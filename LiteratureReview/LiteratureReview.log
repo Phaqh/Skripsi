@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.6.26)  5 DEC 2025 16:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.6.26)  5 DEC 2025 16:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -233,17 +233,7 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count284
 \l__pdf_internal_box=\box55
-) (./LiteratureReview.aux
-
-LaTeX Warning: Label `b1' multiply defined.
-
-
-LaTeX Warning: Label `b1' multiply defined.
-
-
-LaTeX Warning: Label `b1' multiply defined.
-
-)
+) (./LiteratureReview.aux)
 \openout1 = `LiteratureReview.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
@@ -301,21 +291,17 @@ Before submitting the final camera ready copy, remember to:
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
-
-
-LaTeX Warning: There were multiply-defined labels.
-
  ) 
 Here is how much of TeX's memory you used:
- 4105 strings out of 476106
- 64134 string characters out of 5793933
- 1927975 words of memory out of 5000000
- 26101 multiletter control sequences out of 15000+600000
+ 4108 strings out of 476106
+ 64146 string characters out of 5793933
+ 1929975 words of memory out of 5000000
+ 26104 multiletter control sequences out of 15000+600000
  588572 words of font info for 85 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 57i,8n,65p,285b,266s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,8n,65p,947b,266s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on LiteratureReview.pdf (1 page, 46876 bytes).
+Output written on LiteratureReview.pdf (1 page, 49251 bytes).
 PDF statistics:
  29 PDF objects out of 1000 (max. 8388607)
  17 compressed objects within 1 object stream

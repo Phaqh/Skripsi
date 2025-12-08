@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1764926514.16524 "/home/paqh/Documents/Skripsi/LiteratureReview/LiteratureReview.tex" "LiteratureReview.pdf" "LiteratureReview" 1764926514.72893 0
+["pdflatex"] 1764928509.90395 "/home/paqh/Documents/Skripsi/LiteratureReview/LiteratureReview.tex" "LiteratureReview.pdf" "LiteratureReview" 1764928510.58646 0
   "/etc/texmf/web2c/texmf.cnf" 1732769992.1592 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/paqh/Documents/Skripsi/LiteratureReview/LiteratureReview.tex" 1764926513.8386 1242 c9bf54e808c98fae635cffe3f746488c ""
+  "/home/paqh/Documents/Skripsi/LiteratureReview/LiteratureReview.tex" 1764928508.93604 2105 bbb43b5149a92c9386de5bfc69632706 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -52,8 +52,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1750919238.44603 165012 f177baa1c39a3ebd62c3096a43521a0d ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1750919296 6831171 3124f9e25fcfe69974e43fdc46ff2f00 ""
-  "LiteratureReview.aux" 1764926514.65759 689 7f5b5e202e672476cd47c2f0b0cd82c9 "pdflatex"
-  "LiteratureReview.tex" 1764926513.8386 1242 c9bf54e808c98fae635cffe3f746488c ""
+  "LiteratureReview.aux" 1764928510.47904 823 8f344cbeac74c39ec67a2c7a8097e433 "pdflatex"
+  "LiteratureReview.tex" 1764928508.93604 2105 bbb43b5149a92c9386de5bfc69632706 ""
   (generated)
   "LiteratureReview.aux"
   "LiteratureReview.log"
