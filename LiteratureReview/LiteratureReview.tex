@@ -3,8 +3,10 @@
 
 \usepackage{tikz}
 \usepackage{parskip}
-
 \usepackage{forest}
+\usepackage{cuted}
+\usepackage{fvextra}
+
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{algorithmic}
@@ -14,54 +16,6 @@
 
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
-
-\begin{document}
-
-\title{Opponent Modelling in the Iterated Prisoner's Dilemma: A Literature Review}
-
-\author{\IEEEauthorblockN{Faqih Mahardika}
-\IEEEauthorblockA{\textit{Department of Computer Science and Electronics} \\
-\textit{Gadjah Mada University} \\
-Yogyakarta, Indonesia \\
-fm.faqihmahardika@gmail.com}
-}
-
-\maketitle
-
-\begin{abstract}
-
-\end{abstract}
-
-\begin{IEEEkeywords}
-keyword1, keyword2, keyword3 
-\end{IEEEkeywords}
-
-\section{Introduction}
-Cooperation and conflict are fundamental features of interaction in human societies, biological systems, and artificial-agent environments. Game theory offers a powerful analytical framework for studying such strategic interdependence, and seminal work on the evolution of cooperation has shown how behavioural patterns emerge when agents repeatedly face dilemmas that require balancing self-interest with mutual benefit\cite{axelrod_evolution_1981, axelrod_evolution_nodate}. Among these models, the Prisoner's Dilemma (PD) has become the canonical representation of situations in which individual rationality conflicts with collective welfare. In the one-shot PD, mutual cooperation yields the highest joint payoff, yet the incentives embedded in the payoff structure drive both players toward mutual defection, revealing a fundamental tension at the heart of many social, economic, and political interactions.
-
-When this game is repeated over time as the Iterated Prisoner's Dilemma (IPD), the strategic landscape changes significantly. Repetition allows agents to condition their choices on one another's past actions, enabling behaviours such as reciprocity, retaliation, forgiveness, and trust-building. Axelrod's influential IPD tournaments demonstrated that simple contingent strategies most notably Tit-for-Tat could foster stable cooperation even in competitive environments, highlighting how long-term interaction and memory support the emergence of cooperative norms in the absence of central enforcement\cite{axelrod_evolution_nodate, axelrod_evolution_1981}.
-
-The relevance of IPD dynamics extends far beyond abstract models. In biology, theories of reciprocal altruism describe how repeated encounters among organisms can favour contingent cooperation, laying out conditions under which helping behaviour can evolve among self-interested individuals\cite{trivers_evolution_1971}. Evolutionary game theory further formalises these mechanisms through the concept of evolutionarily stable strategies, demonstrating how certain behavioural rules can persist within populations under selective pressure\cite{smith_evolution_nodate}. Social and economic research similarly uses repeated-game frameworks to explain human cooperation, norm enforcement, and punishment in public-goods contexts\cite{charness_cooperation_2021}, while resource-management problems such as commercial fishing exemplify how strategic interdependence in shared environments mirrors the structure of repeated dilemmas\cite{leung_analysis_1976}. Across these domains, the IPD framework provides a versatile lens for understanding how cooperation can arise, stabilize, or collapse under varying incentives and institutional conditions.
-
-Although classical analyses of the IPD provide essential foundations, their assumptions often diverge from the realities of strategic interaction. Real agents whether human, animal, or artificial frequently operate under uncertainty, face limited observability, and adapt their behaviour dynamically. Consequently, much of the recent literature emphasizes the need for models that allow agents to learn from experience and form expectations about others' behaviour over time. This motivates the development of opponent modelling, a set of techniques that enable one agent to infer an opponent's intentions, strategy, or behavioural tendencies based on observed actions. Contemporary surveys outline a wide spectrum of approaches to opponent modelling in adversarial and multi-agent settings, revealing that it plays a central role in enabling adaptive decision-making in repeated games, negotiation, autonomous control, and strategic competition\cite{nashed_survey_nodate}. In the context of the IPD, the ability to anticipate an opponent's future behaviour is especially critical: cooperation thrives when agents can recognise cooperative partners and detect exploiters, adjust to non-stationary strategies, and respond appropriately to shifts in interaction patterns.
-
-By integrating insights from evolutionary theory, behavioural experimentation, and modern learning-based modelling, research on the IPD and opponent modelling provides a comprehensive view of how cooperation emerges and how strategic agents adapt to one another.\@ Yet findings across these fields remain fragmented, and a focused synthesis is needed to understand how opponent-modelling techniques have been conceptualised, implemented, and evaluated specifically within the IPD.\@ This literature review aims to address that gap by examining existing approaches, analysing their underlying assumptions, and identifying methodological challenges and research opportunities that shape the future of adaptive behaviour in repeated strategic environments.
-\section{Related Work}
-Your literature review and related work section.~\cite{axelrod_evolution_1981}
-
-
-\section{Methodology}
-Description of your methodology.
-\begin{tikzpicture}
-    \node (A) at (0,0) [draw, rectangle] {Start};
-    \node (B) at (0,-2) [draw, rectangle] {Step 1};
-    \node (C) at (0,-4) [draw, rectangle] {Step 2};
-    \node (D) at (0,-6) [draw, rectangle] {End};
-
-    \draw[->] (A) -- (B);
-    \draw[->] (B) -- (C);
-    \draw[->] (C) -- (D);
-\end{tikzpicture}
 
 \forestset{
   mynode/.style={
@@ -82,25 +36,192 @@ Description of your methodology.
   }
 }
 
-\begin{forest}
-for tree={mynode}
-[Root
-    [Layer 1A
-        [Child A1
-            [ { \begin{tabular}{c}
-                \textbf{Iterated Prisoner's Dilemma}\\
-                \footnotesize\cite{axelrod_evolution_1981}
-                \end{tabular} }
-            ]
-        ]
-    ]
-]
-\end{forest}
+\begin{document}
+
+\title{Opponent Modelling in the Iterated Prisoner's Dilemma: A Literature Review}
+
+\author{\IEEEauthorblockN{Faqih Mahardika}
+\IEEEauthorblockA{\textit{Department of Computer Science and Electronics} \\
+\textit{Gadjah Mada University} \\
+Yogyakarta, Indonesia \\
+fm.faqihmahardika@gmail.com}
+}
+
+\maketitle
+
+\begin{abstract}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tristique ipsum id lectus euismod molestie. In eget nunc vel nisi venenatis sagittis non at ante. Ut mattis tortor et libero dignissim maximus. Nunc vitae ante sit amet tellus fringilla tincidunt at quis elit. Fusce a laoreet elit, in scelerisque felis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce eu nibh varius, mollis turpis sed, vehicula metus. Nullam rhoncus euismod odio vel ullamcorper. Quisque venenatis id massa quis tempus. Morbi luctus enim lacinia finibus convallis.
+
+Phasellus varius congue tortor sit amet porttitor. Integer velit turpis, facilisis vitae imperdiet id, egestas eu turpis. Proin feugiat a erat eget vehicula. Sed ligula libero, sollicitudin sed nibh iaculis, fermentum feugiat lacus. Donec lectus risus, semper ac posuere non, hendrerit non nisl. Donec at laoreet dolor. Nullam efficitur auctor nisl, vel tincidunt neque lobortis eget. Phasellus elementum justo nec ante malesuada tristique. Curabitur sed magna condimentum, rutrum turpis sed, vehicula lacus. Vivamus ultricies nulla id nulla dictum sollicitudin. Nullam varius, lorem at tincidunt auctor, diam lectus varius mauris, ut pretium nisl arcu a massa. Sed et nisi a mauris eleifend fringilla. Pellentesque facilisis nisl sit amet dictum pellentesque.
 
 
+\end{abstract}
+
+\begin{IEEEkeywords}
+keyword1, keyword2, keyword3 
+\end{IEEEkeywords}
+
+\section{Introduction}
+Cooperation and conflict are fundamental features of interaction in human societies, biological systems, and artificial-agent environments. Game theory provides a rigorous analytical framework for studying such strategic interdependence, and foundational work on the evolution of cooperation demonstrates how behavioural patterns emerge when agents repeatedly face dilemmas that require balancing self-interest with mutual benefit~\cite{axelrod_evolution_1981, axelrod_evolution_nodate}. Among these models, the Prisoner's Dilemma (PD) has become the canonical representation of situations in which individual rationality conflicts with collective welfare. In the one-shot PD, mutual cooperation yields the highest joint payoff, yet the incentive structure leads rational players to defect, exposing a core tension that recurs in many social, economic, and political contexts.
+
+When the game is repeated as the Iterated Prisoner's Dilemma (IPD), the strategic landscape changes significantly. Repetition enables agents to condition their actions on previous interactions, giving rise to behaviours such as reciprocity, retaliation, forgiveness, and trust-building. Axelrod's influential IPD tournaments demonstrated that simple contingent strategies most notably Tit-for-Tat can foster stable cooperation even in competitive environments, illustrating how long-term interaction and memory contribute to the emergence of cooperative norms without centralised enforcement~\cite{axelrod_evolution_nodate, axelrod_evolution_1981}. These results established IPD as a fundamental tool for analysing adaptive, history-dependent decision-making.
+
+The relevance of IPD dynamics extends across multiple domains. In biology, theories of reciprocal altruism describe how repeated encounters favour contingent cooperation, outlining conditions under which helping behaviour can evolve among self-interested organisms~\cite{trivers_evolution_1971}. Evolutionary game theory formalises these mechanisms through the concept of evolutionarily stable strategies, showing how certain behavioural rules can persist under selective pressures~\cite{smith_evolution_nodate}. In the social sciences, repeated-game frameworks explain human cooperation, norm enforcement, and punishment systems in public-goods settings~\cite{charness_cooperation_2021}. In economics and resource management, problems such as commercial fishing demonstrate how strategic interdependence in shared environments mirrors the structure of repeated dilemmas~\cite{leung_analysis_1976}. Across these fields, the IPD serves as a versatile lens for understanding how cooperation emerges, stabilises, or collapses depending on incentives, information structures, and institutional conditions.
+
+Although classical analyses of the IPD provide essential insights, their simplifying assumptions often diverge from the complexities of real strategic interaction. Real agents either human, biological, or artificial frequently operate under uncertainty, possess limited observability, and adapt their behaviour dynamically. These realities have motivated growing interest in opponent modelling, which equips an agent with the ability to infer an opponent's strategy, behavioural tendencies, or intentions from observed actions. Contemporary surveys highlight a broad spectrum of opponent-modelling techniques across adversarial and multi-agent domains, underscoring their importance for enabling adaptive decision-making in repeated games, negotiation, autonomous systems, and competitive learning environments~\cite{nashed_survey_nodate}. Within the IPD, such capabilities are critical: sustaining cooperation depends on recognising cooperative partners, detecting exploiters, and adapting effectively to non-stationary or deceptive strategies.
+
+Therefore, this study aims to systematically review the existing literature on opponent modelling in the Iterated Prisoner's Dilemma. The review is guided by the following research questions:
+\begin{itemize}
+    \item \textbf{RQ1:} What environmental settings and monitoring mechanisms are used in opponent modelling for the Iterated Prisoner's Dilemma, and what are their advantages and disadvantages?
+    \item \textbf{RQ2:} What methodological approaches to opponent modelling have been applied in the Iterated Prisoner's Dilemma, and what strengths and limitations characterize them?
+    \item \textbf{RQ3:} How is the effectiveness of opponent-modelling strategies evaluated in the Iterated Prisoner's Dilemma (e.g., cooperation rate, speed of cooperation, robustness)?
+\end{itemize}
+
+To address these questions, Section~2 outlines the Systematic Literature Review (SLR) methodology used to identify, screen, and synthesise relevant studies. Section~3 presents the results of the review from three analytical perspectives: (i) modelling-based comparison, (ii) environment-based comparison, and (iii) evaluation-based comparison. Section~4 integrates findings across these perspectives to identify persistent limitations and articulate the research gap. Section~5 proposes the methodological framework that this thesis develops to address the identified gap, followed by concluding remarks in Section~6.
+
+\section{Methodology}
+A systematic review will be employed to address the research questions. This method applies a transparent and structured procedure to collect relevant studies, appraise their quality, and integrate their findings in order to answer a well-defined research question~\cite{page_prisma_2021}.
+
+\subsubsection{Inclusion and Exclusion Criteria}
+Studies were included in the review if they met all of the following conditions:
+\begin{itemize}
+    \item \textbf{Topic relevance:} The study presents a substantive discussion, method, or empirical implementation of opponent modelling specifically within the Iterated Prisoner's Dilemma (IPD) or a directly comparable repeated social dilemma.
+    \item \textbf{Scholarly quality:} The work is published in a peer-reviewed journal or international conference proceedings.
+    \item \textbf{Publication window:} The study was published within the last five years.
+    \item \textbf{Accessibility:} The full text is available in English and accessible for analysis.
+\end{itemize}
+Studies were excluded if they met any of the following conditions:
+\begin{itemize}
+    \item \textbf{Irrelevant focus:} The study does not address opponent modelling or does not involve the Iterated Prisoner's Dilemma (e.g., focuses only on one-shot PD, general multi-agent reinforcement learning without opponent inference, or unrelated game-theoretic models).
+    \item \textbf{Theoretical only:} The paper provides purely theoretical or conceptual discussion without proposing, analysing, or evaluating an opponent-modelling method in the IPD context.
+    \item \textbf{Outside the publication window:} Published more than five years before the search date.
+    \item \textbf{Non-English or inaccessible:} The full text is not available in English or cannot be accessed.
+\end{itemize}
+
+\subsubsection{Information Sources and Search Strategy}
+
+The literature search was conducted using four major academic databases selected for their comprehensive coverage of computer science, artificial intelligence, and multi-agent systems research: IEEE Xplore, ScienceDirect, Scopus, and SpringerLink. The search strategy employed a structured set of keywords designed to capture studies related to opponent modelling and the Iterated Prisoner's Dilemma (IPD). The following query was applied across all databases: 
+
+
+\begin{center}
+\colorbox{gray!15}{%
+\begin{minipage}{0.9\linewidth}
+\centering
+\ttfamily
+("opponent modelling" OR "opponent modeling" OR "opponent model" OR "agent modeling")\\
+AND\\
+("prisoner's dilemma" OR "iterated prisoner's dilemma" OR "IPD" OR "repeated game" OR "social dilemma")
+\end{minipage}}
+\end{center}
+
+
+
+Database-specific filters were applied to ensure the relevance and accessibility of retrieved publications. 
+\begin{enumerate}
+    \item \textbf{IEEE Xplore} (04--11--2025): Search applied to all fields.
+    \item \textbf{ScienceDirect} (04--11--2025): Search applied to all fields; restricted to Open Access publications.
+    \item \textbf{Scopus} (04--11--2025): Search applied to all fields.
+    \item \textbf{SpringerLink} (04--11--2025): Search applied to all fields; restricted to Open Access publications.
+\end{enumerate}
+
+\subsection{Research Procedure}
+The literature search was conducted following the defined search strategy, with keywords adapted to the specific query capabilities of each database. All identified records were collected and managed using a reference manager to remove duplicates and ineligible entries during the initial screening. The remaining studies were then screened based on their titles and abstracts to determine relevance. Full-text versions of studies that passed this stage were retrieved and assessed for eligibility as part of the systematic review.
+
+Data extraction focused on gathering information relevant to Opponent Modelling in the Iterated Prisoner's Dilemma, including environmental settings, monitoring methods, modelling approaches, and evaluation metrics. The extracted data were subsequently analyzed and compared to identify patterns, advantages, and limitations of the different approaches. These findings are then used to address the research questions outlined for this review.
 
 \section{Results}
-Your experimental results.
+
+At each stage of the selection process illustrated in Figure~\ref{fig:prisma}, n denotes the number of studies considered. During the identification phase, 10 records were removed as duplicates based on their titles and abstracts. An additional 48 records were excluded for failing to meet the inclusion criteria. At the screening stage, 26 papers were removed because they were not relevant to this study (for example, they did not involve opponent modelling or did not use the IPD as the research context), and 6 papers were excluded because they were non-primary studies, resulting in a total of 32 removals. One record could not be retrieved due to access limitations. Consequently, 20 records were selected for full-text review.
+
+Among the 20 full-text articles obtained, 2 were excluded because they focused on IPD population simulations or did not present any opponent modelling framework. Another 2 were excluded because they were non-primary studies and therefore did not propose their own opponent modelling approach. One additional paper was excluded for focusing solely on theoretical aspects of the IPD without providing an opponent modelling framework.
+
+After applying all exclusion criteria, 15 studies were included in the final systematic review. The titles and characteristics of these studies are presented in Table~\ref{tab:paper_characteristics}.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{images/PrismaENG.png}
+    \caption{Flow diagram for study selection.}
+    \label{fig:prisma}
+\end{figure}
+
+\begin{table}[ht]
+\centering
+\caption{Characteristics of Included Studies}
+\label{tab:paper_characteristics}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{p{0.5cm} p{3.5cm} p{4cm}}
+\hline
+\textbf{Ref.} & \textbf{Paper} & \textbf{Characteristics} \\ \hline
+
+\cite{qiao_o2m_2024} &
+O2M: Online Opponent Modeling in Online General-Sum Matrix Games &
+Presents O2M, an online opponent-modeling algorithm for dynamic general-sum games. \\ \hline
+
+\cite{zhu_evolutionary_2025} &
+Evolutionary Dynamics of Cooperation and Extortion on Networks With Fitness-Dependent Rules &
+Analyzes zero-determinant strategies and derives criteria for cooperation on networks. \\ \hline
+
+\cite{lv_inducing_2023} &
+Inducing Coordination in Multi-Agent Repeated Game through Hierarchical Gifting Policies &
+Proposes a hierarchical gifting mechanism that drives long-term coordination. \\ \hline
+
+\cite{doshi_recursively_2020} &
+Recursively modeling other agents for decision making: A research perspective &
+Reviews recursive modeling frameworks for reasoning about others’ intentions.\\ \hline
+
+\cite{gomez_grounded_2025} &
+Grounded predictions of teamwork as a one-shot game: A multiagent multi-armed bandits approach &
+Models voluntary teamwork and shows how agents learn equilibrium collaboration.\\ \hline
+
+\cite{mendez-naya_delegation_2025} &
+Delegation and strategic altruism: A theoretical approach &
+Introduces quasi-stable and stable equilibria enabling cooperation via altruistic delegates.\\ \hline
+
+\cite{di_coupling_2023} &
+The coupling effect between the environment and strategies drives the emergence of group cooperation &
+Shows that memory–environment coupling causes cycles of cooperation and defection. \\ \hline
+
+\cite{perera_learning_2025} &
+Learning to cooperate against ensembles of diverse opponents &
+Proposes a scalable RL approach that fosters cooperation without explicit opponent models. \\ \hline
+
+\cite{li_exploiting_2025} &
+Exploiting a No-Regret Opponent in Repeated Zero-Sum Games &
+Presents a framework for modeling and exploiting no-regret opponents using RNNs. \\ \hline
+
+\cite{freire_modeling_2023} &
+Modeling Theory of Mind in Dyadic Games Using Adaptive Feedback Control &
+Proposes control-theoretic ToM agents that outperform standard RL strategies. \\ \hline
+
+\cite{hu_modeling_2023} &
+Modeling opponent learning in multiagent repeated games &
+Introduces a Stackelberg-based method that finds stable, high-reward equilibria. \\ \hline
+
+\cite{elhamer_effects_2020} &
+The effects of population size and information update rates on the emergent patterns of cooperative clusters in a large-scale social particle swarm model &
+Shows that faster information updates in SNS networks increase cooperative clustering.\\ \hline
+
+\cite{wang_achieving_2019} &
+Achieving cooperation through deep multiagent reinforcement learning in sequential prisoner’s dilemmas &
+Introduces a sequential PD and a deep RL method that adapts to detected cooperation.\\ \hline
+
+\cite{jin_achieving_2025} &
+Achieving collective welfare in multi-agent reinforcement learning via suggestion sharing &
+Introduces a MARL method where sharing action suggestions enables collective cooperation.\\ \hline
+
+\cite{de_weerd_higher-order_2022} &
+Higher-order theory of mind is especially useful in unpredictable negotiations &
+Finds that higher-order ToM is most beneficial in unpredictable environments.\\ \hline
+
+\end{tabular}
+\end{table}
+
+\section{Synthesis / Discussion}
+integrates findings across these perspectives to identify persistent limitations and articulate the research gap.
+
+\section{Proposed framework}
+my thesis pro[posed framework.]
 
 \section{Conclusion}
 Your conclusions and future work.
@@ -108,7 +229,7 @@ Your conclusions and future work.
 \begin{thebibliography}{00}
 
 \bibitem{nashed_survey_nodate}
-S. B. Nashed and S. Zilberstein, ``A Survey on Opponent Modeling in Adversarial Domains,'' unpublished.
+S. B. Nashed and S. Zilberstein, ``A Survey on Opponent Modeling in Adversarial Domains'' unpublished.
 
 \bibitem{axelrod_evolution_nodate}
 R. Axelrod, ``The Evolution of Cooperation'' unpublished.
@@ -122,7 +243,7 @@ Available: https://www.journals.uchicago.edu/doi/10.1086/406755
 
 \bibitem{charness_cooperation_2021}
 Y. Chen, ``Cooperation and punishment in public goods experiments (by Ernst Fehr and Simon Gächter),'' in \textit{The Art of Experimental Economics}, G. Charness and M. Pingle, Eds., London: Routledge, 2021, pp. 134--143.  
-Available: https://www.taylorfrancis.com/books/9781003019121/chapters/10.4324/9781003019121-12
+Available: www.taylorfrancis.com/books/9781003019121/chapters/10.4324/9781003019121-12
 
 \bibitem{leung_analysis_1976}
 A. Leung and A.-Y. Wang, ``Analysis of Models for Commercial Fishing: Mathematical and Economical Aspects,'' \textit{Econometrica}, vol. 44, no. 2, p. 295, 1976.  
@@ -130,6 +251,61 @@ Available: https://www.jstor.org/stable/1912725
 
 \bibitem{smith_evolution_nodate}
 J. M. Smith, \textit{Evolution and the Theory of Games}. (Publication year not provided.)
+
+\bibitem{page_prisma_2021}
+M.~J.~Page, J.~E.~McKenzie, P.~M.~Bossuyt, I.~Boutron, T.~C.~Hoffmann, 
+C.~D.~Mulrow, L.~Shamseer, J.~M.~Tetzlaff, E.~A.~Akl, S.~E.~Brennan, 
+R.~Chou, J.~Glanville, J.~M.~Grimshaw, A.~Hróbjartsson, M.~M.~Lalu, 
+T.~Li, E.~W.~Loder, E.~Mayo-Wilson, S.~McDonald, L.~A.~McGuinness, 
+L.~A.~Stewart, J.~Thomas, A.~C.~Tricco, V.~A.~Welch, P.~Whiting, 
+and D.~Moher, 
+``The PRISMA 2020 statement: an updated guideline for reporting systematic reviews,'' 
+\textit{BMJ}, vol.~372, p.~n71, Mar.\ 2021. 
+
+\bibitem{qiao_o2m_2024}
+X.~Qiao, C.~Han, and T.~Guo, ``O2M: Online Opponent Modeling in Online General-Sum Matrix Games,'' in \emph{2024 4th International Conference on Artificial Intelligence, Robotics, and Communication (ICAIRC)}, Dec. 2024, pp. 358--361. [Online]. Available: https://ieeexplore.ieee.org/document/10899996/. doi: 10.1109/ICAIRC64177.2024.10899996.
+
+\bibitem{zhu_evolutionary_2025}
+L.~Zhu, Y.~Zhu, and C.~Xia, ``Evolutionary Dynamics of Cooperation and Extortion on Networks With Fitness-Dependent Rules,'' in \emph{2025 Joint International Conference on Automation-Intelligence-Safety (ICAIS) \& International Symposium on Autonomous Systems (ISAS)}, May 2025, pp. 1--6. [Online]. Available: https://ieeexplore.ieee.org/document/11051564/. doi: 10.1109/ICAISISAS64483.2025.11051564.
+
+\bibitem{lv_inducing_2023}
+M.~Lv, J.~Liu, B.~Guo, Y.~Ding, Y.~Zhang, and Z.~Yu, ``Inducing Coordination in Multi-Agent Repeated Game through Hierarchical Gifting Policies,'' in \emph{2023 IEEE 20th International Conference on Mobile Ad Hoc and Smart Systems (MASS)}, Sep. 2023, pp. 279--287. [Online]. Available: https://ieeexplore.ieee.org/document/10298392/. doi: 10.1109/MASS58611.2023.00041.
+
+\bibitem{doshi_recursively_2020}
+P.~Doshi, P.~Gmytrasiewicz, and E.~Durfee, ``Recursively modeling other agents for decision making: A research perspective,'' \emph{Artificial Intelligence}, vol.~279, p. 103202, 2020. [Online]. Available: https://www.sciencedirect.com/science/article/pii/S000437021930027X. doi: 10.1016/j.artint.2019.103202.
+
+\bibitem{gomez_grounded_2025}
+A.~L. de~A. Gómez, C.~Sierra, and J.~Sabater-Mir, ``Grounded predictions of teamwork as a one-shot game: A multiagent multi-armed bandits approach,'' \emph{Artificial Intelligence}, vol.~341, p. 104307, 2025. [Online]. Available: https://www.sciencedirect.com/science/article/pii/S0004370225000268. doi: 10.1016/j.artint.2025.104307.
+
+\bibitem{mendez-naya_delegation_2025}
+L. Méndez-Naya, ``Delegation and strategic altruism: A theoretical approach,'' \emph{Mathematical Social Sciences}, vol. 138, 2025, pp. 102465. doi: 10.1016/j.mathsocsci.2025.102465.
+
+\bibitem{di_coupling_2023}
+C. Di, Q. Zhou, J. Shen, J. Wang, R. Zhou, and T. Wang, ``The coupling effect between the environment and strategies drives the emergence of group cooperation,'' \emph{Chaos, Solitons \& Fractals}, vol. 176, 2023, pp. 114138. doi: 10.1016/j.chaos.2023.114138.
+
+\bibitem{perera_learning_2025}
+I. Perera, F. de Nijs, and J. Garcia, ``Learning to cooperate against ensembles of diverse opponents,'' \emph{Neural Computing and Applications}, vol. 37, no. 23, 2025, pp. 18835--18849. doi: 10.1007/s00521-024-10511-9.
+
+\bibitem{li_exploiting_2025}
+K. Li, W. Huang, C. Li, and X. Deng, ``Exploiting a No-Regret Opponent in Repeated Zero-Sum Games'' \emph{Journal of Shanghai Jiaotong University (Science)}, vol. 30, no. 2, 2025, pp. 385--398. doi: 10.1007/s12204-023-2610-2.
+
+\bibitem{freire_modeling_2023}
+I. T. Freire, X. D. Arsiwalla, J. Y. Puigbò, and P. Verschure, ``Modeling Theory of Mind in Dyadic Games Using Adaptive Feedback Control,'' \emph{Information}, vol. 14, no. 8, 2023. doi: 10.3390/info14080441.
+
+\bibitem{hu_modeling_2023}
+Y. Hu, C. Han, H. Li, and T. Guo, ``Modeling opponent learning in multiagent repeated games,'' \emph{Applied Intelligence}, vol. 53, no. 13, 2023, pp. 17194--17210. doi: 10.1007/s10489-022-04249-x.
+
+\bibitem{elhamer_effects_2020}
+Z. Elhamer, R. Suzuki, and T. Arita, ``The effects of population size and information update rates on the emergent patterns of cooperative clusters in a large-scale social particle swarm model,'' \emph{Artificial Life and Robotics}, vol. 25, no. 1, 2020, pp. 149--158. doi: 10.1007/s10015-019-00558-6.
+
+\bibitem{wang_achieving_2019}
+W. Wang, Y. Wang, J. Hao, and M. E. Taylor, ``Achieving cooperation through deep multiagent reinforcement learning in sequential prisoner’s dilemmas,'' in \emph{ACM International Conference Proceeding Series}, 2019. doi: 10.1145/3356464.3357712.
+
+\bibitem{jin_achieving_2025}
+Y. Jin, S. Wei, and G. Montana, ``Achieving collective welfare in multi-agent reinforcement learning via suggestion sharing,'' \emph{Machine Learning}, vol. 114, no. 8, 2025, p. 190. doi: 10.1007/s10994-025-06823-z.
+
+\bibitem{de_weerd_higher-order_2022}
+H. De Weerd, R. Verbrugge, and B. Verheij, ``Higher-order theory of mind is especially useful in unpredictable negotiations,'' \emph{Autonomous Agents and Multi-Agent Systems}, vol. 36, no. 2, 2022, p. 30. doi: 10.1007/s10458-022-09558-6.
 
 
 
