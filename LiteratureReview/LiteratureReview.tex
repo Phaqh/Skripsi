@@ -36,6 +36,7 @@
   }
 }
 
+
 \begin{document}
 
 \title{Opponent Modelling in the Iterated Prisoner's Dilemma: A Literature Review}
@@ -83,7 +84,7 @@ To address these questions, Section~2 outlines the Systematic Literature Review 
 \section{Methodology}
 A systematic review will be employed to address the research questions. This method applies a transparent and structured procedure to collect relevant studies, appraise their quality, and integrate their findings in order to answer a well-defined research question~\cite{page_prisma_2021}.
 
-\subsubsection{Inclusion and Exclusion Criteria}
+\subsection{Inclusion and Exclusion Criteria}
 Studies were included in the review if they met all of the following conditions:
 \begin{itemize}
     \item \textbf{Topic relevance:} The study presents a substantive discussion, method, or empirical implementation of opponent modelling specifically within the Iterated Prisoner's Dilemma (IPD) or a directly comparable repeated social dilemma.
@@ -99,7 +100,7 @@ Studies were excluded if they met any of the following conditions:
     \item \textbf{Non-English or inaccessible:} The full text is not available in English or cannot be accessed.
 \end{itemize}
 
-\subsubsection{Information Sources and Search Strategy}
+\subsection{Information Sources and Search Strategy}
 
 The literature search was conducted using four major academic databases selected for their comprehensive coverage of computer science, artificial intelligence, and multi-agent systems research: IEEE Xplore, ScienceDirect, Scopus, and SpringerLink. The search strategy employed a structured set of keywords designed to capture studies related to opponent modelling and the Iterated Prisoner's Dilemma (IPD). The following query was applied across all databases: 
 
@@ -203,7 +204,7 @@ The effects of population size and information update rates on the emergent patt
 Shows that faster information updates in SNS networks increase cooperative clustering.\\ \hline
 
 \cite{wang_achieving_2019} &
-Achieving cooperation through deep multiagent reinforcement learning in sequential prisoner’s dilemmas &
+Achieving cooperation through deep multiagent reinforcement learning in sequential prisoner's dilemmas &
 Introduces a sequential PD and a deep RL method that adapts to detected cooperation.\\ \hline
 
 \cite{jin_achieving_2025} &
@@ -219,6 +220,53 @@ Finds that higher-order ToM is most beneficial in unpredictable environments.\\ 
 
 \section{Synthesis / Discussion}
 integrates findings across these perspectives to identify persistent limitations and articulate the research gap.
+
+\begin{figure*}[t]
+\centering
+\begin{forest}
+for tree={
+  grow=east,
+  parent anchor=east,
+  child anchor=west,
+  edge={->},
+  l sep=10pt,
+  s sep=8pt,
+  mynode
+}
+[Environment \\ Game Assumptions, header
+  [Evolutionary, header 
+    [Multi-agent \\ Fixed Group
+      [non-stationary \\ \textit{(P2)}, citation]
+      [Population dynamic \\ \textit{(P8)}, citation]
+    ]
+    [Population / Networked
+      [Population dynamic \\ \textit{(P13)}, citation]
+    ]
+  ]
+  [Sequential / Iterated
+    [Dyadic
+      [non-stationary \\ \textit{(P1)}, citation]
+    ] 
+    [Multi-agent \\ Fixed Group
+      [non-stationary \\ \textit{(P11, P14)}, citation]
+    ]
+    [Population / Networked
+      [non-stationary \\ \textit{(P3, P4, P9, P10, P12, )}, citation]
+      [Population dynamic \\ \textit{(P7)}, citation]
+    ]
+  ]
+  [One-Shot, header
+    [Multi-agent \\ Fixed Group
+      [stationary \\ \textit{(P5, P6)}, citation]
+      [non-stationary \\ \textit{(P15)}, citation]
+    ]
+  ]
+]
+\end{forest}
+\caption{Taxonomy of environment and game assumptions in opponent modelling literature.}
+\label{fig:env-taxonomy}
+\end{figure*}
+
 
 \section{Proposed framework}
 my thesis pro[posed framework.]
@@ -243,7 +291,7 @@ Available: https://www.journals.uchicago.edu/doi/10.1086/406755
 
 \bibitem{charness_cooperation_2021}
 Y. Chen, ``Cooperation and punishment in public goods experiments (by Ernst Fehr and Simon Gächter),'' in \textit{The Art of Experimental Economics}, G. Charness and M. Pingle, Eds., London: Routledge, 2021, pp. 134--143.  
-Available: www.taylorfrancis.com/books/9781003019121/chapters/10.4324/9781003019121-12
+Available: taylorfrancis.com/books/9781003019121/chapters/10.4324/9781003019121-12
 
 \bibitem{leung_analysis_1976}
 A. Leung and A.-Y. Wang, ``Analysis of Models for Commercial Fishing: Mathematical and Economical Aspects,'' \textit{Econometrica}, vol. 44, no. 2, p. 295, 1976.  
