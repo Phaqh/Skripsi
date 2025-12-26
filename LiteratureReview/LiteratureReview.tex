@@ -6,6 +6,10 @@
 \usepackage{forest}
 \usepackage{cuted}
 \usepackage{fvextra}
+\usepackage{booktabs}
+\usepackage{amssymb}
+\usepackage{tabularx}
+ 
 
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts}
@@ -219,57 +223,71 @@ Finds that higher-order ToM is most beneficial in unpredictable environments.\\ 
 \end{table}
 
 \section{Synthesis / Discussion}
-integrates findings across these perspectives to identify persistent limitations and articulate the research gap.
+integrates findings across these perspectives to identify persistent limitations and articulate the research gap. While a broad set of attributes was extracted, only methodologically discriminative dimensions are used for direct comparison; environment and evaluation attributes are summarized separately.
 
-\begin{figure*}[t]
+To operationalize \textit{opponent behavior assumptions} across heterogeneous formulations, we summarize observable behavioral properties rather than internal learning mechanisms. The table below provides a descriptive categorization based on whether an opponent's actions (i) depend on environmental conditions, (ii) are mediated by population-level interactions, (iii) respond directly to the focal agent's actions, and (iv) exhibit action divergence under equivalent recent interaction histories. These criteria are intentionally behavior-centric and evaluated at the level of interaction traces, without assuming access to the opponent's internal model, update rules, or optimization objectives.
+
+This categorization is not intended as a formal or exhaustive taxonomy of opponent modeling methods. Instead, it serves as an analytical aid to support comparison across studies that adopt different game settings, learning paradigms, and modeling abstractions. In cases where a paper does not explicitly define opponent assumptions, classifications are derived conservatively from the described experimental setup and observed interaction dynamics, following standard practice in systematic literature reviews.
+
+
+\begin{table}[ht]
 \centering
-\begin{forest}
-for tree={
-  grow=east,
-  parent anchor=east,
-  child anchor=west,
-  edge={->},
-  l sep=10pt,
-  s sep=8pt,
-  mynode
-}
-[Environment \\ Game Assumptions, header
-  [Evolutionary, header 
-    [Multi-agent \\ Fixed Group
-      [non-stationary \\ \textit{(P2)}, citation]
-      [Population dynamic \\ \textit{(P8)}, citation]
-    ]
-    [Population / Networked
-      [Population dynamic \\ \textit{(P13)}, citation]
-    ]
-  ]
-  [Sequential / Iterated
-    [Dyadic
-      [non-stationary \\ \textit{(P1)}, citation]
-    ] 
-    [Multi-agent \\ Fixed Group
-      [non-stationary \\ \textit{(P11, P14)}, citation]
-    ]
-    [Population / Networked
-      [non-stationary \\ \textit{(P3, P4, P9, P10, P12, )}, citation]
-      [Population dynamic \\ \textit{(P7)}, citation]
-    ]
-  ]
-  [One-Shot, header
-    [Multi-agent \\ Fixed Group
-      [stationary \\ \textit{(P5, P6)}, citation]
-      [non-stationary \\ \textit{(P15)}, citation]
-    ]
-  ]
-]
-\end{forest}
-\caption{Taxonomy of environment and game assumptions in opponent modelling literature.}
-\label{fig:env-taxonomy}
-\end{figure*}
+\caption{Opponent behavior assumption based on observable behavioral dependencies.\\}
+
+\label{tab:opponent-behavior}
+\renewcommand{\arraystretch}{1.1}
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\columnwidth}{cccc X p{2.5cm}}
+\toprule
+Env. & Pop. & Agent & Div. & Opponent Behaviour Category & Paper \\
+\midrule
+-- & -- & -- & -- & Stationary & \cite{mendez-naya_delegation_2025} \\
+\addlinespace
+
+-- & -- & \checkmark & -- & Reactive & \cite{jin_achieving_2025} \\
+\addlinespace
+
+-- & \checkmark & -- & -- & Population-Conformist & \cite{gomez_grounded_2025} \\
+\addlinespace
+
+-- & \checkmark & \checkmark & -- & Contextual Reactive & \cite{elhamer_effects_2020} \\
+\addlinespace
+
+-- & -- & \checkmark & \checkmark & Learning Opponent & \cite{qiao_o2m_2024}, \cite{lv_inducing_2023}, \cite{doshi_recursively_2020}, \cite{li_exploiting_2025}, \cite{freire_modeling_2023}, \cite{hu_modeling_2023}, \cite{wang_achieving_2019}, \cite{de_weerd_higher-order_2022} \\
+\addlinespace
+
+-- & \checkmark & \checkmark & \checkmark & Population-Contextual Strategic & \cite{perera_learning_2025} \\
+\addlinespace
+
+\checkmark & \checkmark & -- & \checkmark & Heterogeneous Collective Behavior & \cite{zhu_evolutionary_2025} \\
+\addlinespace
+
+\checkmark & \checkmark & \checkmark & \checkmark & Environment-Conditioned Strategic & \cite{di_coupling_2023} \\
+\bottomrule
+\end{tabularx}
+
+\begin{flushleft}
+\vspace{2pt}
+\footnotesize
+\noindent\textit{Note:} \\
+Env. — behavior varies across environment within the same game;\\
+Pop. — behavior is mediated by population-level interactions;\\
+Agent — behavior responds directly to the focal agent's actions;\\
+Div. — action divergence occurs on equivalent recent interaction histories.\\
+Checkmarks indicate the presence of a dependency.
+\end{flushleft}
+
+\end{table}
+
+Several consistent patterns emerge from the behavioral categorization in Table\ref{tab:opponent-behavior}. Early and analytically oriented works predominantly assume stationary or purely reactive opponents, where behavior does not diverge under equivalent interaction histories \cite{mendez-naya_delegation_2025}. In contrast, a substantial portion of recent studies model opponents whose actions are explicitly agent-responsive and exhibit action divergence \cite{qiao_o2m_2024}, \cite{zhu_evolutionary_2025}, \cite{lv_inducing_2023}, \cite{doshi_recursively_2020}, \cite{di_coupling_2023}, \cite{perera_learning_2025}, \cite{li_exploiting_2025}, \cite{freire_modeling_2023},\cite{hu_modeling_2023}, \cite{wang_achieving_2019}, \cite{de_weerd_higher-order_2022}, indicating an assumption of learning or strategic adaptation. This shift reflects a growing research emphasis on robustness against non-stationary and adaptive opponents rather than optimization against fixed strategies.
+
+Moreover, population-mediated behavior appears primarily in studies of evolutionary or networked environments, where opponent actions are shaped indirectly through aggregate dynamics rather than direct bilateral adaptation \cite{zhu_evolutionary_2025}, \cite{gomez_grounded_2025}, \cite{di_coupling_2023}, \cite{perera_learning_2025}, \cite{elhamer_effects_2020}. These settings often decouple individual agent responsiveness from population-level change, leading to behavioral patterns that differ qualitatively from pairwise learning scenarios. Notably, only a subset of works combine environment-dependent, population-mediated, and agent-responsive behaviors\cite{di_coupling_2023}, suggesting that fully context-conditioned strategic opponents remain comparatively underexplored.
+
+Overall, the distribution of categories indicates a methodological transition in opponent modeling research—from controlled assumptions that facilitate theoretical analysis \cite{mendez-naya_delegation_2025} toward behaviorally richer opponents that reflect learning, heterogeneity, and strategic feedback. This trend shows opponent non-stationarity is treated as a central challenge rather than a modeling inconvenience.
 
 
 \section{Proposed framework}
-my thesis pro[posed framework.]
+my thesis proposed framework.
 
 \section{Conclusion}
 Your conclusions and future work.

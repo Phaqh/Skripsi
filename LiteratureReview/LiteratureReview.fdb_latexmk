@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1765982886.24623 "/home/paqh/Documents/Skripsi/LiteratureReview/LiteratureReview.tex" "LiteratureReview.pdf" "LiteratureReview" 1765982889.23712 0
+["pdflatex"] 1766736858.75061 "/home/paqh/Documents/Skripsi/LiteratureReview/LiteratureReview.tex" "LiteratureReview.pdf" "LiteratureReview" 1766736861.03976 0
   "/etc/texmf/web2c/texmf.cnf" 1732769992.1592 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/paqh/Documents/Skripsi/LiteratureReview/LiteratureReview.tex" 1765982882.87015 24720 4e7bd0f8913240db8a68ccbf70529791 ""
+  "/home/paqh/Documents/Skripsi/LiteratureReview/LiteratureReview.tex" 1766736856.10841 29102 b6546ef3292438a5e9181bc368ca2945 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1136768653 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -30,6 +30,7 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1248133631 32716 08e384dc442464e7285e891af9f45947 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1248133631 31764 459c573c03a4949a528c2cc7f557e217 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb" 1136849748 45758 19968a0990191524e34e1994d4a31cb6 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb" 1136849748 44729 811d6c62865936705a31c797a1d5dada ""
   "/usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb" 1136849748 44656 0cbca70e0534538582128f6b54593cca ""
@@ -124,6 +125,7 @@
   "/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty" 1686341992 2444 0d0c1ee65478277e8015d65b86983da2 ""
   "/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty" 1705352648 5319 2b738d02ce36ada6dcdd9534940db0ee ""
   "/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty" 1705352648 2894 fc64867f9d198785eabe71a88276a9cb ""
+  "/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty" 1579038678 6078 f1cb470c9199e7110a27851508ed7a5c ""
   "/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty" 1425427964 26218 19edeff8cdc2bcb704e8051dc55eb5a7 ""
   "/usr/share/texlive/texmf-dist/tex/latex/elocalloc/elocalloc.sty" 1481841771 1428 7d469063535b93044f827bfdb1b0a130 ""
   "/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty" 1399239813 4378 f429f0da968c278653359293040a8f52 ""
@@ -164,6 +166,8 @@
   "/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd" 1137110629 985 1ed784d7bfe47179f3550d2303b073f8 ""
   "/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd" 1137110629 961 15056f4a61917ceed3a44e4ac11fcc52 ""
   "/usr/share/texlive/texmf-dist/tex/latex/sttools/cuted.sty" 1633983922 20893 be5f4cfbe5b8948d75d7c76838a15f64 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty" 1698869629 12667 e4b5eb11e4b7239e6c8a52bbe074a6c6 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty" 1698869629 7147 d45559f8a31b8c53ada0640516660003 ""
   "/usr/share/texlive/texmf-dist/tex/latex/trimspaces/trimspaces.sty" 1253232110 1380 971a51b00a14503ddf754cab24c3f209 ""
   "/usr/share/texlive/texmf-dist/tex/latex/upquote/upquote.sty" 1334873510 1048 517e01cde97c1c0baf72e69d43aa5a2e ""
   "/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty" 1700082560 55487 80a65caedd3722f4c20a14a69e785d8f ""
@@ -171,8 +175,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1750919238.44603 165012 f177baa1c39a3ebd62c3096a43521a0d ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1750919296 6831171 3124f9e25fcfe69974e43fdc46ff2f00 ""
-  "LiteratureReview.aux" 1765982889.06529 3411 6d697f99f633fe458e42f2af90b128a4 "pdflatex"
-  "LiteratureReview.tex" 1765982882.87015 24720 4e7bd0f8913240db8a68ccbf70529791 ""
+  "LiteratureReview.aux" 1766736860.83853 4486 bddc4210eb309ec5ce523d79db8ca5db "pdflatex"
+  "LiteratureReview.tex" 1766736856.10841 29102 b6546ef3292438a5e9181bc368ca2945 ""
   "images/PrismaENG.png" 1765455153.76181 480230 c0289b5be626a5d0218f2ccd817ad7b1 ""
   (generated)
   "LiteratureReview.aux"
