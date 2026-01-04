@@ -78,8 +78,8 @@ Although classical analyses of the IPD provide essential insights, their simplif
 
 Therefore, this study aims to systematically review the existing literature on opponent modelling in the Iterated Prisoner's Dilemma. The review is guided by the following research questions:
 \begin{itemize}
-    \item \textbf{RQ1:} What environmental settings and monitoring mechanisms are used in opponent modelling for the Iterated Prisoner's Dilemma, and what are their advantages and disadvantages?
-    \item \textbf{RQ2:} What methodological approaches to opponent modelling have been applied in the Iterated Prisoner's Dilemma, and what strengths and limitations characterize them?
+    \item \textbf{RQ1:} What environmental settings and monitoring mechanisms are used in opponent modelling for the Iterated Prisoner's Dilemma?
+    \item \textbf{RQ2:} What methodological approaches to opponent modelling have been applied in the Iterated Prisoner's Dilemma?
     \item \textbf{RQ3:} How is the effectiveness of opponent-modelling strategies evaluated in the Iterated Prisoner's Dilemma (e.g., cooperation rate, speed of cooperation, robustness)?
 \end{itemize}
 
@@ -137,11 +137,11 @@ Data extraction focused on gathering information relevant to Opponent Modelling 
 
 \section{Results}
 
-At each stage of the selection process illustrated in Figure~\ref{fig:prisma}, n denotes the number of studies considered. During the identification phase, 10 records were removed as duplicates based on their titles and abstracts. An additional 48 records were excluded for failing to meet the inclusion criteria. At the screening stage, 26 papers were removed because they were not relevant to this study (for example, they did not involve opponent modelling or did not use the IPD as the research context), and 6 papers were excluded because they were non-primary studies, resulting in a total of 32 removals. One record could not be retrieved due to access limitations. Consequently, 20 records were selected for full-text review.
+At each stage of the selection process illustrated in Figure ~\ref{fig:prisma}, n denotes the number of studies considered. During the identification phase, 10 records were removed as duplicates based on their titles and abstracts. An additional 48 records were excluded for failing to meet the inclusion criteria. At the screening stage, 26 papers were removed because they were not relevant to this study (for example, they did not involve opponent modelling or did not use the IPD as the research context), and 6 papers were excluded because they were non-primary studies, resulting in a total of 32 removals. One record could not be retrieved due to access limitations. Consequently, 20 records were selected for full-text review.
 
 Among the 20 full-text articles obtained, 2 were excluded because they focused on IPD population simulations or did not present any opponent modelling framework. Another 2 were excluded because they were non-primary studies and therefore did not propose their own opponent modelling approach. One additional paper was excluded for focusing solely on theoretical aspects of the IPD without providing an opponent modelling framework.
 
-After applying all exclusion criteria, 15 studies were included in the final systematic review. The titles and characteristics of these studies are presented in Table~\ref{tab:paper_characteristics}.
+After applying all exclusion criteria, 15 studies were included in the final systematic review. The titles and characteristics of these studies are presented in Table ~\ref{tab:paper_characteristics}.
 
 \begin{figure}[ht]
     \centering
@@ -253,7 +253,7 @@ Env. & Pop. & Agent & Div. & Opponent Behaviour Category & Paper \\
 -- & \checkmark & \checkmark & -- & Contextual Reactive & \cite{elhamer_effects_2020} \\
 \addlinespace
 
--- & -- & \checkmark & \checkmark & Learning Opponent & \cite{qiao_o2m_2024}, \cite{lv_inducing_2023}, \cite{doshi_recursively_2020}, \cite{li_exploiting_2025}, \cite{freire_modeling_2023}, \cite{hu_modeling_2023}, \cite{wang_achieving_2019}, \cite{de_weerd_higher-order_2022} \\
+-- & -- & \checkmark & \checkmark & Learning Opponent & \cite{qiao_o2m_2024, lv_inducing_2023, doshi_recursively_2020, li_exploiting_2025, freire_modeling_2023, hu_modeling_2023, wang_achieving_2019,de_weerd_higher-order_2022} \\
 \addlinespace
 
 -- & \checkmark & \checkmark & \checkmark & Population-Contextual Strategic & \cite{perera_learning_2025} \\
@@ -279,12 +279,65 @@ Checkmarks indicate the presence of a dependency.
 
 \end{table}
 
-Several consistent patterns emerge from the behavioral categorization in Table\ref{tab:opponent-behavior}. Early and analytically oriented works predominantly assume stationary or purely reactive opponents, where behavior does not diverge under equivalent interaction histories \cite{mendez-naya_delegation_2025}. In contrast, a substantial portion of recent studies model opponents whose actions are explicitly agent-responsive and exhibit action divergence \cite{qiao_o2m_2024}, \cite{zhu_evolutionary_2025}, \cite{lv_inducing_2023}, \cite{doshi_recursively_2020}, \cite{di_coupling_2023}, \cite{perera_learning_2025}, \cite{li_exploiting_2025}, \cite{freire_modeling_2023},\cite{hu_modeling_2023}, \cite{wang_achieving_2019}, \cite{de_weerd_higher-order_2022}, indicating an assumption of learning or strategic adaptation. This shift reflects a growing research emphasis on robustness against non-stationary and adaptive opponents rather than optimization against fixed strategies.
+Several consistent patterns emerge from the behavioral categorization in Table \ref{tab:opponent-behavior}. Early and analytically oriented works predominantly assume stationary or purely reactive opponents, where behavior does not diverge under equivalent interaction histories \cite{mendez-naya_delegation_2025}. In contrast, a substantial portion of recent studies model opponents whose actions are explicitly agent-responsive and exhibit action divergence \cite{qiao_o2m_2024, zhu_evolutionary_2025, lv_inducing_2023, doshi_recursively_2020, di_coupling_2023, perera_learning_2025, li_exploiting_2025, freire_modeling_2023, hu_modeling_2023, wang_achieving_2019, de_weerd_higher-order_2022}, indicating an assumption of learning or strategic adaptation. This shift reflects a growing research emphasis on robustness against non-stationary and adaptive opponents rather than optimization against fixed strategies.
 
-Moreover, population-mediated behavior appears primarily in studies of evolutionary or networked environments, where opponent actions are shaped indirectly through aggregate dynamics rather than direct bilateral adaptation \cite{zhu_evolutionary_2025}, \cite{gomez_grounded_2025}, \cite{di_coupling_2023}, \cite{perera_learning_2025}, \cite{elhamer_effects_2020}. These settings often decouple individual agent responsiveness from population-level change, leading to behavioral patterns that differ qualitatively from pairwise learning scenarios. Notably, only a subset of works combine environment-dependent, population-mediated, and agent-responsive behaviors\cite{di_coupling_2023}, suggesting that fully context-conditioned strategic opponents remain comparatively underexplored.
+Moreover, population-mediated behavior appears primarily in studies of evolutionary or networked environments, where opponent actions are shaped indirectly through aggregate dynamics rather than direct bilateral adaptation \cite{zhu_evolutionary_2025, gomez_grounded_2025, di_coupling_2023, perera_learning_2025, elhamer_effects_2020}. These settings often decouple individual agent responsiveness from population-level change, leading to behavioral patterns that differ qualitatively from pairwise learning scenarios. Notably, only a subset of works combine environment-dependent, population-mediated, and agent-responsive behaviors\cite{di_coupling_2023}, suggesting that fully context-conditioned strategic opponents remain comparatively underexplored.
 
-Overall, the distribution of categories indicates a methodological transition in opponent modeling research—from controlled assumptions that facilitate theoretical analysis \cite{mendez-naya_delegation_2025} toward behaviorally richer opponents that reflect learning, heterogeneity, and strategic feedback. This trend shows opponent non-stationarity is treated as a central challenge rather than a modeling inconvenience.
+The distribution of opponent behavior assumptions in Table~\ref{tab:opponent-behavior} reflects a broader methodological shift in opponent modeling research, from controlled and stationary assumptions toward behaviorally rich, adaptive, and heterogeneous opponents. While this characterization highlights the nature of the opponents considered, it does not capture how agents are designed to cope with such complexity. Therefore, in Table~\ref{tab:opponent_modelling_paradigm} reorganize prior work from the perspective of agent-side modelling, categorizing approaches by their dominant opponent modelling paradigm and corresponding learning mechanism.
 
+\begin{table}[ht]
+\centering
+\caption{Comparison of opponent modelling approaches by dominant modelling paradigm and learning mechanism.}
+\label{tab:opponent_modelling_paradigm}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\columnwidth}{p{2.75cm} p{3.5cm} X}
+\hline
+\textbf{Modelling Paradigm} 
+& \textbf{Learning / Update Mechanism} 
+& \textbf{Papers} \\
+\hline
+
+Reactive reinforcement learning
+& Value-based RL (DQN) 
+& \cite{lv_inducing_2023} \\
+
+Gradient-based opponent shaping
+& Gradient descent / opponent-aware updates 
+& \cite{qiao_o2m_2024, hu_modeling_2023, wang_achieving_2019}\\
+
+Recursive belief reasoning
+& Bayesian belief update / cognitive hierarchy 
+& \cite{doshi_recursively_2020, freire_modeling_2023, de_weerd_higher-order_2022} \\
+
+Population-based training
+& Policy-gradient MARL (population sampling) 
+& \cite{perera_learning_2025} \\
+
+Evolutionary population dynamics
+& Fitness-based strategy imitation 
+& \cite{zhu_evolutionary_2025, di_coupling_2023, elhamer_effects_2020} \\
+
+Bandit-based learning-in-games
+& Multi-armed bandit / smooth best response 
+& \cite{gomez_grounded_2025} \\
+
+System identification
+& Autoregressive model with exogenous inputs (NARX) 
+& \cite{li_exploiting_2025} \\
+
+Communication-driven coordination
+& Policy-gradient with communication objective 
+& \cite{jin_achieving_2025} \\
+
+Analytical game-theoretic modelling
+& Equilibrium analysis (no learning) 
+& \cite{mendez-naya_delegation_2025} \\
+
+\hline
+\end{tabularx}
+\end{table}
+
+While Table~\ref{tab:opponent_modelling_paradigm} categorizes prior work by modelling paradigm and learning mechanism, the listed approaches also differ in whether opponent adaptation is handled explicitly or implicitly. Explicit opponent modelling approaches, such as gradient-based opponent shaping~\cite{qiao_o2m_2024, hu_modeling_2023, wang_achieving_2019}, recursive belief reasoning~\cite{doshi_recursively_2020, freire_modeling_2023, de_weerd_higher-order_2022}, and system identification~\cite{li_exploiting_2025}, construct internal representations of opponent behavior or learning dynamics. In contrast, implicit approaches—including reactive reinforcement learning~\cite{lv_inducing_2023} , population-based training\cite{perera_learning_2025}, evolutionary dynamics \cite{zhu_evolutionary_2025, di_coupling_2023, elhamer_effects_2020} and Bandit-based learning-in-games \cite{gomez_grounded_2025} adapt to opponents without maintaining an explicit opponent model. This distinction highlights alternative design philosophies for addressing opponent non-stationarity, independent of the specific learning mechanisms employed.
 
 \section{Proposed framework}
 my thesis proposed framework.

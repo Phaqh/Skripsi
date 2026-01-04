@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.6.26)  26 DEC 2025 15:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.6.26)  4 JAN 2026 23:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -895,7 +895,10 @@ Overfull \hbox (11.62202pt too wide) in paragraph at lines 158--223
  [][] 
  []
 
-[3 <./images/PrismaENG.png>]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3 <./images/PrismaENG.png>]
 Underfull \hbox (badness 3758) in paragraph at lines 267--267
 []|\OT1/ptm/m/n/8 Opponent Be-haviour
  []
@@ -921,117 +924,152 @@ Underfull \hbox (badness 10000) in paragraph at lines 267--267
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 311--313
+Underfull \hbox (badness 1412) in paragraph at lines 337--337
+[]|\OT1/ptm/m/n/8 Reactive re-in-force-ment
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 337--337
+[]|\OT1/ptm/m/n/8 Gradient-based
+ []
+
+
+Underfull \hbox (badness 1490) in paragraph at lines 337--337
+[]| \OT1/ptm/m/n/8 [9], [19],
+ []
+
+
+Underfull \hbox (badness 1648) in paragraph at lines 337--337
+[]|\OT1/ptm/m/n/8 Fitness-based strat-egy im-i-ta-
+ []
+
+
+Underfull \hbox (badness 4752) in paragraph at lines 337--337
+[]|\OT1/ptm/m/n/8 Bandit-based learning-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 337--337
+[]|\OT1/ptm/m/n/8 Communication-driven
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 337--337
+[]|\OT1/ptm/m/n/8 Analytical game-
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 364--366
 []\OT1/ptm/m/n/8 Y. Chen, ``Co-op-er-a-tion and pun-ish-ment in pub-lic goods
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 311--313
+Underfull \hbox (badness 10000) in paragraph at lines 364--366
 \OT1/ptm/m/n/8 ex-per-i-ments (by Ernst Fehr and Si-mon G[]achter),'' in \OT1/ptm/m/it/8 The
  []
 
 
-Underfull \hbox (badness 4595) in paragraph at lines 311--313
+Underfull \hbox (badness 4595) in paragraph at lines 364--366
 \OT1/ptm/m/it/8 Art of Ex-per-i-men-tal Eco-nomics\OT1/ptm/m/n/8 , G. Char-ness and M. Pin-gle,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 311--313
+Underfull \hbox (badness 10000) in paragraph at lines 364--366
 \OT1/ptm/m/n/8 Eds., Lon-don: Rout-ledge, 2021, pp. 134--143. Avail-able:
  []
 
 
-Overfull \hbox (12.08649pt too wide) in paragraph at lines 311--313
+Overfull \hbox (12.08649pt too wide) in paragraph at lines 364--366
 \OT1/ptm/m/n/8 taylorfrancis.com/books/9781003019121/chapters/10.4324/9781003019121-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 332--333
+Underfull \hbox (badness 10000) in paragraph at lines 385--386
 []\OT1/ptm/m/n/8 X. Qiao, C. Han, and T. Guo, ``O2M: On-line Op-po-nent
  []
 
 
-Underfull \hbox (badness 2495) in paragraph at lines 332--333
+Underfull \hbox (badness 2495) in paragraph at lines 385--386
 \OT1/ptm/m/n/8 Mod-el-ing in On-line General-Sum Ma-trix Games,'' in \OT1/ptm/m/it/8 2024 4th
  []
 
 
-Underfull \hbox (badness 2142) in paragraph at lines 332--333
+Underfull \hbox (badness 2142) in paragraph at lines 385--386
 \OT1/ptm/m/it/8 In-ter-na-tional Con-fer-ence on Ar-ti-fi-cial In-tel-li-gence, Robotics, and
  []
 
 
-Underfull \hbox (badness 7722) in paragraph at lines 332--333
+Underfull \hbox (badness 7722) in paragraph at lines 385--386
 \OT1/ptm/m/it/8 Com-mu-ni-ca-tion (ICAIRC)\OT1/ptm/m/n/8 , Dec. 2024, pp. 358--361. [On-line].
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 332--333
+Underfull \hbox (badness 10000) in paragraph at lines 385--386
 \OT1/ptm/m/n/8 Avail-able: https://ieeexplore.ieee.org/document/10899996/. doi:
  []
 
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 335--336
+
+Underfull \hbox (badness 10000) in paragraph at lines 388--389
 []\OT1/ptm/m/n/8 L. Zhu, Y. Zhu, and C. Xia, ``Evo-lu-tion-ary Dy-nam-ics of
  []
 
 
-Underfull \hbox (badness 2426) in paragraph at lines 335--336
+Underfull \hbox (badness 2426) in paragraph at lines 388--389
 \OT1/ptm/m/n/8 Co-op-er-a-tion and Ex-tor-tion on Net-works With Fitness-Dependent
  []
 
 
-Underfull \hbox (badness 3019) in paragraph at lines 335--336
+Underfull \hbox (badness 3019) in paragraph at lines 388--389
 \OT1/ptm/m/n/8 Rules,'' in \OT1/ptm/m/it/8 2025 Joint In-ter-na-tional Con-fer-ence on Automation-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 335--336
+Underfull \hbox (badness 10000) in paragraph at lines 388--389
 \OT1/ptm/m/it/8 Intelligence-Safety (ICAIS) & In-ter-na-tional Sym-po-sium on
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 335--336
+Underfull \hbox (badness 10000) in paragraph at lines 388--389
 \OT1/ptm/m/it/8 Au-tonomous Sys-tems (ISAS)\OT1/ptm/m/n/8 , May 2025, pp. 1--6. [On-line].
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 335--336
+Underfull \hbox (badness 10000) in paragraph at lines 388--389
 \OT1/ptm/m/n/8 Avail-able: https://ieeexplore.ieee.org/document/11051564/. doi:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 341--342
+Underfull \hbox (badness 10000) in paragraph at lines 394--395
 \OT1/ptm/m/it/8 In-tel-li-gence\OT1/ptm/m/n/8 , vol. 279, p. 103202, 2020. [On-line]. Avail-able:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 341--342
+Underfull \hbox (badness 10000) in paragraph at lines 394--395
 \OT1/ptm/m/n/8 https://www.sciencedirect.com/science/article/pii/S000437021930027X.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 344--345
+Underfull \hbox (badness 10000) in paragraph at lines 397--398
 []\OT1/ptm/m/n/8 A. L. de A. G[]omez, C. Sierra, and J. Sabater-Mir,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 344--345
+Underfull \hbox (badness 10000) in paragraph at lines 397--398
 \OT1/ptm/m/n/8 ``Grounded pre-dic-tions of team-work as a one-shot game:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 344--345
+Underfull \hbox (badness 10000) in paragraph at lines 397--398
 \OT1/ptm/m/n/8 A mul-ti-a-gent multi-armed ban-dits ap-proach,'' \OT1/ptm/m/it/8 Ar-ti-fi-cial
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 344--345
+Underfull \hbox (badness 10000) in paragraph at lines 397--398
 \OT1/ptm/m/it/8 In-tel-li-gence\OT1/ptm/m/n/8 , vol. 341, p. 104307, 2025. [On-line]. Avail-able:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 344--345
+Underfull \hbox (badness 10000) in paragraph at lines 397--398
 \OT1/ptm/m/n/8 https://www.sciencedirect.com/science/article/pii/S0004370225000268.
  []
 
@@ -1053,15 +1091,15 @@ L3 programming layer <2024-01-22>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 26363 strings out of 476106
- 616211 string characters out of 5793933
- 1948975 words of memory out of 5000000
- 47998 multiletter control sequences out of 15000+600000
+ 26364 strings out of 476106
+ 616244 string characters out of 5793933
+ 1952975 words of memory out of 5000000
+ 47999 multiletter control sequences out of 15000+600000
  597824 words of font info for 111 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 102i,10n,107p,1656b,283s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,10n,107p,1656b,295s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on LiteratureReview.pdf (5 pages, 371876 bytes).
+Output written on LiteratureReview.pdf (5 pages, 373399 bytes).
 PDF statistics:
  62 PDF objects out of 1000 (max. 8388607)
  38 compressed objects within 1 object stream
