@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.6.26)  4 JAN 2026 23:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.6.26)  8 JAN 2026 23:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/paqh/Documents/Skripsi/LiteratureReview/LiteratureReview.tex
-(/home/paqh/Documents/Skripsi/LiteratureReview/LiteratureReview.tex
+**/home/paqh/Documents/Skripsi/LiteratureReview/LiteratureReviewEng.tex
+(/home/paqh/Documents/Skripsi/LiteratureReview/LiteratureReviewEng.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (/usr/share/texlive/texmf-dist/tex/latex/ieeetran/IEEEtran.cls
@@ -657,8 +657,8 @@ Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 \c@ALC@depth=\count368
 \ALC@tlm=\skip58
 \algorithmicindent=\skip59
-) (./LiteratureReview.aux)
-\openout1 = `LiteratureReview.aux'.
+) (./LiteratureReviewEng.aux)
+\openout1 = `LiteratureReviewEng.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
 LaTeX Font Info:    ... okay on input line 44.
@@ -695,27 +695,27 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 81.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 77.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 81.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 77.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}
 
 
 ]
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 120.
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 132.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-Underfull \hbox (badness 1418) in paragraph at lines 128--129
+Underfull \hbox (badness 1418) in paragraph at lines 140--141
 []\OT1/ptm/b/n/10 ScienceDirect \OT1/ptm/m/n/10 (04--11--2025): Search ap-plied to all
  []
 
 
-Underfull \hbox (badness 1365) in paragraph at lines 130--131
+Underfull \hbox (badness 1365) in paragraph at lines 142--143
 []\OT1/ptm/b/n/10 SpringerLink \OT1/ptm/m/n/10 (04--11--2025): Search ap-plied to all
  []
 
@@ -723,46 +723,11 @@ Underfull \hbox (badness 1365) in paragraph at lines 130--131
 <images/PrismaENG.png, id=18, 1154.3125pt x 1324.95pt>
 File: images/PrismaENG.png Graphic file (type png)
 <use images/PrismaENG.png>
-Package pdftex.def Info: images/PrismaENG.png  used on input line 148.
+Package pdftex.def Info: images/PrismaENG.png  used on input line 160.
 (pdftex.def)             Requested size: 252.0pt x 289.2458pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 166--166
-[]|
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 167--167
-[]|\OT1/ptm/m/n/8 Evolutionary Dy-nam-ics of
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 167--167
-\OT1/ptm/m/n/8 Co-op-er-a-tion and Ex-tor-tion
- []
-
-
-Underfull \hbox (badness 2961) in paragraph at lines 167--167
-\OT1/ptm/m/n/8 on Net-works With Fitness-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 170--170
-[]|
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 171--171
-[]|\OT1/ptm/m/n/8 Inducing Co-or-di-na-tion in
- []
-
-
-Underfull \hbox (badness 1939) in paragraph at lines 171--171
-\OT1/ptm/m/n/8 through Hi-er-ar-chi-cal Gift-ing
- []
-
-
-Underfull \hbox (badness 5711) in paragraph at lines 172--172
-[]|\OT1/ptm/m/n/8 Proposes a hi-er-ar-chi-cal gift-ing
+Overfull \hbox (5.33607pt too wide) in paragraph at lines 172--172
+[]|\OT1/ptm/b/n/8 Ref.| 
  []
 
 
@@ -771,8 +736,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 174--174
  []
 
 
-Underfull \hbox (badness 6047) in paragraph at lines 175--175
-[]|\OT1/ptm/m/n/8 Recursively mod-el-ing other
+Overfull \hbox (0.79204pt too wide) in paragraph at lines 174--174
+\OT1/ptm/m/n/8 [9]| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 176--176
+[]|\OT1/ptm/m/n/8 online opponent-
+ []
+
+
+Underfull \hbox (badness 2435) in paragraph at lines 176--176
+\OT1/ptm/m/n/8 modeling for dy-namic
  []
 
 
@@ -781,8 +756,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 178--178
  []
 
 
-Underfull \hbox (badness 1552) in paragraph at lines 179--179
-\OT1/ptm/m/n/8 mul-ti-a-gent multi-armed ban-
+Overfull \hbox (4.79204pt too wide) in paragraph at lines 178--178
+\OT1/ptm/m/n/8 [10]| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 180--180
+[]|\OT1/ptm/m/n/8 Analyzes zero-
  []
 
 
@@ -791,8 +771,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 182--182
  []
 
 
+Overfull \hbox (4.79204pt too wide) in paragraph at lines 182--182
+\OT1/ptm/m/n/8 [11]| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 183--183
+[]|\OT1/ptm/m/n/8 Inducing Co-or-di-na-tion in Multi-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 183--183
+\OT1/ptm/m/n/8 Agent Re-peated Game through
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 186--186
 []|
+ []
+
+
+Overfull \hbox (4.79204pt too wide) in paragraph at lines 186--186
+\OT1/ptm/m/n/8 [12]| 
  []
 
 
@@ -801,8 +801,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 190--190
  []
 
 
-Underfull \hbox (badness 1983) in paragraph at lines 191--191
-\OT1/ptm/m/n/8 en-sem-bles of di-verse op-po-
+Overfull \hbox (4.79204pt too wide) in paragraph at lines 190--190
+\OT1/ptm/m/n/8 [13]| 
  []
 
 
@@ -811,18 +811,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 194--194
  []
 
 
+Overfull \hbox (4.79204pt too wide) in paragraph at lines 194--194
+\OT1/ptm/m/n/8 [14]| 
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 198--198
 []|
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 200--200
-[]|\OT1/ptm/m/n/8 Proposes control-theoretic ToM
+Overfull \hbox (4.79204pt too wide) in paragraph at lines 198--198
+\OT1/ptm/m/n/8 [15]| 
  []
 
 
-Underfull \hbox (badness 2057) in paragraph at lines 200--200
-\OT1/ptm/m/n/8 agents that out-per-form stan-dard
+Underfull \hbox (badness 2951) in paragraph at lines 200--200
+[]|\OT1/ptm/m/n/8 Scalable RL ap-proach
  []
 
 
@@ -831,13 +836,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 202--202
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 204--204
-[]|\OT1/ptm/m/n/8 Introduces a Stackelberg-based
- []
-
-
-Underfull \hbox (badness 2221) in paragraph at lines 204--204
-\OT1/ptm/m/n/8 method that finds sta-ble, high-
+Overfull \hbox (4.79204pt too wide) in paragraph at lines 202--202
+\OT1/ptm/m/n/8 [16]| 
  []
 
 
@@ -846,8 +846,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 206--206
  []
 
 
-Underfull \hbox (badness 3078) in paragraph at lines 207--207
-\OT1/ptm/m/n/8 scale so-cial par-ti-cle swarm
+Overfull \hbox (4.79204pt too wide) in paragraph at lines 206--206
+\OT1/ptm/m/n/8 [17]| 
+ []
+
+
+Underfull \hbox (badness 4647) in paragraph at lines 207--207
+\OT1/ptm/m/n/8 Games Us-ing Adap-tive Feed-back
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--208
+[]|\OT1/ptm/m/n/8 Proposes control-
  []
 
 
@@ -856,8 +866,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 210--210
  []
 
 
-Underfull \hbox (badness 3375) in paragraph at lines 211--211
-\OT1/ptm/m/n/8 learn-ing in se-quen-tial pris-
+Overfull \hbox (4.79204pt too wide) in paragraph at lines 210--210
+\OT1/ptm/m/n/8 [18]| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 212--212
+[]|\OT1/ptm/m/n/8 Introduces a
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 212--212
+\OT1/ptm/m/n/8 Stackelberg-based
  []
 
 
@@ -866,13 +886,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 214--214
  []
 
 
-Underfull \hbox (badness 1694) in paragraph at lines 215--215
-[]|\OT1/ptm/m/n/8 Achieving col-lec-tive wel-fare
+Overfull \hbox (4.79204pt too wide) in paragraph at lines 214--214
+\OT1/ptm/m/n/8 [19]| 
  []
 
 
-Underfull \hbox (badness 1558) in paragraph at lines 215--215
-\OT1/ptm/m/n/8 in multi-agent re-in-force-ment
+Underfull \hbox (badness 1715) in paragraph at lines 216--216
+[]|\OT1/ptm/m/n/8 Faster in-for-ma-tion up-
  []
 
 
@@ -881,195 +901,232 @@ Underfull \hbox (badness 10000) in paragraph at lines 218--218
  []
 
 
-Underfull \hbox (badness 1681) in paragraph at lines 220--220
-[]|\OT1/ptm/m/n/8 Finds that higher-order ToM is
+Overfull \hbox (4.79204pt too wide) in paragraph at lines 218--218
+\OT1/ptm/m/n/8 [20]| 
  []
 
 
-Underfull \hbox (badness 1546) in paragraph at lines 220--220
-\OT1/ptm/m/n/8 most ben-e-fi-cial in un-pre-dictable
+Underfull \hbox (badness 5105) in paragraph at lines 220--220
+\OT1/ptm/m/n/8 PD and a deep RL
  []
 
 
-Overfull \hbox (11.62202pt too wide) in paragraph at lines 158--223
- [][] 
+Underfull \hbox (badness 10000) in paragraph at lines 222--222
+[]|
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [3 <./images/PrismaENG.png>]
-Underfull \hbox (badness 3758) in paragraph at lines 267--267
-[]|\OT1/ptm/m/n/8 Opponent Be-haviour
+Overfull \hbox (4.79204pt too wide) in paragraph at lines 222--222
+\OT1/ptm/m/n/8 [21]| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 267--267
+Underfull \hbox (badness 10000) in paragraph at lines 224--224
+[]|\OT1/ptm/m/n/8 Introduces a MARL
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 224--224
+\OT1/ptm/m/n/8 method with shar-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 226--226
+[]|
+ []
+
+
+Overfull \hbox (4.79204pt too wide) in paragraph at lines 226--226
+\OT1/ptm/m/n/8 [22]| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 228--228
+[]|\OT1/ptm/m/n/8 Analyze higher-order
+ []
+
+
+Underfull \hbox (badness 5161) in paragraph at lines 228--228
+\OT1/ptm/m/n/8 ToM in un-pre-dictable
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 278--278
+[]|\OT1/ptm/b/n/8 Opponent
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 278--278
 []|\OT1/ptm/m/n/8 Population-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 267--267
+Underfull \hbox (badness 10000) in paragraph at lines 278--278
 []|\OT1/ptm/m/n/8 Population-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 267--267
-[]|\OT1/ptm/m/n/8 Heterogeneous
+Underfull \hbox (badness 3646) in paragraph at lines 278--278
+[]|\OT1/ptm/m/n/8 Heterogeneous Col-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 267--267
+Underfull \hbox (badness 10000) in paragraph at lines 278--278
 []|\OT1/ptm/m/n/8 Environment-
  []
 
 
-Underfull \hbox (badness 1412) in paragraph at lines 337--337
+Underfull \hbox (badness 10000) in paragraph at lines 278--278
+\OT1/ptm/m/n/8 Conditioned
+ []
+
+[3 <./images/PrismaENG.png>]
+Underfull \hbox (badness 1412) in paragraph at lines 344--344
 []|\OT1/ptm/m/n/8 Reactive re-in-force-ment
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 337--337
+Underfull \hbox (badness 10000) in paragraph at lines 344--344
 []|\OT1/ptm/m/n/8 Gradient-based
  []
 
 
-Underfull \hbox (badness 1490) in paragraph at lines 337--337
-[]| \OT1/ptm/m/n/8 [9], [19],
+Underfull \hbox (badness 1490) in paragraph at lines 344--344
+[]| \OT1/ptm/m/n/8 [9], [18],
  []
 
 
-Underfull \hbox (badness 1648) in paragraph at lines 337--337
+Underfull \hbox (badness 1648) in paragraph at lines 344--344
 []|\OT1/ptm/m/n/8 Fitness-based strat-egy im-i-ta-
  []
 
 
-Underfull \hbox (badness 4752) in paragraph at lines 337--337
+Underfull \hbox (badness 4752) in paragraph at lines 344--344
 []|\OT1/ptm/m/n/8 Bandit-based learning-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 337--337
+Underfull \hbox (badness 10000) in paragraph at lines 344--344
 []|\OT1/ptm/m/n/8 Communication-driven
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 337--337
-[]|\OT1/ptm/m/n/8 Analytical game-
+[4]
+Underfull \hbox (badness 1622) in paragraph at lines 403--404
+[]\OT1/ptm/m/n/10 Across the re-viewed lit-er-a-ture, a broad range of mod-
  []
 
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 364--366
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 421--423
 []\OT1/ptm/m/n/8 Y. Chen, ``Co-op-er-a-tion and pun-ish-ment in pub-lic goods
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 364--366
+Underfull \hbox (badness 10000) in paragraph at lines 421--423
 \OT1/ptm/m/n/8 ex-per-i-ments (by Ernst Fehr and Si-mon G[]achter),'' in \OT1/ptm/m/it/8 The
  []
 
 
-Underfull \hbox (badness 4595) in paragraph at lines 364--366
+Underfull \hbox (badness 4595) in paragraph at lines 421--423
 \OT1/ptm/m/it/8 Art of Ex-per-i-men-tal Eco-nomics\OT1/ptm/m/n/8 , G. Char-ness and M. Pin-gle,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 364--366
+Underfull \hbox (badness 10000) in paragraph at lines 421--423
 \OT1/ptm/m/n/8 Eds., Lon-don: Rout-ledge, 2021, pp. 134--143. Avail-able:
  []
 
 
-Overfull \hbox (12.08649pt too wide) in paragraph at lines 364--366
+Overfull \hbox (12.08649pt too wide) in paragraph at lines 421--423
 \OT1/ptm/m/n/8 taylorfrancis.com/books/9781003019121/chapters/10.4324/9781003019121-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 385--386
+Underfull \hbox (badness 10000) in paragraph at lines 442--443
 []\OT1/ptm/m/n/8 X. Qiao, C. Han, and T. Guo, ``O2M: On-line Op-po-nent
  []
 
 
-Underfull \hbox (badness 2495) in paragraph at lines 385--386
+Underfull \hbox (badness 2495) in paragraph at lines 442--443
 \OT1/ptm/m/n/8 Mod-el-ing in On-line General-Sum Ma-trix Games,'' in \OT1/ptm/m/it/8 2024 4th
  []
 
 
-Underfull \hbox (badness 2142) in paragraph at lines 385--386
+Underfull \hbox (badness 2142) in paragraph at lines 442--443
 \OT1/ptm/m/it/8 In-ter-na-tional Con-fer-ence on Ar-ti-fi-cial In-tel-li-gence, Robotics, and
  []
 
 
-Underfull \hbox (badness 7722) in paragraph at lines 385--386
+Underfull \hbox (badness 7722) in paragraph at lines 442--443
 \OT1/ptm/m/it/8 Com-mu-ni-ca-tion (ICAIRC)\OT1/ptm/m/n/8 , Dec. 2024, pp. 358--361. [On-line].
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 385--386
+Underfull \hbox (badness 10000) in paragraph at lines 442--443
 \OT1/ptm/m/n/8 Avail-able: https://ieeexplore.ieee.org/document/10899996/. doi:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 388--389
+Underfull \hbox (badness 10000) in paragraph at lines 445--446
 []\OT1/ptm/m/n/8 L. Zhu, Y. Zhu, and C. Xia, ``Evo-lu-tion-ary Dy-nam-ics of
  []
 
 
-Underfull \hbox (badness 2426) in paragraph at lines 388--389
+Underfull \hbox (badness 2426) in paragraph at lines 445--446
 \OT1/ptm/m/n/8 Co-op-er-a-tion and Ex-tor-tion on Net-works With Fitness-Dependent
  []
 
 
-Underfull \hbox (badness 3019) in paragraph at lines 388--389
+Underfull \hbox (badness 3019) in paragraph at lines 445--446
 \OT1/ptm/m/n/8 Rules,'' in \OT1/ptm/m/it/8 2025 Joint In-ter-na-tional Con-fer-ence on Automation-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 388--389
+Underfull \hbox (badness 10000) in paragraph at lines 445--446
 \OT1/ptm/m/it/8 Intelligence-Safety (ICAIS) & In-ter-na-tional Sym-po-sium on
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 388--389
+Underfull \hbox (badness 10000) in paragraph at lines 445--446
 \OT1/ptm/m/it/8 Au-tonomous Sys-tems (ISAS)\OT1/ptm/m/n/8 , May 2025, pp. 1--6. [On-line].
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 388--389
+Underfull \hbox (badness 10000) in paragraph at lines 445--446
 \OT1/ptm/m/n/8 Avail-able: https://ieeexplore.ieee.org/document/11051564/. doi:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 394--395
+Underfull \hbox (badness 10000) in paragraph at lines 451--452
 \OT1/ptm/m/it/8 In-tel-li-gence\OT1/ptm/m/n/8 , vol. 279, p. 103202, 2020. [On-line]. Avail-able:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 394--395
+Underfull \hbox (badness 10000) in paragraph at lines 451--452
 \OT1/ptm/m/n/8 https://www.sciencedirect.com/science/article/pii/S000437021930027X.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 397--398
+Underfull \hbox (badness 10000) in paragraph at lines 454--455
 []\OT1/ptm/m/n/8 A. L. de A. G[]omez, C. Sierra, and J. Sabater-Mir,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 397--398
+Underfull \hbox (badness 10000) in paragraph at lines 454--455
 \OT1/ptm/m/n/8 ``Grounded pre-dic-tions of team-work as a one-shot game:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 397--398
+Underfull \hbox (badness 10000) in paragraph at lines 454--455
 \OT1/ptm/m/n/8 A mul-ti-a-gent multi-armed ban-dits ap-proach,'' \OT1/ptm/m/it/8 Ar-ti-fi-cial
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 397--398
+Underfull \hbox (badness 10000) in paragraph at lines 454--455
 \OT1/ptm/m/it/8 In-tel-li-gence\OT1/ptm/m/n/8 , vol. 341, p. 104307, 2025. [On-line]. Avail-able:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 397--398
+Underfull \hbox (badness 10000) in paragraph at lines 454--455
 \OT1/ptm/m/n/8 https://www.sciencedirect.com/science/article/pii/S0004370225000268.
  []
 
@@ -1084,25 +1141,25 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[5] (./LiteratureReview.aux)
+[6] (./LiteratureReviewEng.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 26364 strings out of 476106
- 616244 string characters out of 5793933
- 1952975 words of memory out of 5000000
- 47999 multiletter control sequences out of 15000+600000
+ 26363 strings out of 476106
+ 616267 string characters out of 5793933
+ 1960975 words of memory out of 5000000
+ 47998 multiletter control sequences out of 15000+600000
  597824 words of font info for 111 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 102i,10n,107p,1656b,295s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on LiteratureReview.pdf (5 pages, 373399 bytes).
+ 102i,11n,107p,1659b,301s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on LiteratureReviewEng.pdf (6 pages, 395338 bytes).
 PDF statistics:
- 62 PDF objects out of 1000 (max. 8388607)
- 38 compressed objects within 1 object stream
+ 75 PDF objects out of 1000 (max. 8388607)
+ 46 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

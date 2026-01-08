@@ -55,12 +55,8 @@ fm.faqihmahardika@gmail.com}
 \maketitle
 
 \begin{abstract}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tristique ipsum id lectus euismod molestie. In eget nunc vel nisi venenatis sagittis non at ante. Ut mattis tortor et libero dignissim maximus. Nunc vitae ante sit amet tellus fringilla tincidunt at quis elit. Fusce a laoreet elit, in scelerisque felis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce eu nibh varius, mollis turpis sed, vehicula metus. Nullam rhoncus euismod odio vel ullamcorper. Quisque venenatis id massa quis tempus. Morbi luctus enim lacinia finibus convallis.
-
-Phasellus varius congue tortor sit amet porttitor. Integer velit turpis, facilisis vitae imperdiet id, egestas eu turpis. Proin feugiat a erat eget vehicula. Sed ligula libero, sollicitudin sed nibh iaculis, fermentum feugiat lacus. Donec lectus risus, semper ac posuere non, hendrerit non nisl. Donec at laoreet dolor. Nullam efficitur auctor nisl, vel tincidunt neque lobortis eget. Phasellus elementum justo nec ante malesuada tristique. Curabitur sed magna condimentum, rutrum turpis sed, vehicula lacus. Vivamus ultricies nulla id nulla dictum sollicitudin. Nullam varius, lorem at tincidunt auctor, diam lectus varius mauris, ut pretium nisl arcu a massa. Sed et nisi a mauris eleifend fringilla. Pellentesque facilisis nisl sit amet dictum pellentesque.
-
-
+Opponent modelling plays a central role in enabling adaptive behavior in the Iterated Prisoner’s Dilemma (IPD), particularly under non-stationary and learning opponents. This systematic literature review examines prior work on opponent modelling in IPD along three dimensions: opponent behavior assumptions, modelling methodologies, and evaluation practices. The reviewed studies reveal a wide range of assumptions regarding opponent adaptivity, including stationary, reactive, learning-based, and population-mediated behaviors. Methodologically, opponent modelling approaches span gradient-based learning, deep reinforcement learning, recursive belief reasoning, evolutionary dynamics, and system identification. Evaluation practices predominantly rely on cooperation rate, payoff-based metrics, and equilibrium-related measures. While these metrics are informative for long-run performance, they are typically applied in settings with unconstrained or extended interaction horizons. As a result, the literature provides limited insight into how effectively opponent modelling strategies identify and adapt to opponents under short or resource-constrained interactions. The findings highlight the need for evaluation frameworks that explicitly consider interaction constraints when assessing opponent modelling effectiveness.
+  
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -78,31 +74,47 @@ Although classical analyses of the IPD provide essential insights, their simplif
 
 Therefore, this study aims to systematically review the existing literature on opponent modelling in the Iterated Prisoner's Dilemma. The review is guided by the following research questions:
 \begin{itemize}
-    \item \textbf{RQ1:} What environmental settings and monitoring mechanisms are used in opponent modelling for the Iterated Prisoner's Dilemma?
+    \item \textbf{RQ1:} What opponent behavior assumptions are used in opponent modelling for the Iterated Prisoner's Dilemma?
     \item \textbf{RQ2:} What methodological approaches to opponent modelling have been applied in the Iterated Prisoner's Dilemma?
-    \item \textbf{RQ3:} How is the effectiveness of opponent-modelling strategies evaluated in the Iterated Prisoner's Dilemma (e.g., cooperation rate, speed of cooperation, robustness)?
+    \item \textbf{RQ3:} How is the effectiveness of opponent-modelling strategies evaluated in the Iterated Prisoner's Dilemma?
 \end{itemize}
 
-To address these questions, Section~2 outlines the Systematic Literature Review (SLR) methodology used to identify, screen, and synthesise relevant studies. Section~3 presents the results of the review from three analytical perspectives: (i) modelling-based comparison, (ii) environment-based comparison, and (iii) evaluation-based comparison. Section~4 integrates findings across these perspectives to identify persistent limitations and articulate the research gap. Section~5 proposes the methodological framework that this thesis develops to address the identified gap, followed by concluding remarks in Section~6.
+To address these questions, Section~2 outlines the Systematic Literature Review (SLR) methodology used to identify, screen, and synthesise relevant studies. Section~3 presents the results and discussion of the review from three analytical perspectives: (i) Opponent behavior assumption comparison, (ii) methodological approach comparison, and (iii) evaluation-based comparison. Section~4 concludes the literature review.
 
 \section{Methodology}
 A systematic review will be employed to address the research questions. This method applies a transparent and structured procedure to collect relevant studies, appraise their quality, and integrate their findings in order to answer a well-defined research question~\cite{page_prisma_2021}.
 
 \subsection{Inclusion and Exclusion Criteria}
-Studies were included in the review if they met all of the following conditions:
+
+Studies were included in the review if they satisfied all of the following conditions:
+
 \begin{itemize}
-    \item \textbf{Topic relevance:} The study presents a substantive discussion, method, or empirical implementation of opponent modelling specifically within the Iterated Prisoner's Dilemma (IPD) or a directly comparable repeated social dilemma.
+    \item \textbf{Topic relevance:} The study presents a substantive discussion, method, or empirical analysis of opponent modelling, opponent-aware decision making, or explicit reasoning about other agents’ strategies in \emph{repeated strategic interaction settings}. This includes, but is not limited to, the Iterated Prisoner’s Dilemma (IPD), repeated general-sum games, repeated zero-sum games, and structurally comparable repeated social dilemmas where agents condition behavior on observed opponent actions.
+    
+    \item \textbf{Structural comparability:} The game or interaction setting involves repeated encounters, strategic interdependence, and observable opponent actions, enabling adaptation or reasoning over opponent behavior across time. The IPD is treated as a canonical instance within this broader class of repeated strategic games.
+    
     \item \textbf{Scholarly quality:} The work is published in a peer-reviewed journal or international conference proceedings.
-    \item \textbf{Publication window:} The study was published within the last five years.
+    
+    \item \textbf{Publication window:} The study was published between 2019 and 2025. This window was selected to capture contemporary opponent-modelling approaches developed in the modern learning-based multi-agent systems era, while maintaining sufficient coverage given the limited volume of work explicitly addressing opponent modelling in repeated dilemma settings.
+    
     \item \textbf{Accessibility:} The full text is available in English and accessible for analysis.
 \end{itemize}
+
 Studies were excluded if they met any of the following conditions:
+
 \begin{itemize}
-    \item \textbf{Irrelevant focus:} The study does not address opponent modelling or does not involve the Iterated Prisoner's Dilemma (e.g., focuses only on one-shot PD, general multi-agent reinforcement learning without opponent inference, or unrelated game-theoretic models).
-    \item \textbf{Theoretical only:} The paper provides purely theoretical or conceptual discussion without proposing, analysing, or evaluating an opponent-modelling method in the IPD context.
-    \item \textbf{Outside the publication window:} Published more than five years before the search date.
+    \item \textbf{Irrelevant focus:} The study does not address opponent modelling, opponent-aware adaptation, or reasoning about other agents, or focuses exclusively on one-shot games without repeated interaction.
+    
+    \item \textbf{Generic multi-agent learning:} The study applies multi-agent reinforcement learning or learning-in-games techniques without incorporating opponent-aware adaptation, either explicitly or implicitly, through action conditioning, belief updates, or history-dependent response mechanisms.
+
+    
+    \item \textbf{Purely theoretical without opponent reasoning:} The paper provides only abstract or normative theoretical analysis and does not propose, analyze, or operationalize any mechanism for opponent modelling, opponent inference, or opponent-aware decision making in repeated interaction settings.
+    
+    \item \textbf{Outside the publication window:} The study was published outside the defined six-year publication window.
+    
     \item \textbf{Non-English or inaccessible:} The full text is not available in English or cannot be accessed.
 \end{itemize}
+
 
 \subsection{Information Sources and Search Strategy}
 
@@ -155,69 +167,65 @@ After applying all exclusion criteria, 15 studies were included in the final sys
 \caption{Characteristics of Included Studies}
 \label{tab:paper_characteristics}
 \renewcommand{\arraystretch}{1.4}
-\begin{tabular}{p{0.5cm} p{3.5cm} p{4cm}}
+\begin{tabular}{p{0.3cm} p{4.3cm} p{2.8cm}}
 \hline
-\textbf{Ref.} & \textbf{Paper} & \textbf{Characteristics} \\ \hline
+\textbf{Ref.} & \textbf{Title} & \textbf{Characteristics} \\ \hline
 
 \cite{qiao_o2m_2024} &
 O2M: Online Opponent Modeling in Online General-Sum Matrix Games &
-Presents O2M, an online opponent-modeling algorithm for dynamic general-sum games. \\ \hline
+online opponent-modeling for dynamic general-sum games. \\ \hline
 
 \cite{zhu_evolutionary_2025} &
 Evolutionary Dynamics of Cooperation and Extortion on Networks With Fitness-Dependent Rules &
-Analyzes zero-determinant strategies and derives criteria for cooperation on networks. \\ \hline
+Analyzes zero-determinant strategies. \\ \hline
 
 \cite{lv_inducing_2023} &
 Inducing Coordination in Multi-Agent Repeated Game through Hierarchical Gifting Policies &
-Proposes a hierarchical gifting mechanism that drives long-term coordination. \\ \hline
+Proposes a hierarchical gifting mechanism. \\ \hline
 
 \cite{doshi_recursively_2020} &
 Recursively modeling other agents for decision making: A research perspective &
-Reviews recursive modeling frameworks for reasoning about others’ intentions.\\ \hline
+Reviews recursive modeling frameworks.\\ \hline
 
 \cite{gomez_grounded_2025} &
 Grounded predictions of teamwork as a one-shot game: A multiagent multi-armed bandits approach &
-Models voluntary teamwork and shows how agents learn equilibrium collaboration.\\ \hline
-
-\cite{mendez-naya_delegation_2025} &
-Delegation and strategic altruism: A theoretical approach &
-Introduces quasi-stable and stable equilibria enabling cooperation via altruistic delegates.\\ \hline
+Models voluntary teamwork.\\ \hline
 
 \cite{di_coupling_2023} &
 The coupling effect between the environment and strategies drives the emergence of group cooperation &
-Shows that memory–environment coupling causes cycles of cooperation and defection. \\ \hline
+Analyze memory environment coupling. \\ \hline
 
 \cite{perera_learning_2025} &
 Learning to cooperate against ensembles of diverse opponents &
-Proposes a scalable RL approach that fosters cooperation without explicit opponent models. \\ \hline
+Scalable RL approach that fosters cooperation. \\ \hline
 
 \cite{li_exploiting_2025} &
 Exploiting a No-Regret Opponent in Repeated Zero-Sum Games &
-Presents a framework for modeling and exploiting no-regret opponents using RNNs. \\ \hline
+Framework for exploiting no-regret opponents. \\ \hline
 
 \cite{freire_modeling_2023} &
 Modeling Theory of Mind in Dyadic Games Using Adaptive Feedback Control &
-Proposes control-theoretic ToM agents that outperform standard RL strategies. \\ \hline
+Proposes control-theoretic ToM agents. \\ \hline
 
 \cite{hu_modeling_2023} &
 Modeling opponent learning in multiagent repeated games &
-Introduces a Stackelberg-based method that finds stable, high-reward equilibria. \\ \hline
+Introduces a Stackelberg-based method. \\ \hline
 
 \cite{elhamer_effects_2020} &
 The effects of population size and information update rates on the emergent patterns of cooperative clusters in a large-scale social particle swarm model &
-Shows that faster information updates in SNS networks increase cooperative clustering.\\ \hline
+Faster information updates in SNS networks.\\ \hline
 
 \cite{wang_achieving_2019} &
 Achieving cooperation through deep multiagent reinforcement learning in sequential prisoner's dilemmas &
-Introduces a sequential PD and a deep RL method that adapts to detected cooperation.\\ \hline
+Introduces a sequential PD and a deep RL method.\\ \hline
 
 \cite{jin_achieving_2025} &
 Achieving collective welfare in multi-agent reinforcement learning via suggestion sharing &
-Introduces a MARL method where sharing action suggestions enables collective cooperation.\\ \hline
+Introduces a MARL method with sharing action suggestions.\\ \hline
 
 \cite{de_weerd_higher-order_2022} &
 Higher-order theory of mind is especially useful in unpredictable negotiations &
-Finds that higher-order ToM is most beneficial in unpredictable environments.\\ \hline
+Analyze higher-order ToM in unpredictable environments.\\ \hline
 
 \end{tabular}
 \end{table}
@@ -225,9 +233,10 @@ Finds that higher-order ToM is most beneficial in unpredictable environments.\\ 
 \section{Synthesis / Discussion}
 integrates findings across these perspectives to identify persistent limitations and articulate the research gap. While a broad set of attributes was extracted, only methodologically discriminative dimensions are used for direct comparison; environment and evaluation attributes are summarized separately.
 
+\subsection{What opponent behavior assumptions are used in opponent modelling for the Iterated Prisoner's Dilemma?}
 To operationalize \textit{opponent behavior assumptions} across heterogeneous formulations, we summarize observable behavioral properties rather than internal learning mechanisms. The table below provides a descriptive categorization based on whether an opponent's actions (i) depend on environmental conditions, (ii) are mediated by population-level interactions, (iii) respond directly to the focal agent's actions, and (iv) exhibit action divergence under equivalent recent interaction histories. These criteria are intentionally behavior-centric and evaluated at the level of interaction traces, without assuming access to the opponent's internal model, update rules, or optimization objectives.
 
-This categorization is not intended as a formal or exhaustive taxonomy of opponent modeling methods. Instead, it serves as an analytical aid to support comparison across studies that adopt different game settings, learning paradigms, and modeling abstractions. In cases where a paper does not explicitly define opponent assumptions, classifications are derived conservatively from the described experimental setup and observed interaction dynamics, following standard practice in systematic literature reviews.
+This categorization is not intended as a formal or exhaustive taxonomy of opponent modeling methods. Instead, it serves as an analytical aid to support comparison across studies that adopt different game settings, learning paradigms, and modeling abstractions. In cases where a paper does not explicitly define opponent assumptions, classifications are derived conservatively from the described experimental setup and observed interaction dynamics.
 
 
 \begin{table}[ht]
@@ -239,11 +248,13 @@ This categorization is not intended as a formal or exhaustive taxonomy of oppone
 \setlength{\tabcolsep}{4pt}
 \begin{tabularx}{\columnwidth}{cccc X p{2.5cm}}
 \toprule
-Env. & Pop. & Agent & Div. & Opponent Behaviour Category & Paper \\
+\textbf{Env.} 
+& \textbf{Pop.} 
+& \textbf{Agent}
+& \textbf{Div.}
+& \textbf{Opponent Behaviour Category}
+& \textbf{Ref.} \\
 \midrule
--- & -- & -- & -- & Stationary & \cite{mendez-naya_delegation_2025} \\
-\addlinespace
-
 -- & -- & \checkmark & -- & Reactive & \cite{jin_achieving_2025} \\
 \addlinespace
 
@@ -278,11 +289,11 @@ Checkmarks indicate the presence of a dependency.
 \end{flushleft}
 
 \end{table}
-
-Several consistent patterns emerge from the behavioral categorization in Table \ref{tab:opponent-behavior}. Early and analytically oriented works predominantly assume stationary or purely reactive opponents, where behavior does not diverge under equivalent interaction histories \cite{mendez-naya_delegation_2025}. In contrast, a substantial portion of recent studies model opponents whose actions are explicitly agent-responsive and exhibit action divergence \cite{qiao_o2m_2024, zhu_evolutionary_2025, lv_inducing_2023, doshi_recursively_2020, di_coupling_2023, perera_learning_2025, li_exploiting_2025, freire_modeling_2023, hu_modeling_2023, wang_achieving_2019, de_weerd_higher-order_2022}, indicating an assumption of learning or strategic adaptation. This shift reflects a growing research emphasis on robustness against non-stationary and adaptive opponents rather than optimization against fixed strategies.
+Several consistent patterns emerge from the behavioral categorization in Table \ref{tab:opponent-behavior}. Substantial portion of recent studies model opponents whose actions are explicitly agent-responsive and exhibit action divergence \cite{qiao_o2m_2024, zhu_evolutionary_2025, lv_inducing_2023, doshi_recursively_2020, di_coupling_2023, perera_learning_2025, li_exploiting_2025, freire_modeling_2023, hu_modeling_2023, wang_achieving_2019, de_weerd_higher-order_2022}, indicating an assumption of learning or strategic adaptation. Reflects a growing research emphasis on robustness against non-stationary and adaptive opponents rather than optimization against fixed strategies.
 
 Moreover, population-mediated behavior appears primarily in studies of evolutionary or networked environments, where opponent actions are shaped indirectly through aggregate dynamics rather than direct bilateral adaptation \cite{zhu_evolutionary_2025, gomez_grounded_2025, di_coupling_2023, perera_learning_2025, elhamer_effects_2020}. These settings often decouple individual agent responsiveness from population-level change, leading to behavioral patterns that differ qualitatively from pairwise learning scenarios. Notably, only a subset of works combine environment-dependent, population-mediated, and agent-responsive behaviors\cite{di_coupling_2023}, suggesting that fully context-conditioned strategic opponents remain comparatively underexplored.
 
+\subsection{What methodological approaches to opponent modelling have been applied in the Iterated Prisoner's Dilemma?}
 The distribution of opponent behavior assumptions in Table~\ref{tab:opponent-behavior} reflects a broader methodological shift in opponent modeling research, from controlled and stationary assumptions toward behaviorally rich, adaptive, and heterogeneous opponents. While this characterization highlights the nature of the opponents considered, it does not capture how agents are designed to cope with such complexity. Therefore, in Table~\ref{tab:opponent_modelling_paradigm} reorganize prior work from the perspective of agent-side modelling, categorizing approaches by their dominant opponent modelling paradigm and corresponding learning mechanism.
 
 \begin{table}[ht]
@@ -329,21 +340,67 @@ Communication-driven coordination
 & Policy-gradient with communication objective 
 & \cite{jin_achieving_2025} \\
 
-Analytical game-theoretic modelling
-& Equilibrium analysis (no learning) 
-& \cite{mendez-naya_delegation_2025} \\
-
 \hline
 \end{tabularx}
 \end{table}
 
-While Table~\ref{tab:opponent_modelling_paradigm} categorizes prior work by modelling paradigm and learning mechanism, the listed approaches also differ in whether opponent adaptation is handled explicitly or implicitly. Explicit opponent modelling approaches, such as gradient-based opponent shaping~\cite{qiao_o2m_2024, hu_modeling_2023, wang_achieving_2019}, recursive belief reasoning~\cite{doshi_recursively_2020, freire_modeling_2023, de_weerd_higher-order_2022}, and system identification~\cite{li_exploiting_2025}, construct internal representations of opponent behavior or learning dynamics. In contrast, implicit approaches—including reactive reinforcement learning~\cite{lv_inducing_2023} , population-based training\cite{perera_learning_2025}, evolutionary dynamics \cite{zhu_evolutionary_2025, di_coupling_2023, elhamer_effects_2020} and Bandit-based learning-in-games \cite{gomez_grounded_2025} adapt to opponents without maintaining an explicit opponent model. This distinction highlights alternative design philosophies for addressing opponent non-stationarity, independent of the specific learning mechanisms employed.
+Table~\ref{tab:opponent_modelling_paradigm} categorizes prior work by modelling paradigm and learning mechanism, the listed approaches also differ in whether opponent adaptation is handled explicitly or implicitly. Explicit opponent modelling approaches, such as gradient-based opponent shaping~\cite{qiao_o2m_2024, hu_modeling_2023, wang_achieving_2019}, recursive belief reasoning~\cite{doshi_recursively_2020, freire_modeling_2023, de_weerd_higher-order_2022}, and system identification~\cite{li_exploiting_2025}, construct internal representations of opponent behavior. In contrast, implicit approaches including reactive reinforcement learning~\cite{lv_inducing_2023}, population-based training\cite{perera_learning_2025}, evolutionary dynamics \cite{zhu_evolutionary_2025, di_coupling_2023, elhamer_effects_2020} and Bandit-based learning-in-games \cite{gomez_grounded_2025} adapt without maintaining explicit opponent model. This highlights alternative design philosophies for addressing non-stationarity opponent.
 
-\section{Proposed framework}
-my thesis proposed framework.
+\subsection{How is the effectiveness of opponent-modelling strategies evaluated in the Iterated Prisoner's Dilemma?}
+Evaluation choices implicitly define what constitutes success in adaptive multi-agent interaction, such as cooperation outcomes, robustness to exploitation, stability, or predictive accuracy. Table~\ref{tab:evaluation_metrics} provides a descriptive overview of the evaluation environments and metrics used in prior work, with the aim of enabling cross-paper comparison and highlighting recurring evaluation patterns and omissions rather than standardizing or ranking criteria.
+
+\begin{table}[ht]
+\centering
+\caption{Evaluation environments and metrics in studies}
+\label{tab:evaluation_metrics}
+\renewcommand{\arraystretch}{1.2}
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\columnwidth}{c >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X}
+\hline
+\textbf{Ref.} & \textbf{Evaluation Environment} & \textbf{Metrics} \\
+\hline
+\cite{qiao_o2m_2024} & Symmetric self-play & MSE during offline training; latent memory accuracy \\
+
+\cite{zhu_evolutionary_2025} & Scale-free network with zero-determinant strategies & Frequency of cooperation (C) and exploitation (E) \\
+
+\cite{lv_inducing_2023} & Adaptive opponents (averaged over multiple opponents) & Reward value \\
+
+\cite{doshi_recursively_2020} & No training performed & Not applicable \\
+
+\cite{gomez_grounded_2025} & Custom teamwork-game simulator (aggregative public good games); synthetic experiments & Aggregate team productivity; $\chi^2$ goodness-of-fit to equilibrium; convergence to Nash equilibrium; individual contribution \\
+
+\cite{di_coupling_2023} & Evolutionary game simulator on structured networks & Cooperation level; fraction of cooperators; phase-transition thresholds \\
+
+\cite{perera_learning_2025} & Repeated matrix games with synthetic opponent populations & Average payoff; cooperation rate; robustness across opponent sets; generalization \\
+
+\cite{li_exploiting_2025} & Repeated zero-sum games against Hedge, OMD, and Regret Matching & Prediction error; cumulative payoff; robustness to non-stationarity \\
+
+\cite{freire_modeling_2023} & Repeated matrix games; embodied continuous-time robotic simulations & Efficacy; stability; prediction accuracy \\
+
+\cite{hu_modeling_2023} & Repeated matrix-game simulations & Average payoff; convergence speed; equilibrium selection \\
+
+\cite{elhamer_effects_2020} & Large-scale continuous-space simulations (FLAME GPU) & Cooperation rate; cooperative cluster size and count; agent speed; cluster stability \\
+
+\cite{wang_achieving_2019} & Custom 2D SPD environments (Fruit Gathering; Apple--Pear games) & Average individual reward; total social welfare; cooperation degree detection accuracy \\
+
+\cite{jin_achieving_2025} & MARL benchmarks (Cleanup, Harvest, Sequential PD, Tragedy of the Commons) & Normalized return; cooperation rate; convergence speed; policy discrepancy (MSE) \\
+
+\cite{de_weerd_higher-order_2022} & Simulated Colored Trails with increasing environmental unpredictability & Allocator score; responder score; total social welfare \\
+\hline
+\end{tabularx}
+\end{table}
+
+Table~\ref{tab:evaluation_metrics} reveals a strong concentration of evaluation practices around aggregate performance outcomes, most notably cooperation rate \cite{di_coupling_2023,elhamer_effects_2020,wang_achieving_2019,jin_achieving_2025}, average payoff \cite{lv_inducing_2023,perera_learning_2025,li_exploiting_2025,wang_achieving_2019,de_weerd_higher-order_2022}, and convergence to equilibrium\cite{gomez_grounded_2025,hu_modeling_2023,jin_achieving_2025}. These metrics are well aligned with long-horizon repeated interaction settings, where early exploratory losses can be amortized over time and stable behavioral patterns eventually emerge.
+
+However, comparatively little attention is given to interaction constraints, such as limited game horizon, finite learning budget, or the opportunity cost incurred during opponent probing. Even when non-stationary or adaptive opponents are considered, evaluation is typically conducted under conditions where prolonged interaction is assumed \cite{qiao_o2m_2024}, and performance is assessed after convergence rather than during the learning phase itself.
+
+As a result, existing evaluation protocols tend to under-represent scenarios in which exploration is costly, miscoordination is irreversible, or early decisions dominate total return. This gap is particularly salient for online opponent modelling, where identifying opponent behavior necessarily requires intervention through action, yet the cost of such intervention is rarely isolated as an evaluation dimension. Consequently, current metrics provide limited insight into how efficiently an agent balances opponent identification against immediate performance under constrained interaction settings.
+
 
 \section{Conclusion}
-Your conclusions and future work.
+This review synthesized the opponent-modelling literature in repeated strategic interaction by examining how opponent behavior is assumed, how it is modelled, and how modelling effectiveness is evaluated, with a primary focus on canonical social dilemma settings commonly instantiated through the Iterated Prisoner’s Dilemma. The analysis reveals substantial diversity in opponent behavior assumptions, ranging from stationary and reactive opponents to adaptive and population-mediated dynamics. While many studies implicitly account for non-stationarity arising from learning dynamics or environmental coupling, these assumptions are frequently embedded within experimental designs rather than stated explicitly. As a result, modelling approaches that appear methodologically similar may operate under fundamentally different opponent behavior assumptions, complicating direct comparison across studies.
+
+Across the reviewed literature, a broad range of modelling methodologies has been employed, reflecting differing views on the appropriate abstraction for representing adaptive opponents. Evaluation practices predominantly emphasize outcome-based metrics such as cooperation rate, average payoff, and equilibrium convergence. These metrics are effective for assessing long-horizon performance and stability, but they are typically applied in settings where interaction horizons are unconstrained or sufficiently long to amortize exploration costs. Consequently, although opponent identification and adaptation are central motivations of opponent modelling, comparatively limited attention is paid to the efficiency and timeliness of such identification under constrained interaction horizons. This observation highlights an opportunity for future research to examine opponent-modelling effectiveness in online settings where interaction opportunities are limited, exploration is costly, and early-stage adaptation is critical.
 
 \begin{thebibliography}{00}
 
@@ -395,9 +452,6 @@ P.~Doshi, P.~Gmytrasiewicz, and E.~Durfee, ``Recursively modeling other agents f
 
 \bibitem{gomez_grounded_2025}
 A.~L. de~A. Gómez, C.~Sierra, and J.~Sabater-Mir, ``Grounded predictions of teamwork as a one-shot game: A multiagent multi-armed bandits approach,'' \emph{Artificial Intelligence}, vol.~341, p. 104307, 2025. [Online]. Available: https://www.sciencedirect.com/science/article/pii/S0004370225000268. doi: 10.1016/j.artint.2025.104307.
-
-\bibitem{mendez-naya_delegation_2025}
-L. Méndez-Naya, ``Delegation and strategic altruism: A theoretical approach,'' \emph{Mathematical Social Sciences}, vol. 138, 2025, pp. 102465. doi: 10.1016/j.mathsocsci.2025.102465.
 
 \bibitem{di_coupling_2023}
 C. Di, Q. Zhou, J. Shen, J. Wang, R. Zhou, and T. Wang, ``The coupling effect between the environment and strategies drives the emergence of group cooperation,'' \emph{Chaos, Solitons \& Fractals}, vol. 176, 2023, pp. 114138. doi: 10.1016/j.chaos.2023.114138.
