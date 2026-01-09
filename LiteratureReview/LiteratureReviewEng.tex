@@ -43,7 +43,7 @@
 
 \begin{document}
 
-\title{Opponent Modelling in the Iterated Prisoner's Dilemma: A Literature Review}
+\title{Opponent Modelling in Repeated Strategic Interaction: Assumptions, Methods, and Evaluation Practices}
 
 \author{\IEEEauthorblockN{Faqih Mahardika}
 \IEEEauthorblockA{\textit{Department of Computer Science and Electronics} \\
@@ -55,12 +55,11 @@ fm.faqihmahardika@gmail.com}
 \maketitle
 
 \begin{abstract}
-Opponent modelling plays a central role in enabling adaptive behavior in the Iterated Prisoner’s Dilemma (IPD), particularly under non-stationary and learning opponents. This systematic literature review examines prior work on opponent modelling in IPD along three dimensions: opponent behavior assumptions, modelling methodologies, and evaluation practices. The reviewed studies reveal a wide range of assumptions regarding opponent adaptivity, including stationary, reactive, learning-based, and population-mediated behaviors. Methodologically, opponent modelling approaches span gradient-based learning, deep reinforcement learning, recursive belief reasoning, evolutionary dynamics, and system identification. Evaluation practices predominantly rely on cooperation rate, payoff-based metrics, and equilibrium-related measures. While these metrics are informative for long-run performance, they are typically applied in settings with unconstrained or extended interaction horizons. As a result, the literature provides limited insight into how effectively opponent modelling strategies identify and adapt to opponents under short or resource-constrained interactions. The findings highlight the need for evaluation frameworks that explicitly consider interaction constraints when assessing opponent modelling effectiveness.
-  
+Cooperation and conflict are fundamental features of interaction in human societies, biological systems, and artificial-agent environments, where agents repeatedly face strategic trade-offs between short-term self-interest and long-term collective outcomes. Opponent modelling plays a central role in such settings by enabling agents to infer, anticipate, and adapt to the behavior of others, with applications ranging from negotiation and market interactions to multi-agent artificial intelligence systems. This literature review synthesizes prior work on opponent modelling in repeated strategic games, using the Iterated Prisoner's Dilemma as a canonical instantiation of repeated social dilemmas rather than as a restrictive domain. The review analyzes existing approaches along three dimensions: assumptions about opponent behavior, opponent-modelling methodologies, and evaluation practices. The surveyed literature exhibits substantial diversity in opponent behavior assumptions, including stationary, reactive, learning-based, and population-mediated opponents, often embedded implicitly within experimental setups. Methodologically, approaches span gradient-based learning, deep reinforcement learning, recursive belief reasoning, evolutionary dynamics, and system identification. Evaluation practices predominantly emphasize outcome-based metrics such as cooperation rate, average payoff, and equilibrium-related measures. While informative for long-horizon performance, these metrics are typically applied under unconstrained interaction horizons, limiting insight into the efficiency and timeliness of opponent identification and adaptation. This review highlights a structural gap in existing evaluations and underscores the need for horizon-aware assessment frameworks that better reflect the constraints of real-world repeated interactions.
 \end{abstract}
 
 \begin{IEEEkeywords}
-keyword1, keyword2, keyword3 
+Opponent Modelling, Iterated Prisoner's Dilemma, Online Adaptation, Repeated Games
 \end{IEEEkeywords}
 
 \section{Introduction}
@@ -89,13 +88,13 @@ A systematic review will be employed to address the research questions. This met
 Studies were included in the review if they satisfied all of the following conditions:
 
 \begin{itemize}
-    \item \textbf{Topic relevance:} The study presents a substantive discussion, method, or empirical analysis of opponent modelling, opponent-aware decision making, or explicit reasoning about other agents’ strategies in \emph{repeated strategic interaction settings}. This includes, but is not limited to, the Iterated Prisoner’s Dilemma (IPD), repeated general-sum games, repeated zero-sum games, and structurally comparable repeated social dilemmas where agents condition behavior on observed opponent actions.
+    \item \textbf{Topic relevance:} The study presents a substantive discussion, method, or empirical analysis of opponent modelling, opponent-aware decision making, or explicit reasoning about other agent's strategies in \emph{repeated strategic interaction settings}. This includes, not limited to, the Iterated Prisoner's Dilemma (IPD), repeated general-sum games, repeated zero-sum games, and structurally comparable repeated social dilemmas where agents condition behavior on observed opponent actions.
     
     \item \textbf{Structural comparability:} The game or interaction setting involves repeated encounters, strategic interdependence, and observable opponent actions, enabling adaptation or reasoning over opponent behavior across time. The IPD is treated as a canonical instance within this broader class of repeated strategic games.
     
     \item \textbf{Scholarly quality:} The work is published in a peer-reviewed journal or international conference proceedings.
     
-    \item \textbf{Publication window:} The study was published between 2019 and 2025. This window was selected to capture contemporary opponent-modelling approaches developed in the modern learning-based multi-agent systems era, while maintaining sufficient coverage given the limited volume of work explicitly addressing opponent modelling in repeated dilemma settings.
+    \item \textbf{Publication window:} The study was published between 2019 and 2025. This window was selected to capture contemporary opponent-modelling approaches developed in the modern learning-based multi-agent systems era.
     
     \item \textbf{Accessibility:} The full text is available in English and accessible for analysis.
 \end{itemize}
@@ -103,11 +102,10 @@ Studies were included in the review if they satisfied all of the following condi
 Studies were excluded if they met any of the following conditions:
 
 \begin{itemize}
-    \item \textbf{Irrelevant focus:} The study does not address opponent modelling, opponent-aware adaptation, or reasoning about other agents, or focuses exclusively on one-shot games without repeated interaction.
+    \item \textbf{Irrelevant focus:} The study does not address opponent modelling, opponent-aware adaptation, or reasoning about other agents, or without repeated interaction settings.
     
-    \item \textbf{Generic multi-agent learning:} The study applies multi-agent reinforcement learning or learning-in-games techniques without incorporating opponent-aware adaptation, either explicitly or implicitly, through action conditioning, belief updates, or history-dependent response mechanisms.
+    \item \textbf{Generic multi-agent learning:} The study applies multi-agent reinforcement learning or learning-in-games techniques without incorporating opponent-aware adaptation, either explicitly or implicitly.
 
-    
     \item \textbf{Purely theoretical without opponent reasoning:} The paper provides only abstract or normative theoretical analysis and does not propose, analyze, or operationalize any mechanism for opponent modelling, opponent inference, or opponent-aware decision making in repeated interaction settings.
     
     \item \textbf{Outside the publication window:} The study was published outside the defined six-year publication window.
@@ -118,7 +116,7 @@ Studies were excluded if they met any of the following conditions:
 
 \subsection{Information Sources and Search Strategy}
 
-The literature search was conducted using four major academic databases selected for their comprehensive coverage of computer science, artificial intelligence, and multi-agent systems research: IEEE Xplore, ScienceDirect, Scopus, and SpringerLink. The search strategy employed a structured set of keywords designed to capture studies related to opponent modelling and the Iterated Prisoner's Dilemma (IPD). The following query was applied across all databases: 
+The literature search was conducted using four major academic databases: IEEE Xplore, ScienceDirect, Scopus, and SpringerLink.  The search strategy prioritised canonical repeated dilemma formulations and opponent-aware work to ensure conceptual focus. Broader multi-agent learning literature was considered where opponent differentiation was present, but not exhaustively reviewed. The following query was applied across databases: 
 
 
 \begin{center}
@@ -145,15 +143,15 @@ Database-specific filters were applied to ensure the relevance and accessibility
 \subsection{Research Procedure}
 The literature search was conducted following the defined search strategy, with keywords adapted to the specific query capabilities of each database. All identified records were collected and managed using a reference manager to remove duplicates and ineligible entries during the initial screening. The remaining studies were then screened based on their titles and abstracts to determine relevance. Full-text versions of studies that passed this stage were retrieved and assessed for eligibility as part of the systematic review.
 
-Data extraction focused on gathering information relevant to Opponent Modelling in the Iterated Prisoner's Dilemma, including environmental settings, monitoring methods, modelling approaches, and evaluation metrics. The extracted data were subsequently analyzed and compared to identify patterns, advantages, and limitations of the different approaches. These findings are then used to address the research questions outlined for this review.
+Data extraction focused on gathering information relevant to Opponent Modelling in the Iterated Prisoner's Dilemma, including environmental settings, modelling approaches, and evaluation metrics. The extracted data were subsequently analyzed and compared to identify patterns of the different approaches. These findings are then used to address the research questions outlined for this review.
 
 \section{Results}
 
 At each stage of the selection process illustrated in Figure ~\ref{fig:prisma}, n denotes the number of studies considered. During the identification phase, 10 records were removed as duplicates based on their titles and abstracts. An additional 48 records were excluded for failing to meet the inclusion criteria. At the screening stage, 26 papers were removed because they were not relevant to this study (for example, they did not involve opponent modelling or did not use the IPD as the research context), and 6 papers were excluded because they were non-primary studies, resulting in a total of 32 removals. One record could not be retrieved due to access limitations. Consequently, 20 records were selected for full-text review.
 
-Among the 20 full-text articles obtained, 2 were excluded because they focused on IPD population simulations or did not present any opponent modelling framework. Another 2 were excluded because they were non-primary studies and therefore did not propose their own opponent modelling approach. One additional paper was excluded for focusing solely on theoretical aspects of the IPD without providing an opponent modelling framework.
+Among the 20 full-text articles obtained, 2 were excluded because they focused on IPD population simulations or did not present any opponent modelling. Another 2 were excluded because they were non-primary studies. Three additional papers were excluded for focusing solely on theoretical aspects of the IPD.
 
-After applying all exclusion criteria, 15 studies were included in the final systematic review. The titles and characteristics of these studies are presented in Table ~\ref{tab:paper_characteristics}.
+After applying all exclusion criteria, 13 studies were included in the final systematic review. The titles and characteristics of these studies are presented in Table ~\ref{tab:paper_characteristics}.
 
 \begin{figure}[ht]
     \centering
@@ -182,10 +180,6 @@ Analyzes zero-determinant strategies. \\ \hline
 \cite{lv_inducing_2023} &
 Inducing Coordination in Multi-Agent Repeated Game through Hierarchical Gifting Policies &
 Proposes a hierarchical gifting mechanism. \\ \hline
-
-\cite{doshi_recursively_2020} &
-Recursively modeling other agents for decision making: A research perspective &
-Reviews recursive modeling frameworks.\\ \hline
 
 \cite{gomez_grounded_2025} &
 Grounded predictions of teamwork as a one-shot game: A multiagent multi-armed bandits approach &
@@ -264,7 +258,7 @@ This categorization is not intended as a formal or exhaustive taxonomy of oppone
 -- & \checkmark & \checkmark & -- & Contextual Reactive & \cite{elhamer_effects_2020} \\
 \addlinespace
 
--- & -- & \checkmark & \checkmark & Learning Opponent & \cite{qiao_o2m_2024, lv_inducing_2023, doshi_recursively_2020, li_exploiting_2025, freire_modeling_2023, hu_modeling_2023, wang_achieving_2019,de_weerd_higher-order_2022} \\
+-- & -- & \checkmark & \checkmark & Learning Opponent & \cite{qiao_o2m_2024, lv_inducing_2023, li_exploiting_2025, freire_modeling_2023, hu_modeling_2023, wang_achieving_2019,de_weerd_higher-order_2022} \\
 \addlinespace
 
 -- & \checkmark & \checkmark & \checkmark & Population-Contextual Strategic & \cite{perera_learning_2025} \\
@@ -289,7 +283,7 @@ Checkmarks indicate the presence of a dependency.
 \end{flushleft}
 
 \end{table}
-Several consistent patterns emerge from the behavioral categorization in Table \ref{tab:opponent-behavior}. Substantial portion of recent studies model opponents whose actions are explicitly agent-responsive and exhibit action divergence \cite{qiao_o2m_2024, zhu_evolutionary_2025, lv_inducing_2023, doshi_recursively_2020, di_coupling_2023, perera_learning_2025, li_exploiting_2025, freire_modeling_2023, hu_modeling_2023, wang_achieving_2019, de_weerd_higher-order_2022}, indicating an assumption of learning or strategic adaptation. Reflects a growing research emphasis on robustness against non-stationary and adaptive opponents rather than optimization against fixed strategies.
+Several consistent patterns emerge from the behavioral categorization in Table \ref{tab:opponent-behavior}. Substantial portion of recent studies model opponents whose actions are explicitly agent-responsive and exhibit action divergence \cite{qiao_o2m_2024, zhu_evolutionary_2025, lv_inducing_2023, di_coupling_2023, perera_learning_2025, li_exploiting_2025, freire_modeling_2023, hu_modeling_2023, wang_achieving_2019, de_weerd_higher-order_2022}, indicating an assumption of learning or strategic adaptation. Reflects a growing research emphasis on robustness against non-stationary and adaptive opponents rather than optimization against fixed strategies.
 
 Moreover, population-mediated behavior appears primarily in studies of evolutionary or networked environments, where opponent actions are shaped indirectly through aggregate dynamics rather than direct bilateral adaptation \cite{zhu_evolutionary_2025, gomez_grounded_2025, di_coupling_2023, perera_learning_2025, elhamer_effects_2020}. These settings often decouple individual agent responsiveness from population-level change, leading to behavioral patterns that differ qualitatively from pairwise learning scenarios. Notably, only a subset of works combine environment-dependent, population-mediated, and agent-responsive behaviors\cite{di_coupling_2023}, suggesting that fully context-conditioned strategic opponents remain comparatively underexplored.
 
@@ -318,7 +312,7 @@ Gradient-based opponent shaping
 
 Recursive belief reasoning
 & Bayesian belief update / cognitive hierarchy 
-& \cite{doshi_recursively_2020, freire_modeling_2023, de_weerd_higher-order_2022} \\
+& \cite{freire_modeling_2023, de_weerd_higher-order_2022} \\
 
 Population-based training
 & Policy-gradient MARL (population sampling) 
@@ -344,7 +338,7 @@ Communication-driven coordination
 \end{tabularx}
 \end{table}
 
-Table~\ref{tab:opponent_modelling_paradigm} categorizes prior work by modelling paradigm and learning mechanism, the listed approaches also differ in whether opponent adaptation is handled explicitly or implicitly. Explicit opponent modelling approaches, such as gradient-based opponent shaping~\cite{qiao_o2m_2024, hu_modeling_2023, wang_achieving_2019}, recursive belief reasoning~\cite{doshi_recursively_2020, freire_modeling_2023, de_weerd_higher-order_2022}, and system identification~\cite{li_exploiting_2025}, construct internal representations of opponent behavior. In contrast, implicit approaches including reactive reinforcement learning~\cite{lv_inducing_2023}, population-based training\cite{perera_learning_2025}, evolutionary dynamics \cite{zhu_evolutionary_2025, di_coupling_2023, elhamer_effects_2020} and Bandit-based learning-in-games \cite{gomez_grounded_2025} adapt without maintaining explicit opponent model. This highlights alternative design philosophies for addressing non-stationarity opponent.
+Table~\ref{tab:opponent_modelling_paradigm} categorizes prior work by modelling paradigm and learning mechanism, the listed approaches also differ in whether opponent adaptation is handled explicitly or implicitly. Explicit opponent modelling approaches, such as gradient-based opponent shaping~\cite{qiao_o2m_2024, hu_modeling_2023, wang_achieving_2019}, recursive belief reasoning~\cite{freire_modeling_2023, de_weerd_higher-order_2022}, and system identification~\cite{li_exploiting_2025}, construct internal representations of opponent behavior. In contrast, implicit approaches including reactive reinforcement learning~\cite{lv_inducing_2023}, population-based training\cite{perera_learning_2025}, evolutionary dynamics \cite{zhu_evolutionary_2025, di_coupling_2023, elhamer_effects_2020} and Bandit-based learning-in-games \cite{gomez_grounded_2025} adapt without maintaining explicit opponent model. This highlights alternative design philosophies for addressing non-stationarity opponent.
 
 \subsection{How is the effectiveness of opponent-modelling strategies evaluated in the Iterated Prisoner's Dilemma?}
 Evaluation choices implicitly define what constitutes success in adaptive multi-agent interaction, such as cooperation outcomes, robustness to exploitation, stability, or predictive accuracy. Table~\ref{tab:evaluation_metrics} provides a descriptive overview of the evaluation environments and metrics used in prior work, with the aim of enabling cross-paper comparison and highlighting recurring evaluation patterns and omissions rather than standardizing or ranking criteria.
@@ -364,8 +358,6 @@ Evaluation choices implicitly define what constitutes success in adaptive multi-
 \cite{zhu_evolutionary_2025} & Scale-free network with zero-determinant strategies & Frequency of cooperation (C) and exploitation (E) \\
 
 \cite{lv_inducing_2023} & Adaptive opponents (averaged over multiple opponents) & Reward value \\
-
-\cite{doshi_recursively_2020} & No training performed & Not applicable \\
 
 \cite{gomez_grounded_2025} & Custom teamwork-game simulator (aggregative public good games); synthetic experiments & Aggregate team productivity; $\chi^2$ goodness-of-fit to equilibrium; convergence to Nash equilibrium; individual contribution \\
 
@@ -446,9 +438,6 @@ L.~Zhu, Y.~Zhu, and C.~Xia, ``Evolutionary Dynamics of Cooperation and Extortion
 
 \bibitem{lv_inducing_2023}
 M.~Lv, J.~Liu, B.~Guo, Y.~Ding, Y.~Zhang, and Z.~Yu, ``Inducing Coordination in Multi-Agent Repeated Game through Hierarchical Gifting Policies,'' in \emph{2023 IEEE 20th International Conference on Mobile Ad Hoc and Smart Systems (MASS)}, Sep. 2023, pp. 279--287. [Online]. Available: https://ieeexplore.ieee.org/document/10298392/. doi: 10.1109/MASS58611.2023.00041.
-
-\bibitem{doshi_recursively_2020}
-P.~Doshi, P.~Gmytrasiewicz, and E.~Durfee, ``Recursively modeling other agents for decision making: A research perspective,'' \emph{Artificial Intelligence}, vol.~279, p. 103202, 2020. [Online]. Available: https://www.sciencedirect.com/science/article/pii/S000437021930027X. doi: 10.1016/j.artint.2019.103202.
 
 \bibitem{gomez_grounded_2025}
 A.~L. de~A. Gómez, C.~Sierra, and J.~Sabater-Mir, ``Grounded predictions of teamwork as a one-shot game: A multiagent multi-armed bandits approach,'' \emph{Artificial Intelligence}, vol.~341, p. 104307, 2025. [Online]. Available: https://www.sciencedirect.com/science/article/pii/S0004370225000268. doi: 10.1016/j.artint.2025.104307.

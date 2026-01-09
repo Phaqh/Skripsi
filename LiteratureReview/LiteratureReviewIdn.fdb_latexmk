@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1767944915.4332 "/home/paqh/Documents/Skripsi/LiteratureReview/LiteratureReviewEng.tex" "LiteratureReviewEng.pdf" "LiteratureReviewEng" 1767944917.75881 0
+["pdflatex"] 1767947164.64166 "/home/paqh/Documents/Skripsi/LiteratureReview/LiteratureReviewIdn.tex" "LiteratureReviewIdn.pdf" "LiteratureReviewIdn" 1767947166.97819 0
   "/etc/texmf/web2c/texmf.cnf" 1732769992.1592 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/paqh/Documents/Skripsi/LiteratureReview/LiteratureReviewEng.tex" 1767944915.05402 37523 47605c071f8e482d1874e4ea2ccc9007 ""
+  "/home/paqh/Documents/Skripsi/LiteratureReview/LiteratureReviewIdn.tex" 1767947161.8588 40797 981dd9d74dc029a0ad7defad22867493 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1136768653 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -29,6 +29,7 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr8.tfm" 1136768653 1292 21c1c5bfeaebccffdb478fd231a0997d ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1248133631 35469 70d41d2b9ea31d5d813066df7c99281c ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1248133631 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1248133631 32716 08e384dc442464e7285e891af9f45947 ""
@@ -177,11 +178,11 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1750919238.44603 165012 f177baa1c39a3ebd62c3096a43521a0d ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1750919296 6831171 3124f9e25fcfe69974e43fdc46ff2f00 ""
-  "LiteratureReviewEng.aux" 1767944917.56302 6285 24c903b268783b37bc1e56c11e8638a2 "pdflatex"
-  "LiteratureReviewEng.tex" 1767944915.05402 37523 47605c071f8e482d1874e4ea2ccc9007 ""
+  "LiteratureReviewIdn.aux" 1767947166.77496 6346 f5aa0cd4a3b456ff4ebf5773acb15ac5 "pdflatex"
+  "LiteratureReviewIdn.tex" 1767947161.8588 40797 981dd9d74dc029a0ad7defad22867493 ""
   "images/PrismaENG.png" 1767941806.63925 483712 9b46650efd8c6e0201a0b4e40922b619 ""
   (generated)
-  "LiteratureReviewEng.aux"
-  "LiteratureReviewEng.log"
-  "LiteratureReviewEng.pdf"
+  "LiteratureReviewIdn.aux"
+  "LiteratureReviewIdn.log"
+  "LiteratureReviewIdn.pdf"
   (rewritten before read)
