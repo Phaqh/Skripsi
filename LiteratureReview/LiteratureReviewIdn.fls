@@ -319,11 +319,11 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm
-INPUT ./images/PrismaENG.png
-INPUT ./images/PrismaENG.png
-INPUT ./images/PrismaENG.png
-INPUT ./images/PrismaENG.png
-INPUT ./images/PrismaENG.png
+INPUT ./images/PrismaIDN.png
+INPUT ./images/PrismaIDN.png
+INPUT ./images/PrismaIDN.png
+INPUT ./images/PrismaIDN.png
+INPUT ./images/PrismaIDN.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmrc7t.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr6.tfm

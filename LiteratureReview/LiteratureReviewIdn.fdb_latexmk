@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1767947164.64166 "/home/paqh/Documents/Skripsi/LiteratureReview/LiteratureReviewIdn.tex" "LiteratureReviewIdn.pdf" "LiteratureReviewIdn" 1767947166.97819 0
+["pdflatex"] 1767973308.47932 "/home/paqh/Documents/Skripsi/LiteratureReview/LiteratureReviewIdn.tex" "LiteratureReviewIdn.pdf" "LiteratureReviewIdn" 1767973310.82813 0
   "/etc/texmf/web2c/texmf.cnf" 1732769992.1592 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/paqh/Documents/Skripsi/LiteratureReview/LiteratureReviewIdn.tex" 1767947161.8588 40797 981dd9d74dc029a0ad7defad22867493 ""
+  "/home/paqh/Documents/Skripsi/LiteratureReview/LiteratureReviewIdn.tex" 1767973305.54886 40552 16e46b4814150958eb7a143af0776644 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1136768653 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -178,9 +178,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1750919238.44603 165012 f177baa1c39a3ebd62c3096a43521a0d ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1750919296 6831171 3124f9e25fcfe69974e43fdc46ff2f00 ""
-  "LiteratureReviewIdn.aux" 1767947166.77496 6346 f5aa0cd4a3b456ff4ebf5773acb15ac5 "pdflatex"
-  "LiteratureReviewIdn.tex" 1767947161.8588 40797 981dd9d74dc029a0ad7defad22867493 ""
-  "images/PrismaENG.png" 1767941806.63925 483712 9b46650efd8c6e0201a0b4e40922b619 ""
+  "LiteratureReviewIdn.aux" 1767973310.62396 6374 007b87e4312559c2fd51470e6543a1f5 "pdflatex"
+  "LiteratureReviewIdn.tex" 1767973305.54886 40552 16e46b4814150958eb7a143af0776644 ""
+  "images/PrismaIDN.png" 1767941812.81304 538980 d6ce39e1e669fce69cdea3f32343ebe0 ""
   (generated)
   "LiteratureReviewIdn.aux"
   "LiteratureReviewIdn.log"
