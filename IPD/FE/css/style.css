@@ -1,0 +1,22 @@
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+section {
+  border: 1px solid #ccc;
+  padding: 12px;
+  margin-bottom: 15px;
+}
+
+button {
+  margin-right: 8px;
+}
+
+#visualization div {
+  margin-top: 10px;
+}

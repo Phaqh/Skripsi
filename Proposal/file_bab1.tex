@@ -1,0 +1,57 @@
+\section{Latar Belakang}
+Perkembangan kecerdasan buatan (Artificial Intelligence/AI) dalam beberapa dekade terakhir menunjukkan peningkatan signifikan, khususnya pada metode pembelajaran mesin dan pembelajaran penguatan (reinforcement learning). Sistem AI semakin banyak digunakan untuk mengambil keputusan secara otonom dalam lingkungan yang dinamis dan interaktif. Salah satu konteks yang sering digunakan untuk mempelajari pengambilan keputusan strategis adalah permainan berulang (iterated games), seperti \textit{Iterated Prisoner’s Dilemma} (IPD). IPD menyediakan kerangka formal yang sederhana namun kaya untuk menganalisis perilaku kooperatif, kompetitif, dan adaptif antar agen.
+
+Dalam skenario IPD, performa suatu agen sangat dipengaruhi oleh kemampuannya memahami dan memprediksi perilaku lawan. Oleh karena itu, pemodelan lawan (opponent modelling) menjadi komponen penting dalam perancangan agen cerdas. Pemodelan lawan bertujuan untuk membangun representasi atau estimasi kebijakan lawan berdasarkan riwayat interaksi, sehingga agen dapat menyesuaikan strateginya secara adaptif. Berbagai pendekatan telah diusulkan, mulai dari model probabilistik sederhana hingga model berbasis pembelajaran mesin dan jaringan saraf.
+
+Namun, banyak pendekatan pemodelan lawan modern bersifat \textit{black-box}, sehingga sulit untuk dipahami, dianalisis, dan dipercaya. Kurangnya transparansi ini menjadi permasalahan tersendiri, terutama ketika model digunakan untuk tujuan analisis ilmiah atau pengambilan keputusan yang membutuhkan justifikasi. Hal ini mendorong berkembangnya bidang \textit{Explainable Artificial Intelligence} (XAI), yang berfokus pada pengembangan model dan metode yang tidak hanya akurat, tetapi juga dapat dijelaskan.
+
+Salah satu model yang berpotensi digunakan dalam pemodelan lawan yang relatif lebih terstruktur adalah \textit{Nonlinear AutoRegressive with eXogenous input} (NARX). Model NARX memanfaatkan hubungan temporal antara keluaran masa lalu dan masukan eksternal (eksogen) untuk memprediksi keluaran di masa depan. Dalam konteks IPD, tindakan lawan pada langkah sebelumnya dapat dipandang sebagai sinyal temporal, sementara tindakan agen sendiri dapat diperlakukan sebagai masukan eksogen. Struktur ini membuka peluang untuk melakukan analisis kausal dan interpretasi terhadap pengaruh riwayat interaksi terhadap prediksi perilaku lawan.
+
+Selain isu keterjelasan, pemodelan lawan dalam IPD juga menghadapi keterbatasan praktis, seperti horizon interaksi yang terbatas. Dalam banyak studi teoretis, agen diasumsikan berinteraksi dalam horizon tak terbatas, sementara dalam praktik (dan eksperimen), jumlah iterasi sering kali dibatasi. Keterbatasan horizon ini memengaruhi kualitas pembelajaran, kemampuan generalisasi model, serta evaluasi kinerja pemodelan lawan. Oleh karena itu, diperlukan kajian yang secara eksplisit mempertimbangkan keterbatasan horizon dalam perancangan dan evaluasi model.
+
+Berdasarkan uraian tersebut, penelitian ini mengusulkan penggunaan model NARX untuk pemodelan lawan pada permainan Iterated Prisoner’s Dilemma dengan horizon terbatas, serta menganalisis aspek keterjelasan (explainability) dari model yang dihasilkan. Diharapkan penelitian ini dapat memberikan kontribusi dalam memahami trade-off antara performa prediksi, keterbatasan interaksi, dan keterjelasan model dalam konteks pemodelan lawan.
+
+\section{Rumusan Masalah}
+Berdasarkan latar belakang yang telah diuraikan, rumusan masalah dalam penelitian ini adalah sebagai berikut:
+\begin{enumerate}
+\item Bagaimana merancang model pemodelan lawan pada Iterated Prisoner’s Dilemma menggunakan pendekatan NARX dengan horizon interaksi terbatas?
+\item Sejauh mana model NARX mampu memprediksi perilaku lawan secara akurat dalam kondisi horizon terbatas?
+\item Bagaimana aspek keterjelasan (explainability) dari model NARX dapat dianalisis dan disajikan dalam konteks pemodelan lawan?
+\end{enumerate}
+
+\section{Batasan Masalah}
+Untuk menjaga fokus dan ketercapaian penelitian, batasan masalah yang diterapkan adalah sebagai berikut:
+\begin{itemize}
+\item Lingkungan yang digunakan adalah permainan Iterated Prisoner’s Dilemma dua pemain.
+\item Pemodelan lawan dilakukan dari sudut pandang satu agen terhadap satu lawan.
+\item Horizon interaksi dibatasi pada jumlah iterasi tertentu yang telah ditetapkan dalam eksperimen.
+\item Model yang digunakan untuk pemodelan lawan dibatasi pada pendekatan NARX.
+\item Evaluasi keterjelasan model dilakukan tanpa melibatkan subjek manusia secara langsung.
+\end{itemize}
+
+\section{Tujuan Penelitian}
+Tujuan dari penelitian ini adalah:
+\begin{enumerate}
+\item Merancang dan mengimplementasikan model NARX untuk pemodelan lawan pada Iterated Prisoner’s Dilemma dengan horizon terbatas.
+\item Mengevaluasi kinerja prediksi model NARX terhadap perilaku lawan.
+\item Menganalisis dan menyajikan aspek keterjelasan model NARX dalam konteks pemodelan lawan.
+\end{enumerate}
+
+\section{Manfaat Penelitian}
+Manfaat yang diharapkan dari penelitian ini antara lain:
+\begin{itemize}
+\item Memberikan kontribusi akademik dalam kajian pemodelan lawan dan explainable AI pada permainan berulang.
+\item Menjadi referensi bagi penelitian selanjutnya yang mengkaji pemodelan lawan dengan keterbatasan interaksi.
+\item Memberikan pemahaman yang lebih baik mengenai penggunaan model NARX sebagai alternatif model yang lebih dapat dijelaskan.
+\end{itemize}
+
+\section{Sistematika Penulisan}
+Sistematika penulisan skripsi ini adalah sebagai berikut:
+\begin{itemize}
+\item Bab I Pendahuluan, berisi latar belakang, rumusan masalah, batasan masalah, tujuan penelitian, manfaat penelitian, dan sistematika penulisan.
+\item Bab II Tinjauan Pustaka, membahas penelitian-penelitian terkait yang relevan dengan topik pemodelan lawan, Iterated Prisoner’s Dilemma, dan explainable AI.
+\item Bab III Landasan Teori, menjelaskan konsep dan teori yang mendasari penelitian, termasuk IPD, pemodelan lawan, dan model NARX.
+\item Bab IV Analisis dan Perancangan, memaparkan analisis masalah serta perancangan sistem dan metode yang digunakan.
+\item Bab V Hasil dan Pembahasan, menyajikan hasil eksperimen dan pembahasan terhadap temuan penelitian.
+\item Bab VI Kesimpulan dan Saran, berisi kesimpulan penelitian serta saran untuk pengembangan penelitian selanjutnya.
+\end{itemize}

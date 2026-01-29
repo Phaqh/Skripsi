@@ -338,6 +338,66 @@ Communication-driven coordination
 \end{tabularx}
 \end{table}
 
+\begin{figure*}[t]
+\begin{forest}
+for tree={
+  grow = east,
+  parent anchor = east,
+  child anchor = west,
+  edge={->},
+  l sep=10pt,
+  s sep=8pt,
+  mynode
+}
+[\textit{opponent modelling}
+    [Eksplisit
+        [Gradient-based Opponent Shaping
+            [\textit{Gradient descent} / pembaruan sadar lawan
+                \\ \cite{qiao_o2m_2024, hu_modeling_2023, wang_achieving_2019}
+            ]
+        ]
+        [Recursive Belief Reasoning
+            [Pembaruan keyakinan Bayesian / \textit{cognitive hierarchy}
+                \\ \cite{freire_modeling_2023, de_weerd_higher-order_2022}
+            ]
+        ]
+        [System Identification
+            [Model autoregresif dengan input eksogen (NARX)
+                \\ \cite{li_exploiting_2025}
+            ]
+        ]
+        [Communication-driven Coordination
+            [\textit{Policy-gradient} dengan objektif komunikasi
+                \\ \cite{jin_achieving_2025}
+            ]
+        ]
+    ]
+    [Implisit
+        [Reactive Reinforcement Learning
+            [RL berbasis nilai (DQN)
+                \\ \cite{lv_inducing_2023}
+            ]
+        ]
+        [Population-based Training
+            [\textit{Policy-gradient} MARL (sampling populasi)
+                \\ \cite{perera_learning_2025}
+            ]
+        ]
+        [Evolutionary Population Dynamics
+            [Imitasi strategi berbasis \textit{fitness}
+                \\ \cite{zhu_evolutionary_2025, di_coupling_2023, elhamer_effects_2020}
+            ]
+        ]
+        [Bandit-based Learning-in-Games
+            [\textit{Multi-armed bandit} / \textit{smooth best response}
+                \\ \cite{gomez_grounded_2025}
+            ]
+        ]
+    ]
+]
+\end{forest}
+\end{figure*}
+
 Table~\ref{tab:opponent_modelling_paradigm} categorizes prior work by modelling paradigm and learning mechanism, the listed approaches also differ in whether opponent adaptation is handled explicitly or implicitly. Explicit opponent modelling approaches, such as gradient-based opponent shaping~\cite{qiao_o2m_2024, hu_modeling_2023, wang_achieving_2019}, recursive belief reasoning~\cite{freire_modeling_2023, de_weerd_higher-order_2022}, and system identification~\cite{li_exploiting_2025}, construct internal representations of opponent behavior. In contrast, implicit approaches including reactive reinforcement learning~\cite{lv_inducing_2023}, population-based training\cite{perera_learning_2025}, evolutionary dynamics \cite{zhu_evolutionary_2025, di_coupling_2023, elhamer_effects_2020} and Bandit-based learning-in-games \cite{gomez_grounded_2025} adapt without maintaining explicit opponent model. This highlights alternative design philosophies for addressing non-stationarity opponent.
 
 \subsection{How is the effectiveness of opponent-modelling strategies evaluated in the Iterated Prisoner's Dilemma?}
