@@ -1,6 +1,6 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.1.29)  29 JAN 2026 21:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.1.29)  9 FEB 2026 19:46
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  %&-line parsing enabled.
 **index.tex
 (./index.tex
@@ -266,7 +266,7 @@ Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/shellesc.sty
 Package: shellesc 2023/07/08 v1.0d unified shell escape interface for LaTeX
-Package shellesc Info: Restricted shell escape enabled on input line 77.
+Package shellesc Info: Unrestricted shell escape enabled on input line 75.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/ifplatform/ifplatform.sty
 Package: ifplatform 2017/10/13 v0.4a Testing for the operating system
@@ -294,11 +294,13 @@ Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty
 Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 )
+runsystem(uname -s > "index.w18")...executed.
 
-Package ifplatform Warning: 
-    shell escape is disabled, so I can only detect \ifwindows.
+ (./index.w18)
+runsystem(rm -- "index.w18")...executed.
 
-) (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
+)
+(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
 (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
 \xs_counta=\count305
 \xs_countb=\count306
@@ -329,20 +331,8 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@every@listing=\toks27
 \c@listing=\count310
 )
-runsystem(mkdir -p _minted-index)...disabled (restricted).
+runsystem(mkdir -p _minted-index)...executed.
 
-
-
-! Package minted Error: You must invoke LaTeX with the -shell-escape flag.
-
-See the minted package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.17 \usemintedstyle
-                    {emacs}
-Pass the -shell-escape flag to LaTeX. Refer to the minted.sty documentation for
- more information.
 
 (/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjustbox.sty
 Package: adjustbox 2022/10/17 v1.3a Adjusting TeX boxes (trim, clip, ...)
@@ -1430,14 +1420,6 @@ File: biblatex.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
 \biburllcskip=\muskip21
 \c@smartand=\count511
 )
-Package biblatex Info: Trying to load natbib compatibility...
-Package biblatex Info: ... file 'blx-natbib.def' found.
-
-(/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-natbib.def
-File: blx-natbib.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
-Package biblatex Info: Delimiter 'nameyeardelim' in context '' already defined,
- overwriting.
-)
 Package biblatex Info: Trying to load bibliography style 'authoryear'...
 Package biblatex Info: ... file 'authoryear.bbx' found.
 
@@ -1553,6 +1535,12 @@ LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
+
+Package ugmskripsi Warning: Failed to patch LoF spacing on input line 20.
+
+
+Package ugmskripsi Warning: Failed to patch LoT spacing on input line 26.
+
 (/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
 Package caption Info: New subtype `subfigure' on input line 238.
@@ -1676,60 +1664,49 @@ Package: easytable 2001/05/31v1.1
 \@tab@size@rule=\dimen467
 \@tab@size@dash=\dimen468
 )
-runsystem(command -v pygmentize && touch index.aex)...disabled (restricted).
+runsystem(command -v pygmentize && touch index.aex)...executed.
 
-
-
-! Package minted Error: You must have `pygmentize' installed to use this packag
-e.
-
-See the minted package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.59 \begin{document}
-                     
-Refer to the installation instructions in the minted documentation for more inf
-ormation.
+runsystem(rm index.aex)...executed.
 
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 
+
 Package csquotes Warning: No style for language 'indonesian'.
-(csquotes)                Using fallback style on input line 59.
+(csquotes)                Using fallback style on input line 79.
 
 Package csquotes Info: Redefining alias 'default' -> 'fallback'.
 
 Package biblatex Warning: Conflicting options.
 (biblatex)                '<namepart>inits' conflicts with 'uniquename=full'.
-(biblatex)                Setting 'uniquename=init' on input line 59.
+(biblatex)                Setting 'uniquename=init' on input line 79.
 
-LaTeX Font Info:    Trying to load font information for T1+ptm on input line 59
+LaTeX Font Info:    Trying to load font information for T1+ptm on input line 79
 .
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 ) (./index.aux)
 \openout1 = `index.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1761,7 +1738,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 59.
+Package hyperref Info: Link coloring OFF on input line 79.
 
 (./index.out) (./index.out)
 \@outlinefile=\write8
@@ -1779,7 +1756,7 @@ Package biblatex Info: ... file 'indonesian.lbx' not found.
 
 
 Package biblatex Warning: Language 'indonesian' not supported.
-(biblatex)                Using dummy definitions on input line 59.
+(biblatex)                Using dummy definitions on input line 79.
 
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
@@ -1789,14 +1766,14 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'index.bbl' found.
 (./index.bbl)
-Package biblatex Info: Reference section=0 on input line 59.
-Package biblatex Info: Reference segment=0 on input line 59.
+Package biblatex Info: Reference section=0 on input line 79.
+Package biblatex Info: Reference segment=0 on input line 79.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-<Images/logougm.png, id=107, 110.5731pt x 112.2594pt>
+<Images/logougm.png, id=159, 110.5731pt x 112.2594pt>
 File: Images/logougm.png Graphic file (type png)
 <use Images/logougm.png>
-Package pdftex.def Info: Images/logougm.png  used on input line 61.
+Package pdftex.def Info: Images/logougm.png  used on input line 81.
 (pdftex.def)             Requested size: 180.67566pt x 183.4471pt.
  [1
 
@@ -1804,42 +1781,42 @@ Package pdftex.def Info: Images/logougm.png  used on input line 61.
 st/fonts/enc/dvips/base/8r.enc} <./Images/logougm.png>]
 File: Images/logougm.png Graphic file (type png)
 <use Images/logougm.png>
-Package pdftex.def Info: Images/logougm.png  used on input line 63.
+Package pdftex.def Info: Images/logougm.png  used on input line 83.
 (pdftex.def)             Requested size: 180.67566pt x 183.4471pt.
 
 [2]
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 67
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 87
 .
  (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 67.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 87.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 67.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 67.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 87.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 87.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 67.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 87.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (15.46408pt too wide) in paragraph at lines 67--67
+Overfull \hbox (15.46408pt too wide) in paragraph at lines 87--87
  [][] 
  []
 
 
-Overfull \hbox (15.46408pt too wide) in paragraph at lines 67--67
+Overfull \hbox (15.46408pt too wide) in paragraph at lines 87--87
  [][] 
  []
 
 
-Overfull \hbox (15.46408pt too wide) in paragraph at lines 67--67
+Overfull \hbox (15.46408pt too wide) in paragraph at lines 87--87
  [][] 
  []
 
@@ -1847,7 +1824,13 @@ Overfull \hbox (15.46408pt too wide) in paragraph at lines 67--67
 
 ] [4
 
-] (./motto.tex) (./prakata.tex) (./index.toc [5
+] (./motto.tex) (./prakata.tex) (./index.toc
+Overfull \hbox (2.04721pt too wide) in paragraph at lines 19--19
+ [][] [][]\T1/ptm/m/n/12 Pendekatan me-to-do-lo-gis da-lam \T1/ptm/m/it/12 op-p
+o-nent mo-de-lling \T1/ptm/m/n/12 un-tuk \T1/ptm/m/it/12 Re- 
+ []
+
+[5
 
 
 
@@ -1860,8 +1843,7 @@ Overfull \hbox (15.46408pt too wide) in paragraph at lines 67--67
 \tf@lot=\write10
 \openout10 = `index.lot'.
 
-
-[7
+ [7
 
 
 ] (./index.lof)
@@ -1871,581 +1853,173 @@ Overfull \hbox (15.46408pt too wide) in paragraph at lines 67--67
  [8
 
 
-] (./abstract_ind.tex) (./abstract_eng.tex) [9
+] (./abstract_ind.tex
+! Undefined control sequence.
+<inserted text> \normalfont \Medium 
+                                    \bfseries PEMODELAN LAWAN BELAJAR MENGGU...
+l.4 ...e{\normalfont\Medium\bfseries \gettitleind}
+                                                  \\[1cm]
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
+) [9
+
+] (./abstract_eng.tex) [10
 
 ]
 \bbl@ensure@indonesian {BAB} I.
-(./file_bab1.tex [1
+(./file_bab1.tex
+Overfull \hbox (12.29323pt too wide) in paragraph at lines 3--4
+\T1/ptm/m/n/12 pem-be-la-jar-an me-sin dan pem-be-la-jar-an pe-ngu-at-an (\T1/p
+tm/m/it/12 re-in-for-ce-ment le-ar-ning\T1/ptm/m/n/12 ). Pendekatan-
+ []
+
+[1
 
 
-]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 2
-5.
+] [2] [3]
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 7
+9.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [2] [3]) [4]
+) [4])
+[5]
 \bbl@ensure@indonesian {BAB} II.
-(./file_bab2.tex
+(./file_bab2.tex [6
 
-LaTeX Warning: Citation 'jin_achieving_2025' on page 5 undefined on input line 
-44.
-
-
-Overfull \hbox (27.36343pt too wide) in paragraph at lines 44--44
-[]|[]| 
+]
+Underfull \hbox (badness 4001) in paragraph at lines 47--47
+[]| \T1/ptm/m/n/12 Qi-ao et al.
  []
 
 
-LaTeX Warning: Citation 'gomez_grounded_2025' on page 5 undefined on input line
- 44.
-
-
-Overfull \hbox (46.64754pt too wide) in paragraph at lines 44--44
-[]|[]| 
+Underfull \hbox (badness 10000) in paragraph at lines 47--47
+[]\T1/ptm/m/n/12 2025[]; Fre-i-re
  []
 
 
-LaTeX Warning: Citation 'elhamer_effects_2020' on page 5 undefined on input lin
-e 44.
-
-
-Overfull \hbox (39.49515pt too wide) in paragraph at lines 44--44
-[]|[]| 
+Underfull \hbox (badness 10000) in paragraph at lines 47--47
+\T1/ptm/m/n/12 et al. []2023[];
  []
 
 
-LaTeX Warning: Citation 'qiao_o2m_2024' on page 5 undefined on input line 44.
-
-
-LaTeX Warning: Citation 'lv_inducing_2023' on page 5 undefined on input line 44
-.
-
-
-LaTeX Warning: Citation 'li_exploiting_2025' on page 5 undefined on input line 
-44.
-
-
-LaTeX Warning: Citation 'freire_modeling_2023' on page 5 undefined on input lin
-e 44.
-
-
-LaTeX Warning: Citation 'hu_modeling_2023' on page 5 undefined on input line 44
-.
-
-
-LaTeX Warning: Citation 'wang_achieving_2019' on page 5 undefined on input line
- 44.
-
-
-LaTeX Warning: Citation 'de_weerd_higher-order_2022' on page 5 undefined on inp
-ut line 44.
-
-
-Overfull \hbox (12.20775pt too wide) in paragraph at lines 44--44
-[]|[]\T1/ptm/m/n/12 ;
+Underfull \hbox (badness 10000) in paragraph at lines 47--47
+\T1/ptm/m/n/12 Wang et al.
  []
 
 
-Overfull \hbox (22.22723pt too wide) in paragraph at lines 44--44
-[]\T1/ptm/m/n/12 ;
+Underfull \hbox (badness 7186) in paragraph at lines 47--47
+[]| \T1/ptm/m/n/12 Zhu et al.
  []
 
-
-Overfull \hbox (25.5511pt too wide) in paragraph at lines 44--44
-[]\T1/ptm/m/n/12 ;
- []
-
-
-Overfull \hbox (43.75516pt too wide) in paragraph at lines 44--44
-[]\T1/ptm/m/n/12 ;
- []
-
-
-Overfull \hbox (28.88731pt too wide) in paragraph at lines 44--44
-[]\T1/ptm/m/n/12 ;
- []
-
-
-Overfull \hbox (44.03143pt too wide) in paragraph at lines 44--44
-[]\T1/ptm/m/n/12 ;
- []
-
-
-Overfull \hbox (79.73085pt too wide) in paragraph at lines 44--44
-[]| 
- []
-
-
-LaTeX Warning: Citation 'perera_learning_2025' on page 5 undefined on input lin
-e 44.
-
-
-Overfull \hbox (41.12738pt too wide) in paragraph at lines 44--44
-[]|[]| 
- []
-
-
-LaTeX Warning: Citation 'zhu_evolutionary_2025' on page 5 undefined on input li
-ne 44.
-
-
-Overfull \hbox (47.90742pt too wide) in paragraph at lines 44--44
-[]|[]| 
- []
-
-
-LaTeX Warning: Citation 'di_coupling_2023' on page 5 undefined on input line 44
-.
-
-
-Overfull \hbox (18.89136pt too wide) in paragraph at lines 44--44
-[]|[]| 
- []
-
-
-LaTeX Warning: Citation 'qiao_o2m_2024' on page 5 undefined on input line 58.
-
-
-LaTeX Warning: Citation 'zhu_evolutionary_2025' on page 5 undefined on input li
-ne 58.
-
-
-LaTeX Warning: Citation 'lv_inducing_2023' on page 5 undefined on input line 58
-.
-
-
-LaTeX Warning: Citation 'di_coupling_2023' on page 5 undefined on input line 58
-.
-
-
-LaTeX Warning: Citation 'perera_learning_2025' on page 5 undefined on input lin
-e 58.
-
-
-LaTeX Warning: Citation 'li_exploiting_2025' on page 5 undefined on input line 
-58.
-
-
-LaTeX Warning: Citation 'freire_modeling_2023' on page 5 undefined on input lin
-e 58.
-
-
-LaTeX Warning: Citation 'hu_modeling_2023' on page 5 undefined on input line 58
-.
-
-
-LaTeX Warning: Citation 'wang_achieving_2019' on page 5 undefined on input line
- 58.
-
-
-LaTeX Warning: Citation 'de_weerd_higher-order_2022' on page 5 undefined on inp
-ut line 58.
-
-
-Overfull \hbox (3.85567pt too wide) in paragraph at lines 58--59
-[]\T1/ptm/m/n/12 Sejumlah po-la yang kon-sis-ten mun-cul da-ri ka-te-go-ri-sa-s
-i per-i-la-ku pa-da Ta-bel []2.1[].
- []
-
-
-Overfull \hbox (44.57457pt too wide) in paragraph at lines 58--59
-\T1/ptm/m/n/12 sif ter-ha-dap agen dan me-nun-jukk-an di-ver-gen-si ak-si []; [
-];
- []
-
-
-Overfull \hbox (84.61786pt too wide) in paragraph at lines 58--59
-[]\T1/ptm/m/n/12 ; []; []; [],
- []
-
-[5
-
-] [6]
-
-LaTeX Warning: Citation 'zhu_evolutionary_2025' on page 7 undefined on input li
-ne 60.
-
-
-LaTeX Warning: Citation 'gomez_grounded_2025' on page 7 undefined on input line
- 60.
-
-
-LaTeX Warning: Citation 'di_coupling_2023' on page 7 undefined on input line 60
-.
-
-
-LaTeX Warning: Citation 'perera_learning_2025' on page 7 undefined on input lin
-e 60.
-
-
-LaTeX Warning: Citation 'elhamer_effects_2020' on page 7 undefined on input lin
-e 60.
-
-
-LaTeX Warning: Citation 'di_coupling_2023' on page 7 undefined on input line 60
-.
-
-
-Overfull \hbox (55.86594pt too wide) in paragraph at lines 60--61
-\T1/ptm/m/n/12 ca-ra ti-dak lang-sung me-la-lui di-na-mi-ka agre-gat []; [];
- []
-
-
-Overfull \hbox (8.22545pt too wide) in paragraph at lines 60--61
-\T1/ptm/m/n/12 an, di-me-di-a-si po-pu-la-si, dan res-pon-sif ter-ha-dap agen s
-e-ca-ra si-mult-an [],
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 171--171
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 116--116
 []|\T1/ptm/b/n/12 Mekanisme Pem-be-la-jar-an /
  []
 
 
-LaTeX Warning: Citation 'lv_inducing_2023' on page 7 undefined on input line 17
-1.
-
-
-Overfull \hbox (33.11774pt too wide) in paragraph at lines 171--171
-[]|[]| 
+Underfull \hbox (badness 1831) in paragraph at lines 116--116
+[]| \T1/ptm/m/n/12 Lv et al.
  []
 
 
-Underfull \hbox (badness 4726) in paragraph at lines 171--171
+Underfull \hbox (badness 4726) in paragraph at lines 116--116
 []|\T1/ptm/m/n/12 Gradient-based op-po-nent sha-
  []
 
 
-Underfull \hbox (badness 1087) in paragraph at lines 171--171
-[]|\T1/ptm/m/it/12 Gradient de-scent \T1/ptm/m/n/12 / pem-ba-ru-an
+Underfull \hbox (badness 10000) in paragraph at lines 116--116
+[]\T1/ptm/m/n/12 2024[]; Hu
  []
 
 
-LaTeX Warning: Citation 'qiao_o2m_2024' on page 7 undefined on input line 171.
-
-
-LaTeX Warning: Citation 'hu_modeling_2023' on page 7 undefined on input line 17
-1.
-
-
-LaTeX Warning: Citation 'wang_achieving_2019' on page 7 undefined on input line
- 171.
-
-
-Overfull \hbox (26.43413pt too wide) in paragraph at lines 171--171
-[]|[]\T1/ptm/m/n/12 ;
+Underfull \hbox (badness 10000) in paragraph at lines 116--116
+[]| \T1/ptm/m/n/12 Fre-i-re
  []
 
 
-Overfull \hbox (43.1137pt too wide) in paragraph at lines 171--171
-[]\T1/ptm/m/n/12 ;
+Underfull \hbox (badness 10000) in paragraph at lines 116--116
+\T1/ptm/m/n/12 De We-e-rd
  []
 
 
-Overfull \hbox (54.92194pt too wide) in paragraph at lines 171--171
-[]| 
+Underfull \hbox (badness 3333) in paragraph at lines 116--116
+[]| \T1/ptm/m/n/12 Per-e-ra et
  []
 
 
-LaTeX Warning: Citation 'freire_modeling_2023' on page 7 undefined on input lin
-e 171.
-
-
-LaTeX Warning: Citation 'de_weerd_higher-order_2022' on page 7 undefined on inp
-ut line 171.
-
-
-Overfull \hbox (57.98154pt too wide) in paragraph at lines 171--171
-[]|[]\T1/ptm/m/n/12 ;
- []
-
-
-Overfull \hbox (93.95723pt too wide) in paragraph at lines 171--171
-[]| 
- []
-
-
-Underfull \hbox (badness 6658) in paragraph at lines 171--171
-[]|\T1/ptm/m/it/12 Policy-gradient \T1/ptm/m/n/12 MARL (sam-
- []
-
-
-LaTeX Warning: Citation 'perera_learning_2025' on page 7 undefined on input lin
-e 171.
-
-
-Overfull \hbox (55.35376pt too wide) in paragraph at lines 171--171
-[]|[]| 
- []
-
-
-Underfull \hbox (badness 2073) in paragraph at lines 171--171
+Underfull \hbox (badness 2073) in paragraph at lines 116--116
 []|\T1/ptm/m/n/12 Evolutionary po-pu-la-tion dyna-
  []
 
 
-LaTeX Warning: Citation 'zhu_evolutionary_2025' on page 7 undefined on input li
-ne 171.
-
-
-LaTeX Warning: Citation 'di_coupling_2023' on page 7 undefined on input line 17
-1.
-
-
-LaTeX Warning: Citation 'elhamer_effects_2020' on page 7 undefined on input lin
-e 171.
-
-
-Overfull \hbox (65.46968pt too wide) in paragraph at lines 171--171
-[]|[]\T1/ptm/m/n/12 ;
+Underfull \hbox (badness 10000) in paragraph at lines 116--116
+[]\T1/ptm/m/n/12 2025[]; Di
  []
 
 
-Overfull \hbox (36.45361pt too wide) in paragraph at lines 171--171
-[]\T1/ptm/m/n/12 ;
+Underfull \hbox (badness 10000) in paragraph at lines 116--116
+\T1/ptm/m/n/12 El-ha-mer
  []
 
 
-Overfull \hbox (53.72153pt too wide) in paragraph at lines 171--171
-[]| 
+Underfull \hbox (badness 3068) in paragraph at lines 116--116
+[]| \T1/ptm/m/n/12 Li et al.
  []
 
 
-Underfull \hbox (badness 3965) in paragraph at lines 171--171
-[]|\T1/ptm/m/it/12 Multi-armed ban-dit \T1/ptm/m/n/12 / \T1/ptm/m/it/12 smo-o-t
-h
- []
-
-
-LaTeX Warning: Citation 'gomez_grounded_2025' on page 7 undefined on input line
- 171.
-
-
-Overfull \hbox (60.87392pt too wide) in paragraph at lines 171--171
-[]|[]| 
- []
-
-
-LaTeX Warning: Citation 'li_exploiting_2025' on page 7 undefined on input line 
-171.
-
-
-Overfull \hbox (36.4416pt too wide) in paragraph at lines 171--171
-[]|[]| 
- []
-
-
-Underfull \hbox (badness 8170) in paragraph at lines 171--171
+Underfull \hbox (badness 8170) in paragraph at lines 116--116
 []|\T1/ptm/m/n/12 Communication-driven co-o-rdi-
  []
 
 
-LaTeX Warning: Citation 'jin_achieving_2025' on page 7 undefined on input line 
-171.
-
-
-Overfull \hbox (41.58981pt too wide) in paragraph at lines 171--171
-[]|[]| 
+Underfull \hbox (badness 1584) in paragraph at lines 116--116
+[]| \T1/ptm/m/n/12 Jin et al.
  []
 
 
-LaTeX Warning: Citation 'qiao_o2m_2024' on page 7 undefined on input line 174.
-
-
-LaTeX Warning: Citation 'hu_modeling_2023' on page 7 undefined on input line 17
-4.
-
-
-LaTeX Warning: Citation 'wang_achieving_2019' on page 7 undefined on input line
- 174.
-
-
-LaTeX Warning: Citation 'freire_modeling_2023' on page 7 undefined on input lin
-e 174.
-
-
-LaTeX Warning: Citation 'de_weerd_higher-order_2022' on page 7 undefined on inp
-ut line 174.
-
-
-LaTeX Warning: Citation 'li_exploiting_2025' on page 7 undefined on input line 
-174.
-
-
-LaTeX Warning: Citation 'lv_inducing_2023' on page 7 undefined on input line 17
-4.
-
-
-LaTeX Warning: Citation 'perera_learning_2025' on page 7 undefined on input lin
-e 174.
-
-
-LaTeX Warning: Citation 'zhu_evolutionary_2025' on page 7 undefined on input li
-ne 174.
-
-
-LaTeX Warning: Citation 'di_coupling_2023' on page 7 undefined on input line 17
-4.
-
-
-LaTeX Warning: Citation 'elhamer_effects_2020' on page 7 undefined on input lin
-e 174.
-
-
-LaTeX Warning: Citation 'gomez_grounded_2025' on page 7 undefined on input line
- 174.
-
-
-Overfull \hbox (10.33795pt too wide) in paragraph at lines 174--175
-\T1/ptm/m/n/12 ser-ta \T1/ptm/m/it/12 bandit-based learning-in-games []\T1/ptm/
-m/n/12 , ber-a-dap-ta-si tan-pa mem-
+Overfull \hbox (1.31158pt too wide) in paragraph at lines 119--120
+[]\T1/ptm/m/n/12 Pendekatan-pendekatan ter-se-but da-pat di-be-dak-an le-bih la
+n-jut ber-da-sark-an apa-
  []
 
-[7] [8]
+[8] [9] [10]
 
-LaTeX Warning: Citation 'qiao_o2m_2024' on page 9 undefined on input line 216.
+LaTeX Warning: Float too large for page by 95.17113pt on input line 167.
 
-
-LaTeX Warning: Citation 'zhu_evolutionary_2025' on page 9 undefined on input li
-ne 216.
-
-
-LaTeX Warning: Citation 'lv_inducing_2023' on page 9 undefined on input line 21
-6.
-
-
-LaTeX Warning: Citation 'gomez_grounded_2025' on page 9 undefined on input line
- 216.
-
-
-LaTeX Warning: Citation 'di_coupling_2023' on page 9 undefined on input line 21
-6.
-
-
-LaTeX Warning: Citation 'perera_learning_2025' on page 9 undefined on input lin
-e 216.
-
-
-LaTeX Warning: Citation 'li_exploiting_2025' on page 9 undefined on input line 
-216.
-
-
-LaTeX Warning: Citation 'freire_modeling_2023' on page 9 undefined on input lin
-e 216.
-
-
-LaTeX Warning: Citation 'hu_modeling_2023' on page 9 undefined on input line 21
-6.
-
-
-LaTeX Warning: Citation 'elhamer_effects_2020' on page 9 undefined on input lin
-e 216.
-
-
-LaTeX Warning: Citation 'wang_achieving_2019' on page 9 undefined on input line
- 216.
-
-
-LaTeX Warning: Citation 'jin_achieving_2025' on page 9 undefined on input line 
-216.
-
-
-LaTeX Warning: Citation 'de_weerd_higher-order_2022' on page 9 undefined on inp
-ut line 216.
-
-
-LaTeX Warning: Float too large for page by 223.3382pt on input line 217.
-
-
-LaTeX Warning: Citation 'di_coupling_2023' on page 9 undefined on input line 21
-9.
-
-
-LaTeX Warning: Citation 'elhamer_effects_2020' on page 9 undefined on input lin
-e 219.
-
-
-LaTeX Warning: Citation 'wang_achieving_2019' on page 9 undefined on input line
- 219.
-
-
-LaTeX Warning: Citation 'jin_achieving_2025' on page 9 undefined on input line 
-219.
-
-
-LaTeX Warning: Citation 'lv_inducing_2023' on page 9 undefined on input line 21
-9.
-
-
-LaTeX Warning: Citation 'perera_learning_2025' on page 9 undefined on input lin
-e 219.
-
-
-LaTeX Warning: Citation 'li_exploiting_2025' on page 9 undefined on input line 
-219.
-
-
-LaTeX Warning: Citation 'wang_achieving_2019' on page 9 undefined on input line
- 219.
-
-
-LaTeX Warning: Citation 'de_weerd_higher-order_2022' on page 9 undefined on inp
-ut line 219.
-
-
-LaTeX Warning: Citation 'gomez_grounded_2025' on page 9 undefined on input line
- 219.
-
-
-LaTeX Warning: Citation 'hu_modeling_2023' on page 9 undefined on input line 21
-9.
-
-
-LaTeX Warning: Citation 'jin_achieving_2025' on page 9 undefined on input line 
-219.
-
-
-Overfull \hbox (41.75385pt too wide) in paragraph at lines 219--220
-\T1/ptm/m/n/12 rata []; []; []; [];
- []
-
-
-Overfull \hbox (51.96608pt too wide) in paragraph at lines 219--220
-[]\T1/ptm/m/n/12 , ser-ta kon-ver-gen-si me-nu-ju equ-i-li-bri-um [];
- []
-
-
-LaTeX Warning: Citation 'qiao_o2m_2024' on page 9 undefined on input line 221.
-
-[9] [10]) [11] [12]
+[11] [12] [13]) [14]
 \bbl@ensure@indonesian {BAB} III.
-(./file_bab3.tex) [13
+(./file_bab3.tex [15
 
-]
+] [16] [17] [18] [19]) [20]
 \bbl@ensure@indonesian {BAB} IV.
-(./file_bab4.tex) [14
+(./file_bab4.tex) [21
 
 ]
 \bbl@ensure@indonesian {BAB} V.
-(./file_bab5.tex) [15
+(./file_bab5.tex) [22
 
 ]
 \bbl@ensure@indonesian {BAB} VI.
-(./file_bab6.tex) [16
+(./file_bab6.tex) [23
 
 ]
 
-LaTeX Warning: Empty bibliography on input line 192.
+Package biblatex Warning: Name format 'last-first' deprecated.
+(biblatex)                Please use 'family-given' instead.
+(biblatex)                Using 'family-given' now.
 
-[17
+[24
 
-] (./hasil_eksperimen.tex)
+] [25] (./hasil_eksperimen.tex)
 
-Package caption Warning: Unused \captionsetup[figure] on input line 20.
+Package caption Warning: Unused \captionsetup[figure] on input line 40.
 See the caption package documentation for explanation.
 
-[18
+[26
 
 
 ] (./index.aux)
@@ -2453,40 +2027,33 @@ See the caption package documentation for explanation.
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `index.out' has not changed.
-(rerunfilecheck)             Checksum: B4F4EABF6B0DCDD5C85443BEF141A377;4487.
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                index
-(biblatex)                and rerun LaTeX afterwards.
-
+(rerunfilecheck)             Checksum: 6D3BFF02BB8313595FE3E2C842BF3298;7508.
 Package logreq Info: Writing requests to 'index.run.xml'.
 \openout1 = `index.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43608 strings out of 475597
- 859236 string characters out of 5783339
- 1941975 words of memory out of 5000000
- 64885 multiletter control sequences out of 15000+600000
+ 43894 strings out of 475597
+ 866552 string characters out of 5783339
+ 1942975 words of memory out of 5000000
+ 65124 multiletter control sequences out of 15000+600000
  592688 words of font info for 87 fonts, out of 8000000 for 9000
  309 hyphenation exceptions out of 8191
- 125i,12n,121p,1907b,1276s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 125i,12n,121p,1997b,1799s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr
-8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on index.pdf (27 pages, 196714 bytes).
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utm
+bi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on index.pdf (36 pages, 245412 bytes).
 PDF statistics:
- 342 PDF objects out of 1000 (max. 8388607)
- 292 compressed objects within 3 object streams
- 70 named destinations out of 1000 (max. 500000)
- 218 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 649 PDF objects out of 1000 (max. 8388607)
+ 505 compressed objects within 6 object streams
+ 117 named destinations out of 1000 (max. 500000)
+ 322 words of extra memory for PDF output out of 10000 (max. 10000000)
 

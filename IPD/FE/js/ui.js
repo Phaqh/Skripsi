@@ -1,6 +1,8 @@
 import { stepGame, dummyOpponent } from './game.js';
 import { updateStateView } from './ui_state.js';
 import { updatePlots } from './viz.js';
+import { updateActionPlot } from './viz.js';
+
 
 export function bindUI({ state, reset }) {
 
@@ -17,7 +19,9 @@ export function bindUI({ state, reset }) {
   function doStep(playerAction) {
     const opponentAction = dummyOpponent(state.history);
     stepGame(state, playerAction, opponentAction);
+
     updateStateView(state);
     updatePlots(state);
+    updateActionPlot(state);
   }
 }

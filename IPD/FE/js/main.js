@@ -5,9 +5,18 @@ import { initPlots } from './viz.js';
 let state = initState();
 
 function reset() {
-  state = initState();
+  const newState = initState();
+
+  Object.keys(newState).forEach(key => {
+    state[key] = newState[key];
+  });
+
   initPlots();
 }
 
-bindUI({ state, reset });
+bindUI({ 
+  getState: () => state,
+  reset
+});
+
 initPlots();

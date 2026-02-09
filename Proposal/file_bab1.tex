@@ -1,57 +1,90 @@
 \section{Latar Belakang}
-Perkembangan kecerdasan buatan (Artificial Intelligence/AI) dalam beberapa dekade terakhir menunjukkan peningkatan signifikan, khususnya pada metode pembelajaran mesin dan pembelajaran penguatan (reinforcement learning). Sistem AI semakin banyak digunakan untuk mengambil keputusan secara otonom dalam lingkungan yang dinamis dan interaktif. Salah satu konteks yang sering digunakan untuk mempelajari pengambilan keputusan strategis adalah permainan berulang (iterated games), seperti \textit{Iterated Prisoner’s Dilemma} (IPD). IPD menyediakan kerangka formal yang sederhana namun kaya untuk menganalisis perilaku kooperatif, kompetitif, dan adaptif antar agen.
 
-Dalam skenario IPD, performa suatu agen sangat dipengaruhi oleh kemampuannya memahami dan memprediksi perilaku lawan. Oleh karena itu, pemodelan lawan (opponent modelling) menjadi komponen penting dalam perancangan agen cerdas. Pemodelan lawan bertujuan untuk membangun representasi atau estimasi kebijakan lawan berdasarkan riwayat interaksi, sehingga agen dapat menyesuaikan strateginya secara adaptif. Berbagai pendekatan telah diusulkan, mulai dari model probabilistik sederhana hingga model berbasis pembelajaran mesin dan jaringan saraf.
+Perkembangan kecerdasan buatan (\textit{Artificial Intelligence}/AI) dalam beberapa dekade terakhir menunjukkan kemajuan yang signifikan, khususnya dalam bidang pembelajaran mesin dan pembelajaran penguatan (\textit{reinforcement learning}). Pendekatan-pendekatan tersebut memungkinkan agen cerdas untuk mempelajari pengambilan keputusan secara otonom melalui interaksi berulang dengan lingkungan yang bersifat dinamis dan tidak pasti. Salah satu kerangka yang banyak digunakan untuk mengkaji pengambilan keputusan strategis dan interaksi antar agen adalah permainan berulang (\textit{iterated games}), seperti \textit{Iterated Prisoner's Dilemma} (IPD). Meskipun memiliki struktur yang sederhana, IPD mampu merepresentasikan dinamika kerja sama, kompetisi, serta adaptasi strategi yang kompleks.
 
-Namun, banyak pendekatan pemodelan lawan modern bersifat \textit{black-box}, sehingga sulit untuk dipahami, dianalisis, dan dipercaya. Kurangnya transparansi ini menjadi permasalahan tersendiri, terutama ketika model digunakan untuk tujuan analisis ilmiah atau pengambilan keputusan yang membutuhkan justifikasi. Hal ini mendorong berkembangnya bidang \textit{Explainable Artificial Intelligence} (XAI), yang berfokus pada pengembangan model dan metode yang tidak hanya akurat, tetapi juga dapat dijelaskan.
+Dalam skenario IPD, kinerja suatu agen tidak hanya ditentukan oleh kebijakan yang dimilikinya, tetapi juga oleh kemampuannya dalam memahami dan mengantisipasi perilaku lawan. Oleh karena itu, pemodelan lawan (\textit{opponent modelling}) menjadi komponen penting dalam perancangan agen cerdas. Pemodelan lawan bertujuan membangun representasi perilaku atau kecenderungan strategi lawan berdasarkan riwayat interaksi, sehingga agen dapat menyesuaikan tindakannya secara adaptif. Berbagai pendekatan pemodelan lawan telah diusulkan, mulai dari strategi berbasis aturan hingga metode pembelajaran yang memanfaatkan ketergantungan temporal antar aksi.
 
-Salah satu model yang berpotensi digunakan dalam pemodelan lawan yang relatif lebih terstruktur adalah \textit{Nonlinear AutoRegressive with eXogenous input} (NARX). Model NARX memanfaatkan hubungan temporal antara keluaran masa lalu dan masukan eksternal (eksogen) untuk memprediksi keluaran di masa depan. Dalam konteks IPD, tindakan lawan pada langkah sebelumnya dapat dipandang sebagai sinyal temporal, sementara tindakan agen sendiri dapat diperlakukan sebagai masukan eksogen. Struktur ini membuka peluang untuk melakukan analisis kausal dan interpretasi terhadap pengaruh riwayat interaksi terhadap prediksi perilaku lawan.
+Dalam kerangka pembelajaran penguatan, pemodelan lawan sering kali diintegrasikan secara langsung ke dalam proses pembelajaran kebijakan agen. Pendekatan terintegrasi ini umumnya menggabungkan proses pengumpulan data, pembaruan model lawan, dan pembelajaran kebijakan dalam satu siklus pembelajaran tertutup. Meskipun efektif dalam beberapa kondisi, pendekatan tersebut menyulitkan analisis terhadap kontribusi masing-masing komponen, khususnya ketika jumlah interaksi terbatas atau data observasi bersifat terbatas. Dalam kondisi tersebut, sulit untuk memisahkan apakah peningkatan kinerja agen disebabkan oleh kualitas pemodelan lawan atau oleh mekanisme pembelajaran kebijakan itu sendiri.
 
-Selain isu keterjelasan, pemodelan lawan dalam IPD juga menghadapi keterbatasan praktis, seperti horizon interaksi yang terbatas. Dalam banyak studi teoretis, agen diasumsikan berinteraksi dalam horizon tak terbatas, sementara dalam praktik (dan eksperimen), jumlah iterasi sering kali dibatasi. Keterbatasan horizon ini memengaruhi kualitas pembelajaran, kemampuan generalisasi model, serta evaluasi kinerja pemodelan lawan. Oleh karena itu, diperlukan kajian yang secara eksplisit mempertimbangkan keterbatasan horizon dalam perancangan dan evaluasi model.
+Selain itu, pemodelan lawan dalam permainan berulang juga menghadapi tantangan praktis terkait horizon interaksi. Banyak kajian teoretis mengasumsikan horizon interaksi tak terbatas, sementara dalam praktik simulasi dan eksperimen, interaksi sering kali dibatasi oleh jumlah iterasi tertentu atau bersifat stokastik. Horizon interaksi yang terbatas berdampak pada jumlah data yang tersedia untuk mempelajari perilaku lawan, kestabilan estimasi model, serta reliabilitas evaluasi kinerja agen. Kesalahan prediksi pada fase awal interaksi dapat memberikan pengaruh yang tidak proporsional terhadap hasil keseluruhan permainan.
 
-Berdasarkan uraian tersebut, penelitian ini mengusulkan penggunaan model NARX untuk pemodelan lawan pada permainan Iterated Prisoner’s Dilemma dengan horizon terbatas, serta menganalisis aspek keterjelasan (explainability) dari model yang dihasilkan. Diharapkan penelitian ini dapat memberikan kontribusi dalam memahami trade-off antara performa prediksi, keterbatasan interaksi, dan keterjelasan model dalam konteks pemodelan lawan.
+Berdasarkan kondisi tersebut, diperlukan pendekatan pemodelan lawan yang mampu merepresentasikan ketergantungan temporal perilaku lawan secara eksplisit, sekaligus memungkinkan analisis yang terkontrol terhadap pengaruh kualitas pemodelan tersebut terhadap kinerja agen. Salah satu cara pandang yang relevan adalah memformulasikan pemodelan lawan sebagai permasalahan prediksi deret waktu, di mana perilaku lawan dipelajari dari riwayat interaksi tanpa harus terikat secara langsung pada pembaruan kebijakan agen.
+
+Penelitian ini berangkat dari kebutuhan tersebut dengan mengkaji pemodelan lawan dalam permainan \textit{Iterated Prisoner's Dilemma} pada skenario interaksi dengan horizon terbatas. Fokus penelitian diarahkan pada hubungan antara kualitas pemodelan perilaku lawan, keterbatasan interaksi, dan kinerja agen dalam kerangka pembelajaran berbasis evaluasi. Tinjauan pustaka pada bab selanjutnya akan membahas secara lebih rinci pendekatan-pendekatan pemodelan lawan yang telah ada, asumsi yang digunakan, serta keterbatasannya sebagai dasar perumusan metode penelitian.
 
 \section{Rumusan Masalah}
-Berdasarkan latar belakang yang telah diuraikan, rumusan masalah dalam penelitian ini adalah sebagai berikut:
+
+Berdasarkan latar belakang yang telah diuraikan, permasalahan yang dikaji dalam penelitian ini dirumuskan sebagai berikut:
+
 \begin{enumerate}
-\item Bagaimana merancang model pemodelan lawan pada Iterated Prisoner’s Dilemma menggunakan pendekatan NARX dengan horizon interaksi terbatas?
-\item Sejauh mana model NARX mampu memprediksi perilaku lawan secara akurat dalam kondisi horizon terbatas?
-\item Bagaimana aspek keterjelasan (explainability) dari model NARX dapat dianalisis dan disajikan dalam konteks pemodelan lawan?
+    \item Bagaimana pengaruh pemisahan (\textit{decoupling}) proses pengumpulan data pemodelan lawan dari pembelajaran kebijakan aktor terhadap kualitas pemodelan lawan dan kinerja agen?
+    
+    \item Bagaimana perbedaan karakteristik horizon terbatas dengan panjang tetap (\textit{fixed horizon}) dan horizon terbatas yang bersifat stokastik (\textit{stochastic horizon}) memengaruhi stabilitas dan akurasi pemodelan lawan berbasis NARX?
+    
+    \item Sejauh mana kualitas pemodelan lawan yang dihasilkan oleh \textit{critic} NARX berkorelasi dengan kinerja agen aktor dalam kerangka \textit{actor--critic} pada kondisi interaksi yang terbatas?
 \end{enumerate}
 
 \section{Batasan Masalah}
-Untuk menjaga fokus dan ketercapaian penelitian, batasan masalah yang diterapkan adalah sebagai berikut:
-\begin{itemize}
-\item Lingkungan yang digunakan adalah permainan Iterated Prisoner’s Dilemma dua pemain.
-\item Pemodelan lawan dilakukan dari sudut pandang satu agen terhadap satu lawan.
-\item Horizon interaksi dibatasi pada jumlah iterasi tertentu yang telah ditetapkan dalam eksperimen.
-\item Model yang digunakan untuk pemodelan lawan dibatasi pada pendekatan NARX.
-\item Evaluasi keterjelasan model dilakukan tanpa melibatkan subjek manusia secara langsung.
-\end{itemize}
+
+Agar penelitian ini terfokus dan memiliki ruang lingkup yang jelas, maka ditetapkan beberapa batasan masalah sebagai berikut:
+
+\begin{enumerate}
+    \item Permainan yang dikaji dalam penelitian ini dibatasi pada \textit{Iterated Prisoner's Dilemma} (IPD) dengan struktur payoff standar, tanpa mempertimbangkan variasi payoff atau bentuk permainan sosial lainnya.
+    
+    \item Interaksi dalam permainan dibatasi pada skenario dua agen (\textit{dyadic interaction}), sehingga interaksi multi-agen atau interaksi kelompok tidak menjadi bagian dari kajian.
+    
+    \item Pemodelan lawan dilakukan berdasarkan riwayat aksi dalam permainan, dengan asumsi observasi sempurna terhadap aksi lawan, tanpa mempertimbangkan mekanisme komunikasi eksplisit, negosiasi, atau pertukaran informasi di luar aksi permainan.
+    
+    \item Penelitian ini memfokuskan kajian pada perilaku lawan yang bersifat adaptif dan bergantung pada riwayat interaksi, tanpa mengasumsikan kemampuan prediksi sempurna atau perilaku rasional global dari lawan.
+    
+    \item Evaluasi dilakukan pada interaksi dengan horizon terbatas, tanpa mempertimbangkan skenario horizon tak terbatas atau analisis keseimbangan jangka panjang.
+    
+    \item Fokus evaluasi dibatasi pada kualitas pemodelan perilaku lawan dan dampaknya terhadap kinerja agen aktor dalam permainan, tanpa membahas aspek optimalitas global, efisiensi komputasi, maupun generalisasi ke domain permainan lain.
+\end{enumerate}
+
+
 
 \section{Tujuan Penelitian}
-Tujuan dari penelitian ini adalah:
+
+Penelitian ini bertujuan untuk:
+
 \begin{enumerate}
-\item Merancang dan mengimplementasikan model NARX untuk pemodelan lawan pada Iterated Prisoner’s Dilemma dengan horizon terbatas.
-\item Mengevaluasi kinerja prediksi model NARX terhadap perilaku lawan.
-\item Menganalisis dan menyajikan aspek keterjelasan model NARX dalam konteks pemodelan lawan.
+    \item Menganalisis kinerja model \textit{Nonlinear AutoRegressive with eXogenous input} (NARX) ketika digunakan sebagai \textit{critic} untuk pemodelan lawan pada permainan \textit{Iterated Prisoner’s Dilemma} dengan horizon interaksi terbatas.
+    
+    \item Mengkaji pengaruh pemisahan (\textit{decoupling}) proses pengumpulan data pemodelan lawan dari pembelajaran kebijakan aktor terhadap kualitas pemodelan lawan.
+    
+    \item Menganalisis dampak perbedaan karakteristik horizon terbatas, yaitu horizon dengan panjang tetap (\textit{fixed horizon}) dan horizon terbatas yang bersifat stokastik (\textit{stochastic horizon}), terhadap stabilitas dan akurasi pemodelan lawan berbasis NARX\@.
+    
+    \item Mengidentifikasi hubungan antara kualitas pemodelan lawan yang dihasilkan oleh \textit{critic} NARX dan kinerja agen aktor dalam kerangka \textit{actor--critic} pada kondisi interaksi yang terbatas.
 \end{enumerate}
 
 \section{Manfaat Penelitian}
-Manfaat yang diharapkan dari penelitian ini antara lain:
-\begin{itemize}
-\item Memberikan kontribusi akademik dalam kajian pemodelan lawan dan explainable AI pada permainan berulang.
-\item Menjadi referensi bagi penelitian selanjutnya yang mengkaji pemodelan lawan dengan keterbatasan interaksi.
-\item Memberikan pemahaman yang lebih baik mengenai penggunaan model NARX sebagai alternatif model yang lebih dapat dijelaskan.
-\end{itemize}
+
+Manfaat yang diharapkan dari penelitian ini adalah sebagai berikut:
+
+\begin{enumerate}
+    \item Memberikan pemahaman empiris mengenai penggunaan model deret waktu berbasis NARX sebagai \textit{critic} dalam pemodelan lawan pada permainan berulang dengan horizon interaksi terbatas.
+    
+    \item Menyediakan kerangka analisis yang lebih terkontrol untuk mengkaji pengaruh kualitas pemodelan lawan terhadap kinerja agen aktor melalui pendekatan pemisahan (\textit{decoupling}) proses pengumpulan data dan pembelajaran kebijakan.
+    
+    \item Menjadi referensi bagi penelitian selanjutnya yang mengkaji pemodelan lawan atau pembelajaran multi-agen pada kondisi data dan interaksi yang terbatas, khususnya dalam konteks permainan sosial sederhana.
+    
+    \item Memberikan kontribusi metodologis dalam perancangan dan evaluasi agen berbasis \textit{actor--critic}, khususnya terkait pemanfaatan model eksplisit sebagai komponen evaluasi (\textit{critic}).
+\end{enumerate}
 
 \section{Sistematika Penulisan}
-Sistematika penulisan skripsi ini adalah sebagai berikut:
+
+Sistematika penulisan skripsi ini disusun sebagai berikut:
 \begin{itemize}
-\item Bab I Pendahuluan, berisi latar belakang, rumusan masalah, batasan masalah, tujuan penelitian, manfaat penelitian, dan sistematika penulisan.
-\item Bab II Tinjauan Pustaka, membahas penelitian-penelitian terkait yang relevan dengan topik pemodelan lawan, Iterated Prisoner’s Dilemma, dan explainable AI.
-\item Bab III Landasan Teori, menjelaskan konsep dan teori yang mendasari penelitian, termasuk IPD, pemodelan lawan, dan model NARX.
-\item Bab IV Analisis dan Perancangan, memaparkan analisis masalah serta perancangan sistem dan metode yang digunakan.
-\item Bab V Hasil dan Pembahasan, menyajikan hasil eksperimen dan pembahasan terhadap temuan penelitian.
-\item Bab VI Kesimpulan dan Saran, berisi kesimpulan penelitian serta saran untuk pengembangan penelitian selanjutnya.
+    \item Bab I Pendahuluan, berisi latar belakang penelitian, rumusan masalah, batasan masalah, tujuan penelitian, manfaat penelitian, serta sistematika penulisan.
+    
+    \item Bab II Tinjauan Pustaka, membahas penelitian-penelitian terdahulu yang relevan dengan permainan \textit{Iterated Prisoner’s Dilemma}, pemodelan lawan (\textit{opponent modelling}), serta pendekatan pemodelan perilaku lawan dalam kerangka pembelajaran multi-agen.
+    
+    \item Bab III Landasan Teori, menjelaskan konsep dan teori yang mendasari penelitian, meliputi permainan \textit{Iterated Prisoner’s Dilemma}, pemodelan lawan, kerangka \textit{actor--critic}, serta model \textit{Nonlinear AutoRegressive with eXogenous input} (NARX).
+    
+    \item Bab IV Metodologi Penelitian, memaparkan perancangan metode penelitian, termasuk skema pengumpulan data secara terpisah (\textit{decoupled}), perancangan \textit{critic} berbasis NARX, skenario horizon terbatas, serta prosedur evaluasi yang digunakan.
+    
+    \item Bab V Hasil dan Pembahasan, menyajikan hasil eksperimen yang diperoleh serta pembahasan mengenai kinerja pemodelan lawan dan dampaknya terhadap kinerja agen aktor.
+    
+    \item Bab VI Kesimpulan dan Saran, berisi kesimpulan yang diperoleh dari hasil penelitian serta saran untuk pengembangan penelitian selanjutnya.
 \end{itemize}

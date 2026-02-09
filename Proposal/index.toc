@@ -9,19 +9,33 @@
 \contentsline {chapter}{\numberline {I}PENDAHULUAN}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Latar Belakang}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Rumusan Masalah}{2}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Batasan Masalah}{2}{section.1.3}%
+\contentsline {section}{\numberline {1.3}Batasan Masalah}{3}{section.1.3}%
 \contentsline {section}{\numberline {1.4}Tujuan Penelitian}{3}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Manfaat Penelitian}{3}{section.1.5}%
-\contentsline {section}{\numberline {1.6}Sistematika Penulisan}{3}{section.1.6}%
-\contentsline {chapter}{\numberline {II}TINJAUAN PUSTAKA}{5}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Synthesis / Discussion}{5}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Asumsi perilaku lawan apa saja yang digunakan dalam \textit {opponent modelling} untuk \textit {Repeated Games}?}{5}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Pendekatan metodologis apa saja dalam \textit {opponent modelling} yang telah diterapkan pada \textit {Repeated Games}?}{7}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Bagaimana efektivitas strategi opponent modelling dievaluasi dalam \textit {Repeated Games}?}{9}{subsection.2.1.3}%
-\contentsline {section}{\numberline {2.2}Kesimpulan}{11}{section.2.2}%
-\contentsline {chapter}{\numberline {III}LANDASAN TEORI}{13}{chapter.3}%
-\contentsline {chapter}{\numberline {IV}ANALISIS DAN PERANCANGAN}{14}{chapter.4}%
-\contentsline {chapter}{\numberline {V}HASIL DAN PEMBAHASAN}{15}{chapter.5}%
-\contentsline {chapter}{\numberline {VI}KESIMPULAN DAN SARAN}{16}{chapter.6}%
-\contentsline {chapter}{DAFTAR PUSTAKA}{17}{section*.17}%
-\contentsline {chapter}{LAMPIRAN}{18}{chapter*.19}%
+\contentsline {section}{\numberline {1.5}Manfaat Penelitian}{4}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Sistematika Penulisan}{5}{section.1.6}%
+\contentsline {chapter}{\numberline {II}TINJAUAN PUSTAKA}{6}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Synthesis / Discussion}{6}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Asumsi perilaku lawan dalam \textit {opponent modelling} untuk \textit {Repeated Games}}{6}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Pendekatan metodologis dalam \textit {opponent modelling} untuk \textit {Repeated Games}}{8}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Bagaimana efektivitas strategi \textit {opponent modelling} dievaluasi dalam \textit {Repeated Games}?}{10}{subsection.2.1.3}%
+\contentsline {section}{\numberline {2.2}Kesimpulan}{13}{section.2.2}%
+\contentsline {chapter}{\numberline {III}LANDASAN TEORI}{15}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Dilema Sosial dalam Game Multi-Agen}{15}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Prisonner's Dilemma}{15}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Multi-agent system}{15}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Game Theory sebagai Model Matematika Interaksi Strategis}{15}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Repeated Game dan Ketergantungan Temporal}{16}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}History dependent-strategies dalam Repeated Game}{16}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Perkembangan lawan}{16}{subsection.3.3.2}%
+\contentsline {section}{\numberline {3.4}Pemodelan Lawan}{16}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Pendekatan Reinforcement Learning dalam Repeated Game}{16}{subsection.3.4.1}%
+\contentsline {subsubsection}{Keterbatasan Reinforcement Learning untuk Opponent Modeling}{17}{section*.17}%
+\contentsline {section}{\numberline {3.5}Opponent Modeling sebagai Pemodelan Time Series}{17}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Evolusi Model Prediktif: AR, ANN, ARX, dan NARX}{17}{subsection.3.5.1}%
+\contentsline {section}{\numberline {3.6}Evaluasi Model Prediksi Perilaku Lawan}{19}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Keterbatasan Prediksi Global pada Horizon Panjang}{19}{subsection.3.6.1}%
+\contentsline {chapter}{\numberline {IV}ANALISIS DAN PERANCANGAN}{21}{chapter.4}%
+\contentsline {chapter}{\numberline {V}HASIL DAN PEMBAHASAN}{22}{chapter.5}%
+\contentsline {chapter}{\numberline {VI}KESIMPULAN DAN SARAN}{23}{chapter.6}%
+\contentsline {chapter}{DAFTAR PUSTAKA}{24}{section*.18}%
+\contentsline {chapter}{LAMPIRAN}{26}{chapter*.20}%

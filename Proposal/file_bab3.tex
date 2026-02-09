@@ -1,0 +1,228 @@
+\section {Dilema Sosial dalam Game Multi-Agen}
+\label{sec:dilema_sosial_game}
+
+Dilema sosial merupakan situasi di mana kepentingan individu
+tidak selalu sejalan dengan kepentingan kolektif.
+Dalam konteks game multi-agen,
+setiap agen mengambil keputusan yang dapat memengaruhi
+hasil yang diterima oleh agen lain.
+
+Fenomena dilema sosial banyak ditemukan
+dalam game berulang,
+di mana interaksi antar agen bersifat strategis
+dan bergantung pada perilaku lawan.
+
+\subsection{Prisonner's Dilemma}
+Prisonners' dilemma merupakan contoh klasik dari dilema sosial dalam teori permainan. Dalam permainan ini, dua tahanan dihadapkan pada pilihan untuk bekerja sama atau mengkhianati satu sama lain. Jika kedua tahanan bekerja sama, mereka menerima hukuman ringan. Namun, jika salah satu mengkhianati yang lain sementara yang lain tetap diam, pengkhianat akan dibebaskan sementara yang diam menerima hukuman berat. Jika keduanya mengkhianati, keduanya menerima hukuman sedang. Meskipun kerjasama memberikan hasil terbaik secara kolektif, rasionalitas individu sering kali mendorong mereka untuk mengkhianati, menciptakan dilema sosial.
+
+\subsection{Multi-agent system}
+Dalam sistem multi-agen, sejumlah agen otonom berinteraksi dalam lingkungan yang sama. Setiap agen memiliki tujuan dan strategi sendiri, yang dapat saling mempengaruhi. Interaksi ini sering kali melibatkan dilema sosial, di mana keputusan satu agen dapat berdampak pada hasil yang diterima oleh agen lain. Studi tentang sistem multi-agen mencakup analisis perilaku kolektif, koordinasi, dan kompetisi antar agen dalam konteks game teori.
+% Tambahkan:
+% - Prisoner's Dilemma, Social Dilemma
+% - Multi-agent interaction
+
+% =========================================================
+\section {Game Theory sebagai Model Matematika Interaksi Strategis}
+\label{sec:game_theory_model}
+
+Oleh karena itu, dilema sosial dalam game
+dimodelkan menggunakan kerangka matematika
+\textit{game theory}.
+Game theory menyediakan representasi formal
+terhadap agen, ruang aksi,
+serta struktur payoff
+yang mendefinisikan hasil interaksi strategis.
+
+Pendekatan ini memungkinkan analisis
+perilaku agen secara sistematis
+berdasarkan aturan permainan yang didefinisikan.
+
+
+% Tambahkan:
+% - Agent, action, payoff
+% - Static vs dynamic games
+
+% =========================================================
+\section {Repeated Game dan Ketergantungan Temporal}
+\label{sec:repeated_game}
+
+Namun, banyak game dengan dilema sosial
+tidak berlangsung sebagai interaksi satu kali,
+melainkan sebagai interaksi berulang.
+Dalam repeated game,
+keputusan agen pada satu iterasi
+dipengaruhi oleh hasil interaksi sebelumnya.
+
+Oleh karena itu, konsep \textit{repeated game}
+digunakan untuk merepresentasikan dinamika strategi
+yang berkembang seiring waktu
+dan bergantung pada riwayat interaksi.
+
+\subsection{History dependent-strategies dalam Repeated Game}
+Dalam repeated game,
+strategi yang diadopsi oleh agen
+sering kali bergantung pada
+riwayat tindakan sebelumnya.
+Strategi semacam ini
+dikenal sebagai \textit{history-dependent strategies}.
+Contohnya termasuk strategi \textit{tit-for-tat}, \textit{Grim}, dll.
+
+\subsection{Perkembangan lawan}
+lawan sederhana sampai kompleks, menentukan strategi tidak  lagi hanya dengan memperhatikan tindakan sebelumnya, tetapi juga dengan memahami perkembangan perilaku lawan seiring waktu. contoh hmd, HDO, memberikan kompleksitas lebih tinggi dalam permainan berulang. 
+% Tambahkan:
+% - History-dependent strategies
+% - Cooperation and retaliation
+
+% =========================================================
+\section{Pemodelan Lawan}
+\label{sec:opponent_modeling}
+Dalam konteks repeated game,
+pemodelan lawan (opponent modeling)
+merupakan aspek penting
+untuk memahami dan memprediksi
+perilaku agen lain.
+Pendekatan ini melibatkan
+analisis strategi lawan
+berdasarkan observasi tindakan mereka
+dalam interaksi berulang.
+Dengan demikian,
+agen dapat menyesuaikan strateginya
+untuk mencapai hasil yang lebih baik.
+
+\subsection {Pendekatan Reinforcement Learning dalam Repeated Game}
+\label{sec:rl_repeated_game}
+
+Meskipun repeated game menjelaskan dinamika interaksi,
+pendekatan analitis klasik
+sering kali tidak memadai
+untuk menangani agen yang adaptif.
+
+Oleh karena itu,
+\textit{reinforcement learning} (RL)
+dan \textit{deep reinforcement learning} (DRL)
+banyak digunakan
+untuk mempelajari strategi optimal
+dalam repeated game.
+
+Pendekatan ini memungkinkan agen
+menyesuaikan kebijakannya
+berdasarkan pengalaman interaksi.
+
+% Tambahkan:
+% - Agent, environment, reward
+% - Actor-Critic (konseptual)
+
+% =========================================================
+\subsubsection {Keterbatasan Reinforcement Learning untuk Opponent Modeling}
+\label{sec:keterbatasan_rl_opponent}
+
+Namun, reinforcement learning
+pada umumnya berfokus pada
+optimasi kebijakan agen
+berdasarkan sinyal reward,
+bukan pada pemodelan eksplisit
+perilaku lawan.
+
+Selain itu,
+pendekatan ini sering memerlukan
+horizon jangka panjang,
+jumlah episode yang besar,
+serta sumber daya komputasi
+yang signifikan.
+Kondisi ini menjadi keterbatasan
+ketika tujuan utama penelitian
+adalah prediksi perilaku lawan.
+
+% Tambahkan:
+% - Sample inefficiency
+% - Reward engineering
+% - Long-horizon dependency
+
+% =========================================================
+\section {Opponent Modeling sebagai Pemodelan Time Series}
+\label{sec:opponent_time_series}
+
+Dengan demikian,
+perilaku lawan dalam repeated game
+lebih tepat dipandang
+sebagai proses sekuensial.
+Tindakan lawan pada suatu waktu
+dipengaruhi oleh
+riwayat tindakan sebelumnya
+serta tindakan agen lain.
+
+Pendekatan \textit{time series}
+memungkinkan pemodelan
+ketergantungan temporal tersebut
+secara eksplisit.
+
+% Tambahkan:
+% - Sequential prediction
+% - Autoregressive behavior
+\subsection{Evolusi Model Prediktif: AR, ANN, ARX, dan NARX}
+\label{subsec:ar_arx_narx}
+
+Pemodelan perilaku lawan dalam permainan berulang dapat dipandang sebagai permasalahan prediksi deret waktu, di mana aksi lawan pada waktu tertentu bergantung pada riwayat interaksi sebelumnya. Pendekatan paling dasar untuk memodelkan ketergantungan temporal tersebut adalah model autoregresi (Autoregressive Model, AR), yang merepresentasikan keluaran sistem sebagai fungsi linier dari keluaran masa lalu.
+
+Dalam konteks opponent modelling, model AR digunakan untuk memprediksi aksi lawan berdasarkan riwayat aksinya sendiri. Model ini memiliki keunggulan dari sisi kesederhanaan dan efisiensi komputasi, serta mampu menangkap pola perilaku yang relatif stabil. Namun, asumsi linearitas membatasi kemampuan model AR dalam merepresentasikan perilaku lawan yang kompleks dan adaptif, khususnya pada permainan dengan interaksi strategis yang dinamis.
+
+Untuk meningkatkan kapasitas representasi, pendekatan berbasis jaringan saraf tiruan (Artificial Neural Network, ANN) diperkenalkan sebagai model prediktif nonlinier. Jaringan saraf mampu memodelkan hubungan kompleks antara input dan output tanpa asumsi linearitas yang ketat. Dalam penerapannya pada opponent modelling, riwayat aksi lawan dan agen dapat digunakan sebagai input untuk memprediksi aksi lawan berikutnya.
+
+Meskipun ANN meningkatkan fleksibilitas model, pendekatan ini tidak secara eksplisit membedakan antara ketergantungan temporal internal sistem dan pengaruh input eksternal. Ketergantungan waktu biasanya direpresentasikan dengan memperluas vektor input menggunakan beberapa observasi masa lalu, yang dapat meningkatkan dimensi input secara signifikan dan menyulitkan proses pelatihan serta interpretasi model.
+
+Model AutoRegressive with eXogenous inputs (ARX) diperkenalkan untuk mengatasi keterbatasan tersebut dengan memisahkan secara eksplisit pengaruh keluaran masa lalu dan input eksternal. Dalam model ARX, keluaran pada waktu tertentu dimodelkan sebagai fungsi linier dari keluaran masa lalu dan variabel eksogen. Dalam konteks permainan berulang, variabel eksogen tersebut dapat berupa aksi agen atau faktor kontekstual lain yang memengaruhi keputusan lawan.
+
+Model ARX memungkinkan analisis yang lebih terstruktur terhadap dinamika interaksi antara agen dan lawan. Namun, seperti halnya model AR, ARX masih dibatasi oleh asumsi linearitas, sehingga kurang mampu menangkap dinamika nonlinier yang umum muncul dalam perilaku strategis dan adaptif.
+
+Untuk menggabungkan pemodelan dinamika temporal yang eksplisit dengan kemampuan representasi nonlinier, model Nonlinear AutoRegressive with eXogenous inputs (NARX) diperkenalkan. Model NARX merepresentasikan keluaran sistem sebagai fungsi nonlinier dari keluaran masa lalu dan input eksogen masa lalu, yang umumnya direalisasikan menggunakan jaringan saraf.
+
+Dalam opponent modelling, NARX memungkinkan pemodelan perilaku lawan sebagai respons terhadap riwayat aksinya sendiri dan tindakan agen secara simultan. Struktur ini memberikan keseimbangan antara kapasitas representasi dan eksplisitnya pemodelan dinamika temporal. Selain itu, penggunaan jumlah lag yang terbatas memungkinkan pengendalian kompleksitas model, sehingga tetap feasible secara komputasi untuk diterapkan pada permainan berulang dengan horizon menengah.
+
+Meskipun demikian, model NARX tetap memiliki keterbatasan. Kinerja prediksi sangat dipengaruhi oleh pemilihan jumlah lag dan kualitas data pelatihan. Selain itu, seperti model prediktif lainnya, NARX berfokus pada estimasi perilaku lawan pada horizon terbatas dan tidak secara langsung menjamin optimalitas keputusan strategis jangka panjang. Oleh karena itu, model ini umumnya digunakan sebagai komponen prediktif yang dikombinasikan dengan mekanisme evaluasi lanjutan.
+
+Secara keseluruhan, perkembangan dari model AR menuju ANN, ARX, dan akhirnya NARX mencerminkan kebutuhan untuk memodelkan dinamika temporal dan interaksi strategis secara lebih akurat tanpa menuntut kompleksitas komputasi yang tidak feasible. Berdasarkan pertimbangan tersebut, penelitian ini memilih NARX sebagai model prediktif perilaku lawan dalam permainan berulang.
+
+% =========================================================
+\section {Evaluasi Model Prediksi Perilaku Lawan}
+\label{sec:evaluasi_opponent_model}
+
+Oleh karena itu,
+diperlukan metode evaluasi
+untuk menilai
+sejauh mana model
+mampu memprediksi
+perilaku lawan secara akurat
+dan konsisten.
+
+Evaluasi dalam opponent modeling
+dapat mencakup
+akurasi prediksi tindakan,
+pengukuran error time series,
+serta evaluasi berbasis interaksi
+dalam skenario game.
+
+Landasan teori evaluasi ini
+menjadi dasar
+bagi perancangan eksperimen
+dan analisis hasil
+pada bab selanjutnya.
+
+\subsection{Keterbatasan Prediksi Global pada Horizon Panjang}
+\label{subsec:global_prediction_limitation}
+
+Dalam permainan berulang dua agen (\emph{dyadic repeated games}), pengambilan keputusan yang optimal secara teoritis mensyaratkan agen untuk mempertimbangkan konsekuensi jangka panjang dari setiap aksi yang diambil. Secara ideal, agen memilih aksi yang memaksimalkan nilai ekspektasi dari akumulasi reward sepanjang horizon permainan, dengan memperhitungkan respons lawan terhadap aksi tersebut pada setiap langkah selanjutnya.
+
+Pendekatan ini berkaitan erat dengan kerangka optimisasi dinamis dan \emph{dynamic programming}, di mana solusi optimal diperoleh dengan mengevaluasi seluruh kemungkinan lintasan interaksi antara agen dan lawannya. Namun, kompleksitas perhitungan solusi tersebut meningkat secara eksponensial terhadap panjang horizon. Jika setiap agen memiliki ruang aksi diskret berukuran $|\mathcal{A}|$ dan permainan berlangsung selama $H$ langkah, maka jumlah kemungkinan urutan aksi bersama berada pada orde $|\mathcal{A}|^{2H}$.
+
+Selain kompleksitas ruang aksi, tantangan tambahan muncul akibat sifat adaptif lawan. Dalam opponent modelling, perilaku lawan tidak dapat diasumsikan statis, melainkan dapat berubah sebagai respons terhadap strategi yang diterapkan agen. Hal ini menyebabkan agen harus mempertimbangkan tidak hanya prediksi aksi lawan, tetapi juga bagaimana kebijakan lawan berevolusi sepanjang interaksi. Akibatnya, perhitungan kebijakan optimal memerlukan estimasi terhadap dinamika kebijakan lawan, yang semakin memperbesar beban komputasi.
+
+Keterbatasan ini menjadikan pendekatan prediksi global-optimal pada horizon panjang sulit diterapkan dalam praktik, khususnya pada skenario dengan keterbatasan sumber daya komputasi dan waktu. Bahkan pada permainan dengan struktur sederhana, evaluasi seluruh lintasan interaksi menjadi tidak tractable untuk horizon menengah hingga panjang. Oleh karena itu, sebagian besar pendekatan praktis memilih untuk membatasi horizon perencanaan atau menggunakan aproksimasi nilai.
+
+Pembatasan horizon dan pendekatan prediksi jangka pendek memang dapat mengurangi kompleksitas komputasi secara signifikan, namun konsekuensi strategis jangka panjang tidak sepenuhnya tertangkap. Dalam konteks dilema sosial berulang, keputusan yang optimal secara instan dapat memicu perubahan perilaku lawan pada langkah-langkah berikutnya, sehingga menurunkan reward kumulatif jangka panjang. Hal ini menunjukkan bahwa terdapat trade-off mendasar antara efisiensi komputasi dan kualitas keputusan strategis.
+
+Sebagai respons terhadap trade-off tersebut, berbagai pendekatan telah dikembangkan untuk mengaproksimasi dampak jangka panjang tanpa melakukan prediksi global secara eksplisit. Pendekatan-pendekatan ini mencakup penggunaan metrik evaluasi berbasis regret, simulasi terbatas melalui \emph{Monte Carlo rollout}, serta model prediktif dinamis yang memfokuskan pada estimasi konsekuensi jangka menengah. Dengan demikian, kualitas keputusan dapat ditingkatkan tanpa menuntut perhitungan yang tidak feasible secara komputasi.
+
+% Tambahkan:
+% - Accuracy
+% - MSE / temporal error
+% - Interaction-based evaluation

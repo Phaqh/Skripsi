@@ -1,11 +1,15 @@
 export function initState() {
   return {
     turn: 0,
-    history: [],        // [{ player, opponent, payoff }]
-    coopProbs: [],      // model predictions
+    history: [],
+    coopProbs: [],
     scores: {
       player: [],
       opponent: []
+    },
+    actions: {
+      player: [0],
+      opponent: [0]
     }
   };
 }

@@ -2376,20 +2376,19 @@
     <bcf:citekey order="20" intorder="1">zhu_evolutionary_2025</bcf:citekey>
     <bcf:citekey order="21" intorder="1">di_coupling_2023</bcf:citekey>
     <bcf:citekey order="22" intorder="1">qiao_o2m_2024</bcf:citekey>
-    <bcf:citekey order="22" intorder="2">zhu_evolutionary_2025</bcf:citekey>
-    <bcf:citekey order="22" intorder="3">lv_inducing_2023</bcf:citekey>
-    <bcf:citekey order="22" intorder="4">di_coupling_2023</bcf:citekey>
-    <bcf:citekey order="22" intorder="5">perera_learning_2025</bcf:citekey>
-    <bcf:citekey order="22" intorder="6">li_exploiting_2025</bcf:citekey>
-    <bcf:citekey order="22" intorder="7">freire_modeling_2023</bcf:citekey>
-    <bcf:citekey order="22" intorder="8">hu_modeling_2023</bcf:citekey>
-    <bcf:citekey order="22" intorder="9">wang_achieving_2019</bcf:citekey>
-    <bcf:citekey order="22" intorder="10">de_weerd_higher-order_2022</bcf:citekey>
+    <bcf:citekey order="22" intorder="2">lv_inducing_2023</bcf:citekey>
+    <bcf:citekey order="22" intorder="3">li_exploiting_2025</bcf:citekey>
+    <bcf:citekey order="22" intorder="4">freire_modeling_2023</bcf:citekey>
+    <bcf:citekey order="22" intorder="5">hu_modeling_2023</bcf:citekey>
+    <bcf:citekey order="22" intorder="6">wang_achieving_2019</bcf:citekey>
+    <bcf:citekey order="22" intorder="7">de_weerd_higher-order_2022</bcf:citekey>
+    <bcf:citekey order="22" intorder="8">perera_learning_2025</bcf:citekey>
+    <bcf:citekey order="22" intorder="9">di_coupling_2023</bcf:citekey>
     <bcf:citekey order="23" intorder="1">zhu_evolutionary_2025</bcf:citekey>
     <bcf:citekey order="23" intorder="2">gomez_grounded_2025</bcf:citekey>
-    <bcf:citekey order="23" intorder="3">di_coupling_2023</bcf:citekey>
-    <bcf:citekey order="23" intorder="4">perera_learning_2025</bcf:citekey>
-    <bcf:citekey order="23" intorder="5">elhamer_effects_2020</bcf:citekey>
+    <bcf:citekey order="23" intorder="3">elhamer_effects_2020</bcf:citekey>
+    <bcf:citekey order="23" intorder="4">di_coupling_2023</bcf:citekey>
+    <bcf:citekey order="23" intorder="5">perera_learning_2025</bcf:citekey>
     <bcf:citekey order="24" intorder="1">di_coupling_2023</bcf:citekey>
     <bcf:citekey order="41" intorder="1">lv_inducing_2023</bcf:citekey>
     <bcf:citekey order="42" intorder="1">qiao_o2m_2024</bcf:citekey>

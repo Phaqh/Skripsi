@@ -88,7 +88,7 @@ doi=false,
 url=false,
 eprint=false,
 backend=biber,
-natbib=true,
+% natbib=true,
 style=authoryear,
 citestyle=authoryear,
 firstinits=true,
@@ -321,6 +321,7 @@ uniquelist=false
 \newcommand{\getfullname}{\xcapitalisewords{\@fullname}}
 \newcommand{\idnum}[1]{\gdef\@idnum{#1}}
 \newcommand{\@idnum}{}
+\newcommand{\getidnum}{\@idnum}
 \newcommand{\examdate}[1]{\gdef\@examdate{#1}}
 \newcommand{\@examdate}{\number\day~\ifcase\month\or
     Januari\or Februari\or Maret\or April\or Mei\or Juni\or

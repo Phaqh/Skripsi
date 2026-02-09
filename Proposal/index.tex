@@ -8,12 +8,32 @@
 \usepackage{amssymb}
 
 % Script dibawah untuk menghapus batas list of table and figure
-\usepackage{etoolbox}% http://ctan.org/pkg/etoolbox
+\usepackage{etoolbox}
+
 \makeatletter
-% \patchcmd{<cmd>}{<search>}{<replace>}{<succes>}{<failure>}
-\patchcmd{\@chapter}{\addtocontents{lof}{\protect\addvspace{10\p@}}}{}{}{}% LoF
-\patchcmd{\@chapter}{\addtocontents{lot}{\protect\addvspace{10\p@}}}{}{}{}% LoT
+
+% Remove chapter spacing in LoF / LoT
+\patchcmd{\@chapter}
+  {\addtocontents{lof}{\protect\addvspace{10\p@}}}
+  {}
+  {}
+  {\PackageWarning{ugmskripsi}{Failed to patch LoF spacing}}
+
+\patchcmd{\@chapter}
+  {\addtocontents{lot}{\protect\addvspace{10\p@}}}
+  {}
+  {}
+  {\PackageWarning{ugmskripsi}{Failed to patch LoT spacing}}
+
+% Fix page numbering position (UGM class)
+\AtBeginDocument{%
+  \pagestyle{chapterheading}
+}
+% \AtBeginShipout{%
+%   \typeout{PAGE \thepage\space STYLE=\meaning\@pagestyle}%
+% }
 \makeatother
+
 
 \usepackage{caption}
 \captionsetup[table]{labelsep=space}
@@ -25,31 +45,31 @@
 %-----------------------------------------------------------------
 %Disini awal masukan untuk data tesis
 %-----------------------------------------------------------------
-\titleind{ PERAMALAN NILAI TUKAR RUPIAH TERHADAP DOLAR DENGAN METODE AA }
+\titleind{Pemodelan Lawan Belajar Menggunakan Nonlinear AutoRegressive with eXogenous Input (NARX) pada Iterated Prisoner's Dilemma dengan Horizon Terbatas}
 
-\titleeng{ FORECASTING OF RUPIAH EXCHANGE RATE TO DOLLARS WITH AA METHOD }
+\titleeng{ Learning Opponent Modelling using a Nonlinear AutoRegressive with eXogenous Input (NARX) Model in the Iterated Prisoner's Dilemma with a Bounded Horizon }
 
-\fullname{Bunga Melati Harum}
+\fullname{Faqih Mahardika}
 
-\idnum{10/123456/PA/12345}
+\idnum{21/482551/PA/21039}
 
-\degree{Sarjana Sains}
+\degree{Sarjana Komputer}
 
-\yearsubmit{2017}
+\yearsubmit{2026}
 
-\program{Matematika}
+\program{Ilmu Komputer}
 
-\headprogram{Dr. Eva Maria}
+\headprogram{Arif Nurwidyantoro, M.Cs., Ph.D.}
 
-\dept{Matematika}
+\dept{Ilmu Komputer dan Elektronika}
 
-\firstsupervisor{Alice, Ph.D.}
+\firstsupervisor{Dr.\ Sri Mulyana, M.Kom.}
 
 \firstexaminer{Bob, M.Sc.}
 
 \secondexaminer{Eve, Ph.D.}
 
-\examdate{30 Februari 2017}
+\examdate{8 Mei 2026}
 
 
 %-----------------------------------------------------------------
@@ -58,15 +78,15 @@
 
 \begin{document}
 
-\cover
+\cover{}
 
-\titlepageind
+\titlepageind{}
 
 % \agreementpage
-\cleardoublepage\phantomsection
-\approvalpage
-\cleardoublepage\phantomsection
-\declarepage
+\cleardoublepage\phantomsection{}
+\approvalpage{}
+\cleardoublepage\phantomsection{}
+\declarepage{}
 
 %-----------------------------------------------------------------
 %Disini awal masukan Acknowledment
@@ -79,7 +99,7 @@
 %-----------------------------------------------------------------
 %Disini awal masukan Motto
 %-----------------------------------------------------------------
-\cleardoublepage\phantomsection
+\cleardoublepage\phantomsection{}
 \input{motto}
 %-----------------------------------------------------------------
 %Disini akhir masukan untuk Motto
@@ -88,7 +108,7 @@
 %-----------------------------------------------------------------
 %Disini awal masukan untuk Prakata
 %-----------------------------------------------------------------
-\cleardoublepage\phantomsection
+\cleardoublepage\phantomsection{}
 \input{prakata}
 %-----------------------------------------------------------------
 %Disini akhir masukan Prakata
@@ -97,7 +117,7 @@
 %-----------------------------------------------------------------
 %Disini awal masukan untuk daftar isi
 %-----------------------------------------------------------------
-\cleardoublepage\phantomsection
+\cleardoublepage\phantomsection{}
 \addcontentsline{toc}{chapter}{\contentsname}
 \tableofcontents
 %-----------------------------------------------------------------
@@ -107,7 +127,7 @@
 %-----------------------------------------------------------------
 %Disini awal masukan untuk daftar table
 %-----------------------------------------------------------------
-\cleardoublepage\phantomsection
+\cleardoublepage\phantomsection{}
 \addcontentsline{toc}{chapter}{\listtablename}
 \listoftables
 %-----------------------------------------------------------------
@@ -117,7 +137,7 @@
 %-----------------------------------------------------------------
 %Disini awal masukan untuk daftar gambar
 %-----------------------------------------------------------------
-\cleardoublepage\phantomsection
+\cleardoublepage\phantomsection{}
 \addcontentsline{toc}{chapter}{\listfigurename}
 \listoffigures
 %-----------------------------------------------------------------
@@ -127,7 +147,7 @@
 %-----------------------------------------------------------------
 %Disini awal masukan Intisari
 %-----------------------------------------------------------------
-\cleardoublepage\phantomsection
+\cleardoublepage\phantomsection{}
 \input{abstract_ind}
 %-----------------------------------------------------------------
 %Disini akhir masukan Intisari
@@ -136,14 +156,14 @@
 %-----------------------------------------------------------------
 %Disini awal masukan untuk Abstract
 %-----------------------------------------------------------------
-\cleardoublepage\phantomsection
+\cleardoublepage\phantomsection{}
 \input{abstract_eng}
 %-----------------------------------------------------------------
 %Disini akhir masukan Abstract
 %-----------------------------------------------------------------
 
 %\clearpage
-\cleardoublepage\phantomsection
+\cleardoublepage\phantomsection{}
 \pagenumbering{arabic}
 \setcounter{page}{1}
 %-----------------------------------------------------------------
@@ -184,7 +204,7 @@
   \printtext%
 }{}{}
 %\clearpage
-\cleardoublepage\phantomsection
+\cleardoublepage\phantomsection{}
 \begin{center}
     \textbf{{\large DAFTAR PUSTAKA}}
 \end{center}
@@ -200,9 +220,9 @@
 %\clearpage
 
 \appendix
-% \addcontentsline{toc}{chapter}{\appendixname}
+% \addcontentsline{toc}{chapFebruariter}{\appendixname}
 \setcounter{secnumdepth}{-1}
-\cleardoublepage\phantomsection
+\cleardoublepage\phantomsection{}
 \chapter{LAMPIRAN}
     \input{hasil_eksperimen}
 
