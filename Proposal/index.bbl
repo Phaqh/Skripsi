@@ -19,6 +19,216 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global}
+    \entry{albrecht_autonomous_2018}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=9da4f3f413d514d731efe34067976909}{%
+           family={Albrecht},
+           familyi={A\bibinitperiod},
+           given={Stefano\bibnamedelima V.},
+           giveni={S\bibinitperiod\bibinitdelim V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3f42a499da2cddc0bae71b76c81f7c46}{%
+           family={Stone},
+           familyi={S\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{9350371115a0d7dab048a4452942a148}
+      \strng{fullhash}{9350371115a0d7dab048a4452942a148}
+      \strng{bibnamehash}{9350371115a0d7dab048a4452942a148}
+      \strng{authorbibnamehash}{9350371115a0d7dab048a4452942a148}
+      \strng{authornamehash}{9350371115a0d7dab048a4452942a148}
+      \strng{authorfullhash}{9350371115a0d7dab048a4452942a148}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Much research in artiﬁcial intelligence is concerned with the development of autonomous agents that can interact eﬀectively with other agents. An important aspect of such agents is the ability to reason about the behaviours of other agents, by constructing models which make predictions about various properties of interest (such as actions, goals, beliefs) of the modelled agents. A variety of modelling approaches now exist which vary widely in their methodology and underlying assumptions, catering to the needs of the diﬀerent sub-communities within which they were developed and reﬂecting the diﬀerent practical uses for which they are intended. The purpose of the present article is to provide a comprehensive survey of the salient modelling methods which can be found in the literature. The article concludes with a discussion of open problems which may form the basis for fruitful future research.}
+      \field{annotation}{Comment: Final manuscript (46 pages), published in Artificial Intelligence Journal. The {arXiv} version also contains a table of contents after the abstract, but is otherwise identical to the {AIJ} version. Keywords: autonomous agents, multiagent systems, modelling other agents, opponent modelling}
+      \field{eprinttype}{arxiv}
+      \field{issn}{00043702}
+      \field{journaltitle}{Artificial Intelligence}
+      \field{langid}{english}
+      \field{month}{5}
+      \field{shortjournal}{Artificial Intelligence}
+      \field{shorttitle}{Autonomous Agents Modelling Other Agents}
+      \field{title}{Autonomous Agents Modelling Other Agents: A Comprehensive Survey and Open Problems}
+      \field{urlday}{21}
+      \field{urlmonth}{12}
+      \field{urlyear}{2025}
+      \field{volume}{258}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{66\bibrangedash 95}
+      \range{pages}{30}
+      \verb{doi}
+      \verb 10.1016/j.artint.2018.01.002
+      \endverb
+      \verb{eprint}
+      \verb 1709.08071 [cs]
+      \endverb
+      \verb{file}
+      \verb PDF:/home/paqh/Zotero/storage/RU7DVCZ9/Albrecht and Stone - 2018 - Autonomous Agents Modelling Other Agents A Comprehensive Survey and Open Problems.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1709.08071
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1709.08071
+      \endverb
+      \keyw{Computer Science - Artificial Intelligence,Computer Science - Multiagent Systems}
+    \endentry
+    \entry{axelrod_evolution_1981}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=e46fddf6d412d66cae997840c9ba5f34}{%
+           family={Axelrod},
+           familyi={A\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7187734982dc7773b27d5232ed742347}{%
+           family={Hamilton},
+           familyi={H\bibinitperiod},
+           given={William\bibnamedelima D},
+           giveni={W\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8d220c6534e4fa5d2950021de7ed80d7}
+      \strng{fullhash}{8d220c6534e4fa5d2950021de7ed80d7}
+      \strng{bibnamehash}{8d220c6534e4fa5d2950021de7ed80d7}
+      \strng{authorbibnamehash}{8d220c6534e4fa5d2950021de7ed80d7}
+      \strng{authornamehash}{8d220c6534e4fa5d2950021de7ed80d7}
+      \strng{authorfullhash}{8d220c6534e4fa5d2950021de7ed80d7}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Cooperation in organisms, whether bacteria or primates, has been a difficulty for evolutionary theory since Darwin. On the assumption that interactions between pairs of individuals occur on a probabilistic basis, a model is developed based on the concept of an evolutionarily stable strategy in the context of the Prisoner's Dilemma game. Deductions from the model, and the results of a computer tournament show how cooperation based on reciprocity can get started in an asocial world, can thrive while interacting with a wide range of other strategies, and can resist invasion once fully established. Potential applications include specific aspects of territoriality, mating, and disease.}
+      \field{langid}{english}
+      \field{title}{The Evolution of Cooperation}
+      \field{year}{1981}
+      \field{dateera}{ce}
+      \verb{file}
+      \verb PDF:/home/paqh/Zotero/storage/D45VFM7S/Axelrod and Hamilton - 1981 - The Evolution of Cooperation.pdf:application/pdf
+      \endverb
+    \endentry
+    \entry{bengio_scheduled_2015}{misc}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=02404a92b0be3f52ec5ac08e41c13445}{%
+           family={Bengio},
+           familyi={B\bibinitperiod},
+           given={Samy},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=494b568c5dc85ba8f3f409635f9c5f25}{%
+           family={Vinyals},
+           familyi={V\bibinitperiod},
+           given={Oriol},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5a9f30e0c0441d2aea255916ff375e8c}{%
+           family={Jaitly},
+           familyi={J\bibinitperiod},
+           given={Navdeep},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=62efade83d70f0323fe248755e6c90c5}{%
+           family={Shazeer},
+           familyi={S\bibinitperiod},
+           given={Noam},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {arXiv}%
+      }
+      \strng{namehash}{a7107fc44d58e0d53178f67bb2ce15f8}
+      \strng{fullhash}{408b3268fa483a5b87403a194fe84027}
+      \strng{bibnamehash}{408b3268fa483a5b87403a194fe84027}
+      \strng{authorbibnamehash}{408b3268fa483a5b87403a194fe84027}
+      \strng{authornamehash}{a7107fc44d58e0d53178f67bb2ce15f8}
+      \strng{authorfullhash}{408b3268fa483a5b87403a194fe84027}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Recurrent Neural Networks can be trained to produce sequences of tokens given some input, as exempliﬁed by recent results in machine translation and image captioning. The current approach to training them consists of maximizing the likelihood of each token in the sequence given the current (recurrent) state and the previous token. At inference, the unknown previous token is then replaced by a token generated by the model itself. This discrepancy between training and inference can yield errors that can accumulate quickly along the generated sequence. We propose a curriculum learning strategy to gently change the training process from a fully guided scheme using the true previous token, towards a less guided scheme which mostly uses the generated token instead. Experiments on several sequence prediction tasks show that this approach yields signiﬁcant improvements. Moreover, it was used successfully in our winning entry to the {MSCOCO} image captioning challenge, 2015.}
+      \field{day}{23}
+      \field{eprinttype}{arxiv}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{{arXiv}:1506.03099}
+      \field{title}{Scheduled Sampling for Sequence Prediction with Recurrent Neural Networks}
+      \field{urlday}{16}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.1506.03099
+      \endverb
+      \verb{eprint}
+      \verb 1506.03099 [cs]
+      \endverb
+      \verb{file}
+      \verb PDF:/home/paqh/Zotero/storage/DKABT7DP/Bengio et al. - 2015 - Scheduled Sampling for Sequence Prediction with Recurrent Neural Networks.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1506.03099
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1506.03099
+      \endverb
+      \keyw{Computer Science - Machine Learning,Computer Science - Computation and Language,Computer Science - Computer Vision and Pattern Recognition}
+    \endentry
+    \entry{bonanno_game_2024}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=1de45dec4919ef86b84c842a3206e677}{%
+           family={Bonanno},
+           familyi={B\bibinitperiod},
+           given={Giacomo},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Place of publication not identified}%
+      }
+      \list{publisher}{1}{%
+        {Kindle Direct Publishing}%
+      }
+      \strng{namehash}{1de45dec4919ef86b84c842a3206e677}
+      \strng{fullhash}{1de45dec4919ef86b84c842a3206e677}
+      \strng{bibnamehash}{1de45dec4919ef86b84c842a3206e677}
+      \strng{authorbibnamehash}{1de45dec4919ef86b84c842a3206e677}
+      \strng{authornamehash}{1de45dec4919ef86b84c842a3206e677}
+      \strng{authorfullhash}{1de45dec4919ef86b84c842a3206e677}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{edition}{Third edition}
+      \field{isbn}{978-1-9836-0463-8}
+      \field{langid}{english}
+      \field{note}{{OCLC}: 1506202870}
+      \field{shorttitle}{Game theory}
+      \field{title}{Game theory: volume 1: basic concepts}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \verb{file}
+      \verb PDF:/home/paqh/Zotero/storage/E65NVD6P/Bonanno - 2024 - Game theory volume 1 basic concepts.pdf:application/pdf
+      \endverb
+    \endentry
     \entry{de_weerd_higher-order_2022}{article}{}
       \name{author}{3}{}{%
         {{un=0,uniquepart=base,hash=bd16bed4971380ff9dc87fe6d3c0a96c}{%
@@ -40,9 +250,6 @@
            giveni={B\bibinitperiod},
            givenun=0}}%
       }
-      \list{language}{1}{%
-        {en}%
-      }
       \strng{namehash}{e9425ee7d5a4c02c8056e1e65d7f26dd}
       \strng{fullhash}{2afa2ef0d0cbb1f88017ed72f4ddb1e2}
       \strng{bibnamehash}{2afa2ef0d0cbb1f88017ed72f4ddb1e2}
@@ -55,17 +262,20 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{Abstract In social interactions, people often reason about the beliefs, goals and intentions of others. This theory of mind allows them to interpret the behavior of others, and predict how they will behave in the future. People can also use this ability recursively: they use higher-order theory of mind to reason about the theory of mind abilities of others, as in “he thinks that I don't know that he sent me an anonymous letter”. Previous agent-based modeling research has shown that the usefulness of higher-order theory of mind reasoning can be useful across competitive, cooperative, and mixed-motive settings. In this paper, we cast a new light on these results by investigating how the predictability of the environment influences the effectiveness of higher-order theory of mind. Our results show that the benefit of (higher-order) theory of mind reasoning is strongly dependent on the predictability of the environment. We consider agent-based simulations in repeated one-shot negotiations in a particular negotiation setting known as Colored Trails. When this environment is highly predictable, agents obtain little benefit from theory of mind reasoning. However, if the environment has more observable features that change over time, agents without the ability to use theory of mind experience more difficulties predicting the behavior of others accurately. This in turn allows theory of mind agents to obtain higher scores in these more dynamic environments. These results suggest that the human-specific ability for higher-order theory of mind reasoning may have evolved to allow us to survive in more complex and unpredictable environments.}
+      \field{abstract}{Abstract In social interactions, people often reason about the beliefs, goals and intentions of others. This theory of mind allows them to interpret the behavior of others, and predict how they will behave in the future. People can also use this ability recursively: they use higher-order theory of mind to reason about the theory of mind abilities of others, as in “he thinks that I don’t know that he sent me an anonymous letter”. Previous agent-based modeling research has shown that the usefulness of higher-order theory of mind reasoning can be useful across competitive, cooperative, and mixed-motive settings. In this paper, we cast a new light on these results by investigating how the predictability of the environment influences the effectiveness of higher-order theory of mind. Our results show that the benefit of (higher-order) theory of mind reasoning is strongly dependent on the predictability of the environment. We consider agent-based simulations in repeated one-shot negotiations in a particular negotiation setting known as Colored Trails. When this environment is highly predictable, agents obtain little benefit from theory of mind reasoning. However, if the environment has more observable features that change over time, agents without the ability to use theory of mind experience more difficulties predicting the behavior of others accurately. This in turn allows theory of mind agents to obtain higher scores in these more dynamic environments. These results suggest that the human-specific ability for higher-order theory of mind reasoning may have evolved to allow us to survive in more complex and unpredictable environments.}
       \field{issn}{1387-2532, 1573-7454}
       \field{journaltitle}{Autonomous Agents and Multi-Agent Systems}
+      \field{langid}{english}
       \field{month}{10}
       \field{number}{2}
+      \field{shortjournal}{Auton Agent Multi-Agent Syst}
       \field{title}{Higher-order theory of mind is especially useful in unpredictable negotiations}
       \field{urlday}{4}
       \field{urlmonth}{11}
       \field{urlyear}{2025}
       \field{volume}{36}
       \field{year}{2022}
+      \field{dateera}{ce}
       \field{urldateera}{ce}
       \field{pages}{30}
       \range{pages}{1}
@@ -133,12 +343,13 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{The emergence of cooperation is a central issue in understanding collective behavior and evolution. The eco-evolutionary game model introduces a human–environment coupling mechanism, revealing that the feedback between strategies and the relevant environment is a key element in sustaining long-term cooperation. Previous theoretical studies have observed periodic oscillations between cooperative and defective actions under certain conditions. However, such investigations assume cooperators hold a benefit advantage over defectors, which does not fundamentally illuminate how cooperation emerges. Our paper emphasizes that understanding this issue requires considering inherent human memory characteristics. We refine the eco-evolutionary game model using reinforcement learning, constructing a multi-agent system that couples environment and memory-based decision-making. Comprehensive analyses encompass collective and individual perspectives. Our findings show that with the memory mechanism, oscillations between collective cooperation and defection can still occur, even if defection remains a strict Nash equilibrium. Cooperation emerges from the group's random exploratory actions in depleted environments, altering the environment's trends. A positive feedback loop forms among the environment, individual rewards, and actions, stabilizing cooperation as a favorable individual strategy at that point. However, established group cooperation leads individuals seeking optimal behavior to transition from cooperators to defectors through exploration, resulting in cooperation collapse. Subsequently, the memory mechanism reengages, diluting defectors' expected payoffs and initiating a new round of exploratory behavior within the group. Our results unveil the micro-level mechanisms driving cyclic oscillations, enhancing our understanding of the environment-strategy interplay.}
+      \field{abstract}{The emergence of cooperation is a central issue in understanding collective behavior and evolution. The eco-evolutionary game model introduces a human–environment coupling mechanism, revealing that the feedback between strategies and the relevant environment is a key element in sustaining long-term cooperation. Previous theoretical studies have observed periodic oscillations between cooperative and defective actions under certain conditions. However, such investigations assume cooperators hold a benefit advantage over defectors, which does not fundamentally illuminate how cooperation emerges. Our paper emphasizes that understanding this issue requires considering inherent human memory characteristics. We refine the eco-evolutionary game model using reinforcement learning, constructing a multi-agent system that couples environment and memory-based decision-making. Comprehensive analyses encompass collective and individual perspectives. Our findings show that with the memory mechanism, oscillations between collective cooperation and defection can still occur, even if defection remains a strict Nash equilibrium. Cooperation emerges from the group’s random exploratory actions in depleted environments, altering the environment’s trends. A positive feedback loop forms among the environment, individual rewards, and actions, stabilizing cooperation as a favorable individual strategy at that point. However, established group cooperation leads individuals seeking optimal behavior to transition from cooperators to defectors through exploration, resulting in cooperation collapse. Subsequently, the memory mechanism reengages, diluting defectors’ expected payoffs and initiating a new round of exploratory behavior within the group. Our results unveil the micro-level mechanisms driving cyclic oscillations, enhancing our understanding of the environment-strategy interplay.}
       \field{issn}{0960-0779}
       \field{journaltitle}{Chaos, Solitons \& Fractals}
       \field{title}{The coupling effect between the environment and strategies drives the emergence of group cooperation}
       \field{volume}{176}
       \field{year}{2023}
+      \field{dateera}{ce}
       \field{pages}{114138}
       \range{pages}{1}
       \verb{doi}
@@ -188,13 +399,15 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{We study the impact of network size in the context of interactions within social network services (SNS) on cooperation among its users, as well as that of the speed of information update about other neighbors during interaction, using an enhanced version of a swarm model that uses prisoner's dilemma as social interaction strategy and that models users' interactions through kinematics. We focus on the speed of information update about social environments and study the relationships between the resulting patterns of cooperation in different information update rates. We observed the large variations among emerging many cooperative clusters in size, speed, and cooperation rate in the large population. Moreover, cooperation was more promoted when the information update rate was high, in contrast to low update rate where the population converged to a few large clusters with many wandering defectors. © 2020 Elsevier B.V., All rights reserved.}
+      \field{abstract}{We study the impact of network size in the context of interactions within social network services ({SNS}) on cooperation among its users, as well as that of the speed of information update about other neighbors during interaction, using an enhanced version of a swarm model that uses prisoner’s dilemma as social interaction strategy and that models users’ interactions through kinematics. We focus on the speed of information update about social environments and study the relationships between the resulting patterns of cooperation in different information update rates. We observed the large variations among emerging many cooperative clusters in size, speed, and cooperation rate in the large population. Moreover, cooperation was more promoted when the information update rate was high, in contrast to low update rate where the population converged to a few large clusters with many wandering defectors. © 2020 Elsevier B.V., All rights reserved.}
+      \field{annotation}{Cited by: 4}
       \field{journaltitle}{Artificial Life and Robotics}
       \field{note}{Type: Article}
       \field{number}{1}
       \field{title}{The effects of population size and information update rates on the emergent patterns of cooperative clusters in a large-scale social particle swarm model}
       \field{volume}{25}
       \field{year}{2020}
+      \field{dateera}{ce}
       \field{pages}{149\bibrangedash 158}
       \range{pages}{10}
       \verb{doi}
@@ -209,7 +422,7 @@
       \verb{url}
       \verb https://www.scopus.com/inward/record.uri?eid=2-s2.0-85074536816&doi=10.1007%2Fs10015-019-00558-6&partnerID=40&md5=f9805479bd27a789b9c3c146d2816666
       \endverb
-      \keyw{Multi agent systems,Multi-Agent Model,Information updates,Large population,Population sizes,Population statistics,Social environment,Social interactions,Social network service (SNS),Social network services}
+      \keyw{Multi agent systems,Multi-Agent Model,Information updates,Large population,Population sizes,Population statistics,Social environment,Social interactions,Social network service ({SNS}),Social network services}
     \endentry
     \entry{freire_modeling_2023}{article}{}
       \name{author}{4}{}{%
@@ -250,13 +463,15 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{A major challenge in cognitive science and AI has been to understand how intelligent autonomous agents might acquire and predict the behavioral and mental states of other agents in the course of complex social interactions. How does such an agent model the goals, beliefs, and actions of other agents it interacts with? What are the computational principles to model a Theory of Mind (ToM)? Deep learning approaches to address these questions fall short of a better understanding of the problem. In part, this is due to the black-box nature of deep networks, wherein computational mechanisms of ToM are not readily revealed. Here, we consider alternative hypotheses seeking to model how the brain might realize a ToM. In particular, we propose embodied and situated agent models based on distributed adaptive control theory to predict the actions of other agents in five different game-theoretic tasks (Harmony Game, Hawk-Dove, Stag Hunt, Prisoner's Dilemma, and Battle of the Exes). Our multi-layer control models implement top-down predictions from adaptive to reactive layers of control and bottom-up error feedback from reactive to adaptive layers. We test cooperative and competitive strategies among seven different agent models (cooperative, greedy, tit-for-tat, reinforcement-based, rational, predictive, and internal agents). We show that, compared to pure reinforcement-based strategies, probabilistic learning agents modeled on rational, predictive, and internal phenotypes perform better in game-theoretic metrics across tasks. The outlined autonomous multi-agent models might capture systems-level processes underlying a ToM and suggest architectural principles of ToM from a control-theoretic perspective. © 2023 Elsevier B.V., All rights reserved.}
+      \field{abstract}{A major challenge in cognitive science and {AI} has been to understand how intelligent autonomous agents might acquire and predict the behavioral and mental states of other agents in the course of complex social interactions. How does such an agent model the goals, beliefs, and actions of other agents it interacts with? What are the computational principles to model a Theory of Mind ({ToM})? Deep learning approaches to address these questions fall short of a better understanding of the problem. In part, this is due to the black-box nature of deep networks, wherein computational mechanisms of {ToM} are not readily revealed. Here, we consider alternative hypotheses seeking to model how the brain might realize a {ToM}. In particular, we propose embodied and situated agent models based on distributed adaptive control theory to predict the actions of other agents in five different game-theoretic tasks (Harmony Game, Hawk-Dove, Stag Hunt, Prisoner’s Dilemma, and Battle of the Exes). Our multi-layer control models implement top-down predictions from adaptive to reactive layers of control and bottom-up error feedback from reactive to adaptive layers. We test cooperative and competitive strategies among seven different agent models (cooperative, greedy, tit-for-tat, reinforcement-based, rational, predictive, and internal agents). We show that, compared to pure reinforcement-based strategies, probabilistic learning agents modeled on rational, predictive, and internal phenotypes perform better in game-theoretic metrics across tasks. The outlined autonomous multi-agent models might capture systems-level processes underlying a {ToM} and suggest architectural principles of {ToM} from a control-theoretic perspective. © 2023 Elsevier B.V., All rights reserved.}
+      \field{annotation}{Cited by: 3; All Open Access; Gold Open Access; Green Final Open Access; Green Open Access}
       \field{journaltitle}{Information (Switzerland)}
       \field{note}{Type: Article}
       \field{number}{8}
-      \field{title}{Modeling {Theory} of {Mind} in {Dyadic} {Games} {Using} {Adaptive} {Feedback} {Control}}
+      \field{title}{Modeling Theory of Mind in Dyadic Games Using Adaptive Feedback Control}
       \field{volume}{14}
       \field{year}{2023}
+      \field{dateera}{ce}
       \verb{doi}
       \verb 10.3390/info14080441
       \endverb
@@ -307,9 +522,10 @@
       \field{abstract}{Humans possess innate collaborative capacities. However, effective teamwork often remains challenging. This study delves into the feasibility of collaboration within teams of rational, self-interested agents who engage in teamwork without the obligation to contribute. Drawing from psychological and game theoretical frameworks, we formalise teamwork as a one-shot aggregative game, integrating insights from Steiner's theory of group productivity. We characterise this novel game's Nash equilibria and propose a multiagent multi-armed bandit system that learns to converge to approximations of such equilibria. Our research contributes value to the areas of game theory and multiagent systems, paving the way for a better understanding of voluntary collaborative dynamics. We examine how team heterogeneity, task typology, and assessment difficulty influence agents' strategies and resulting teamwork outcomes. Finally, we empirically study the behaviour of work teams under incentive systems that defy analytical treatment. Our agents demonstrate human-like behaviour patterns, corroborating findings from social psychology research.}
       \field{issn}{0004-3702}
       \field{journaltitle}{Artificial Intelligence}
-      \field{title}{Grounded predictions of teamwork as a one-shot game: {A} multiagent multi-armed bandits approach}
+      \field{title}{Grounded predictions of teamwork as a one-shot game: A multiagent multi-armed bandits approach}
       \field{volume}{341}
       \field{year}{2025}
+      \field{dateera}{ce}
       \field{pages}{104307}
       \range{pages}{1}
       \verb{doi}
@@ -324,7 +540,134 @@
       \verb{url}
       \verb https://www.sciencedirect.com/science/article/pii/S0004370225000268
       \endverb
-      \keyw{Aggregative games,Cooperative AI,Group productivity theory,Multiagent multi-armed bandits}
+      \keyw{Aggregative games,Cooperative {AI},Group productivity theory,Multiagent multi-armed bandits}
+    \endentry
+    \entry{hernandez-leal_survey_2019}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=994e8fe8d289061af2ca9d999708550f}{%
+           family={Hernandez-Leal},
+           familyi={H\bibinithyphendelim L\bibinitperiod},
+           given={Pablo},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8403ec4af976c188e59539f83a7c2efe}{%
+           family={Kartal},
+           familyi={K\bibinitperiod},
+           given={Bilal},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=986ede3e90e206372b7eeb16dddc9ac6}{%
+           family={Taylor},
+           familyi={T\bibinitperiod},
+           given={Matthew\bibnamedelima E.},
+           giveni={M\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4a8f2946dd773bb282e2bdbc66de37e6}
+      \strng{fullhash}{bab3c5e694c4decb4811c5e79333ccb9}
+      \strng{bibnamehash}{bab3c5e694c4decb4811c5e79333ccb9}
+      \strng{authorbibnamehash}{bab3c5e694c4decb4811c5e79333ccb9}
+      \strng{authornamehash}{4a8f2946dd773bb282e2bdbc66de37e6}
+      \strng{authorfullhash}{bab3c5e694c4decb4811c5e79333ccb9}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Deep reinforcement learning ({RL}) has achieved outstanding results in recent years. This has led to a dramatic increase in the number of applications and methods. Recent works have explored learning beyond single-agent scenarios and have considered multiagent learning ({MAL}) scenarios. Initial results report successes in complex multiagent domains, although there are several challenges to be addressed. The primary goal of this article is to provide a clear overview of current multiagent deep reinforcement learning ({MDRL}) literature. Additionally, we complement the overview with a broader analysis: (i) we revisit previous key components, originally presented in {MAL} and {RL}, and highlight how they have been adapted to multiagent deep reinforcement learning settings. (ii) We provide general guidelines to new practitioners in the area: describing lessons learned from {MDRL} works, pointing to recent benchmarks, and outlining open avenues of research. (iii) We take a more critical tone raising practical challenges of {MDRL} (e.g., implementation and computational demands). We expect this article will help unify and motivate future research to take advantage of the abundant literature that exists (e.g., {RL} and {MAL}) in a joint eﬀort to promote fruitful research in the multiagent community.}
+      \field{annotation}{Comment: Under review since Oct 2018. Earlier versions of this work had the title: "Is multiagent deep reinforcement learning the answer or the question? A brief survey"}
+      \field{eprinttype}{arxiv}
+      \field{issn}{1387-2532, 1573-7454}
+      \field{journaltitle}{Autonomous Agents and Multi-Agent Systems}
+      \field{langid}{english}
+      \field{month}{11}
+      \field{number}{6}
+      \field{shortjournal}{Auton Agent Multi-Agent Syst}
+      \field{title}{A Survey and Critique of Multiagent Deep Reinforcement Learning}
+      \field{urlday}{21}
+      \field{urlmonth}{12}
+      \field{urlyear}{2025}
+      \field{volume}{33}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{750\bibrangedash 797}
+      \range{pages}{48}
+      \verb{doi}
+      \verb 10.1007/s10458-019-09421-1
+      \endverb
+      \verb{eprint}
+      \verb 1810.05587 [cs]
+      \endverb
+      \verb{file}
+      \verb PDF:/home/paqh/Zotero/storage/3SCCQDCP/Hernandez-Leal et al. - 2019 - A Survey and Critique of Multiagent Deep Reinforcement Learning.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1810.05587
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1810.05587
+      \endverb
+      \keyw{Computer Science - Artificial Intelligence,Computer Science - Machine Learning,Computer Science - Multiagent Systems}
+    \endentry
+    \entry{hochreiter_long_1997}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=41b31e29fb2bdbf9f5c9c1b0d5b3e815}{%
+           family={Hochreiter},
+           familyi={H\bibinitperiod},
+           given={Sepp},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=288bdbcfe1b91ad7484d7a24f74f99ed}{%
+           family={Schmidhuber},
+           familyi={S\bibinitperiod},
+           given={Jürgen},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
+      \strng{fullhash}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
+      \strng{bibnamehash}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
+      \strng{authorbibnamehash}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
+      \strng{authornamehash}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
+      \strng{authorfullhash}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Learning to store information over extended time intervals by recurrent backpropagation takes a very long time, mostly because of insufficient, decaying error backflow. We briefly review Hochreiter's (1991) analysis of this problem, then address it by introducing a novel, efficient, gradient based method called long short-term memory ({LSTM}). Truncating the gradient where this does not do harm, {LSTM} can learn to bridge minimal time lags in excess of 1000 discrete-time steps by enforcing constant error flow through constant error carousels within special units. Multiplicative gate units learn to open and close access to the constant error flow. {LSTM} is local in space and time; its computational complexity per time step and weight is O. 1. Our experiments with artificial data involve local, distributed, real-valued, and noisy pattern representations. In comparisons with real-time recurrent learning, back propagation through time, recurrent cascade correlation, Elman nets, and neural sequence chunking, {LSTM} leads to many more successful runs, and learns much faster. {LSTM} also solves complex, artificial long-time-lag tasks that have never been solved by previous recurrent network algorithms.}
+      \field{day}{1}
+      \field{issn}{0899-7667, 1530-888X}
+      \field{journaltitle}{Neural Computation}
+      \field{langid}{english}
+      \field{month}{11}
+      \field{number}{8}
+      \field{shortjournal}{Neural Computation}
+      \field{title}{Long Short-Term Memory}
+      \field{urlday}{16}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{volume}{9}
+      \field{year}{1997}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1735\bibrangedash 1780}
+      \range{pages}{46}
+      \verb{doi}
+      \verb 10.1162/neco.1997.9.8.1735
+      \endverb
+      \verb{file}
+      \verb PDF:/home/paqh/Zotero/storage/PR95KQKC/Hochreiter and Schmidhuber - 1997 - Long Short-Term Memory.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://direct.mit.edu/neco/article/9/8/1735-1780/6109
+      \endverb
+      \verb{url}
+      \verb https://direct.mit.edu/neco/article/9/8/1735-1780/6109
+      \endverb
     \endentry
     \entry{hu_modeling_2023}{article}{}
       \name{author}{4}{}{%
@@ -365,13 +708,15 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{Multiagent reinforcement learning (MARL) has been used extensively in the game environment. One of the main challenges in MARL is that the environment of the agent system is dynamic, and the other agents are also updating their strategies. Therefore, modeling the opponents' learning process and adopting specific strategies to shape learning is an effective way to obtain better training results. Previous studies such as DRON, LOLA and SOS approximated the opponent's learning process and gave effective applications. However, these studies modeled only transient changes in opponent strategies and lacked stability in the improvement of equilibrium efficiency. In this article, we design the MOL (modeling opponent learning) method based on the Stackelberg game. We use best response theory to approximate the opponents' preferences for different actions and explore stable equilibrium with higher rewards. We find that MOL achieves better results in several games with classical structures (the Prisoner's Dilemma, Stackelberg Leader game and Stag Hunt with 3 players), and in randomly generated bimatrix games. MOL performs well in competitive games played against different opponents and converges to stable points that score above the Nash equilibrium in repeated game environments. The results may provide a reference for the definition of equilibrium in multiagent reinforcement learning systems, and contribute to the design of learning objectives in MARL to avoid local disadvantageous equilibrium and improve general efficiency. © 2023 Elsevier B.V., All rights reserved.}
+      \field{abstract}{Multiagent reinforcement learning ({MARL}) has been used extensively in the game environment. One of the main challenges in {MARL} is that the environment of the agent system is dynamic, and the other agents are also updating their strategies. Therefore, modeling the opponents’ learning process and adopting specific strategies to shape learning is an effective way to obtain better training results. Previous studies such as {DRON}, {LOLA} and {SOS} approximated the opponent’s learning process and gave effective applications. However, these studies modeled only transient changes in opponent strategies and lacked stability in the improvement of equilibrium efficiency. In this article, we design the {MOL} (modeling opponent learning) method based on the Stackelberg game. We use best response theory to approximate the opponents’ preferences for different actions and explore stable equilibrium with higher rewards. We find that {MOL} achieves better results in several games with classical structures (the Prisoner’s Dilemma, Stackelberg Leader game and Stag Hunt with 3 players), and in randomly generated bimatrix games. {MOL} performs well in competitive games played against different opponents and converges to stable points that score above the Nash equilibrium in repeated game environments. The results may provide a reference for the definition of equilibrium in multiagent reinforcement learning systems, and contribute to the design of learning objectives in {MARL} to avoid local disadvantageous equilibrium and improve general efficiency. © 2023 Elsevier B.V., All rights reserved.}
+      \field{annotation}{Cited by: 5; All Open Access; Hybrid Gold Open Access}
       \field{journaltitle}{Applied Intelligence}
       \field{note}{Type: Article}
       \field{number}{13}
       \field{title}{Modeling opponent learning in multiagent repeated games}
       \field{volume}{53}
       \field{year}{2023}
+      \field{dateera}{ce}
       \field{pages}{17194\bibrangedash 17210}
       \range{pages}{17}
       \verb{doi}
@@ -409,9 +754,6 @@
            giveni={G\bibinitperiod},
            givenun=0}}%
       }
-      \list{language}{1}{%
-        {en}%
-      }
       \strng{namehash}{45f2f4f8c0ca907187a22c213a9cda0d}
       \strng{fullhash}{e80a2204626b9348596a3e662a254cca}
       \strng{bibnamehash}{e80a2204626b9348596a3e662a254cca}
@@ -424,17 +766,20 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{Abstract In human society, the conflict between self-interest and collective well-being often obstructs efforts to achieve shared welfare. Related concepts like the Tragedy of the Commons and Social Dilemmas frequently manifest in our daily lives. As artificial agents increasingly serve as autonomous proxies for humans, we propose a novel multi-agent reinforcement learning (MARL) method to address this issue - learning policies to maximise collective returns even when individual agents' interests conflict with the collective one. Unlike traditional cooperative MARL solutions that involve sharing rewards, values, and policies or designing intrinsic rewards to encourage agents to learn collectively optimal policies, we propose a novel MARL approach where agents exchange action suggestions. Our method reveals less private information compared to sharing rewards, values, or policies, while enabling effective cooperation without the need to design intrinsic rewards. Our algorithm is supported by our theoretical analysis that establishes a bound on the discrepancy between collective and individual objectives, demonstrating how sharing suggestions can align agents' behaviours with the collective objective. Experimental results demonstrate that our algorithm performs competitively with baselines that rely on value or policy sharing or intrinsic rewards.}
+      \field{abstract}{Abstract In human society, the conflict between self-interest and collective well-being often obstructs efforts to achieve shared welfare. Related concepts like the Tragedy of the Commons and Social Dilemmas frequently manifest in our daily lives. As artificial agents increasingly serve as autonomous proxies for humans, we propose a novel multi-agent reinforcement learning ({MARL}) method to address this issue - learning policies to maximise collective returns even when individual agents’ interests conflict with the collective one. Unlike traditional cooperative {MARL} solutions that involve sharing rewards, values, and policies or designing intrinsic rewards to encourage agents to learn collectively optimal policies, we propose a novel {MARL} approach where agents exchange action suggestions. Our method reveals less private information compared to sharing rewards, values, or policies, while enabling effective cooperation without the need to design intrinsic rewards. Our algorithm is supported by our theoretical analysis that establishes a bound on the discrepancy between collective and individual objectives, demonstrating how sharing suggestions can align agents’ behaviours with the collective objective. Experimental results demonstrate that our algorithm performs competitively with baselines that rely on value or policy sharing or intrinsic rewards.}
       \field{issn}{0885-6125, 1573-0565}
       \field{journaltitle}{Machine Learning}
+      \field{langid}{english}
       \field{month}{8}
       \field{number}{8}
+      \field{shortjournal}{Mach Learn}
       \field{title}{Achieving collective welfare in multi-agent reinforcement learning via suggestion sharing}
       \field{urlday}{4}
       \field{urlmonth}{11}
       \field{urlyear}{2025}
       \field{volume}{114}
       \field{year}{2025}
+      \field{dateera}{ce}
       \field{urldateera}{ce}
       \field{pages}{190}
       \range{pages}{1}
@@ -490,13 +835,15 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{In repeated zero-sum games, instead of constantly playing an equilibrium strategy of the stage game, learning to exploit the opponent given historical interactions could typically obtain a higher utility. However, when playing against a fully adaptive opponent, one would have difficulty identifying the opponent's adaptive dynamics and further exploiting its potential weakness. In this paper, we study the problem of optimizing against the adaptive opponent who uses no-regret learning. No-regret learning is a classic and widely-used branch of adaptive learning algorithms. We propose a general framework for online modeling no-regret opponents and exploiting their weakness. With this framework, one could approximate the opponent's no-regret learning dynamics and then develop a response plan to obtain a significant profit based on the inferences of the opponent's strategies. We employ two system identification architectures, including the recurrent neural network (RNN) and the nonlinear autoregressive exogenous model, and adopt an efficient greedy response plan within the framework. Theoretically, we prove the approximation capability of our RNN architecture at approximating specific no-regret dynamics. Empirically, we demonstrate that during interactions at a low level of non-stationarity, our architectures could approximate the dynamics with a low error, and the derived policies could exploit the no-regret opponent to obtain a decent utility. © 2025 Elsevier B.V., All rights reserved.}
+      \field{abstract}{In repeated zero-sum games, instead of constantly playing an equilibrium strategy of the stage game, learning to exploit the opponent given historical interactions could typically obtain a higher utility. However, when playing against a fully adaptive opponent, one would have difficulty identifying the opponent’s adaptive dynamics and further exploiting its potential weakness. In this paper, we study the problem of optimizing against the adaptive opponent who uses no-regret learning. No-regret learning is a classic and widely-used branch of adaptive learning algorithms. We propose a general framework for online modeling no-regret opponents and exploiting their weakness. With this framework, one could approximate the opponent’s no-regret learning dynamics and then develop a response plan to obtain a significant profit based on the inferences of the opponent’s strategies. We employ two system identification architectures, including the recurrent neural network ({RNN}) and the nonlinear autoregressive exogenous model, and adopt an efficient greedy response plan within the framework. Theoretically, we prove the approximation capability of our {RNN} architecture at approximating specific no-regret dynamics. Empirically, we demonstrate that during interactions at a low level of non-stationarity, our architectures could approximate the dynamics with a low error, and the derived policies could exploit the no-regret opponent to obtain a decent utility. © 2025 Elsevier B.V., All rights reserved.}
+      \field{annotation}{Cited by: 0}
       \field{journaltitle}{Journal of Shanghai Jiaotong University (Science)}
       \field{note}{Type: Article}
       \field{number}{2}
-      \field{title}{Exploiting a {No}-{Regret} {Opponent} in {Repeated} {Zero}-{Sum} {Games}}
+      \field{title}{Exploiting a No-Regret Opponent in Repeated Zero-Sum Games; 重复零和博弈中对无遗憾对手进行盘剥的研究}
       \field{volume}{30}
       \field{year}{2025}
+      \field{dateera}{ce}
       \field{pages}{385\bibrangedash 398}
       \range{pages}{14}
       \verb{doi}
@@ -511,7 +858,7 @@
       \verb{url}
       \verb https://www.scopus.com/inward/record.uri?eid=2-s2.0-105001082101&doi=10.1007%2Fs12204-023-2610-2&partnerID=40&md5=b91d9d28bdade788c8985552e1a51657
       \endverb
-      \keyw{Dynamical systems,Learning algorithms,Learning systems,Opponent models,A,Dynamics,Network architecture,No-regret learning,Opponent exploitation,Recurrent neural network,Recurrent neural networks,Religious buildings,Repeated games,Response plans,System-identification,TP 18,Zero-sum game}
+      \keyw{Dynamical systems,Learning algorithms,Learning systems,Opponent models,A,Dynamics,Network architecture,No-regret learning,Opponent exploitation,Recurrent neural network,Recurrent neural networks,Religious buildings,Repeated games,Response plans,System-identification,{TP} 18,Zero-sum game}
     \endentry
     \entry{lv_inducing_2023}{inproceedings}{}
       \name{author}{6}{}{%
@@ -564,15 +911,18 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{Coordination, i.e., multiple autonomous agents in a system to achieve a common goal, is critical for distributed systems since it can increase the overall reward among all agents. However, The dynamic environment and selfish agents pose challenges to learning coordination behavior from historical interaction data in a long-term interaction environment. Previous works mostly focus on one-shot or short-term distributed agent interaction environments, which often leads to selfish or lazy behavior in long-term interaction environments, i.e., prioritizing individual optimal strategies over cooperative strategies. This behavior is mainly due to the lack of historical memory or incomplete use of historical interaction data to guide the current interaction strategy. In this paper, we propose a hierarchical peer-rewarding mechanism, hierarchical gifting, that allows each agent to dynamically assign some of their rewards to other agents based on historical interaction data and guide the agents towards more coordinated behavior while ensuring that agents remain selfish and decentralized. Specifically, we first propose an auxiliary opponent modeling task so that agents can infer opponents' types through historical interaction trajectories. In addition, we design a hierarchical gifting strategy that dynamically changes during execution based on known opponents' types. We employ a theoretical framework that captures the benefit of hierarchical gifting in converging to the coordinated behavior by characterizing the equilibria's basins of attraction in a dynamical system. With hierarchical gifting, we demonstrate increased coordinated behavior of different risk, general-sum coordination games to the prosocial equilibrium both via numerical analysis and experiments.}
-      \field{booktitle}{2023 {IEEE} 20th {International} {Conference} on {Mobile} {Ad} {Hoc} and {Smart} {Systems} ({MASS})}
+      \field{abstract}{Coordination, i.e., multiple autonomous agents in a system to achieve a common goal, is critical for distributed systems since it can increase the overall reward among all agents. However, The dynamic environment and selfish agents pose challenges to learning coordination behavior from historical interaction data in a long-term interaction environment. Previous works mostly focus on one-shot or short-term distributed agent interaction environments, which often leads to selfish or lazy behavior in long-term interaction environments, i.e., prioritizing individual optimal strategies over cooperative strategies. This behavior is mainly due to the lack of historical memory or incomplete use of historical interaction data to guide the current interaction strategy. In this paper, we propose a hierarchical peer-rewarding mechanism, hierarchical gifting, that allows each agent to dynamically assign some of their rewards to other agents based on historical interaction data and guide the agents towards more coordinated behavior while ensuring that agents remain selfish and decentralized. Specifically, we first propose an auxiliary opponent modeling task so that agents can infer opponents’ types through historical interaction trajectories. In addition, we design a hierarchical gifting strategy that dynamically changes during execution based on known opponents’ types. We employ a theoretical framework that captures the benefit of hierarchical gifting in converging to the coordinated behavior by characterizing the equilibria’s basins of attraction in a dynamical system. With hierarchical gifting, we demonstrate increased coordinated behavior of different risk, general-sum coordination games to the prosocial equilibrium both via numerical analysis and experiments.}
+      \field{annotation}{Cited by: 0}
+      \field{booktitle}{2023 {IEEE} 20th International Conference on Mobile Ad Hoc and Smart Systems ({MASS})}
+      \field{eventtitle}{2023 {IEEE} 20th International Conference on Mobile Ad Hoc and Smart Systems ({MASS})}
       \field{month}{9}
-      \field{note}{ISSN: 2155-6814}
-      \field{title}{Inducing {Coordination} in {Multi}-{Agent} {Repeated} {Game} through {Hierarchical} {Gifting} {Policies}}
+      \field{note}{{ISSN}: 2155-6814}
+      \field{title}{Inducing Coordination in Multi-Agent Repeated Game through Hierarchical Gifting Policies}
       \field{urlday}{4}
       \field{urlmonth}{11}
       \field{urlyear}{2025}
       \field{year}{2023}
+      \field{dateera}{ce}
       \field{urldateera}{ce}
       \field{pages}{279\bibrangedash 287}
       \range{pages}{9}
@@ -589,6 +939,62 @@
       \verb https://ieeexplore.ieee.org/document/10298392/
       \endverb
       \keyw{Risk assessment,Task analysis,Dynamical systems,Trajectory,Game theory,Games,Autonomous agents,Behavioral sciences,Coordination,Game Theory,Multi-agent Reinforcement Learning,Multi-agent Systems,Numerical analysis,Reinforcement learning,Learning systems,Multi agent systems,Repeated games,Multi agent,Multi-agent reinforcement learning,Coordinated behavior,Distributed systems,Dynamic environments,Hierarchical systems,Interaction environment,Long-term interaction,Selfish Agents}
+    \endentry
+    \entry{nisan_algorithmic_2008}{collection}{}
+      \name{editor}{4}{}{%
+        {{un=0,uniquepart=base,hash=dd03ed102537d5040adaf7ede9bad0ec}{%
+           family={Nisan},
+           familyi={N\bibinitperiod},
+           given={Noam},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=efce6f6d496cdcc1bb07fb47dfecb3aa}{%
+           family={Roughgarden},
+           familyi={R\bibinitperiod},
+           given={Tim},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3b65c0aec42ebdc08432a6ece3a86584}{%
+           family={Tardos},
+           familyi={T\bibinitperiod},
+           given={Éva},
+           giveni={É\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4391dea254c3bbcaff1fefed241caed0}{%
+           family={Vazirani},
+           familyi={V\bibinitperiod},
+           given={Vijay\bibnamedelima V.},
+           giveni={V\bibinitperiod\bibinitdelim V\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Cambridge}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge Univ. Press}%
+      }
+      \strng{namehash}{a461b403bdb909ab1f593fcc8e04d108}
+      \strng{fullhash}{f3f9b9c1f783937a9e09835a23bf3b16}
+      \strng{bibnamehash}{f3f9b9c1f783937a9e09835a23bf3b16}
+      \strng{editorbibnamehash}{f3f9b9c1f783937a9e09835a23bf3b16}
+      \strng{editornamehash}{a461b403bdb909ab1f593fcc8e04d108}
+      \strng{editorfullhash}{f3f9b9c1f783937a9e09835a23bf3b16}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{editor}
+      \field{labeltitlesource}{title}
+      \field{edition}{Repr., [Nachdr.]}
+      \field{isbn}{978-0-521-87282-9}
+      \field{langid}{english}
+      \field{pagetotal}{754}
+      \field{title}{Algorithmic game theory}
+      \field{year}{2008}
+      \field{dateera}{ce}
+      \verb{file}
+      \verb PDF:/home/paqh/Zotero/storage/E32E6JJY/Nisan et al. - 2008 - Algorithmic game theory.pdf:application/pdf
+      \endverb
     \endentry
     \entry{perera_learning_2025}{article}{}
       \name{author}{3}{}{%
@@ -626,13 +1032,15 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{The emergence of cooperation in decentralized multi-agent systems is challenging; naive implementations of learning algorithms typically fail to converge or converge to equilibria without cooperation. Opponent modeling techniques, combined with reinforcement learning, have been successful in promoting cooperation, but face challenges when other agents are plentiful or anonymous. We envision environments in which agents face a sequence of interactions with different and heterogeneous agents. Inspired by models of evolutionary game theory, we introduce RL agents that forgo explicit modeling of others. Instead, they augment their reward signal by considering how to best respond to others assumed to be rational against their own strategy. This technique not only scales well in environments with many agents, but can also outperform opponent modeling techniques across a range of cooperation games. Agents that use the algorithm we propose can successfully maintain and establish cooperation when playing against an ensemble of diverse agents. This finding is robust across different kinds of games and can also be shown not to disadvantage agents in purely competitive interactions. While cooperation in pairwise settings is foundational, interactions across large groups of diverse agents are likely to be the norm in future applications where cooperation is an emergent property of agent design, rather than a design goal at the system level. The algorithm we propose here is a simple and scalable step in this direction. © 2025 Elsevier B.V., All rights reserved.}
+      \field{abstract}{The emergence of cooperation in decentralized multi-agent systems is challenging; naive implementations of learning algorithms typically fail to converge or converge to equilibria without cooperation. Opponent modeling techniques, combined with reinforcement learning, have been successful in promoting cooperation, but face challenges when other agents are plentiful or anonymous. We envision environments in which agents face a sequence of interactions with different and heterogeneous agents. Inspired by models of evolutionary game theory, we introduce {RL} agents that forgo explicit modeling of others. Instead, they augment their reward signal by considering how to best respond to others assumed to be rational against their own strategy. This technique not only scales well in environments with many agents, but can also outperform opponent modeling techniques across a range of cooperation games. Agents that use the algorithm we propose can successfully maintain and establish cooperation when playing against an ensemble of diverse agents. This finding is robust across different kinds of games and can also be shown not to disadvantage agents in purely competitive interactions. While cooperation in pairwise settings is foundational, interactions across large groups of diverse agents are likely to be the norm in future applications where cooperation is an emergent property of agent design, rather than a design goal at the system level. The algorithm we propose here is a simple and scalable step in this direction. © 2025 Elsevier B.V., All rights reserved.}
+      \field{annotation}{Cited by: 0; All Open Access; Hybrid Gold Open Access}
       \field{journaltitle}{Neural Computing and Applications}
       \field{note}{Type: Article}
       \field{number}{23}
       \field{title}{Learning to cooperate against ensembles of diverse opponents}
       \field{volume}{37}
       \field{year}{2025}
+      \field{dateera}{ce}
       \field{pages}{18835\bibrangedash 18849}
       \range{pages}{15}
       \verb{doi}
@@ -647,7 +1055,7 @@
       \verb{url}
       \verb https://www.scopus.com/inward/record.uri?eid=2-s2.0-85214668528&doi=10.1007%2Fs00521-024-10511-9&partnerID=40&md5=10fe010167eb8ddf09ffc6248af3f874
       \endverb
-      \keyw{Game theory,Cooperation,Reinforcement learning,Adversarial machine learning,Best response,Decentralised,Decentralized systems,Evolutionary game theory,Federated learning,Iterated prisoner's dilemma,Learning algorithms,Learning systems,Modelling techniques,Multi agent systems,Multiagent systems (MASs),Opponent models,Population games,Reinforcement learnings}
+      \keyw{Game theory,Cooperation,Reinforcement learning,Adversarial machine learning,Best response,Decentralised,Decentralized systems,Evolutionary game theory,Federated learning,Iterated prisoner’s dilemma,Learning algorithms,Learning systems,Modelling techniques,Multi agent systems,Multiagent systems ({MASs}),Opponent models,Population games,Reinforcement learnings}
     \endentry
     \entry{qiao_o2m_2024}{inproceedings}{}
       \name{author}{3}{}{%
@@ -682,15 +1090,17 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
-      \field{abstract}{This paper focuses on strategy learning in online general-sum games, specifically addressing online matrix games (MGs), where two players control parameters and face an unknown, stochastically varying payoff matrix. The goal is to learn strategies that maximize long-term rewards within this dynamic and uncertain game environment. We introduce Online Opponent Modeling (O2M), a novel algorithm designed to overcome the limitations of OMG-RFTL, which struggles in general-sum game settings. O2M incorporates opponent modeling techniques into online game frameworks, alleviating the non-stationarity issue inherent in multi-agent systems and enabling agents to achieve superior rewards.}
-      \field{booktitle}{2024 4th {International} {Conference} on {Artificial} {Intelligence}, {Robotics}, and {Communication} ({ICAIRC})}
+      \field{abstract}{This paper focuses on strategy learning in online general-sum games, specifically addressing online matrix games ({MGs}), where two players control parameters and face an unknown, stochastically varying payoff matrix. The goal is to learn strategies that maximize long-term rewards within this dynamic and uncertain game environment. We introduce Online Opponent Modeling (O2M), a novel algorithm designed to overcome the limitations of {OMG}-{RFTL}, which struggles in general-sum game settings. O2M incorporates opponent modeling techniques into online game frameworks, alleviating the non-stationarity issue inherent in multi-agent systems and enabling agents to achieve superior rewards.}
+      \field{booktitle}{2024 4th International Conference on Artificial Intelligence, Robotics, and Communication ({ICAIRC})}
+      \field{eventtitle}{2024 4th International Conference on Artificial Intelligence, Robotics, and Communication ({ICAIRC})}
       \field{month}{12}
-      \field{shorttitle}{{O2M}}
-      \field{title}{{O2M}: {Online} {Opponent} {Modeling} in {Online} {General}-{Sum} {Matrix} {Games}}
+      \field{shorttitle}{O2M}
+      \field{title}{O2M: Online Opponent Modeling in Online General-Sum Matrix Games}
       \field{urlday}{4}
       \field{urlmonth}{11}
       \field{urlyear}{2025}
       \field{year}{2024}
+      \field{dateera}{ce}
       \field{urldateera}{ce}
       \field{pages}{358\bibrangedash 361}
       \range{pages}{4}
@@ -707,6 +1117,70 @@
       \verb https://ieeexplore.ieee.org/document/10899996/
       \endverb
       \keyw{Artificial intelligence,Heuristic algorithms,Multi-agent systems,Robots,Games,Faces,Matrix Game,Online learning,Opponent modeling}
+    \endentry
+    \entry{shoham_multiagent_2009}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=774e2e16526f33f383bed004b13bf326}{%
+           family={Shoham},
+           familyi={S\bibinitperiod},
+           given={Yoav},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{774e2e16526f33f383bed004b13bf326}
+      \strng{fullhash}{774e2e16526f33f383bed004b13bf326}
+      \strng{bibnamehash}{774e2e16526f33f383bed004b13bf326}
+      \strng{authorbibnamehash}{774e2e16526f33f383bed004b13bf326}
+      \strng{authornamehash}{774e2e16526f33f383bed004b13bf326}
+      \strng{authorfullhash}{774e2e16526f33f383bed004b13bf326}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{title}{Multiagent Systems: Algorithmic, Game-Theoretic, and Logical Foundations}
+      \field{year}{2009}
+      \field{dateera}{ce}
+      \verb{file}
+      \verb PDF:/home/paqh/Zotero/storage/V2H8HELF/Shoham - Multiagent Systems Algorithmic, Game-Theoretic, and Logical Foundations.pdf:application/pdf
+      \endverb
+    \endentry
+    \entry{sutton_reinforcement_2015}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=eb920e5277d3d5fd0903f3cd41e11871}{%
+           family={Sutton},
+           familyi={S\bibinitperiod},
+           given={Richard\bibnamedelima S},
+           giveni={R\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=32a0a208f8bcf56a13b0a8e618aa806a}{%
+           family={Barto},
+           familyi={B\bibinitperiod},
+           given={Andrew\bibnamedelima G},
+           giveni={A\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c6212f1a1407d96a3d9f4fefbb07eade}
+      \strng{fullhash}{c6212f1a1407d96a3d9f4fefbb07eade}
+      \strng{bibnamehash}{c6212f1a1407d96a3d9f4fefbb07eade}
+      \strng{authorbibnamehash}{c6212f1a1407d96a3d9f4fefbb07eade}
+      \strng{authornamehash}{c6212f1a1407d96a3d9f4fefbb07eade}
+      \strng{authorfullhash}{c6212f1a1407d96a3d9f4fefbb07eade}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{title}{Reinforcement Learning: An Introduction}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \verb{file}
+      \verb PDF:/home/paqh/Zotero/storage/EINGZTN3/Sutton and Barto - Reinforcement Learning An Introduction.pdf:application/pdf
+      \endverb
     \endentry
     \entry{wang_achieving_2019}{inproceedings}{}
       \name{author}{4}{}{%
@@ -747,16 +1221,18 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{The Iterated Prisoner's Dilemma has guided research on social dilemmas for decades. However, it distinguishes between only two atomic actions: cooperate and defect. In real-world prisoner's dilemmas, these choices are temporally extended and different strategies may correspond to sequences of actions, reflecting grades of cooperation. We introduce a Sequential Prisoner's Dilemma (SPD) game to better capture the aforementioned characteristics. In this work, we propose a deep multiagent reinforcement-learning approach that investigates the evolution of mutual cooperation in SPD games. Our approach consists of two phases. The first phase is offline: it synthesizes policies with different cooperation degrees and then trains a cooperation degree detection network. The second phase is online: an agent adaptively selects its policy based on the detected degree of opponent cooperation. The effectiveness of our approach is demonstrated in two representative SPD 2D games: the Apple-Pear game and the Fruit Gathering game. Experimental results show that our strategy can avoid being exploited by exploitative opponents and achieve cooperation with cooperative opponents. © 2022 Elsevier B.V., All rights reserved.}
-      \field{booktitle}{{ACM} {International} {Conference} {Proceeding} {Series}}
+      \field{abstract}{The Iterated Prisoner’s Dilemma has guided research on social dilemmas for decades. However, it distinguishes between only two atomic actions: cooperate and defect. In real-world prisoner’s dilemmas, these choices are temporally extended and different strategies may correspond to sequences of actions, reflecting grades of cooperation. We introduce a Sequential Prisoner’s Dilemma ({SPD}) game to better capture the aforementioned characteristics. In this work, we propose a deep multiagent reinforcement-learning approach that investigates the evolution of mutual cooperation in {SPD} games. Our approach consists of two phases. The first phase is offline: it synthesizes policies with different cooperation degrees and then trains a cooperation degree detection network. The second phase is online: an agent adaptively selects its policy based on the detected degree of opponent cooperation. The effectiveness of our approach is demonstrated in two representative {SPD} 2D games: the Apple-Pear game and the Fruit Gathering game. Experimental results show that our strategy can avoid being exploited by exploitative opponents and achieve cooperation with cooperative opponents. © 2022 Elsevier B.V., All rights reserved.}
+      \field{annotation}{Cited by: 1}
+      \field{booktitle}{{ACM} International Conference Proceeding Series}
       \field{note}{Type: Conference paper}
-      \field{title}{Achieving cooperation through deep multiagent reinforcement learning in sequential prisoner's dilemmas}
+      \field{title}{Achieving cooperation through deep multiagent reinforcement learning in sequential prisoner’s dilemmas}
       \field{year}{2019}
+      \field{dateera}{ce}
       \verb{doi}
       \verb 10.1145/3356464.3357712
       \endverb
       \verb{file}
-      \verb PDF:/home/paqh/Zotero/storage/K7Q4J56S/Wang et al. - 2019 - Achieving cooperation through deep multiagent reinforcement learning in sequential prisoner's dilemm.pdf:application/pdf
+      \verb PDF:/home/paqh/Zotero/storage/K7Q4J56S/Wang et al. - 2019 - Achieving cooperation through deep multiagent reinforcement learning in sequential prisoner’s dilemm.pdf:application/pdf
       \endverb
       \verb{urlraw}
       \verb https://www.scopus.com/inward/record.uri?eid=2-s2.0-85075428156&doi=10.1145%2F3356464.3357712&partnerID=40&md5=f3900b979cd42f8d14b73dbb5ee134ba
@@ -799,15 +1275,18 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{This study establishes a multi-agent modeling framework to analyze the evolutionary dynamics of zero-determinant strategies on regular networks under hybrid social dilemmas integrating Prisoner's Dilemma and Snowdrift game. By formulating fitness-driven dynamical equations, theoretical and numerical results reveal that cooperators exhibit dominance in steady-state under pairwise comparison rules, whereas extortion strategies demonstrate significant invasion characteristics in scale-free networks under death-birth update rule. Notably, the influence of both temptation and extortion factors on cooperation evolution exhibits a pronounced rule-dependent phenomenon. By decoupling the multidimensional coupling effects of network topology, strategy update rule and payoff parameters, we establish critical criteria for cooperation evolution. These findings provide a dynamical theoretical basis for illustrating cooperation emergence mechanisms in complex social networks and designing intervention strategies to enhance collective cooperation.}
-      \field{booktitle}{2025 {Joint} {International} {Conference} on {Automation}-{Intelligence}-{Safety} ({ICAIS}) \& {International} {Symposium} on {Autonomous} {Systems} ({ISAS})}
+      \field{abstract}{This study establishes a multi-agent modeling framework to analyze the evolutionary dynamics of zero-determinant strategies on regular networks under hybrid social dilemmas integrating Prisoner’s Dilemma and Snowdrift game. By formulating fitness-driven dynamical equations, theoretical and numerical results reveal that cooperators exhibit dominance in steady-state under pairwise comparison rules, whereas extortion strategies demonstrate significant invasion characteristics in scale-free networks under death-birth update rule. Notably, the influence of both temptation and extortion factors on cooperation evolution exhibits a pronounced rule-dependent phenomenon. By decoupling the multidimensional coupling effects of network topology, strategy update rule and payoff parameters, we establish critical criteria for cooperation evolution. These findings provide a dynamical theoretical basis for illustrating cooperation emergence mechanisms in complex social networks and designing intervention strategies to enhance collective cooperation.}
+      \field{annotation}{Cited by: 0}
+      \field{booktitle}{2025 Joint International Conference on Automation-Intelligence-Safety ({ICAIS}) \& International Symposium on Autonomous Systems ({ISAS})}
+      \field{eventtitle}{2025 Joint International Conference on Automation-Intelligence-Safety ({ICAIS}) \& International Symposium on Autonomous Systems ({ISAS})}
       \field{month}{5}
-      \field{note}{ISSN: 2996-3850}
-      \field{title}{Evolutionary {Dynamics} of {Cooperation} and {Extortion} on {Networks} {With} {Fitness}-{Dependent} {Rules}}
+      \field{note}{{ISSN}: 2996-3850}
+      \field{title}{Evolutionary Dynamics of Cooperation and Extortion on Networks With Fitness-Dependent Rules}
       \field{urlday}{4}
       \field{urlmonth}{11}
       \field{urlyear}{2025}
       \field{year}{2025}
+      \field{dateera}{ce}
       \field{urldateera}{ce}
       \field{pages}{1\bibrangedash 6}
       \range{pages}{6}

@@ -1,0 +1,270 @@
+\section{Deskripsi Umum}
+Penelitian ini bertujuan mengembangkan algoritma pembelajaran \textit{online} untuk skenario \textit{Iterated Prisoner's Dilemma} (IPD) dengan lawan adaptif dan non-stasioner. Fokus utama adalah pada pemodelan lawan yang sepenuhnya terpisah dari sinyal reward, serta eksplorasi berbasis peningkatan pemahaman terhadap dinamika lawan. Model prediksi digunakan sebagai komponen evaluasi dalam simulasi\textit{Monte Carlo rollout} untuk mengestimasi nilai aksi agen.Pendekatan ini memisahkan sepenuhnya proses pembentukan beliefdari sinyal reward, sehingga pemodelan lawan tidak terdorong oleh bias utilitas agen. Eksplorasi berbasis epistemik dibahas sebagai kemungkinan penggunaan lanjutan dari belief state, namun tidak menjadi bagian dari implementasi utama dalam penelitian ini.
+
+\section{Formulasi Masalah}
+
+Penelitian ini mempertimbangkan skenario \textit{Iterated Prisoner's Dilemma} (IPD) dengan horizon stokastik. Pada setiap langkah waktu $t$, agen dan lawan masing-masing memilih aksi $a_t^{(i)} \in \{C, D\}$. Interaksi berlanjut dengan probabilitas $\gamma \in (0,1)$ dan berhenti secara geometrik.
+
+Lawan diasumsikan adaptif dan non-stasioner, namun algoritma internalnya tidak diketahui. Lawan dapat berupa algoritma pembelajaran daring seperti Hedge, Online Mirror Descent, atau agen berbasis reinforcement learning. Agen tidak memiliki akses terhadap parameter internal maupun fungsi utilitas lawan.
+
+Tujuan agen adalah memaksimalkan ekspektasi reward kumulatif terhadap lawan adaptif, dengan memanfaatkan modul pemodelan lawan yang sepenuhnya terpisah dari sinyal reward.
+
+\section{Metodologi Penelitian}
+
+Penelitian ini bertujuan untuk membangun model \textit{belief state} lawan dalam permainan berulang menggunakan arsitektur Long Short-Term Memory (LSTM) yang dilatih secara \textit{offline}, serta memanfaatkannya untuk simulasi \textit{Monte Carlo rollout} pada tahap pengambilan keputusan.
+
+
+\subsection{Formalisasi Permainan}
+
+Permainan diformalkan sebagai permainan normal berulang dua pemain dengan:
+Parameter \textit{trembling-hand} $\epsilon$
+merepresentasikan probabilitas kesalahan aksi acak
+yang bersifat independen pada setiap tahap.
+Dengan probabilitas $\epsilon$,
+aksi yang dipilih digantikan oleh aksi acak uniform.
+Parameter ini digunakan untuk memastikan
+bahwa proses observasi tetap eksploratif
+dan menghindari determinisme penuh dalam dinamika permainan.
+
+
+\begin{itemize}
+    \item Himpunan aksi diskrit $A = \{1, \dots, m\}$
+    \item Matriks payoff $P \in \mathbb{R}^{m \times m}$
+    \item Tingkat terminasi $\gamma \in (0,1)$
+    \item Tingkat \textit{trembling-hand} $\epsilon \in [0,1]$
+\end{itemize}
+
+Pada setiap tahap $t$, agen dan lawan memilih aksi $a_t^{agent}$ dan $a_t^{opp}$. Reward dihitung sebagai:
+
+\begin{equation}
+r_t^{agent}, r_t^{opp} = \phi(a_t^{agent}, a_t^{opp}, P)
+\end{equation}
+
+Riwayat interaksi hingga waktu $t$ dinotasikan sebagai:
+
+\begin{equation}
+H_t = \{(a_1^{opp}, a_1^{agent}, r_1^{opp}, r_1^{agent}), \dots, (a_t^{opp}, a_t^{agent}, r_t^{opp}, r_t^{agent})\}
+\end{equation}
+
+Tujuan model adalah mengestimasi distribusi aksi lawan berikutnya:
+
+\begin{equation}
+x_{t+1} = \mathbb{P}(a_{t+1}^{opp} \mid H_t)
+\end{equation}
+
+\subsection{Arsitektur Model}
+
+Model terdiri dari dua komponen utama:
+
+\begin{enumerate}
+    \item Encoder sekuensial berbasis LSTM
+    \item Jaringan feedforward untuk prediksi aksi berikutnya
+\end{enumerate}
+
+\subsubsection{Representasi Masukan}
+
+Pada setiap tahap $t$, vektor masukan didefinisikan sebagai:
+
+\begin{equation}
+s_t =
+\big[
+a_t^{opp},
+a_t^{agent},
+r_t^{opp},
+r_t^{agent}
+\big]
+\end{equation}
+
+Seluruh parameter lingkungan seperti matriks payoff $P$, tingkat terminasi $\gamma$, dan tingkat \textit{trembling-hand} $\epsilon$ digunakan dalam fungsi reward $\phi$.
+
+\subsubsection{Dinamika Hidden State}
+
+Hidden state diperbarui menggunakan LSTM:
+
+\begin{equation}
+h_t = \text{LSTM}(s_t, h_{t-1})
+\end{equation}
+
+dengan dimensi hidden sebesar 64 unit.
+
+Hidden state $h_t$ diinterpretasikan sebagai \textit{belief state} teramortisasi yang mengaproksimasi keadaan laten strategi lawan:
+
+\begin{equation}
+h_t \approx q_\theta(z_t \mid H_t)
+\end{equation}
+
+\subsubsection{Prediksi Aksi Lawan}
+
+Distribusi aksi lawan berikutnya diprediksi melalui jaringan feedforward:
+
+\begin{equation}
+\hat{x}_{t+1} = \text{softmax}(W h_t + b)
+\end{equation}
+
+dengan $\hat{x}_{t+1} \in \Delta_m$.
+
+Fungsi prediksi ini mengaproksimasi fungsi transisi sebenarnya:
+
+\begin{equation}
+x_{t+1} = f(h_t)
+\end{equation}
+
+\subsubsection{Estimasi Epistemic Uncertainty}
+
+Untuk mengukur ketidakpastian epistemik model terhadap distribusi
+aksi lawan, digunakan pendekatan \textit{Monte Carlo dropout}
+pada tahap inferensi.
+Dengan melakukan $M$ kali forward pass dengan dropout aktif,
+diperoleh sekumpulan prediksi:
+
+\begin{equation}
+\{\hat{x}_{t+1}^{(m)}\}_{m=1}^{M}
+\end{equation}
+
+Rata-rata prediksi didefinisikan sebagai:
+
+\begin{equation}
+\bar{x}_{t+1} = \frac{1}{M} \sum_{m=1}^{M} \hat{x}_{t+1}^{(m)}
+\end{equation}
+
+Ketidakpastian epistemik diukur sebagai variansi prediksi:
+
+\begin{equation}
+U_{t+1} =
+\frac{1}{M}
+\sum_{m=1}^{M}
+\|\hat{x}_{t+1}^{(m)} - \bar{x}_{t+1}\|^2
+\end{equation}
+
+Besaran ini digunakan untuk menganalisis stabilitas belief state
+terhadap histori interaksi yang terbatas.
+
+
+\subsection{Fungsi Objektif}
+
+Model dilatih secara \textit{offline} menggunakan fungsi loss \textit{cross-entropy}:
+
+\begin{equation}
+\mathcal{L} =
+-
+\sum_{t=1}^{T}
+\sum_{a \in A}
+x_{t+1}(a)
+\log \hat{x}_{t+1}(a)
+\end{equation}
+
+Pelatihan dilakukan dengan metode \textit{teacher forcing}, serta \textit{scheduled sampling} untuk mengurangi \textit{exposure bias} pada simulasi rekursif.
+
+\subsection{Simulasi Monte Carlo Rollout}
+
+Setelah pelatihan selesai, model digunakan untuk simulasi multi-langkah.
+
+Distribusi prediksi digunakan untuk sampling aksi lawan:
+
+\begin{equation}
+a_{t+1}^{opp} \sim \hat{x}_{t+1}
+\end{equation}
+
+Hidden state diperbarui secara rekursif untuk horizon $k$ langkah. Proses ini diulang sebanyak $n$ kali untuk memperoleh estimasi ekspektasi reward:
+
+\begin{equation}
+\hat{V}(H_t) =
+\frac{1}{n}
+\sum_{i=1}^{n}
+\sum_{j=1}^{k}
+\gamma^{j-1}
+r_{t+j}^{(i)}
+\end{equation}
+
+Estimasi nilai tersebut dihitung untuk setiap kandidat aksi agen
+$a \in A$ dengan melakukan rollout bersyarat pada aksi awal tersebut,
+sehingga diperoleh estimasi:
+
+\begin{equation}
+\hat{Q}(H_t, a)
+\end{equation}
+
+Agen kemudian memilih aksi berdasarkan aturan keputusan greedy:
+
+\begin{equation}
+a_t^{agent}
+=
+\arg\max_{a \in A}
+\hat{Q}(H_t, a)
+\end{equation}
+
+Diasumsikan bahwa fungsi transisi prediktif model
+$f : \Delta_m \rightarrow \Delta_m$
+bersifat Lipschitz kontinu terhadap norma Euclidean,
+yaitu terdapat konstanta $L > 0$ sehingga:
+
+\begin{equation}
+\| f(x) - f(y) \|
+\le
+L \|x - y\|
+\end{equation}
+
+untuk setiap $x, y \in \Delta_m$.
+Konstanta $L$ diestimasi secara empiris
+melalui maksimum rasio perubahan output terhadap perubahan input
+pada data validasi.
+
+
+Dengan asumsi fungsi transisi Lipschitz kontinu dengan konstanta $L$, galat prediksi multi-langkah dibatasi oleh:
+
+\begin{equation}
+\|\hat{x}_{t+k} - x_{t+k}\|
+\le
+\epsilon
+\sum_{i=0}^{k-1} L^i
+=
+\epsilon \frac{L^k - 1}{L - 1}
+\end{equation}
+
+Sehingga horizon simulasi $k$ dipilih agar galat tetap terkendali.
+
+\subsection{Pengumpulan Data}
+
+Data dikumpulkan melalui simulasi pertandingan acak antara agen dan berbagai tipe lawan baseline, meliputi:
+
+\begin{itemize}
+    \item Strategi tetap (fixed mixed strategy)
+    \item Tit-for-Tat
+    \item Win-Stay Lose-Shift
+    \item Fictitious Play
+    \item Q-Learning
+\end{itemize}
+
+Distribusi tipe lawan dikontrol selama proses pelatihan. Dataset dibagi menjadi:
+
+\begin{itemize}
+    \item Data pelatihan
+    \item Data validasi
+    \item Data pengujian (dengan variasi parameter yang tidak terlihat saat pelatihan)
+\end{itemize}
+
+Probabilitas terminasi permainan ditetapkan sebesar $0.05$,
+sehingga panjang episode mengikuti distribusi geometrik
+dengan ekspektasi:
+
+\begin{equation}
+\mathbb{E}[T] = \frac{1}{0.05} = 20
+\end{equation}
+
+Sebanyak 10.000 episode digunakan untuk pelatihan,
+2.000 untuk validasi,
+dan 2.000 untuk pengujian.
+
+Distribusi tipe lawan selama pelatihan ditetapkan uniform,
+sehingga setiap tipe memiliki probabilitas yang sama.
+
+
+\subsection{Evaluasi}
+
+Evaluasi dilakukan berdasarkan:
+
+\begin{enumerate}
+    \item Akurasi prediksi aksi lawan
+    \item Struktur representasi belief state
+    \item Peningkatan utilitas agen melalui Monte Carlo rollout
+\end{enumerate}

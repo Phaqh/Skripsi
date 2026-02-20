@@ -1,74 +1,125 @@
 
-sebanyak 13 studi dimasukkan ke dalam tinjauan sistematis final. Judul dan karakteristik dari studi-studi tersebut disajikan pada Tabel~~\ref{tab:paper_characteristics}.
+sebanyak 13 studi dimasukkan ke dalam tinjauan sistematis final. Judul dan karakteristik dari studi-studi tersebut disajikan pada Tabel~\ref{tab:paper_characteristics}.
 
-\begin{figure}[!htbp]
-    \centering
-    \includegraphics[height=0.8\textheight]{images/PrismaIDN.png}
-    \caption{Diagram alur seleksi studi.}\label{fig:prisma}
-\end{figure}
+% \begin{figure}[!htbp]
+%     \centering
+%     \includegraphics[height=0.8\textheight]{Images/PrismaIDN.png}
+%     \caption{Diagram alur seleksi studi.}\label{fig:prisma}
+% \end{figure}
 
-\begin{table}[!htbp]
+% \begin{table}[!htbp]
+% \centering
+% \caption{Karakteristik Studi yang Disertakan}\label{tab:paper_characteristics}
+% \renewcommand{\arraystretch}{0.5}
+% \begin{tabular}{p{1.65cm} p{6.1cm} p{5.25cm}}
+% \midrule
+% \textbf{Ref.} & \textbf{Title} & \textbf{Characteristics} \\ \midrule
+
+\begin{table}[h]
 \centering
-\caption{Karakteristik Studi yang Disertakan}\label{tab:paper_characteristics}
-\renewcommand{\arraystretch}{1}
-\begin{tabular}{c p{7.0cm} p{7.0cm}}
+\caption{Ringkasan Penelitian Terkait}
+\begin{tabularx}{\textwidth}{{p{1.65cm} p{4.1cm} p{7.25cm}}}
+\toprule
+\textbf{Ref} & \textbf{Nama Model} & \textbf{Temuan Utama} \\
 \midrule
-\textbf{Ref.} & \textbf{Title} & \textbf{Characteristics} \\ \midrule
 
-~\cite{qiao_o2m_2024} &
-O2M\@: Online Opponent Modeling in Online General-Sum Matrix Games &
-~\textit{Online opponent modelling} untuk permainan~\textit{general-sum} dinamis. \\ \midrule
+\cite{qiao_o2m_2024} & Online Opponent Modeling (O2M) 
+& O2M mampu beradaptasi lebih baik dan memperoleh rata-rata reward yang lebih tinggi dibandingkan model baseline. \\
 
-~\cite{zhu_evolutionary_2025} &
-Evolutionary Dynamics of Cooperation and Extortion on Networks With Fitness-Dependent Rules &
-Menganalisis strategi~\textit{zero-determinant}. \\ \midrule
+2 & Zero Determinant Strategy under Evolutionary Dynamic 
+& Proporsi akhir kerja sama melebihi strategi Extort, menunjukkan keunggulan dalam dinamika evolusioner. \\
 
-~\cite{lv_inducing_2023} &
-Inducing Coordination in Multi-Agent Repeated Game through Hierarchical Gifting Policies &
-Mengusulkan mekanisme~\textit{hierarchical gifting}. \\ \midrule
+3 & Hierarchical Gifting DQN 
+& Mampu mendeteksi perubahan strategi lawan secara real-time dan secara dinamis menyesuaikan insentif kerja sama. \\
 
-~\cite{gomez_grounded_2025} &
-Grounded predictions of teamwork as a one-shot game: A multiagent multi-armed bandits approach &
-Memodelkan kerja tim sukarela.\\ \midrule
+4 & Teamwork Game + MA-MAB 
+& Agregasi NE teoretis ($\chi^2 = 0.992$); mereproduksi pola mirip manusia (social loafing, compensation);\\
 
-~\cite{di_coupling_2023} &
-The coupling effect between the environment and strategies drives the emergence of group cooperation &
-Menganalisis keterkaitan memori dan lingkungan. \\ \midrule
+5 & Environment–Strategy Coupling Model 
+& Kopling antara umpan balik lingkungan dan dinamika strategi secara signifikan meningkatkan stabilitas kerja sama kelompok;\\
 
-~\cite{perera_learning_2025} &
-Learning to cooperate against ensembles of diverse opponents &
-Pendekatan RL yang skalabel untuk mendorong kerja sama. \\ \midrule
+6 & Ensemble-Training Cooperative Agent 
+& PRobust dan memiliki generalisasi lebih baik dibanding pelatihan terhadap lawan tunggal; namun dengan biaya komputasi lebih tinggi dan potensi estimasi reward intrinsik yang sub-optimal. \\
 
-~\cite{li_exploiting_2025} &
-Exploiting a No-Regret Opponent in Repeated Zero-Sum Games &
-Kerangka untuk mengeksploitasi lawan~\textit{no-regret}. \\ \midrule
+7 & LSTM-Strategy 
+& RNN mampu mengaproksimasi dinamika no-regret yang halus secara akurat serta memungkinkan eksploitasi yang menguntungkan pada tingkat non-stasioneritas rendah. \\
 
-~\cite{freire_modeling_2023} &
-Modeling Theory of Mind in Dyadic Games Using Adaptive Feedback Control &
-Mengusulkan agen~\textit{Theory of Mind} berbasis kontrol. \\ \midrule
+8 & Internal Model 
+& konvergensi lebih cepat dan stabil dibanding TD-learning standar; performa menurun ketika perilaku lawan bergantung pada aksi agen sendiri (misalnya Tit-for-Tat). \\
 
-~\cite{hu_modeling_2023} &
-Modeling opponent learning in multiagent repeated games &
-Memperkenalkan metode berbasis Stackelberg. \\ \midrule
+9 & Symmetric Learning Awareness (SLA) 
+& Keseimbangan yang lebih stabil dan menghindari perilaku siklik yang muncul pada metode gradien standar; pemodelan eksplisit meningkatkan konvergensi dan stabilitas. \\
 
-~\cite{elhamer_effects_2020} &
-The effects of population size and information update rates on the emergent patterns of cooperative clusters in a large-scale social particle swarm model &
-Pembaruan informasi cepat dalam jaringan SNS.\\ \midrule
+10 & Extended Social Particle Swarm (SPS) Model 
+& Tingkat pembaruan informasi yang tinggi menghasilkan klaster kerja sama yang lebih dinamis dan beragam; Ukuran populasi dan laju pembaruan informasi secara bersama-sama membentuk pola kerja sama. \\
 
-~\cite{wang_achieving_2019} &
-Achieving cooperation through deep multiagent reinforcement learning in sequential prisoner's dilemmas &
-Memperkenalkan PD sekuensial dan metode~\textit{deep RL}.\\ \midrule
+11 & Deep Multiagent Reinforcement Learning (untuk SPD) 
+& Mencapai kerja sama mutual dalam self-play; menghindari eksploitasi oleh lawan defektif; lebih adaptif terhadap perubahan strategi lawan. \\
 
-~\cite{jin_achieving_2025} &
-Achieving collective welfare in multi-agent reinforcement learning via suggestion sharing &
-Metode MARL dengan berbagi saran aksi.\\ \midrule
+12 & Suggestion Sharing (SS) 
+& Mencapai tingkat kerja sama kompetitif atau lebih baik dibanding value sharing, policy sharing, dan intrinsic reward; meningkatkan kerja sama dalam dilema sosial. \\
 
-~\cite{de_weerd_higher-order_2022} &
-Higher-order theory of mind is especially useful in unpredictable negotiations &
-Menganalisis~\textit{higher-order Theory of Mind} dalam lingkungan yang tidak terprediksi.\\ \midrule
+13 & Higher-order Theory of Mind (ToM $k$, $k \geq 2$) 
+& ToM tingkat tinggi memberikan keuntungan signifikan dalam lingkungan tidak dapat diprediksi; terdapat diminishing returns setelah ToM-3. \\
 
-\end{tabular}
+\bottomrule
+\end{tabularx}
 \end{table}
+
+% ~\cite{qiao_o2m_2024} &
+% O2M\@: Online Opponent Modeling in Online General-Sum Matrix Games &
+% ~\textit{Online opponent modelling} untuk permainan~\textit{general-sum} dinamis.\\ \midrule
+
+% ~\cite{zhu_evolutionary_2025} &
+% Evolutionary Dynamics of Cooperation and Extortion on Networks With Fitness-Dependent Rules &
+% Menganalisis strategi~\textit{zero-determinant}.\\ \midrule
+
+% ~\cite{lv_inducing_2023} &
+% Inducing Coordination in Multi-Agent Repeated Game through Hierarchical Gifting Policies &
+% Mengusulkan mekanisme~\textit{hierarchical gifting}.\\ \midrule
+
+% ~\cite{gomez_grounded_2025} &
+% Grounded predictions of teamwork as a one-shot game: A multiagent multi-armed bandits approach &
+% Memodelkan kerja tim sukarela.\\ \midrule
+
+% ~\cite{di_coupling_2023} &
+% The coupling effect between the environment and strategies drives the emergence of group cooperation &
+% Menganalisis keterkaitan memori dan lingkungan.\\ \midrule
+
+% ~\cite{perera_learning_2025} &
+% Learning to cooperate against ensembles of diverse opponents &
+% Pendekatan RL yang skalabel untuk mendorong kerja sama.\\ \midrule
+
+% ~\cite{li_exploiting_2025} &
+% Exploiting a No-Regret Opponent in Repeated Zero-Sum Games &
+% Kerangka untuk mengeksploitasi lawan~\textit{no-regret}.\\ \midrule
+
+% ~\cite{freire_modeling_2023} &
+% Modeling Theory of Mind in Dyadic Games Using Adaptive Feedback Control &
+% Mengusulkan agen~\textit{Theory of Mind} berbasis kontrol.\\ \midrule
+
+% ~\cite{hu_modeling_2023} &
+% Modeling opponent learning in multiagent repeated games &
+% Memperkenalkan metode berbasis Stackelberg.\\ \midrule
+
+% ~\cite{elhamer_effects_2020} &
+% The effects of population size and information update rates on the emergent patterns of cooperative clusters in a large-scale social particle swarm model &
+% Pembaruan informasi cepat dalam jaringan SNS.\\ \midrule
+
+% ~\cite{wang_achieving_2019} &
+% Achieving cooperation through deep multiagent reinforcement learning in sequential prisoner's dilemmas &
+% Memperkenalkan PD sekuensial dan metode~\textit{deep RL}.\\ \midrule
+
+% ~\cite{jin_achieving_2025} &
+% Achieving collective welfare in multi-agent reinforcement learning via suggestion sharing &
+% Metode MARL dengan berbagi saran aksi.\\ \midrule
+
+% ~\cite{de_weerd_higher-order_2022} &
+% Higher-order theory of mind is especially useful in unpredictable negotiations &
+% Menganalisis~\textit{higher-order Theory of Mind} dalam lingkungan yang tidak terprediksi.\\ \midrule
+
+% \end{tabular}
+% \end{table}
 
 \section{Synthesis / Discussion}
 Bagian ini mensintesis temuan-temuan utama dari studi yang ditinjau dengan tujuan mengidentifikasi pola asumsi perilaku lawan, keterbatasan metodologis yang berulang, serta celah penelitian yang masih terbuka dalam \textit{opponent modelling} untuk \textit{repeated games}. Sintesis difokuskan pada dimensi perilaku yang dapat diamati dari riwayat interaksi, alih-alih pada asumsi internal seperti tujuan optimisasi, struktur pembaruan parameter, atau representasi kebijakan lawan yang sering kali tidak dapat diakses secara langsung oleh agen.
@@ -76,7 +127,7 @@ Bagian ini mensintesis temuan-temuan utama dari studi yang ditinjau dengan tujua
 Meskipun berbagai atribut telah diidentifikasi dalam studi-studi yang disertakan, hanya dimensi yang bersifat diskriminatif secara metodologis yang digunakan untuk perbandingan lintas karya. Atribut terkait lingkungan permainan dan protokol evaluasi dibahas secara terpisah untuk menghindari pencampuran antara asumsi perilaku dan pengaturan eksperimental.
 
 \subsection{Asumsi perilaku lawan dalam \textit{opponent modelling} untuk \textit{Repeated Games}}
-Untuk mengoperasionalkan asumsi perilaku lawan secara konsisten pada pengaturan permainan yang beragam, tinjauan ini mengabstraksikan properti perilaku yang dapat diinferensi dari \textit{interaction traces}. Secara khusus, perilaku lawan dikarakterisasi berdasarkan empat jenis dependensi yang dapat diamati: apakah aksi lawan (i) bervariasi lintas kondisi lingkungan dalam permainan yang sama, (ii) dimediasi oleh dinamika pada tingkat populasi, (iii) merespons secara langsung aksi agen, dan (iv) menunjukkan divergensi aksi pada riwayat interaksi terkini yang ekuivalen.
+Untuk mengoperasionalkan asumsi perilaku lawan secara konsisten pada pengaturan permainan yang beragam, tinjauan ini mengabstraksikan properti perilaku yang dapat diinferensi dari \textit{interaction traces}. Secara khusus, perilaku lawan dikarakterisasi berdasarkan empat jenis dependensi yang dapat diamati: apakah aksi lawan (i) bervariasi lintas kondisi lingkungan dalam permainaun yang sama, (ii) dimediasi oleh dinamika pada tingkat populasi, (iii) merespons secara langsung aksi agen, dan (iv) menunjukkan divergensi aksi pada riwayat interaksi terkini yang ekuivalen.
 
 Kriteria-kriteria ini dievaluasi sepenuhnya pada tingkat perilaku eksternal dan tidak mengasumsikan adanya pengetahuan mengenai model internal lawan, mekanisme pembelajaran, maupun tujuan strategis yang dioptimalkan. Dengan demikian, kategorisasi yang digunakan tidak dimaksudkan sebagai taksonomi formal dari metode \textit{opponent modelling}, melainkan sebagai kerangka analitis untuk memungkinkan perbandingan lintas studi yang menggunakan paradigma pembelajaran, representasi strategi, dan abstraksi permainan yang berbeda.
 
@@ -91,7 +142,7 @@ Dalam studi yang tidak mendefinisikan asumsi perilaku lawan secara eksplisit, kl
 \toprule
 \textbf{Env.} 
 & \textbf{Pop.} 
-& \textbf{Agent}Sy
+& \textbf{Agent}
 & \textbf{Div.}
 & \textbf{Kategori Perilaku Lawan}
 & \textbf{Ref.} \\
@@ -140,61 +191,21 @@ Terakhir, hanya sebagian kecil karya yang secara simultan memodelkan perilaku la
 \subsection{Pendekatan metodologis dalam \textit{opponent modelling} untuk \textit{Repeated Games}}
 Distribusi asumsi perilaku lawan pada Tabel~\ref{tab:opponent-behavior} mencerminkan pergeseran metodologis yang lebih luas dalam riset \textit{opponent modelling}, dari pengaturan dengan asumsi lawan yang tetap dan terkontrol menuju lawan yang adaptif, heterogen, dan berperilaku tidak stasioner. Namun, karakterisasi berbasis asumsi perilaku semata belum menjelaskan bagaimana kompleksitas tersebut dihadapi secara komputasional di sisi agen. Untuk itu, Tabel~\ref{tab:opponent_modelling_paradigm} mereorganisasi studi-studi terdahulu berdasarkan paradigma pemodelan dominan dan mekanisme pembelajaran yang digunakan oleh agen.
 
-\begin{table}[!htbp]
-\centering
-\caption{Perbandingan pendekatan~\textit{opponent modelling} berdasarkan paradigma pemodelan dominan dan mekanisme pembelajaran.}
-\label{tab:opponent_modelling_paradigm}
-\renewcommand{\arraystretch}{1.25}
-\begin{tabularx}{\columnwidth}{XX p{2.0cm}}
-\toprule
-\textbf{Paradigma Pemodelan} 
-& \textbf{Mekanisme Pembelajaran / Pembaruan} 
-& \textbf{Makalah} \\
-\midrule
-
-Reactive reinforcement learning
-& RL berbasis nilai (DQN) 
-&~\cite{lv_inducing_2023} \\
-
-Gradient-based opponent shaping
-&~\textit{Gradient descent} / pembaruan sadar lawan 
-&~\cite{qiao_o2m_2024, hu_modeling_2023, wang_achieving_2019}\\
-
-Recursive belief reasoning
-& Pembaruan keyakinan Bayesian /~\textit{cognitive hierarchy} 
-&~\cite{freire_modeling_2023, de_weerd_higher-order_2022} \\
-
-Population-based training
-&~\textit{Policy-gradient} MARL (sampling populasi) 
-&~\cite{perera_learning_2025} \\
-
-Evolutionary population dynamics
-& Imitasi strategi berbasis~\textit{fitness} 
-&~\cite{zhu_evolutionary_2025, di_coupling_2023, elhamer_effects_2020} \\
-
-Bandit-based learning-in-games
-&~\textit{Multi-armed bandit} /~\textit{smooth best response} 
-&~\cite{gomez_grounded_2025} \\
-
-System identification
-& Model autoregresif dengan input eksogen (NARX) 
-&~\cite{li_exploiting_2025} \\
-
-Communication-driven coordination
-&~\textit{Policy-gradient} dengan objektif komunikasi 
-&~\cite{jin_achieving_2025} \\
-
-\bottomrule
-\end{tabularx}
-\end{table}
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[height=0.4\textheight]{Images/Method.png}
+    \caption{Diagram metodologi.}\label{fig:opponent_modelling_paradigm}
+\end{figure}
 
 Pendekatan-pendekatan tersebut dapat dibedakan lebih lanjut berdasarkan apakah adaptasi terhadap lawan ditangani secara eksplisit atau implisit. Paradigma \textit{opponent modelling} yang eksplisit—seperti \textit{gradient-based opponent shaping}~\cite{qiao_o2m_2024, hu_modeling_2023, wang_achieving_2019}, \textit{recursive belief reasoning}~\cite{freire_modeling_2023, de_weerd_higher-order_2022}, serta \textit{system identification}~\cite{li_exploiting_2025}—secara langsung membangun representasi internal perilaku lawan untuk memprediksi atau memengaruhi respons lawan di masa depan. Sebaliknya, pendekatan implisit, termasuk \textit{reactive reinforcement learning}~\cite{lv_inducing_2023}, \textit{population-based training}~\cite{perera_learning_2025}, dinamika evolusioner~\cite{zhu_evolutionary_2025, di_coupling_2023, elhamer_effects_2020}, dan \textit{bandit-based learning-in-games}~\cite{gomez_grounded_2025}, beradaptasi terhadap lawan tanpa mempertahankan model perilaku lawan yang terpisah.
 
 Meskipun pendekatan berbasis \textit{reinforcement learning} dan \textit{policy-gradient} mendominasi literatur terkini, paradigma tersebut umumnya menggabungkan pemodelan lawan ke dalam proses optimisasi kebijakan agen. Akibatnya, dinamika perilaku lawan sering kali terenkapsulasi secara implisit dalam parameter kebijakan atau fungsi nilai, sehingga sulit untuk mengisolasi, menginterpretasi, atau memanfaatkan prediksi eksplisit terhadap respons lawan, terutama pada horizon interaksi yang panjang dan tidak stasioner.
 
-Dalam konteks ini, pendekatan \textit{system identification}, khususnya model autoregresif dengan input eksogen (NARX), menawarkan alternatif metodologis yang berbeda. Alih-alih mengasumsikan struktur pembelajaran atau tujuan optimisasi lawan, NARX memodelkan perilaku lawan sebagai proses dinamis yang dapat diinferensi langsung dari riwayat interaksi. Dengan memanfaatkan dependensi temporal dan aksi agen sebagai sinyal eksogen, pendekatan ini secara alami selaras dengan asumsi perilaku lawan yang responsif dan menunjukkan divergensi aksi pada riwayat interaksi yang ekuivalen, sebagaimana diidentifikasi pada Tabel~\ref{tab:opponent-behavior}.
+Dalam konteks ini, pendekatan \textit{system identification}, model sekuensial berbasis memori (misalnya LSTM) yang berfungsi sebagai pendekatan non-linear autoregressive dengan input eksogen menawarkan alternatif metodologis yang berbeda. Alih-alih mengasumsikan struktur pembelajaran atau tujuan optimisasi lawan, LSTM memodelkan perilaku lawan sebagai proses dinamis yang dapat diinferensi langsung dari riwayat interaksi. Dengan memanfaatkan dependensi temporal dan aksi agen sebagai sinyal eksogen, pendekatan ini secara alami selaras dengan asumsi perilaku lawan yang responsif dan menunjukkan divergensi aksi pada riwayat interaksi yang ekuivalen, sebagaimana diidentifikasi pada Tabel~\ref{tab:opponent-behavior}.
 
-Selain itu, NARX memungkinkan pemisahan yang jelas antara proses prediksi perilaku lawan dan mekanisme pengambilan keputusan agen. Pemisahan ini memberikan fleksibilitas metodologis untuk menganalisis kualitas prediksi lawan secara independen dari kebijakan agen, serta memungkinkan integrasi dengan berbagai skema pengambilan keputusan tanpa memerlukan pelatihan ulang berbasis interaksi penuh seperti pada \textit{reinforcement learning}. Karakteristik ini menjadikan pendekatan berbasis NARX secara khusus menarik pada pengaturan dengan keterbatasan data, sumber daya komputasi, atau horizon waktu penelitian, sekaligus tetap mempertahankan kemampuan untuk menangkap dinamika perilaku lawan yang tidak stasioner dalam \textit{repeated games}.
+Selain itu, LSTM memungkinkan pemisahan yang jelas antara proses prediksi perilaku lawan dan mekanisme pengambilan keputusan agen. Pemisahan ini memberikan fleksibilitas metodologis untuk menganalisis kualitas prediksi lawan secara independen dari kebijakan agen, serta memungkinkan integrasi dengan berbagai skema pengambilan keputusan tanpa memerlukan pelatihan ulang berbasis interaksi penuh seperti pada \textit{reinforcement learning}. Karakteristik ini menjadikan pendekatan berbasis LSTM secara khusus menarik pada pengaturan dengan keterbatasan data, sumber daya komputasi, atau horizon waktu penelitian, sekaligus tetap mempertahankan kemampuan untuk menangkap dinamika perilaku lawan yang tidak stasioner dalam \textit{repeated games}.
+
+Sebagian besar pendekatan eksplisit sekalipun tetap melatih representasi lawan secara terintegrasi dengan objective reward agen. Literatur yang sepenuhnya memisahkan pembelajaran model lawan dari sinyal reward kebijakan relatif jarang dilaporkan, khususnya dalam konteks \textit{repeated games} dengan lawan adaptif dan non-stasioner.
 
 \subsection{Bagaimana efektivitas strategi \textit{opponent modelling} dievaluasi dalam \textit{Repeated Games}?}
 
@@ -248,14 +259,36 @@ Sebagai respons terhadap celah ini, penggunaan horizon tetap yang pendek atau ho
 
 Dalam konteks \textit{opponent modelling} berbasis prediksi eksplisit, evaluasi dengan horizon terbatas juga memungkinkan analisis yang lebih tajam terhadap kegunaan prediksi perilaku lawan. Alih-alih menilai keberhasilan hanya berdasarkan hasil agregat jangka panjang, pengaturan ini menyoroti seberapa cepat dan seberapa akurat model lawan dapat memberikan informasi yang berguna untuk pengambilan keputusan, serta sejauh mana agen mampu memanfaatkan prediksi tersebut tanpa melakukan eksplorasi yang berlebihan. Dengan demikian, praktik evaluasi ini memberikan perspektif pelengkap terhadap literatur yang ada, khususnya dalam menilai efisiensi dan kehati-hatian strategi \textit{opponent modelling} pada pengaturan interaksi yang terbatas.
 
+% \section{Kesimpulan}
+% Bab ini mensintesis literatur \textit{opponent modelling} dalam interaksi strategis berulang dengan menelaah tiga dimensi utama: asumsi perilaku lawan yang mendasari, paradigma pemodelan yang digunakan oleh agen, serta praktik evaluasi yang menentukan kriteria keberhasilan. Tinjauan difokuskan pada pengaturan \textit{repeated games}, khususnya dilema sosial, di mana ketergantungan pada riwayat interaksi dan adaptasi perilaku lawan menjadi faktor sentral.
+
+% Analisis terhadap asumsi perilaku menunjukkan bahwa literatur terkini semakin menekankan lawan yang adaptif, responsif terhadap aksi agen, dan menunjukkan divergensi perilaku meskipun berada pada riwayat interaksi yang ekuivalen. Namun demikian, asumsi-asumsi tersebut sering kali tidak dinyatakan secara eksplisit dan tertanam secara implisit dalam desain eksperimen atau mekanisme pembelajaran. Akibatnya, pendekatan pemodelan yang tampak serupa secara metodologis dapat beroperasi di bawah asumsi perilaku lawan yang berbeda secara fundamental, sehingga menyulitkan perbandingan lintas studi dan interpretasi hasil secara konsisten.
+
+% Dari sisi metodologis, literatur menunjukkan keberagaman paradigma \textit{opponent modelling}, mulai dari pendekatan implisit berbasis optimisasi kebijakan dan dinamika populasi hingga pendekatan eksplisit yang mempertahankan representasi internal perilaku lawan. Meskipun pendekatan berbasis \textit{reinforcement learning} dan \textit{policy-gradient} mendominasi, dinamika perilaku lawan pada paradigma tersebut sering kali terenkapsulasi secara implisit dalam parameter kebijakan agen. Hal ini membatasi kemampuan untuk mengisolasi, mengevaluasi, dan memanfaatkan prediksi perilaku lawan secara langsung, terutama dalam pengaturan interaksi yang tidak stasioner.
+
+% Praktik evaluasi yang ada sebagian besar berfokus pada metrik kinerja agregat jangka panjang, seperti tingkat kerja sama, payoff rata-rata, dan konvergensi menuju equilibrium. Meskipun metrik-metrik ini relevan untuk menilai stabilitas pada horizon interaksi yang panjang, penerapannya secara luas mengasumsikan bahwa biaya eksplorasi dapat diabaikan dan kesalahan awal dapat dipulihkan seiring waktu. Akibatnya, skenario dengan horizon interaksi terbatas, eksplorasi yang mahal, serta sensitivitas tinggi terhadap keputusan awal masih relatif kurang terwakili dalam evaluasi yang ada.
+
+% Berdasarkan sintesis tersebut, dapat diidentifikasi celah penelitian pada \textit{opponent modelling} dalam pengaturan \textit{repeated games} yang bersifat \textit{online}, tidak stasioner, dan dibatasi oleh horizon interaksi yang pendek atau tidak pasti. Secara khusus, literatur masih kurang mengeksplorasi pendekatan yang memungkinkan identifikasi perilaku lawan dalam horizon yang pendek dan eksplisit dari riwayat interaksi, serta evaluasi yang menyoroti trade-off antara eksplorasi dan kinerja langsung pada fase awal interaksi. Celah ini membuka ruang bagi pendekatan metodologis yang berfokus pada pemodelan perilaku lawan berbasis observasi historis dan pengujian yang sensitif terhadap keterbatasan interaksi.
+
 \section{Kesimpulan}
-Bab ini mensintesis literatur \textit{opponent modelling} dalam interaksi strategis berulang dengan menelaah tiga dimensi utama: asumsi perilaku lawan yang mendasari, paradigma pemodelan yang digunakan oleh agen, serta praktik evaluasi yang menentukan kriteria keberhasilan. Tinjauan difokuskan pada pengaturan \textit{repeated games}, khususnya dilema sosial, di mana ketergantungan pada riwayat interaksi dan adaptasi perilaku lawan menjadi faktor sentral.
 
-Analisis terhadap asumsi perilaku menunjukkan bahwa literatur terkini semakin menekankan lawan yang adaptif, responsif terhadap aksi agen, dan menunjukkan divergensi perilaku meskipun berada pada riwayat interaksi yang ekuivalen. Namun demikian, asumsi-asumsi tersebut sering kali tidak dinyatakan secara eksplisit dan tertanam secara implisit dalam desain eksperimen atau mekanisme pembelajaran. Akibatnya, pendekatan pemodelan yang tampak serupa secara metodologis dapat beroperasi di bawah asumsi perilaku lawan yang berbeda secara fundamental, sehingga menyulitkan perbandingan lintas studi dan interpretasi hasil secara konsisten.
+Bab ini telah meninjau literatur \textit{opponent modelling} dalam interaksi strategis berulang dengan menelaah tiga dimensi utama, yaitu asumsi perilaku lawan, paradigma pemodelan yang digunakan, serta praktik evaluasi yang mendasari klaim keberhasilan. Fokus tinjauan diarahkan pada pengaturan \textit{repeated games}, khususnya dilema sosial, di mana ketergantungan terhadap riwayat interaksi dan adaptasi perilaku menjadi aspek sentral dalam dinamika strategi (\cite{axelrod_evolution_1981}).
 
-Dari sisi metodologis, literatur menunjukkan keberagaman paradigma \textit{opponent modelling}, mulai dari pendekatan implisit berbasis optimisasi kebijakan dan dinamika populasi hingga pendekatan eksplisit yang mempertahankan representasi internal perilaku lawan. Meskipun pendekatan berbasis \textit{reinforcement learning} dan \textit{policy-gradient} mendominasi, dinamika perilaku lawan pada paradigma tersebut sering kali terenkapsulasi secara implisit dalam parameter kebijakan agen. Hal ini membatasi kemampuan untuk mengisolasi, mengevaluasi, dan memanfaatkan prediksi perilaku lawan secara langsung, terutama dalam pengaturan interaksi yang tidak stasioner.
+Dari sisi asumsi perilaku, literatur menunjukkan kecenderungan untuk memodelkan lawan sebagai entitas yang adaptif dan responsif terhadap aksi agen (\cite{hernandez-leal_survey_2019}). Namun, asumsi tersebut sering kali tertanam secara implisit dalam desain algoritma atau skema pelatihan, tanpa pemisahan yang jelas antara dinamika perilaku lawan dan mekanisme optimisasi kebijakan agen. Kondisi ini menyulitkan analisis terpisah terhadap kualitas representasi internal perilaku lawan.
 
-Praktik evaluasi yang ada sebagian besar berfokus pada metrik kinerja agregat jangka panjang, seperti tingkat kerja sama, payoff rata-rata, dan konvergensi menuju equilibrium. Meskipun metrik-metrik ini relevan untuk menilai stabilitas pada horizon interaksi yang panjang, penerapannya secara luas mengasumsikan bahwa biaya eksplorasi dapat diabaikan dan kesalahan awal dapat dipulihkan seiring waktu. Akibatnya, skenario dengan horizon interaksi terbatas, eksplorasi yang mahal, serta sensitivitas tinggi terhadap keputusan awal masih relatif kurang terwakili dalam evaluasi yang ada.
+Secara metodologis, pendekatan \textit{opponent modelling} dalam MARL dapat dikategorikan ke dalam paradigma implisit dan eksplisit. Pendekatan implisit umumnya mengintegrasikan dinamika lawan langsung ke dalam parameter kebijakan melalui pelatihan berbasis reward atau \textit{policy gradient} (\cite{hernandez-leal_survey_2019}). Sementara itu, pendekatan eksplisit mempertahankan representasi khusus mengenai perilaku lawan, namun dalam banyak kasus tetap dilatih secara terintegrasi dengan objective reward agen (\cite{albrecht_autonomous_2018}). Akibatnya, kualitas prediksi perilaku lawan sulit dievaluasi secara independen dari kinerja kebijakan akhir.
 
-Berdasarkan sintesis tersebut, dapat diidentifikasi celah penelitian pada \textit{opponent modelling} dalam pengaturan \textit{repeated games} yang bersifat \textit{online}, tidak stasioner, dan dibatasi oleh horizon interaksi yang pendek atau tidak pasti. Secara khusus, literatur masih kurang mengeksplorasi pendekatan yang memungkinkan identifikasi perilaku lawan dalam horizon yang pendek dan eksplisit dari riwayat interaksi, serta evaluasi yang menyoroti trade-off antara eksplorasi dan kinerja langsung pada fase awal interaksi. Celah ini membuka ruang bagi pendekatan metodologis yang berfokus pada pemodelan perilaku lawan berbasis observasi historis dan pengujian yang sensitif terhadap keterbatasan interaksi.
+Selain itu, sebagian besar model lawan berfokus pada prediksi satu langkah ke depan (\textit{one-step prediction}) (\cite{hernandez-leal_survey_2019}), dengan penekanan pada stabilitas jangka panjang atau konvergensi menuju perilaku tertentu. Pendekatan ini kurang mengeksplorasi pemodelan multi-langkah dalam horizon pendek, padahal dalam pengaturan interaksi terbatas atau tidak pasti, dinamika jangka pendek memiliki pengaruh signifikan terhadap kinerja keseluruhan.
 
+Dari sisi evaluasi, praktik yang dominan masih mengandalkan metrik agregat jangka panjang seperti tingkat kerja sama, payoff rata-rata, dan konvergensi menuju equilibrium. Evaluasi semacam ini secara implisit mengasumsikan bahwa biaya eksplorasi awal dapat dikompensasi dalam fase interaksi berikutnya. Namun, dalam pengaturan dengan horizon tetap yang pendek atau terminasi stokastik, eksplorasi yang tidak terarah dapat menimbulkan penurunan kinerja yang sulit dipulihkan (\cite{nisan_algorithmic_2008}). Dengan demikian, pendekatan yang mengandalkan eksplorasi agresif berpotensi terlihat unggul dalam evaluasi horizon panjang, tetapi kurang sesuai untuk skenario interaksi terbatas.
+
+Lebih lanjut, meskipun beberapa studi mempertimbangkan ketidakpastian atau variasi perilaku lawan, pemanfaatan ukuran ketidakpastian prediktif secara eksplisit dalam mekanisme seleksi aksi masih relatif terbatas. Ketidakpastian sering kali muncul sebagai efek samping dari proses pembelajaran, bukan sebagai komponen yang secara langsung dipertimbangkan dalam perhitungan skor aksi sebelum keputusan diambil.
+
+Berdasarkan sintesis tersebut, dapat diidentifikasi celah penelitian pada pengembangan pendekatan \textit{opponent modelling} yang: 
+(i) memisahkan pelatihan model lawan dari sinyal reward kebijakan, 
+(ii) melakukan prediksi multi-langkah dalam horizon pendek, dan 
+(iii) memanfaatkan ukuran ketidakpastian prediktif secara eksplisit dalam proses seleksi aksi, khususnya pada pengaturan interaksi berulang dengan horizon terbatas atau terminasi stokastik. 
+
+Secara khusus, literatur masih sangat terbatas dalam membahas pengaturan \textit{repeated games} dengan terminasi stokastik (misalnya distribusi geometrik), di mana horizon interaksi bersifat tidak pasti dan eksplorasi harus dilakukan secara hati-hati sejak awal interaksi.
+
+Celah ini membuka ruang bagi pendekatan yang menekankan pemodelan perilaku lawan berbasis observasi historis secara terpisah dari optimisasi kebijakan, serta evaluasi yang sensitif terhadap trade-off antara kinerja langsung dan pengurangan ketidakpastian prediksi dalam fase awal interaksi.
