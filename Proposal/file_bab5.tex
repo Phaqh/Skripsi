@@ -1,0 +1,212 @@
+\section{Jadwal Penelitian}
+
+Penelitian ini direncanakan berlangsung selama enam bulan dengan
+pembagian tahapan yang sistematis sesuai dengan alur metodologi
+yang telah dijelaskan pada Bab 4. Penyusunan jadwal dilakukan
+berdasarkan dependensi antar komponen sistem, dimulai dari
+pembangunan lingkungan simulasi, implementasi model prediktif,
+hingga evaluasi tertutup dan studi ablasi.
+
+\subsection{Tahapan Penelitian}
+
+Secara umum, tahapan penelitian dibagi menjadi sebelas fase utama
+sebagai berikut:
+
+\begin{enumerate}
+
+\item \textbf{Perancangan dan Validasi Lingkungan IPD}
+
+Tahap awal mencakup implementasi lingkungan
+\textit{Iterated Prisoner's Dilemma} (IPD), termasuk:
+
+\begin{itemize}
+    \item Implementasi matriks payoff
+    \item Implementasi fixed horizon ($T=100$)
+    \item Implementasi geometric termination ($p_{term}=0.05$)
+    \item Implementasi trembling-hand noise ($\epsilon \in \{0, 0.01, 0.05\}$)
+    \item Validasi distribusi panjang episode
+    \item Pengujian konsistensi reward dan terminasi
+\end{itemize}
+
+Tahap ini memastikan bahwa seluruh eksperimen dilakukan
+pada lingkungan yang tervalidasi dan bebas dari kesalahan logika.
+
+\item \textbf{Implementasi Tipe Lawan}
+
+Meliputi pembangunan berbagai tipe lawan yang digunakan
+dalam pengumpulan data dan evaluasi, yaitu:
+
+\begin{itemize}
+    \item Fixed mixed strategy
+    \item Tit-for-Tat
+    \item Win-Stay Lose-Shift
+    \item Fictitious Play
+    \item Q-Learning agent
+\end{itemize}
+
+Dilakukan pula validasi bahwa agen adaptif benar-benar
+menunjukkan dinamika non-stasioner selama episode.
+
+\item \textbf{Pengumpulan dan Validasi Dataset}
+
+Tahap ini mencakup:
+
+\begin{itemize}
+    \item Simulasi 10.000 episode pelatihan
+    \item Simulasi 2.000 episode validasi
+    \item Simulasi 2.000 episode pengujian
+    \item Verifikasi distribusi tipe lawan uniform
+    \item Pemeriksaan data leakage
+\end{itemize}
+
+\item \textbf{Implementasi Model LSTM}
+
+Meliputi:
+
+\begin{itemize}
+    \item Implementasi arsitektur LSTM satu layer (hidden size 64)
+    \item Integrasi dropout untuk Monte Carlo dropout
+    \item Implementasi scheduled sampling (0 → 0.3)
+    \item Implementasi training pipeline (Adam, early stopping)
+\end{itemize}
+
+\item \textbf{Pelatihan Model Prediktif}
+
+Meliputi:
+
+\begin{itemize}
+    \item Pelatihan model dengan teacher forcing
+    \item Monitoring training dan validation loss
+    \item Penyimpanan model terbaik berdasarkan validation loss
+\end{itemize}
+
+\item \textbf{Evaluasi Model Prediktif (Offline)}
+
+Evaluasi one-step prediction dengan metrik:
+
+\begin{itemize}
+    \item Accuracy
+    \item Cross-entropy loss
+    \item Entropy prediktif
+    \item Analisis pengaruh scheduled sampling
+\end{itemize}
+
+\item \textbf{Evaluasi Stabilitas Multi-Langkah (Open-loop)}
+
+Meliputi:
+
+\begin{itemize}
+    \item Prediksi rekursif hingga horizon $k=10$
+    \item Analisis pertumbuhan error terhadap horizon
+    \item Analisis KL-divergence
+    \item Analisis pertumbuhan variansi prediktif
+\end{itemize}
+
+\item \textbf{Implementasi Monte Carlo Rollout Planning}
+
+Meliputi:
+
+\begin{itemize}
+    \item Implementasi estimator $\hat{Q}$
+    \item Integrasi Monte Carlo dropout ($M=20$)
+    \item Validasi kompleksitas $\mathcal{O}(N \cdot n \cdot k \cdot M)$
+    \item Analisis konvergensi estimator terhadap $n$ dan $M$
+\end{itemize}
+
+\item \textbf{Evaluasi Closed-loop Agen}
+
+Meliputi:
+
+\begin{itemize}
+    \item Simulasi episode penuh
+    \item Evaluasi reward rata-rata
+    \item Evaluasi win-rate
+    \item Evaluasi tingkat kooperasi
+    \item Uji robustnes terhadap noise dan horizon geometrik
+\end{itemize}
+
+\item \textbf{Studi Ablasi}
+
+Meliputi:
+
+\begin{itemize}
+    \item Tanpa scheduled sampling
+    \item Tanpa Monte Carlo dropout
+    \item Horizon $k=1$
+    \item Variasi jumlah kandidat aksi $N$
+\end{itemize}
+
+\item \textbf{Analisis Statistik dan Penulisan Laporan}
+
+Tahap akhir mencakup:
+
+\begin{itemize}
+    \item Uji signifikansi statistik
+    \item Analisis interval kepercayaan
+    \item Visualisasi hasil eksperimen
+    \item Penyusunan Bab 4 dan Bab 5 final
+    \item Revisi berdasarkan masukan pembimbing
+\end{itemize}
+
+\end{enumerate}
+
+\subsection{Rencana Waktu Pelaksanaan}
+
+Rencana waktu pelaksanaan penelitian selama enam bulan
+ditunjukkan pada Tabel berikut.
+
+\begin{table}[H]
+\centering
+\caption{Rencana Jadwal Penelitian (2 Bulan / 8 Minggu)}
+\begin{tabular}{|p{5.8cm}|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{Kegiatan} & \textbf{M1} & \textbf{M2} & \textbf{M3} & \textbf{M4} & \textbf{M5} & \textbf{M6} & \textbf{M7} & \textbf{M8} \\
+\hline
+Perancangan lingkungan IPD & \checkmark & \checkmark & & & & & & \\
+\hline
+Implementasi tipe lawan & \checkmark & \checkmark & & & & & & \\
+\hline
+Pengumpulan dan validasi dataset & & \checkmark & \checkmark & & & & & \\
+\hline
+Implementasi model LSTM & & & \checkmark & \checkmark & & & & \\
+\hline
+Pelatihan model & & & & \checkmark & \checkmark & & & \\
+\hline
+Evaluasi model offline (one-step) & & & & & \checkmark & & & \\
+\hline
+Evaluasi open-loop multi-step & & & & & \checkmark & \checkmark & & \\
+\hline
+Implementasi Monte Carlo rollout & & & & & & \checkmark & \checkmark & \\
+\hline
+Evaluasi closed-loop agen & & & & & & & \checkmark & \\
+\hline
+Studi ablasi & & & & & & & \checkmark & \\
+\hline
+Analisis statistik dan visualisasi & & & & & & & & \checkmark \\
+\hline
+Penulisan dan revisi laporan & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Dependensi dan Risiko}
+
+Beberapa dependensi penting dalam penelitian ini:
+
+\begin{itemize}
+    \item Implementasi rollout planning bergantung pada stabilitas model prediktif pada evaluasi open-loop.
+    \item Evaluasi closed-loop tidak dapat dilakukan sebelum estimator nilai $\hat{Q}$ tervalidasi.
+    \item Studi ablasi dilakukan setelah konfigurasi utama sistem stabil.
+\end{itemize}
+
+Risiko utama penelitian meliputi:
+
+\begin{itemize}
+    \item Akumulasi error prediksi pada horizon panjang
+    \item Kompleksitas komputasi akibat $\mathcal{O}(N \cdot n \cdot k \cdot M)$
+    \item Ketidakstabilan model pada lawan non-stasioner
+\end{itemize}
+
+Strategi mitigasi meliputi pengujian bertahap (offline → open-loop → closed-loop),
+monitoring konvergensi estimator, serta pembatasan parameter eksperimen
+untuk menjaga efisiensi komputasi.

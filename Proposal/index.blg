@@ -1,15 +1,15 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'index.blg'
-[62] biber:340> INFO - === Jum Feb 20, 2026, 16:26:05
-[73] Biber.pm:419> INFO - Reading 'index.bcf'
-[123] Biber.pm:979> INFO - Found 22 citekeys in bib section 0
-[133] Biber.pm:4419> INFO - Processing section 0
-[141] Biber.pm:4610> INFO - Looking for bibtex file 'referensi.bib' for section 0
-[146] bibtex.pm:1713> INFO - LaTeX decoding ...
-[196] bibtex.pm:1519> INFO - Found BibTeX data source 'referensi.bib'
-[331] UCollate.pm:68> INFO - Overriding locale 'indonesian' defaults 'variable = shifted' with 'variable = non-ignorable'
-[331] UCollate.pm:68> INFO - Overriding locale 'indonesian' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[331] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'indonesian'
-[331] Biber.pm:4245> INFO - No sort tailoring available for locale 'indonesian'
-[358] bbl.pm:660> INFO - Writing 'index.bbl' with encoding 'UTF-8'
+[52] biber:340> INFO - === Sab Feb 21, 2026, 23:27:48
+[61] Biber.pm:419> INFO - Reading 'index.bcf'
+[113] Biber.pm:979> INFO - Found 22 citekeys in bib section 0
+[122] Biber.pm:4419> INFO - Processing section 0
+[129] Biber.pm:4610> INFO - Looking for bibtex file 'referensi.bib' for section 0
+[133] bibtex.pm:1713> INFO - LaTeX decoding ...
+[188] bibtex.pm:1519> INFO - Found BibTeX data source 'referensi.bib'
+[328] UCollate.pm:68> INFO - Overriding locale 'indonesian' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[328] UCollate.pm:68> INFO - Overriding locale 'indonesian' defaults 'variable = shifted' with 'variable = non-ignorable'
+[328] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'indonesian'
+[328] Biber.pm:4245> INFO - No sort tailoring available for locale 'indonesian'
+[357] bbl.pm:660> INFO - Writing 'index.bbl' with encoding 'UTF-8'
 [367] bbl.pm:763> INFO - Output to index.bbl

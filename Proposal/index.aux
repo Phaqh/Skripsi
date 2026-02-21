@@ -308,56 +308,80 @@
 \abx@aux@segm{0}{0}{bengio_scheduled_2015}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.8.4}Risiko Propagasi Kesalahan pada Forecasting Rekursif}{29}{subsection.3.8.4}\protected@file@percent }
 \abx@aux@page{88}{29}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.8.5}Evaluasi Multi-Step Menggunakan Negative Log-Likelihood}{29}{subsection.3.8.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {IV}ANALISIS DAN PERANCANGAN}{31}{chapter.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.8.5}Teacher Forcing}{29}{subsection.3.8.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.8.6}Scheduled Sampling}{30}{subsection.3.8.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.8.7}Fungsi Objektif Negative Log-Likelihood}{32}{subsection.3.8.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.9}Optimisasi}{33}{section.3.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.9.1}Pelatihan LSTM dengan Backpropagation Through Time}{33}{subsection.3.9.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {IV}ANALISIS DAN PERANCANGAN}{35}{chapter.4}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Deskripsi Umum}{31}{section.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Formulasi Masalah}{31}{section.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Metodologi Penelitian}{31}{section.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Formalisasi Permainan}{32}{subsection.4.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Arsitektur Model}{32}{subsection.4.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Representasi Masukan}{33}{section*.21}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Dinamika Hidden State}{33}{section*.22}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Prediksi Aksi Lawan}{33}{section*.23}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Estimasi Epistemic Uncertainty}{33}{section*.24}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.3}Fungsi Objektif}{34}{subsection.4.3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.4}Simulasi Monte Carlo Rollout}{34}{subsection.4.3.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.5}Pengumpulan Data}{35}{subsection.4.3.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.6}Evaluasi}{36}{subsection.4.3.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {V}HASIL DAN PEMBAHASAN}{37}{chapter.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Deskripsi Umum}{35}{section.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Formulasi Masalah}{35}{section.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Metodologi Penelitian}{35}{section.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Setup Permainan}{36}{subsection.4.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Matriks Payoff}{36}{section*.21}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Horizon Permainan}{36}{section*.22}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Trembling-Hand Noise}{37}{section*.23}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Representasi Histori}{37}{section*.24}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Arsitektur Model}{37}{subsection.4.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Representasi Input}{37}{section*.25}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Dinamika LSTM}{38}{section*.26}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Prediksi Aksi Lawan}{38}{section*.27}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Prediksi Rekursif}{38}{section*.28}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.3}Protokol Pelatihan}{39}{subsection.4.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.4}Evaluasi Kandidat Aksi dan Skalabilitas Arsitektur}{39}{subsection.4.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Estimasi Ketidakpastian dengan Monte Carlo Dropout}{39}{section*.29}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Pemilihan Aksi}{40}{section*.30}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Parameter Eksperimen}{40}{section*.31}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.5}Pengumpulan Data}{41}{subsection.4.3.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.6}Evaluasi}{41}{subsection.4.3.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Lingkungan Evaluasi dan Tipe Lawan}{42}{section*.32}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Evaluasi Model Prediktif (Offline)}{42}{section*.33}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Evaluasi Stabilitas Multi-Langkah (Open-loop)}{43}{section*.34}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Evaluasi Estimasi Ketidakpastian}{43}{section*.35}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Evaluasi Kualitas Perencanaan (Planning Quality)}{44}{section*.36}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Evaluasi Performa Agen (Closed-loop)}{44}{section*.37}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Baseline}{45}{section*.38}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Ablation Study}{45}{section*.39}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {V}JADWAL PENELITIAN}{46}{chapter.5}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{\numberline {VI}KESIMPULAN DAN SARAN}{38}{chapter.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Jadwal Penelitian}{46}{section.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Tahapan Penelitian}{46}{subsection.5.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Rencana Waktu Pelaksanaan}{49}{subsection.5.1.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Rencana Jadwal Penelitian (2 Bulan / 8 Minggu)}}{49}{table.caption.40}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.3}Dependensi dan Risiko}{50}{subsection.5.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {VI}KESIMPULAN DAN SARAN}{51}{chapter.6}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{DAFTAR PUSTAKA}{39}{section*.25}\protected@file@percent }
-\abx@aux@page{89}{39}
-\abx@aux@page{90}{39}
-\abx@aux@page{91}{39}
-\abx@aux@page{92}{39}
-\abx@aux@page{93}{39}
-\abx@aux@page{94}{39}
-\abx@aux@page{95}{39}
-\abx@aux@page{96}{39}
-\abx@aux@page{97}{39}
-\abx@aux@page{98}{39}
-\abx@aux@page{99}{39}
-\abx@aux@page{100}{40}
-\abx@aux@page{101}{40}
-\abx@aux@page{102}{40}
-\abx@aux@page{103}{40}
-\abx@aux@page{104}{40}
-\abx@aux@page{105}{40}
-\abx@aux@page{106}{40}
-\abx@aux@page{107}{40}
-\abx@aux@page{108}{40}
-\abx@aux@page{109}{40}
-\abx@aux@page{110}{40}
-\@writefile{toc}{\contentsline {chapter}{LAMPIRAN}{42}{chapter*.27}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{DAFTAR PUSTAKA}{52}{section*.41}\protected@file@percent }
+\abx@aux@page{89}{52}
+\abx@aux@page{90}{52}
+\abx@aux@page{91}{52}
+\abx@aux@page{92}{52}
+\abx@aux@page{93}{52}
+\abx@aux@page{94}{52}
+\abx@aux@page{95}{52}
+\abx@aux@page{96}{52}
+\abx@aux@page{97}{52}
+\abx@aux@page{98}{52}
+\abx@aux@page{99}{52}
+\abx@aux@page{100}{53}
+\abx@aux@page{101}{53}
+\abx@aux@page{102}{53}
+\abx@aux@page{103}{53}
+\abx@aux@page{104}{53}
+\abx@aux@page{105}{53}
+\abx@aux@page{106}{53}
+\abx@aux@page{107}{53}
+\abx@aux@page{108}{53}
+\abx@aux@page{109}{53}
+\abx@aux@page{110}{53}
+\@writefile{toc}{\contentsline {chapter}{LAMPIRAN}{55}{chapter*.43}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\abx@aux@read@bbl@mdfivesum{942879E24817C79BA76DF4FA3B634D5B}
+\abx@aux@read@bbl@mdfivesum{77FD45FCAB469A68BFAF22F6B1576258}
 \abx@aux@defaultrefcontext{0}{albrecht_autonomous_2018}{nyt/global//global/global}
 \abx@aux@defaultrefcontext{0}{axelrod_evolution_1981}{nyt/global//global/global}
 \abx@aux@defaultrefcontext{0}{bengio_scheduled_2015}{nyt/global//global/global}
@@ -380,4 +404,4 @@
 \abx@aux@defaultrefcontext{0}{sutton_reinforcement_2015}{nyt/global//global/global}
 \abx@aux@defaultrefcontext{0}{wang_achieving_2019}{nyt/global//global/global}
 \abx@aux@defaultrefcontext{0}{zhu_evolutionary_2025}{nyt/global//global/global}
-\gdef \@abspage@last{53}
+\gdef \@abspage@last{66}

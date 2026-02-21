@@ -11,45 +11,99 @@ Tujuan agen adalah memaksimalkan ekspektasi reward kumulatif terhadap lawan adap
 
 \section{Metodologi Penelitian}
 
-Penelitian ini bertujuan untuk membangun model \textit{belief state} lawan dalam permainan berulang menggunakan arsitektur Long Short-Term Memory (LSTM) yang dilatih secara \textit{offline}, serta memanfaatkannya untuk simulasi \textit{Monte Carlo rollout} pada tahap pengambilan keputusan.
+Penelitian ini bertujuan membangun model prediktif aksi lawan pada permainan berulang dan memanfaatkannya untuk estimasi nilai aksi melalui simulasi multi-langkah (\textit{Monte Carlo rollout}).
 
+\subsection{Setup Permainan}
 
-\subsection{Formalisasi Permainan}
-
-Permainan diformalkan sebagai permainan normal berulang dua pemain dengan:
-Parameter \textit{trembling-hand} $\epsilon$
-merepresentasikan probabilitas kesalahan aksi acak
-yang bersifat independen pada setiap tahap.
-Dengan probabilitas $\epsilon$,
-aksi yang dipilih digantikan oleh aksi acak uniform.
-Parameter ini digunakan untuk memastikan
-bahwa proses observasi tetap eksploratif
-dan menghindari determinisme penuh dalam dinamika permainan.
-
-
-\begin{itemize}
-    \item Himpunan aksi diskrit $A = \{1, \dots, m\}$
-    \item Matriks payoff $P \in \mathbb{R}^{m \times m}$
-    \item Tingkat terminasi $\gamma \in (0,1)$
-    \item Tingkat \textit{trembling-hand} $\epsilon \in [0,1]$
-\end{itemize}
-
-Pada setiap tahap $t$, agen dan lawan memilih aksi $a_t^{agent}$ dan $a_t^{opp}$. Reward dihitung sebagai:
+Permainan yang digunakan dalam penelitian ini adalah
+\textit{Iterated Prisoner’s Dilemma} (IPD) dua pemain dengan dua aksi diskrit:
 
 \begin{equation}
-r_t^{agent}, r_t^{opp} = \phi(a_t^{agent}, a_t^{opp}, P)
+A = \{C, D\}
 \end{equation}
+
+di mana $C$ menyatakan \textit{Cooperate} dan $D$ menyatakan \textit{Defect}.
+
+\subsubsection{Matriks Payoff}
+
+Struktur payoff mengikuti formulasi klasik Prisoner’s Dilemma dengan parameter:
+
+\[
+T > R > P > S
+\quad \text{dan} \quad
+2R > T + S
+\]
+
+Nilai numerik yang digunakan dalam penelitian ini adalah:
+
+\begin{equation}
+P =
+\begin{bmatrix}
+R & S \\
+T & P
+\end{bmatrix}
+=
+\begin{bmatrix}
+3 & 0 \\
+5 & 1
+\end{bmatrix}
+\end{equation}
+
+dengan:
+
+\begin{itemize}
+    \item $T = 5$ (\textit{Temptation})
+    \item $R = 3$ (\textit{Reward})
+    \item $P = 1$ (\textit{Punishment})
+    \item $S = 0$ (\textit{Sucker})
+\end{itemize}
+
+Pada setiap langkah $t$:
+
+\begin{equation}
+(a_t^{agent}, a_t^{opp}) \in \{C, D\}^2
+\end{equation}
+
+Reward agen dan lawan ditentukan langsung dari matriks payoff $P$.
+
+\subsubsection{Horizon Permainan}
+
+Dua konfigurasi horizon digunakan untuk menganalisis stabilitas model:
+
+\begin{enumerate}
+    \item \textbf{Fixed Horizon}: Panjang episode tetap $T = 100$ langkah.
+    
+    \item \textbf{Geometric Termination}: Pada setiap langkah, permainan berakhir
+    dengan probabilitas $p_{term} = 0.05$.
+    Panjang episode mengikuti distribusi geometrik dengan ekspektasi:
+    
+    \begin{equation}
+    \mathbb{E}[T] = \frac{1}{0.05} = 20
+    \end{equation}
+\end{enumerate}
+
+Konfigurasi fixed horizon digunakan untuk analisis stabilitas prediksi multi-langkah tanpa gangguan terminasi stokastik, sedangkan konfigurasi geometrik digunakan untuk menguji robustnes model pada lingkungan dengan horizon acak.
+
+\subsubsection{Trembling-Hand Noise}
+
+Pada eksperimen utama digunakan lingkungan deterministik ($\epsilon = 0$).
+
+Sebagai uji robustnes, diperkenalkan \textit{trembling-hand noise} dengan parameter $\epsilon \in \{0.01, 0.05\}$, di mana pada setiap langkah aksi yang dipilih digantikan oleh aksi acak dengan probabilitas $\epsilon$.
+
+Eksperimen ini bertujuan menguji stabilitas representasi \textit{belief state} dan performa \textit{rollout} dalam kondisi observasi yang terkontaminasi noise.
+
+\subsubsection{Representasi Histori}
 
 Riwayat interaksi hingga waktu $t$ dinotasikan sebagai:
 
 \begin{equation}
-H_t = \{(a_1^{opp}, a_1^{agent}, r_1^{opp}, r_1^{agent}), \dots, (a_t^{opp}, a_t^{agent}, r_t^{opp}, r_t^{agent})\}
+H_t = \{(a_1^{agent}, a_1^{opp}), \dots, (a_t^{agent}, a_t^{opp})\}
 \end{equation}
 
 Tujuan model adalah mengestimasi distribusi aksi lawan berikutnya:
 
 \begin{equation}
-x_{t+1} = \mathbb{P}(a_{t+1}^{opp} \mid H_t)
+\hat{x}_{t+1} = \mathbb{P}(a_{t+1}^{opp} \mid H_t)
 \end{equation}
 
 \subsection{Arsitektur Model}
@@ -57,214 +111,384 @@ x_{t+1} = \mathbb{P}(a_{t+1}^{opp} \mid H_t)
 Model terdiri dari dua komponen utama:
 
 \begin{enumerate}
-    \item Encoder sekuensial berbasis LSTM
-    \item Jaringan feedforward untuk prediksi aksi berikutnya
+    \item LSTM satu layer dengan hidden size 64 sebagai encoder temporal
+    \item Linear layer diikuti softmax untuk prediksi distribusi aksi lawan
 \end{enumerate}
 
-\subsubsection{Representasi Masukan}
+\subsubsection{Representasi Input}
 
-Pada setiap tahap $t$, vektor masukan didefinisikan sebagai:
-
-\begin{equation}
-s_t =
-\big[
-a_t^{opp},
-a_t^{agent},
-r_t^{opp},
-r_t^{agent}
-\big]
-\end{equation}
-
-Seluruh parameter lingkungan seperti matriks payoff $P$, tingkat terminasi $\gamma$, dan tingkat \textit{trembling-hand} $\epsilon$ digunakan dalam fungsi reward $\phi$.
-
-\subsubsection{Dinamika Hidden State}
-
-Hidden state diperbarui menggunakan LSTM:
+Pada setiap langkah waktu $t$, model menerima vektor fitur:
 
 \begin{equation}
-h_t = \text{LSTM}(s_t, h_{t-1})
+x_t \in \mathbb{R}^d
 \end{equation}
 
-dengan dimensi hidden sebesar 64 unit.
+yang terdiri dari:
 
-Hidden state $h_t$ diinterpretasikan sebagai \textit{belief state} teramortisasi yang mengaproksimasi keadaan laten strategi lawan:
+\begin{itemize}
+    \item One-hot aksi agen $a_t^{agent}$ (2 dimensi)
+    \item One-hot aksi lawan $a_t^{opp}$ (2 dimensi)
+    \item Skor kumulatif agen hingga waktu $t$
+    \item Skor kumulatif lawan hingga waktu $t$
+    \item Parameter trembling-hand $\epsilon$
+    \item Probabilitas terminasi $p_{term}$
+\end{itemize}
+
+Seluruh parameter lingkungan dimasukkan pada setiap langkah waktu untuk memungkinkan generalisasi terhadap konfigurasi permainan yang berbeda.
+
+\subsubsection{Dinamika LSTM}
+
+State internal LSTM terdiri dari hidden state $h_t$ dan cell state $c_t$:
 
 \begin{equation}
-h_t \approx q_\theta(z_t \mid H_t)
+(h_t, c_t) = \text{LSTM}(x_t, (h_{t-1}, c_{t-1}))
 \end{equation}
+
+dengan:
+
+\[
+h_t \in \mathbb{R}^{64}, 
+\quad
+c_t \in \mathbb{R}^{64}
+\]
+
+Hidden state $h_t$ berfungsi sebagai representasi laten histori interaksi hingga waktu $t$.
 
 \subsubsection{Prediksi Aksi Lawan}
 
-Distribusi aksi lawan berikutnya diprediksi melalui jaringan feedforward:
+Distribusi aksi lawan berikutnya diperoleh melalui:
 
 \begin{equation}
 \hat{x}_{t+1} = \text{softmax}(W h_t + b)
 \end{equation}
 
-dengan $\hat{x}_{t+1} \in \Delta_m$.
+dengan $\hat{x}_{t+1} \in \Delta_2$.
 
-Fungsi prediksi ini mengaproksimasi fungsi transisi sebenarnya:
+\subsubsection{Prediksi Rekursif}
+
+Pada tahap rollout, aksi lawan yang diprediksi
+$\hat{a}_{t+1}^{opp}$ dimasukkan kembali sebagai bagian dari input
+$x_{t+1}$, sehingga menghasilkan proses prediksi rekursif multi-langkah.
+
+\subsection{Protokol Pelatihan}
+
+Model dilatih secara \textit{offline} menggunakan:
+
+\begin{itemize}
+    \item Loss: cross-entropy one-step
+    \item Optimizer: Adam
+    \item Learning rate: $10^{-3}$
+    \item Batch size: 64
+    \item Jumlah epoch: 50
+    \item Early stopping berdasarkan validation loss
+\end{itemize}
+
+Pelatihan menggunakan \textit{teacher forcing} dengan \textit{scheduled sampling} yang meningkat secara linear dari 0 hingga 0.3 selama 30 epoch pertama.
+
+\subsection{Evaluasi Kandidat Aksi dan Skalabilitas Arsitektur}
+
+Pada setiap waktu $t$, agen membangkitkan sekumpulan kandidat aksi:
 
 \begin{equation}
-x_{t+1} = f(h_t)
+\mathcal{C}_t = \{c^{(1)}, c^{(2)}, \dots, c^{(N)}\}
 \end{equation}
 
-\subsubsection{Estimasi Epistemic Uncertainty}
+dengan $N$ bersifat arbitrer. Arsitektur yang digunakan tidak membatasi jumlah kandidat secara struktural, sehingga evaluasi aksi berskala linear terhadap $N$.
 
-Untuk mengukur ketidakpastian epistemik model terhadap distribusi
-aksi lawan, digunakan pendekatan \textit{Monte Carlo dropout}
-pada tahap inferensi.
-Dengan melakukan $M$ kali forward pass dengan dropout aktif,
-diperoleh sekumpulan prediksi:
+Untuk setiap kandidat $c^{(i)}$, dilakukan estimasi nilai menggunakan simulasi Monte Carlo rollout sepanjang horizon $k$ dengan $n$ simulasi independen:
 
 \begin{equation}
-\{\hat{x}_{t+1}^{(m)}\}_{m=1}^{M}
+\hat{Q}(H_t, c^{(i)})
+=
+\frac{1}{n}
+\sum_{j=1}^{n}
+\sum_{\tau=1}^{k}
+\gamma^{\tau-1} r_{t+\tau}^{(j, i)}
 \end{equation}
 
-Rata-rata prediksi didefinisikan sebagai:
+di mana $H_t$ adalah riwayat hingga waktu $t$, dan $r_{t+\tau}^{(j,i)}$ adalah reward pada langkah $\tau$ dari rollout ke-$j$ untuk kandidat $c^{(i)}$.
+
+\subsubsection{Estimasi Ketidakpastian dengan Monte Carlo Dropout}
+
+Untuk menangkap ketidakpastian epistemik, digunakan pendekatan \textit{Monte Carlo dropout}. Dropout tetap aktif saat inferensi dan dilakukan sebanyak $M$ forward pass independen.
+
+Untuk setiap kandidat $c^{(i)}$, diperoleh:
 
 \begin{equation}
-\bar{x}_{t+1} = \frac{1}{M} \sum_{m=1}^{M} \hat{x}_{t+1}^{(m)}
+\hat{Q}^{(m)}(H_t, c^{(i)}), \quad m = 1, \dots, M
 \end{equation}
 
-Ketidakpastian epistemik diukur sebagai variansi prediksi:
+Nilai ekspektasi diperkirakan sebagai:
 
 \begin{equation}
-U_{t+1} =
+\bar{Q}(c^{(i)})
+=
 \frac{1}{M}
 \sum_{m=1}^{M}
-\|\hat{x}_{t+1}^{(m)} - \bar{x}_{t+1}\|^2
+\hat{Q}^{(m)}(H_t, c^{(i)})
 \end{equation}
 
-Besaran ini digunakan untuk menganalisis stabilitas belief state
-terhadap histori interaksi yang terbatas.
-
-
-\subsection{Fungsi Objektif}
-
-Model dilatih secara \textit{offline} menggunakan fungsi loss \textit{cross-entropy}:
+Sedangkan variansi antar forward pass:
 
 \begin{equation}
-\mathcal{L} =
--
-\sum_{t=1}^{T}
-\sum_{a \in A}
-x_{t+1}(a)
-\log \hat{x}_{t+1}(a)
+\mathrm{Var}_Q(c^{(i)})
+=
+\frac{1}{M}
+\sum_{m=1}^{M}
+\left(
+\hat{Q}^{(m)}(H_t, c^{(i)}) - \bar{Q}(c^{(i)})
+\right)^2
 \end{equation}
 
-Pelatihan dilakukan dengan metode \textit{teacher forcing}, serta \textit{scheduled sampling} untuk mengurangi \textit{exposure bias} pada simulasi rekursif.
+digunakan sebagai indikator ketidakpastian epistemik terhadap estimasi nilai aksi.
 
-\subsection{Simulasi Monte Carlo Rollout}
+\subsubsection{Pemilihan Aksi}
 
-Setelah pelatihan selesai, model digunakan untuk simulasi multi-langkah.
-
-Distribusi prediksi digunakan untuk sampling aksi lawan:
-
-\begin{equation}
-a_{t+1}^{opp} \sim \hat{x}_{t+1}
-\end{equation}
-
-Hidden state diperbarui secara rekursif untuk horizon $k$ langkah. Proses ini diulang sebanyak $n$ kali untuk memperoleh estimasi ekspektasi reward:
-
-\begin{equation}
-\hat{V}(H_t) =
-\frac{1}{n}
-\sum_{i=1}^{n}
-\sum_{j=1}^{k}
-\gamma^{j-1}
-r_{t+j}^{(i)}
-\end{equation}
-
-Estimasi nilai tersebut dihitung untuk setiap kandidat aksi agen
-$a \in A$ dengan melakukan rollout bersyarat pada aksi awal tersebut,
-sehingga diperoleh estimasi:
-
-\begin{equation}
-\hat{Q}(H_t, a)
-\end{equation}
-
-Agen kemudian memilih aksi berdasarkan aturan keputusan greedy:
+Aksi dipilih secara greedy berdasarkan estimasi nilai rata-rata:
 
 \begin{equation}
 a_t^{agent}
 =
-\arg\max_{a \in A}
-\hat{Q}(H_t, a)
+\arg\max_{c^{(i)} \in \mathcal{C}_t}
+\bar{Q}(c^{(i)})
 \end{equation}
 
-Diasumsikan bahwa fungsi transisi prediktif model
-$f : \Delta_m \rightarrow \Delta_m$
-bersifat Lipschitz kontinu terhadap norma Euclidean,
-yaitu terdapat konstanta $L > 0$ sehingga:
+Sebagai alternatif, dapat digunakan kriteria \textit{risk-sensitive}:
 
 \begin{equation}
-\| f(x) - f(y) \|
-\le
-L \|x - y\|
-\end{equation}
-
-untuk setiap $x, y \in \Delta_m$.
-Konstanta $L$ diestimasi secara empiris
-melalui maksimum rasio perubahan output terhadap perubahan input
-pada data validasi.
-
-
-Dengan asumsi fungsi transisi Lipschitz kontinu dengan konstanta $L$, galat prediksi multi-langkah dibatasi oleh:
-
-\begin{equation}
-\|\hat{x}_{t+k} - x_{t+k}\|
-\le
-\epsilon
-\sum_{i=0}^{k-1} L^i
+a_t^{agent}
 =
-\epsilon \frac{L^k - 1}{L - 1}
+\arg\max_{c^{(i)} \in \mathcal{C}_t}
+\left(
+\bar{Q}(c^{(i)})
+-
+\lambda \sqrt{\mathrm{Var}_Q(c^{(i)})}
+\right)
 \end{equation}
 
-Sehingga horizon simulasi $k$ dipilih agar galat tetap terkendali.
+dengan $\lambda \ge 0$ sebagai parameter aversi risiko.
+
+\subsubsection{Parameter Eksperimen}
+
+Secara teoritis, jumlah kandidat $N$ bersifat arbitrer dan tidak membatasi struktur model. Namun dalam eksperimen ini digunakan:
+
+\begin{itemize}
+    \item Jumlah kandidat aksi: $N = 20$
+    \item Jumlah rollout per kandidat: $n = 50$
+    \item Horizon simulasi: $k = 10$
+    \item Jumlah forward pass MC dropout: $M = 20$
+\end{itemize}
+
+Pemilihan $N = 20$ didasarkan pada kompromi antara stabilitas estimasi Monte Carlo (dengan error $\mathcal{O}(1/\sqrt{N})$) dan efisiensi komputasi, mengingat kompleksitas total evaluasi berskala:
+
+\begin{equation}
+\mathcal{O}(N \cdot n \cdot k \cdot M)
+\end{equation}
+
+Dengan demikian, nilai $N=20$ cukup untuk menghasilkan estimasi yang stabil tanpa meningkatkan beban komputasi secara berlebihan, sementara arsitektur tetap mendukung jumlah kandidat yang lebih besar pada skenario lanjutan.
 
 \subsection{Pengumpulan Data}
 
-Data dikumpulkan melalui simulasi pertandingan acak antara agen dan berbagai tipe lawan baseline, meliputi:
+Dataset dikumpulkan melalui simulasi pertandingan melawan berbagai tipe lawan:
 
 \begin{itemize}
-    \item Strategi tetap (fixed mixed strategy)
+    \item Fixed mixed strategy
     \item Tit-for-Tat
     \item Win-Stay Lose-Shift
     \item Fictitious Play
     \item Q-Learning
 \end{itemize}
 
-Distribusi tipe lawan dikontrol selama proses pelatihan. Dataset dibagi menjadi:
+Distribusi tipe lawan selama pelatihan ditetapkan uniform.
+
+Jumlah episode:
 
 \begin{itemize}
-    \item Data pelatihan
-    \item Data validasi
-    \item Data pengujian (dengan variasi parameter yang tidak terlihat saat pelatihan)
+    \item 10.000 pelatihan
+    \item 2.000 validasi
+    \item 2.000 pengujian
 \end{itemize}
 
-Probabilitas terminasi permainan ditetapkan sebesar $0.05$,
-sehingga panjang episode mengikuti distribusi geometrik
-dengan ekspektasi:
-
-\begin{equation}
-\mathbb{E}[T] = \frac{1}{0.05} = 20
-\end{equation}
-
-Sebanyak 10.000 episode digunakan untuk pelatihan,
-2.000 untuk validasi,
-dan 2.000 untuk pengujian.
-
-Distribusi tipe lawan selama pelatihan ditetapkan uniform,
-sehingga setiap tipe memiliki probabilitas yang sama.
-
+Set pengujian mencakup variasi parameter yang tidak terlihat saat pelatihan untuk menguji generalisasi.
 
 \subsection{Evaluasi}
 
-Evaluasi dilakukan berdasarkan:
+Evaluasi dilakukan secara bertingkat untuk memisahkan kontribusi dari
+model prediktif, mekanisme rollout, estimasi ketidakpastian, serta
+kualitas pengambilan keputusan dalam interaksi tertutup.
+Pendekatan ini memastikan bahwa setiap komponen sistem dianalisis
+secara terpisah sebelum dievaluasi secara end-to-end.
 
-\begin{enumerate}
-    \item Akurasi prediksi aksi lawan
-    \item Struktur representasi belief state
-    \item Peningkatan utilitas agen melalui Monte Carlo rollout
-\end{enumerate}
+\subsubsection{Lingkungan Evaluasi dan Tipe Lawan}
+
+Evaluasi dilakukan dalam lingkungan \textit{Iterated Prisoner's Dilemma} (IPD)
+dengan berbagai tipe lawan untuk menguji robustnes model terhadap dinamika
+yang berbeda. Setiap tipe lawan merepresentasikan kelas strategi dengan
+karakteristik stasioner maupun adaptif.
+
+\begin{itemize}
+
+\item \textbf{Fixed Mixed Strategy} \\
+Lawan memilih aksi kooperasi dengan probabilitas tetap $p \in [0,1]$
+dan defeksi dengan probabilitas $1-p$. Strategi ini bersifat stasioner
+dan tidak bergantung pada riwayat permainan.
+
+\item \textbf{Tit-for-Tat (TFT)} \\
+Lawan memulai dengan kooperasi, kemudian meniru aksi terakhir agen:
+\[
+a_{t}^{opp} = a_{t-1}^{agent}.
+\]
+Strategi ini deterministik dan reaktif.
+
+\item \textbf{Win-Stay Lose-Shift (WSLS)} \\
+Lawan mempertahankan aksi sebelumnya jika reward tinggi,
+dan mengganti aksi jika reward rendah.
+Strategi ini bergantung pada payoff sebelumnya.
+
+\item \textbf{Fictitious Play} \\
+Lawan mengestimasi distribusi aksi agen berdasarkan frekuensi historis
+dan memilih aksi terbaik terhadap distribusi tersebut.
+Strategi ini adaptif namun berbasis estimasi frekuensi.
+
+\item \textbf{Q-Learning Agent} \\
+Lawan merupakan agen pembelajaran berbasis Q-learning
+yang memperbarui nilai aksi secara iteratif selama episode.
+Strategi ini bersifat non-stasioner dan adaptif terhadap dinamika permainan.
+
+\end{itemize}
+
+Setiap tipe lawan dievaluasi dalam sejumlah episode independen.
+Parameter strategi (misalnya probabilitas pada fixed mixed strategy
+atau learning rate pada Q-learning) ditetapkan konstan selama satu
+episode namun dapat divariasikan antar eksperimen untuk menguji
+robustnes agen terhadap perubahan dinamika lingkungan.
+
+\subsubsection{Evaluasi Model Prediktif (Offline)}
+
+Evaluasi pertama dilakukan pada tahap offline untuk mengukur kualitas
+model LSTM sebagai prediktor aksi lawan secara lokal (one-step).
+
+Metrik yang digunakan:
+
+\begin{itemize}
+    \item \textbf{One-step accuracy}
+    \item \textbf{Cross-entropy loss}
+    \item \textbf{Entropy prediktif} sebagai indikator tingkat keyakinan model
+    \item Analisis perbandingan dengan dan tanpa \textit{scheduled sampling}
+\end{itemize}
+
+Tahap ini bertujuan memastikan bahwa model memiliki kapasitas
+representasi yang memadai sebelum digunakan dalam rollout multi-langkah.
+
+\subsubsection{Evaluasi Stabilitas Multi-Langkah (Open-loop)}
+
+Pada tahap ini model dievaluasi tanpa intervensi agen,
+dengan melakukan prediksi rekursif hingga horizon $k$.
+
+Dievaluasi:
+
+\begin{itemize}
+    \item Akurasi prediksi sebagai fungsi horizon $k$
+    \item Pertumbuhan error terhadap peningkatan horizon
+    \item Divergensi distribusi prediktif terhadap distribusi ground-truth
+    \item Pertumbuhan variansi prediktif:
+    \[
+    \mathrm{Var}(x_{t+k}) \text{ sebagai fungsi } k
+    \]
+\end{itemize}
+
+Analisis ini mengukur stabilitas representasi laten
+serta tingkat akumulasi error akibat self-conditioning.
+
+\subsubsection{Evaluasi Estimasi Ketidakpastian}
+
+Ketidakpastian epistemik dievaluasi menggunakan Monte Carlo dropout
+dengan $M$ forward pass independen.
+
+Untuk setiap prediksi diperoleh:
+
+\begin{itemize}
+    \item Rata-rata probabilitas prediksi
+    \item Variansi antar forward pass
+    \item Entropy distribusi prediktif
+\end{itemize}
+
+Selain itu dianalisis:
+
+\begin{itemize}
+    \item Korelasi antara variansi prediktif dan error aktual
+    \item Pertumbuhan ketidakpastian terhadap peningkatan horizon
+\end{itemize}
+
+Tujuannya adalah memverifikasi bahwa estimasi ketidakpastian
+bersifat informatif dan berkorelasi dengan kesalahan prediksi.
+
+\subsubsection{Evaluasi Kualitas Perencanaan (Planning Quality)}
+
+Evaluasi ini menilai stabilitas estimasi nilai aksi $\hat{Q}$.
+
+Dianalisis sensitivitas terhadap parameter simulasi:
+
+\begin{itemize}
+    \item Horizon rollout $k$
+    \item Jumlah rollout per kandidat $n$
+    \item Jumlah kandidat aksi $N$
+    \item Jumlah forward pass MC dropout $M$
+\end{itemize}
+
+Diperiksa konvergensi estimator Monte Carlo dengan memperhatikan:
+
+\[
+\mathrm{Var}(\hat{Q}) \propto \frac{1}{n}
+\]
+
+serta stabilitas estimasi terhadap variasi $M$.
+
+Tahap ini memastikan bahwa performa agen bukan artefak
+dari konfigurasi simulasi tertentu.
+
+\subsubsection{Evaluasi Performa Agen (Closed-loop)}
+
+Evaluasi akhir dilakukan dalam interaksi tertutup
+melalui simulasi episode permainan penuh.
+
+Metrik yang digunakan:
+
+\begin{itemize}
+    \item Rata-rata reward per episode
+    \item Distribusi reward
+    \item Win-rate terhadap baseline
+    \item Tingkat kooperasi sepanjang episode
+    \item Stabilitas pola interaksi antar waktu
+\end{itemize}
+
+\subsubsection{Baseline}
+
+Performa agen dibandingkan dengan beberapa baseline:
+
+\begin{itemize}
+    \item Agen greedy one-step (tanpa rollout)
+    \item Agen rollout tanpa estimasi ketidakpastian
+    \item Agen heuristic reaktif
+    \item Agen acak (random policy)
+\end{itemize}
+
+Perbandingan ini bertujuan mengisolasi kontribusi
+rollout multi-langkah serta estimasi ketidakpastian
+terhadap peningkatan performa agen.
+
+\subsubsection{Ablation Study}
+
+Dilakukan studi ablasi untuk mengevaluasi pengaruh
+setiap komponen sistem:
+
+\begin{itemize}
+    \item Tanpa scheduled sampling
+    \item Tanpa Monte Carlo dropout
+    \item Horizon tetap ($k=1$)
+    \item Variasi jumlah kandidat aksi $N$
+\end{itemize}
+
+Ablasi ini membantu mengidentifikasi komponen
+yang paling berkontribusi terhadap stabilitas
+dan performa akhir agen.

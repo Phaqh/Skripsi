@@ -1,58 +1,56 @@
 \section{Latar Belakang}
 
-Interaksi strategis berulang antara agen rasional merupakan fondasi penting dalam multi-agent reinforcement learning (MARL) (\cite{hernandez-leal_survey_2019}). Salah satu kerangka klasik yang sering digunakan untuk mempelajari dinamika adaptasi strategis adalah \textit{Repeated Iterated Prisoner's Dilemma} (IPD). Dalam permainan ini, dua agen berinteraksi secara berulang tanpa komunikasi eksplisit, dan negosiasi strategi terjadi murni melalui urutan aksi(\cite{axelrod_evolution_1981}).
+Interaksi strategis berulang antara agen merupakan salah satu topik utama dalam multi-agent reinforcement learning (MARL) \cite{hernandez-leal_survey_2019}. Salah satu kerangka klasik yang banyak digunakan untuk mempelajari dinamika tersebut adalah \textit{Repeated Iterated Prisoner’s Dilemma} (IPD) \cite{axelrod_evolution_1981}. Dalam permainan ini, dua agen berinteraksi secara berulang tanpa komunikasi eksplisit, dan penyesuaian strategi terjadi melalui pengamatan terhadap aksi lawan pada putaran sebelumnya.
 
-Pada lingkungan IPD dengan \textit{stochastic termination} (geometric stopping), dinamika menjadi lebih kompleks karena horizon interaksi bersifat tidak pasti (\cite{axelrod_evolution_1981}). Kompleksitas ini meningkat ketika lawan bersifat adaptif dan non-stasioner, misalnya menggunakan algoritma pembelajaran daring seperti \textit{Hedge}, \textit{Online Mirror Descent}, atau pendekatan berbasis reinforcement learning. Dalam konteks ini, agen tidak mengetahui algoritma internal lawan dan harus beradaptasi hanya berdasarkan observasi historis (\cite{nisan_algorithmic_2008}).
+Pada IPD dengan \textit{stochastic termination} (geometric stopping), interaksi dapat berakhir secara acak pada setiap putaran \cite{axelrod_evolution_1981}. Kondisi ini menyebabkan panjang interaksi tidak pasti, meskipun memiliki nilai ekspektasi tertentu. Dalam situasi seperti ini, keputusan agen lebih bergantung pada dinamika jangka pendek dibandingkan analisis jangka panjang, karena selalu terdapat kemungkinan permainan berhenti pada langkah berikutnya \cite{nisan_algorithmic_2008}.
 
-Dalam konteks terminasi stokastik dengan distribusi geometrik, horizon efektif interaksi bersifat terbatas secara ekspektasi. Oleh karena itu, pemodelan prediksi jangka pendek menjadi lebih relevan dibandingkan analisis asimtotik jangka panjang, karena keputusan eksplorasi harus mempertimbangkan probabilitas terminasi yang meningkat seiring waktu (\cite{nisan_algorithmic_2008}).
+Tantangan menjadi lebih besar ketika lawan bersifat adaptif atau non-stasioner, misalnya menggunakan algoritma pembelajaran daring seperti \textit{Hedge} atau \textit{Online Mirror Descent}, maupun pendekatan berbasis reinforcement learning \cite{nisan_algorithmic_2008}. Dalam kondisi tersebut, agen tidak mengetahui mekanisme internal lawan dan hanya dapat mengamati urutan aksi yang terjadi selama interaksi.
 
-Dalam lingkungan dengan horizon stokastik dan lawan non-stasioner, sinyal reward seringkali menjadi indikator yang terkonflasi antara kualitas kebijakan agen dan perubahan strategi lawan\textbf{(kasih referensi)}. Ketika reward digunakan secara langsung untuk memperbarui model lawan, terjadi risiko pencampuran antara inferensi dinamika lawan dan evaluasi utilitas tindakan. Akibatnya, proses pembelajaran dapat mengalami bias identifikasi dan ketidakstabilan adaptasi \textbf{(kasih referensi)}. Hingga saat ini, belum banyak pendekatan yang secara eksplisit memisahkan pemodelan belief terhadap lawan dari optimisasi reward, sekaligus mengevaluasi perolehan informasi epistemik jangka pendek dalam interaksi strategis berulang dengan terminasi stokastik.
+Sebagian pendekatan opponent modelling dalam MARL membangun model lawan yang terintegrasi langsung dengan proses optimisasi kebijakan agen. Pembaruan model sering kali berkaitan erat dengan sinyal reward atau digunakan secara langsung untuk meningkatkan performa agen. Pendekatan ini efektif untuk tujuan performa, namun dapat menyulitkan pemisahan antara perubahan perilaku lawan dan perubahan kebijakan agen itu sendiri. Akibatnya, interpretasi terhadap dinamika strategi lawan menjadi kurang jelas.
 
+Selain itu, banyak pendekatan berfokus pada prediksi satu-langkah (one-step prediction), yaitu memprediksi aksi lawan pada langkah berikutnya. Meskipun berguna, pendekatan ini mungkin belum cukup untuk menangkap pola strategi yang bergantung pada beberapa langkah ke depan. Dalam lingkungan dengan terminasi stokastik, kemampuan melakukan prediksi multi-langkah jangka pendek (k-step forecasting) berpotensi memberikan gambaran yang lebih lengkap mengenai kecenderungan strategi lawan sebelum interaksi berakhir.
 
-Sebagian besar pendekatan opponent modelling dalam MARL berfokus pada inferensi tipe eksplisit, estimasi utilitas, atau pelatihan bersama berbasis reward. Pendekatan tersebut umumnya:
+Berdasarkan kondisi tersebut, masih terdapat ruang untuk mengembangkan kerangka opponent modelling. Sebagian besar pendekatan opponent modelling dalam MARL berfokus pada inferensi tipe eksplisit, estimasi utilitas, atau pelatihan bersama berbasis reward. Dalam praktiknya, pendekatan tersebut umumnya:
 \begin{enumerate}
-    \item Mengintegrasikan belief modelling langsung ke dalam objective reward,
-    \item Berorientasi pada prediksi satu langkah ke depan,
-    \item Tidak memisahkan modul belief dari optimisasi kebijakan,
-    \item Tidak mengevaluasi \textit{epistemic information gain} secara eksplisit.
+    \item Mengintegrasikan pembaruan model lawan secara langsung dengan objective reward agen,
+    \item Berorientasi pada prediksi satu langkah ke depan (one-step prediction).
 \end{enumerate}
 
-Akibatnya, eksplorasi terhadap lawan seringkali bersifat implisit dan tidak terstruktur sehingga kurang robust terhadap perubahan algoritma maupun dinamika pembelajaran lawan.\textbf{(kasih referensi)}
+Pendekatan ini efektif untuk meningkatkan performa agen, namun pemisahan antara perubahan strategi lawan dan perubahan kebijakan agen tidak selalu terlihat secara jelas. Ketika model lawan diperbarui berdasarkan sinyal reward yang sama dengan yang digunakan untuk optimisasi kebijakan, interpretasi terhadap dinamika perilaku lawan dapat menjadi kurang terpisah secara konseptual.
 
-Dalam konteks ini, ketidakpastian terhadap dinamika strategi lawan bukan sekadar noise statistik, melainkan komponen epistemik yang secara langsung memengaruhi kualitas pengambilan keputusan. Oleh karena itu, eksplorasi tidak hanya berkaitan dengan perolehan reward yang lebih tinggi, tetapi juga dengan reduksi ketidakpastian terhadap model lawan. Pendekatan yang tidak secara eksplisit mengkuantifikasi aspek epistemik ini berpotensi gagal beradaptasi ketika lawan mengubah kebijakannya secara dinamis.
+Selain itu, fokus pada prediksi satu langkah mungkin belum sepenuhnya menangkap pola strategi yang bergantung pada beberapa langkah interaksi. Dalam lingkungan dengan terminasi stokastik, kemampuan melakukan prediksi multi-langkah jangka pendek berpotensi memberikan informasi tambahan mengenai kecenderungan strategi lawan sebelum interaksi berakhir.
 
-Berdasarkan permasalahan tersebut, diperlukan suatu kerangka pemodelan yang (i) tidak mengasumsikan struktur parametrik eksplisit dari algoritma lawan, (ii) memisahkan secara konseptual dan komputasional belief modelling dari optimisasi reward, serta (iii) memungkinkan integrasi estimasi perolehan informasi epistemik ke dalam mekanisme seleksi aksi.
+Dalam konteks ini, ketidakpastian terhadap dinamika strategi lawan dapat dipandang sebagai bagian penting dari proses pengambilan keputusan. Ketidakpastian tersebut tidak hanya berkaitan dengan variasi acak, tetapi juga dengan keterbatasan informasi yang dimiliki agen terhadap mekanisme adaptasi lawan. Oleh karena itu, selain mempertimbangkan perolehan reward, agen juga dapat mempertimbangkan bagaimana observasi baru memperbarui keyakinannya terhadap model lawan.
 
-Dalam kerangka yang diusulkan, sinyal reward tetap digunakan untuk evaluasi dan seleksi kebijakan, namun tidak digunakan sebagai sinyal pelatihan dalam pembaruan belief terhadap lawan. Dengan demikian, proses inferensi dinamika lawan dipisahkan secara konseptual dari optimisasi utilitas agen.
+Berdasarkan pertimbangan tersebut, diperlukan suatu kerangka pemodelan yang (i) tidak bergantung pada asumsi eksplisit mengenai struktur algoritma internal lawan, (ii) memisahkan secara konseptual proses pembaruan belief terhadap lawan dari optimisasi reward agen, serta (iii) memungkinkan evaluasi perubahan keyakinan sebagai bagian dari analisis dinamika interaksi.
 
-Dengan pendekatan ini, belief terhadap dinamika lawan tidak hanya berfungsi sebagai model prediktif, tetapi menjadi komponen aktif dalam menentukan strategi eksplorasi dan eksploitasi agen.
+Dalam kerangka yang diusulkan, sinyal reward tetap digunakan untuk evaluasi dan seleksi kebijakan agen, namun tidak digunakan sebagai sinyal langsung dalam pembaruan belief terhadap lawan. Dengan demikian, proses pemodelan perilaku lawan dilakukan berdasarkan observasi aksi, sementara optimisasi utilitas tetap berjalan sebagai modul terpisah.
 
-Dalam penelitian ini, peningkatan keyakinan (confidence improvement) didefinisikan sebagai perubahan terukur pada distribusi prediktif belief akibat observasi kontrafaktual trajectory aksi agen, yang berfungsi sebagai proksi reduksi ketidakpastian epistemik jangka pendek.
+Melalui pendekatan ini, belief terhadap dinamika lawan berfungsi tidak hanya sebagai alat prediksi, tetapi juga sebagai dasar untuk menganalisis bagaimana observasi baru memengaruhi tingkat keyakinan agen terhadap pola strategi lawan.
 
-Sebagai ilustrasi, estimasi tersebut dapat diintegrasikan ke dalam skema seleksi aksi berbasis prinsip seperti Upper Confidence Bound (UCB), meskipun perancangan mekanisme seleksi aksi bukan fokus utama penelitian ini.
+Dalam penelitian ini, peningkatan keyakinan (\textit{confidence improvement}) didefinisikan sebagai perubahan terukur pada distribusi prediktif belief setelah observasi trajectory aksi agen dan lawan. Perubahan ini digunakan sebagai indikator reduksi ketidakpastian jangka pendek dalam proses interaksi.
+
+Sebagai ilustrasi, estimasi perubahan keyakinan tersebut dapat dikaitkan dengan mekanisme seleksi aksi berbasis prinsip seperti \textit{Upper Confidence Bound} (UCB), meskipun perancangan mekanisme seleksi aksi bukan merupakan fokus utama penelitian ini.
 
 \section{Rumusan Masalah}
 
 Berdasarkan latar belakang tersebut, penelitian ini merumuskan permasalahan sebagai berikut:
 
 \begin{enumerate}
-    \item Bagaimana membangun modul pemodelan lawan yang sepenuhnya observasional dan tidak bergantung pada sinyal reward?
-    \item Bagaimana melakukan prediksi multi-langkah jangka pendek ($k$-step forecasting) terhadap distribusi aksi lawan yang dikondisikan pada trajectory aksi agen?
-    \item Bagaimana mengestimasi peningkatan keyakinan (\textit{confidence improvement}) yang didefinisikan sebagai perubahan distribusi prediktif belief
-    % \item Bagaimana memanfaatkan estimasi peningkatan keyakinan tersebut dalam mekanisme seleksi aksi yang mempertimbangkan keseimbangan antara eksploitasi dan eksplorasi?
-
+    \item Bagaimana merancang modul pemodelan lawan yang dipisahkan dari proses optimisasi reward agen, sehingga pembaruan model dilakukan secara observasional berdasarkan trajectory aksi yang teramati?
+    \item Bagaimana memformulasikan dan mengimplementasikan prediksi multi-langkah jangka pendek ($k$-step forecasting) terhadap distribusi aksi lawan untuk menangkap dinamika strategi dalam interaksi berulang dengan terminasi stokastik?
 \end{enumerate}
 
 \section{Batasan Penelitian}
 
-Agar fokus penelitian tetap terjaga dan implementasi eksperimental stabil, penelitian ini dibatasi pada:
+Agar ruang lingkup penelitian tetap terfokus dan implementasi eksperimental terkendali, penelitian ini dibatasi pada:
 
 \begin{enumerate}
     \item Lingkungan \textit{Repeated Iterated Prisoner’s Dilemma} dengan \textit{stochastic termination}.
-    \item Lawan adaptif yang tidak diketahui algoritmanya, namun terbatas pada kelas pembelajaran daring seperti Hedge, Online Mirror Descent, serta pendekatan reinforcement learning berbasis policy update tanpa observasi struktur eksplisit lawan.
-    \item Prediksi jangka pendek ($k$-step forecasting), tanpa pemodelan asimtotik jangka panjang.
-    \item Tidak mencakup inferensi eksplisit terhadap struktur algoritma lawan.
-    \item Tidak mengoptimalkan mutual information atau objective identifiability struktural secara eksplisit, melainkan menggunakan proksi berbasis perubahan distribusi prediktif belief.
+    \item Lawan adaptif yang algoritmanya tidak diketahui oleh agen, namun dibatasi pada kelas pembelajaran daring seperti \textit{Hedge}, \textit{Online Mirror Descent}, serta pendekatan reinforcement learning berbasis pembaruan kebijakan tanpa asumsi akses terhadap struktur internalnya.
+    \item Analisis difokuskan pada prediksi jangka pendek ($k$-step forecasting), tanpa membahas sifat asimtotik atau konvergensi jangka panjang.
+    \item Penelitian tidak melakukan inferensi eksplisit terhadap struktur parametrik atau bentuk algoritma internal lawan.
+    \item Evaluasi perubahan keyakinan dilakukan melalui perubahan distribusi prediktif belief, tanpa optimisasi eksplisit terhadap mutual information atau kriteria identifiabilitas struktural.
 \end{enumerate}
 
 \section{Tujuan Penelitian}
@@ -60,22 +58,21 @@ Agar fokus penelitian tetap terjaga dan implementasi eksperimental stabil, penel
 Penelitian ini bertujuan untuk:
 
 \begin{enumerate}
-    \item Mengembangkan modul \textit{decoupled latent opponent belief} yang dilatih murni menggunakan forecasting loss tanpa sinyal reward.
-    \item Mengimplementasikan mekanisme prediksi multi-langkah jangka pendek terhadap distribusi aksi lawan yang dikondisikan pada trajectory aksi agen.
-    \item Merumuskan ukuran \textit{counterfactual confidence improvement} sebagai proksi reduksi ketidakpastian prediktif jangka pendek.
-    \item Mengeksplorasi bagaimana komponen belief dan estimasi reduksi ketidakpastian dapat dimanfaatkan dalam mekanisme seleksi aksi yang mempertimbangkan eksploitasi dan eksplorasi.
+    \item Merancang dan mengimplementasikan modul pemodelan belief terhadap lawan yang dipisahkan dari proses optimisasi reward agen, serta dilatih berdasarkan kesalahan prediksi (forecasting loss) terhadap aksi yang terobservasi.
+    
+    \item Mengembangkan mekanisme prediksi multi-langkah jangka pendek ($k$-step forecasting) terhadap distribusi aksi lawan yang dikondisikan pada trajectory interaksi.
 \end{enumerate}
 
 \section{Manfaat Penelitian}
 
-Kontribusi utama penelitian ini adalah sebagai berikut:
+Manfaat dan kontribusi yang diharapkan dari penelitian ini adalah sebagai berikut:
 
 \begin{enumerate}
-    \item Mengusulkan modul belief lawan yang terpisah dari optimisasi reward tanpa asumsi struktur parametrik eksplisit terhadap algoritma lawan.
-    \item Memperkenalkan pendekatan \textit{multi-step short-horizon forecasting} dalam konteks IPD adaptif.
-    \item Mengusulkan estimasi \textit{counterfactual confidence improvement} sebagai ukuran eksplorasi epistemik berbasis prediksi.
-    \item Memberikan formulasi eksplorasi epistemik berbasis pembaruan belief kontrafaktual yang dapat diaplikasikan pada lingkungan interaksi strategis non-stasioner.
-    \item Memberikan kerangka eksplorasi epistemik jangka pendek pada interaksi strategis berulang non-stasioner yang tidak bergantung pada asumsi struktur algoritma lawan.
+    \item Menyediakan formulasi opponent modelling yang dipisahkan secara struktural dari optimisasi reward agen, sehingga proses pemodelan perilaku lawan dapat dianalisis secara lebih terfokus.
+    
+    \item Memperluas pendekatan prediksi dalam interaksi IPD adaptif melalui penerapan prediksi multi-langkah jangka pendek untuk menangkap dinamika strategi lawan.
+    
+    \item Mengusulkan penggunaan perubahan distribusi prediktif sebagai ukuran operasional untuk mengevaluasi pembaruan keyakinan terhadap lawan dalam horizon interaksi terbatas.
 \end{enumerate}
 
 \section{Sistematika Penelitian}
