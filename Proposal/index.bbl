@@ -19,69 +19,6 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global}
-    \entry{albrecht_autonomous_2018}{article}{}
-      \name{author}{2}{}{%
-        {{un=0,uniquepart=base,hash=9da4f3f413d514d731efe34067976909}{%
-           family={Albrecht},
-           familyi={A\bibinitperiod},
-           given={Stefano\bibnamedelima V.},
-           giveni={S\bibinitperiod\bibinitdelim V\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=3f42a499da2cddc0bae71b76c81f7c46}{%
-           family={Stone},
-           familyi={S\bibinitperiod},
-           given={Peter},
-           giveni={P\bibinitperiod},
-           givenun=0}}%
-      }
-      \strng{namehash}{9350371115a0d7dab048a4452942a148}
-      \strng{fullhash}{9350371115a0d7dab048a4452942a148}
-      \strng{bibnamehash}{9350371115a0d7dab048a4452942a148}
-      \strng{authorbibnamehash}{9350371115a0d7dab048a4452942a148}
-      \strng{authornamehash}{9350371115a0d7dab048a4452942a148}
-      \strng{authorfullhash}{9350371115a0d7dab048a4452942a148}
-      \field{sortinit}{A}
-      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{shorttitle}
-      \field{abstract}{Much research in artiﬁcial intelligence is concerned with the development of autonomous agents that can interact eﬀectively with other agents. An important aspect of such agents is the ability to reason about the behaviours of other agents, by constructing models which make predictions about various properties of interest (such as actions, goals, beliefs) of the modelled agents. A variety of modelling approaches now exist which vary widely in their methodology and underlying assumptions, catering to the needs of the diﬀerent sub-communities within which they were developed and reﬂecting the diﬀerent practical uses for which they are intended. The purpose of the present article is to provide a comprehensive survey of the salient modelling methods which can be found in the literature. The article concludes with a discussion of open problems which may form the basis for fruitful future research.}
-      \field{annotation}{Comment: Final manuscript (46 pages), published in Artificial Intelligence Journal. The {arXiv} version also contains a table of contents after the abstract, but is otherwise identical to the {AIJ} version. Keywords: autonomous agents, multiagent systems, modelling other agents, opponent modelling}
-      \field{eprinttype}{arxiv}
-      \field{issn}{00043702}
-      \field{journaltitle}{Artificial Intelligence}
-      \field{langid}{english}
-      \field{month}{5}
-      \field{shortjournal}{Artificial Intelligence}
-      \field{shorttitle}{Autonomous Agents Modelling Other Agents}
-      \field{title}{Autonomous Agents Modelling Other Agents: A Comprehensive Survey and Open Problems}
-      \field{urlday}{21}
-      \field{urlmonth}{12}
-      \field{urlyear}{2025}
-      \field{volume}{258}
-      \field{year}{2018}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \field{pages}{66\bibrangedash 95}
-      \range{pages}{30}
-      \verb{doi}
-      \verb 10.1016/j.artint.2018.01.002
-      \endverb
-      \verb{eprint}
-      \verb 1709.08071 [cs]
-      \endverb
-      \verb{file}
-      \verb PDF:/home/paqh/Zotero/storage/RU7DVCZ9/Albrecht and Stone - 2018 - Autonomous Agents Modelling Other Agents A Comprehensive Survey and Open Problems.pdf:application/pdf
-      \endverb
-      \verb{urlraw}
-      \verb http://arxiv.org/abs/1709.08071
-      \endverb
-      \verb{url}
-      \verb http://arxiv.org/abs/1709.08071
-      \endverb
-      \keyw{Computer Science - Artificial Intelligence,Computer Science - Multiagent Systems}
-    \endentry
     \entry{axelrod_evolution_1981}{article}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=e46fddf6d412d66cae997840c9ba5f34}{%
@@ -940,6 +877,42 @@
       \endverb
       \keyw{Risk assessment,Task analysis,Dynamical systems,Trajectory,Game theory,Games,Autonomous agents,Behavioral sciences,Coordination,Game Theory,Multi-agent Reinforcement Learning,Multi-agent Systems,Numerical analysis,Reinforcement learning,Learning systems,Multi agent systems,Repeated games,Multi agent,Multi-agent reinforcement learning,Coordinated behavior,Distributed systems,Dynamic environments,Hierarchical systems,Interaction environment,Long-term interaction,Selfish Agents}
     \endentry
+    \entry{nashed_survey_2022}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=25e4b8f0c4cf30e30989f75d5f7088cb}{%
+           family={Nashed},
+           familyi={N\bibinitperiod},
+           given={Samer\bibnamedelima B},
+           giveni={S\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a59b49a6e7b6a6776b1e5728dd527f83}{%
+           family={Zilberstein},
+           familyi={Z\bibinitperiod},
+           given={Shlomo},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{9fc0cb12237718d931b0cf8a8ddd753b}
+      \strng{fullhash}{9fc0cb12237718d931b0cf8a8ddd753b}
+      \strng{bibnamehash}{9fc0cb12237718d931b0cf8a8ddd753b}
+      \strng{authorbibnamehash}{9fc0cb12237718d931b0cf8a8ddd753b}
+      \strng{authornamehash}{9fc0cb12237718d931b0cf8a8ddd753b}
+      \strng{authorfullhash}{9fc0cb12237718d931b0cf8a8ddd753b}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Opponent modeling is the ability to use prior knowledge and observations in order to predict the behavior of an opponent. This survey presents a comprehensive overview of existing opponent modeling techniques for adversarial domains, many of which must address stochastic, continuous, or concurrent actions, and sparse, partially observable payoﬀ structures. We discuss all the components of opponent modeling systems, including feature extraction, learning algorithms, and strategy abstractions. These discussions lead us to propose a new form of analysis for describing and predicting the evolution of game states over time. We then introduce a new framework that facilitates method comparison, analyze a representative selection of techniques using the proposed framework, and highlight common trends among recently proposed methods. Finally, we list several open problems and discuss future research directions inspired by {AI} research on opponent modeling and related research in other disciplines.}
+      \field{langid}{english}
+      \field{title}{A Survey on Opponent Modeling in Adversarial Domains}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \verb{file}
+      \verb PDF:/home/paqh/Zotero/storage/GK8TDDA8/Nashed and Zilberstein - A Survey on Opponent Modeling in Adversarial Domains.pdf:application/pdf
+      \endverb
+    \endentry
     \entry{nisan_algorithmic_2008}{collection}{}
       \name{editor}{4}{}{%
         {{un=0,uniquepart=base,hash=dd03ed102537d5040adaf7ede9bad0ec}{%
@@ -1145,41 +1118,6 @@
       \field{dateera}{ce}
       \verb{file}
       \verb PDF:/home/paqh/Zotero/storage/V2H8HELF/Shoham - Multiagent Systems Algorithmic, Game-Theoretic, and Logical Foundations.pdf:application/pdf
-      \endverb
-    \endentry
-    \entry{sutton_reinforcement_2015}{article}{}
-      \name{author}{2}{}{%
-        {{un=0,uniquepart=base,hash=eb920e5277d3d5fd0903f3cd41e11871}{%
-           family={Sutton},
-           familyi={S\bibinitperiod},
-           given={Richard\bibnamedelima S},
-           giveni={R\bibinitperiod\bibinitdelim S\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=32a0a208f8bcf56a13b0a8e618aa806a}{%
-           family={Barto},
-           familyi={B\bibinitperiod},
-           given={Andrew\bibnamedelima G},
-           giveni={A\bibinitperiod\bibinitdelim G\bibinitperiod},
-           givenun=0}}%
-      }
-      \strng{namehash}{c6212f1a1407d96a3d9f4fefbb07eade}
-      \strng{fullhash}{c6212f1a1407d96a3d9f4fefbb07eade}
-      \strng{bibnamehash}{c6212f1a1407d96a3d9f4fefbb07eade}
-      \strng{authorbibnamehash}{c6212f1a1407d96a3d9f4fefbb07eade}
-      \strng{authornamehash}{c6212f1a1407d96a3d9f4fefbb07eade}
-      \strng{authorfullhash}{c6212f1a1407d96a3d9f4fefbb07eade}
-      \field{sortinit}{S}
-      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{langid}{english}
-      \field{title}{Reinforcement Learning: An Introduction}
-      \field{year}{2015}
-      \field{dateera}{ce}
-      \verb{file}
-      \verb PDF:/home/paqh/Zotero/storage/EINGZTN3/Sutton and Barto - Reinforcement Learning An Introduction.pdf:application/pdf
       \endverb
     \endentry
     \entry{wang_achieving_2019}{inproceedings}{}

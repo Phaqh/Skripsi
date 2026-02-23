@@ -1,15 +1,15 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'index.blg'
-[52] biber:340> INFO - === Sab Feb 21, 2026, 23:27:48
-[61] Biber.pm:419> INFO - Reading 'index.bcf'
-[113] Biber.pm:979> INFO - Found 22 citekeys in bib section 0
-[122] Biber.pm:4419> INFO - Processing section 0
-[129] Biber.pm:4610> INFO - Looking for bibtex file 'referensi.bib' for section 0
-[133] bibtex.pm:1713> INFO - LaTeX decoding ...
-[188] bibtex.pm:1519> INFO - Found BibTeX data source 'referensi.bib'
-[328] UCollate.pm:68> INFO - Overriding locale 'indonesian' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[328] UCollate.pm:68> INFO - Overriding locale 'indonesian' defaults 'variable = shifted' with 'variable = non-ignorable'
-[328] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'indonesian'
-[328] Biber.pm:4245> INFO - No sort tailoring available for locale 'indonesian'
-[357] bbl.pm:660> INFO - Writing 'index.bbl' with encoding 'UTF-8'
-[367] bbl.pm:763> INFO - Output to index.bbl
+[111] biber:340> INFO - === Sen Feb 23, 2026, 20:59:13
+[125] Biber.pm:419> INFO - Reading 'index.bcf'
+[193] Biber.pm:979> INFO - Found 21 citekeys in bib section 0
+[208] Biber.pm:4419> INFO - Processing section 0
+[221] Biber.pm:4610> INFO - Looking for bibtex file 'referensi.bib' for section 0
+[227] bibtex.pm:1713> INFO - LaTeX decoding ...
+[298] bibtex.pm:1519> INFO - Found BibTeX data source 'referensi.bib'
+[482] UCollate.pm:68> INFO - Overriding locale 'indonesian' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[483] UCollate.pm:68> INFO - Overriding locale 'indonesian' defaults 'variable = shifted' with 'variable = non-ignorable'
+[483] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'indonesian'
+[483] Biber.pm:4245> INFO - No sort tailoring available for locale 'indonesian'
+[517] bbl.pm:660> INFO - Writing 'index.bbl' with encoding 'UTF-8'
+[529] bbl.pm:763> INFO - Output to index.bbl

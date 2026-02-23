@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.1.29)  21 FEB 2026 23:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.1.29)  23 FEB 2026 20:59
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1770,7 +1770,7 @@ Package biblatex Info: Reference section=0 on input line 79.
 Package biblatex Info: Reference segment=0 on input line 79.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-<Images/logougm.png, id=284, 110.5731pt x 112.2594pt>
+<Images/logougm.png, id=252, 110.5731pt x 112.2594pt>
 File: Images/logougm.png Graphic file (type png)
 <use Images/logougm.png>
 Package pdftex.def Info: Images/logougm.png  used on input line 81.
@@ -1861,164 +1861,181 @@ o-nent mo-de-lling \T1/ptm/m/n/12 un-tuk \T1/ptm/m/it/12 Re-
 ]
 \bbl@ensure@indonesian {BAB} I.
 (./file_bab1.tex
-Overfull \hbox (0.42336pt too wide) in paragraph at lines 7--8
-[]\T1/ptm/m/n/12 Tantangan men-ja-di le-bih be-sar ke-ti-ka la-w-an ber-si-fat 
-adap-tif atau non-stasioner,
+Overfull \hbox (5.39085pt too wide) in paragraph at lines 3--4
+[]\T1/ptm/m/n/12 Interaksi stra-te-gis ber-u-lang me-ru-pak-an per-ma-sa-lah-an
+ fun-da-men-tal da-lam \T1/ptm/m/it/12 multi-
+ []
+
+
+Overfull \hbox (0.48517pt too wide) in paragraph at lines 7--8
+\T1/ptm/m/n/12 ar-ning stan-dar, ter-da-pat po-ten-si ke-ti-dak-se-su-a-i-an an
+-ta-ra ob-jek-tif pe-la-tih-an satu-langkah
+ []
+
+
+Overfull \hbox (6.29103pt too wide) in paragraph at lines 13--14
+[]\T1/ptm/m/n/12 Berdasarkan kon-di-si ter-se-but, ter-da-pat ke-bu-tuh-an un-t
+uk se-ca-ra sis-te-ma-tis meng-
  []
 
 [1
 
 
 ] [2]
-Overfull \hbox (2.46559pt too wide) in paragraph at lines 33--34
-\T1/ptm/m/n/12 ngan me-ka-nis-me se-lek-si ak-si ber-ba-sis prin-sip se-per-ti 
-\T1/ptm/m/it/12 Up-per Con-fi-den-ce Bo-und \T1/ptm/m/n/12 (UCB),
+Overfull \hbox (0.11243pt too wide) in paragraph at lines 52--53
+[]\T1/ptm/m/n/12 Mengembangkan dan meng-im-ple-men-ta-sik-an me-ka-nis-me pre-d
+ik-si tra-je-ctory ak-
  []
 
 
-Overfull \hbox (7.13203pt too wide) in paragraph at lines 41--42
-[]\T1/ptm/m/n/12 Bagaimana me-mfor-mu-la-sik-an dan meng-im-ple-men-ta-sik-an p
-re-dik-si multi-langkah
+Overfull \hbox (4.7686pt too wide) in paragraph at lines 68--69
+[]\T1/ptm/m/n/12 Memberikan per-ban-ding-an em-pi-ris an-ta-ra pen-de-kat-an re
+-cur-si-ve dan di-re-ct multi-
  []
 
-[3] [4]) [5]
+[3]) [4]
 \bbl@ensure@indonesian {BAB} II.
 (./file_bab2.tex
 
-LaTeX Warning: Reference `tab:paper_characteristics' on page 6 undefined on inp
-ut line 2.
+LaTeX Warning: Reference `tab:ringkasan_terkait' on page 5 undefined on input l
+ine 3.
 
 
-Underfull \hbox (badness 7777) in paragraph at lines 66--66
+Underfull \hbox (badness 7777) in paragraph at lines 64--64
 []|\T1/ptm/m/n/12 Qiao et
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--66
+Underfull \hbox (badness 10000) in paragraph at lines 64--64
 []|\T1/ptm/m/n/12 Online Op-po-nent
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--66
+Underfull \hbox (badness 1286) in paragraph at lines 64--64
+\T1/ptm/m/n/12 pe-ro-leh rata-rata re-wa-rd le-bih ting-gi di-ban-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--64
 []|\T1/ptm/m/n/12 Zero De-ter-mi-nant
  []
 
 
-Underfull \hbox (badness 1383) in paragraph at lines 66--66
-[]|\T1/ptm/m/n/12 Proporsi akhir ker-ja sa-ma me-le-bi-hi stra-te-gi
+Underfull \hbox (badness 2626) in paragraph at lines 64--64
+[]|\T1/ptm/m/n/12 Proporsi akhir ker-ja sa-ma me-le-bi-hi stra-te-
  []
 
 
-Overfull \hbox (8.41457pt too wide) in paragraph at lines 66--66
-[]|\T1/ptm/m/n/12 Environment^^UStrategy
+Underfull \hbox (badness 1132) in paragraph at lines 64--64
+[]|\T1/ptm/m/n/12 Mendeteksi per-u-bah-an stra-te-gi la-w-an se-ca-ra
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--66
+Underfull \hbox (badness 10000) in paragraph at lines 64--64
+[]|\T1/ptm/m/n/12 Environment-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--64
+\T1/ptm/m/n/12 Strategy Co-u-pling
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--64
 []|\T1/ptm/m/n/12 Ensemble-Training
  []
 
 
-Underfull \hbox (badness 2875) in paragraph at lines 66--66
+Underfull \hbox (badness 2875) in paragraph at lines 64--64
 \T1/ptm/m/n/12 ti-cle Swarm (SPS)
  []
 
 
-Underfull \hbox (badness 5908) in paragraph at lines 66--66
-[]|\T1/ptm/m/n/12 Tingkat pem-ba-ru-an in-for-ma-si yang ting-gi
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 66--66
+Underfull \hbox (badness 10000) in paragraph at lines 64--64
 []|\T1/ptm/m/n/12 Deep Mul-ti-a-gent
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--66
+Underfull \hbox (badness 10000) in paragraph at lines 64--64
 \T1/ptm/m/n/12 Re-in-for-ce-ment Le-
  []
 
 
-Underfull \hbox (badness 3536) in paragraph at lines 66--66
+Underfull \hbox (badness 3536) in paragraph at lines 64--64
 []|\T1/ptm/m/n/12 Suggestion Sha-ring
  []
 
 
-Underfull \hbox (badness 3724) in paragraph at lines 66--66
+Underfull \hbox (badness 3724) in paragraph at lines 64--64
 \T1/ptm/m/n/12 of Mind (ToM $\OML/cmm/m/it/12 k$\T1/ptm/m/n/12 ,
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 66--66
+Underfull \hbox (badness 10000) in alignment at lines 64--64
 [][][] 
  []
 
 
-LaTeX Warning: Float too large for page by 122.35329pt on input line 67.
+LaTeX Warning: Float too large for page by 6.35329pt on input line 65.
 
+[5
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[6
-
-]
-Underfull \hbox (badness 4001) in paragraph at lines 170--170
+] [6]
+Underfull \hbox (badness 4001) in paragraph at lines 144--144
 []| \T1/ptm/m/n/12 Qi-ao et al.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--170
+Underfull \hbox (badness 10000) in paragraph at lines 144--144
 []\T1/ptm/m/n/12 2025[]; Fre-i-re
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--170
+Underfull \hbox (badness 10000) in paragraph at lines 144--144
 \T1/ptm/m/n/12 et al. []2023[];
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--170
+Underfull \hbox (badness 10000) in paragraph at lines 144--144
 \T1/ptm/m/n/12 Wang et al.
  []
 
 
-Underfull \hbox (badness 7186) in paragraph at lines 170--170
+Underfull \hbox (badness 7186) in paragraph at lines 144--144
 []| \T1/ptm/m/n/12 Zhu et al.
  []
 
-
-LaTeX Warning: Reference `tab:opponent_modelling_paradigm' on page 7 undefined 
-on input line 192.
-
-[7]
-<Images/Method.png, id=557, 1288.815pt x 1022.31938pt>
+<Images/Method.png, id=492, 1288.815pt x 1022.31938pt>
 File: Images/Method.png Graphic file (type png)
 <use Images/Method.png>
-Package pdftex.def Info: Images/Method.png  used on input line 196.
+Package pdftex.def Info: Images/Method.png  used on input line 170.
 (pdftex.def)             Requested size: 315.63461pt x 250.38042pt.
 
-Overfull \hbox (1.31158pt too wide) in paragraph at lines 200--201
+Overfull \hbox (1.31158pt too wide) in paragraph at lines 174--175
 []\T1/ptm/m/n/12 Pendekatan-pendekatan ter-se-but da-pat di-be-dak-an le-bih la
 n-jut ber-da-sark-an apa-
  []
 
-[8 <./Images/Method.png>] [9]
+[7] [8] [9 <./Images/Method.png>]
+Overfull \hbox (1.86305pt too wide) in paragraph at lines 196--197
+[]\T1/ptm/m/n/12 Dalam kon-teks ini, pen-de-kat-an ber-ba-sis mo-del se-ku-en-s
+i-al me-mo-ri se-per-ti \T1/ptm/m/it/12 Long
+ []
 
-LaTeX Warning: Float too large for page by 95.17113pt on input line 250.
+
+Overfull \hbox (1.03476pt too wide) in paragraph at lines 200--201
+[]\T1/ptm/m/n/12 Selain itu, struk-tur re-ku-ren pa-da LS-TM me-mung-kink-an fo
+-re-cast multi-langkah
+ []
 
 [10]
-Overfull \hbox (7.04993pt too wide) in paragraph at lines 277--278
-\T1/ptm/m/n/12 delk-an la-w-an se-ba-gai en-ti-tas yang adap-tif dan res-pon-si
-f ter-ha-dap ak-si agen ([]Hernandez-
+Overfull \hbox (0.13495pt too wide) in paragraph at lines 202--203
+[]\T1/ptm/m/n/12 Karakteristik \T1/ptm/m/it/12 de-co-u-pling \T1/ptm/m/n/12 dan
+ ke-mam-pu-an \T1/ptm/m/it/12 multi-step fo-re-cas-ting \T1/ptm/m/n/12 ter-se-b
+ut men-
  []
 
-[11]
-Overfull \hbox (1.2992pt too wide) in paragraph at lines 285--286
-[]\T1/ptm/m/n/12 Lebih lan-jut, mes-ki-pun be-be-ra-pa stu-di mem-per-tim-bangk
--an ke-ti-da-kpas-ti-an atau
- []
-
-) [12] [13] [14] [15]
+[11] [12]) [13] [14]
 \bbl@ensure@indonesian {BAB} III.
 (./file_bab3.tex
 Overfull \hbox (0.20752pt too wide) in paragraph at lines 18--19
@@ -2026,52 +2043,46 @@ Overfull \hbox (0.20752pt too wide) in paragraph at lines 18--19
 -delk-an pe-ma-in, stra-
  []
 
-[16
+[15
 
-] [17]
-Overfull \hbox (5.40353pt too wide) in paragraph at lines 90--91
-[]\T1/ptm/m/n/12 Dalam ba-nyak in-te-rak-si nya-ta, pan-jang per-ma-in-an ti-da
-k te-tap, me-la-ink-an meng-
- []
-
-[18] [19] [20]
+] [16] [17] [18]
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 1
-97.
+50.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-[21] [22] [23] [24] [25]
-Overfull \hbox (4.80576pt too wide) in paragraph at lines 400--405
+[19]
+<Images/LSTM.png, id=654, 1409.265pt x 877.2775pt>
+File: Images/LSTM.png Graphic file (type png)
+<use Images/LSTM.png>
+Package pdftex.def Info: Images/LSTM.png  used on input line 191.
+(pdftex.def)             Requested size: 402.2038pt x 250.38042pt.
+ [20] [21 <./Images/LSTM.png>] [22] [23] [24]
+Overfull \hbox (4.80576pt too wide) in paragraph at lines 389--394
 \T1/ptm/m/n/12 meng-u-kur de-vi-a-si per-for-ma agen ter-ha-dap stra-te-gi eku-
 i-li-bri-um yang mem-per-tim-bangk-
  []
 
-[26]
-Overfull \hbox (0.45872pt too wide) in paragraph at lines 476--486
-[]\T1/ptm/m/n/12 Meskipun ni-lai ak-si se-ca-ra te-o-ri-tis se-ring di-de-fi-ni
--sik-an da-lam ho-ri-zon tak hing-
- []
-
-[27]
-Overfull \hbox (0.14688pt too wide) in paragraph at lines 496--504
+[25] [26]
+Overfull \hbox (0.14688pt too wide) in paragraph at lines 486--494
 []\T1/ptm/m/n/12 Pendekatan ter-in-te-gra-si mem-pe-la-ja-ri rep-re-sen-ta-si l
 a-w-an se-ca-ra end-to-end ber-
  []
 
-[28] [29]
-Overfull \hbox (1.09758pt too wide) in paragraph at lines 647--652
+[27] [28]
+Overfull \hbox (1.09758pt too wide) in paragraph at lines 643--648
 \T1/ptm/m/n/12 di-ke-nal se-ba-gai \T1/ptm/m/it/12 expo-su-re bi-as\T1/ptm/m/n/
 12 . Pa-da sa-at in-fe-ren-si, mo-del ti-dak la-gi me-ne-ri-ma ground-
  []
 
 
-Overfull \hbox (6.59123pt too wide) in paragraph at lines 653--656
+Overfull \hbox (6.59123pt too wide) in paragraph at lines 649--652
 []\T1/ptm/m/n/12 Untuk men-jem-ba-ta-ni ke-sen-jang-an dis-tri-bu-si ter-se-but
 , \T1/ptm/m/it/12 sche-du-led sam-pling \T1/ptm/m/n/12 mem-
  []
 
-[30] [31]
-Overfull \hbox (6.34425pt too wide) in paragraph at lines 720--723
+[29]
+Overfull \hbox (6.34425pt too wide) in paragraph at lines 716--719
 []\T1/ptm/m/n/12 Misalkan pa-da wak-tu $\OML/cmm/m/it/12 t$ \T1/ptm/m/n/12 ter-
 se-dia his-tory in-te-rak-si $\OML/cmm/m/it/12 h[] \OT1/cmr/m/n/12 = \OMS/cmsy/
 m/n/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a[]; a[]\OT1/cmr/m/n/12 )\OML/cmm/m/i
@@ -2079,45 +2090,53 @@ t/12 ; [] ; \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a[]; a[]\OT1/cmr/m/n/12 )\OMS/cms
 y/m/n/12 g$\T1/ptm/m/n/12 .
  []
 
-[32] [33]) [34]
+[30] [31]) [32] [33]
 \bbl@ensure@indonesian {BAB} IV.
 (./file_bab4.tex
-Overfull \hbox (11.70537pt too wide) in paragraph at lines 2--3
-\T1/ptm/m/n/12 tuk ske-na-rio \T1/ptm/m/it/12 Ite-ra-ted Pri-so-ner's Di-lem-ma
- \T1/ptm/m/n/12 (IPD) de-ngan la-w-an adap-tif dan non-stasioner.
+Overfull \hbox (12.9624pt too wide) in paragraph at lines 19--23
+[]\T1/ptm/m/n/12 Pendekatan ini me-mung-kink-an ana-li-sis ter-ha-dap sta-bi-li
+-tas pre-dik-si multi-langkah
  []
 
 
-Overfull \hbox (0.83092pt too wide) in paragraph at lines 6--7
+Overfull \hbox (0.83092pt too wide) in paragraph at lines 26--29
 []\T1/ptm/m/n/12 Penelitian ini mem-per-tim-bangk-an ske-na-rio \T1/ptm/m/it/12
  Ite-ra-ted Pri-so-ner's Di-lem-ma \T1/ptm/m/n/12 (IPD)
  []
 
-[35
+[34
 
-] [36] [37] [38] [39] [40] [41] [42] [43] [44]) [45]
+] [35] [36]
+Overfull \hbox (4.75015pt too wide) in paragraph at lines 223--224
+[]\T1/ptm/m/n/12 Secara for-mal, un-tuk dis-tri-bu-si pre-dik-si $[]$ dan ak-si
+ ak-tu-al $\OML/cmm/m/it/12 a[]$\T1/ptm/m/n/12 , cross-entropy
+ []
+
+[37] [38] [39] [40]
+Overfull \hbox (1.15709pt too wide) in paragraph at lines 481--483
+ []\T1/ptm/b/n/12 Evaluasi Es-ti-ma-si Ke-ti-da-kpas-ti-an[] \T1/ptm/m/n/12 Ke-
+ti-da-kpas-ti-an epis-te-mik di-hi-tung meng-gu-nak-
+ []
+
+[41] [42]) [43]
 \bbl@ensure@indonesian {BAB} V.
-(./file_bab5.tex [46
+(./file_bab5.tex [44
 
-]
-Package textcomp Info: Symbol \textrightarrow not provided by
-(textcomp)             font family ptm in TS1 encoding.
-(textcomp)             Default family used instead on input line 69.
- [47] [48]
-Overfull \hbox (8.77493pt too wide) in paragraph at lines 161--190
+] [45] [46]
+Overfull \hbox (8.77493pt too wide) in paragraph at lines 164--193
  [][] 
  []
 
-[49]
+[47]
 Package textcomp Info: Symbol \textrightarrow not provided by
 (textcomp)             font family ptm in TS1 encoding.
-(textcomp)             Default family used instead on input line 210.
+(textcomp)             Default family used instead on input line 213.
 Package textcomp Info: Symbol \textrightarrow not provided by
 (textcomp)             font family ptm in TS1 encoding.
-(textcomp)             Default family used instead on input line 210.
-) [50]
+(textcomp)             Default family used instead on input line 213.
+) [48]
 \bbl@ensure@indonesian {BAB} VI.
-(./file_bab6.tex) [51
+(./file_bab6.tex) [49
 
 ]
 
@@ -2125,9 +2144,9 @@ Package biblatex Warning: Name format 'last-first' deprecated.
 (biblatex)                Please use 'family-given' instead.
 (biblatex)                Using 'family-given' now.
 
-[52
+[50
 
-] [53] [54] (./hasil_eksperimen.tex) [55
+] [51] [52] (./hasil_eksperimen.tex) [53
 
 
 ] (./index.aux)
@@ -2140,39 +2159,40 @@ L3 programming layer <2020/03/25>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `index.out' has not changed.
-(rerunfilecheck)             Checksum: F94DA468DDA0C1822079C968AC43CB71;12570.
+(rerunfilecheck)             Checksum: 687638823F91453CD09ECC7B4F57F390;11057.
 Package logreq Info: Writing requests to 'index.run.xml'.
 \openout1 = `index.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 44193 strings out of 475597
- 871988 string characters out of 5783339
- 1957975 words of memory out of 5000000
- 65245 multiletter control sequences out of 15000+600000
+ 44158 strings out of 475597
+ 871373 string characters out of 5783339
+ 1947975 words of memory out of 5000000
+ 65211 multiletter control sequences out of 15000+600000
  597391 words of font info for 91 fonts, out of 8000000 for 9000
  309 hyphenation exceptions out of 8191
- 125i,12n,121p,1997b,1811s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 125i,12n,121p,1997b,1795s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </home/paqh/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600p
-k></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/s
-ymbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/sy
-mbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/urw/times/utmri8a.pfb>
-Output written on index.pdf (66 pages, 669568 bytes).
+k></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbol
+s/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols
+/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
+times/utmri8a.pfb>
+Output written on index.pdf (64 pages, 812934 bytes).
 PDF statistics:
- 1108 PDF objects out of 1200 (max. 8388607)
- 940 compressed objects within 10 object streams
- 293 named destinations out of 1000 (max. 500000)
- 575 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1046 PDF objects out of 1200 (max. 8388607)
+ 877 compressed objects within 9 object streams
+ 292 named destinations out of 1000 (max. 500000)
+ 516 words of extra memory for PDF output out of 10000 (max. 10000000)
 

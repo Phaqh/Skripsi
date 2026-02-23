@@ -8,86 +8,77 @@
 \contentsline {chapter}{\bbl@ensure@indonesian {DAFTAR GAMBAR}}{ix}{section*.9}%
 \contentsline {chapter}{\numberline {I}PENDAHULUAN}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Latar Belakang}{1}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Rumusan Masalah}{3}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Batasan Penelitian}{3}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Tujuan Penelitian}{4}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Manfaat Penelitian}{4}{section.1.5}%
-\contentsline {section}{\numberline {1.6}Sistematika Penelitian}{5}{section.1.6}%
-\contentsline {chapter}{\numberline {II}TINJAUAN PUSTAKA}{6}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Synthesis / Discussion}{6}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Asumsi perilaku lawan dalam \textit {opponent modelling} untuk \textit {Repeated Games}}{6}{subsection.2.1.1}%
+\contentsline {section}{\numberline {1.2}Rumusan Masalah}{2}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Batasan Penelitian}{2}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Tujuan Penelitian}{3}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Manfaat Penelitian}{3}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Sistematika Penelitian}{4}{section.1.6}%
+\contentsline {chapter}{\numberline {II}TINJAUAN PUSTAKA}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Synthesis / Discussion}{5}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Asumsi Perilaku Lawan dalam \textit {Opponent Modelling} untuk \textit {Repeated Games}}{5}{subsection.2.1.1}%
 \contentsline {subsection}{\numberline {2.1.2}Pendekatan metodologis dalam \textit {opponent modelling} untuk \textit {Repeated Games}}{7}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Bagaimana efektivitas strategi \textit {opponent modelling} dievaluasi dalam \textit {Repeated Games}?}{9}{subsection.2.1.3}%
-\contentsline {section}{\numberline {2.2}Kesimpulan}{11}{section.2.2}%
-\contentsline {chapter}{\numberline {III}LANDASAN TEORI}{16}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Dilema Sosial}{16}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Game Theory}{16}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Prisoner's Dilemma}{17}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Iterated Prisoner's Dilemma}{17}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Finite Horizon}{17}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Infinite Horizon dan Discount Factor}{18}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Stochastic Termination}{18}{subsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.4.4}Hubungan Stochastic Termination dan Discounted Return}{19}{subsection.3.4.4}%
-\contentsline {subsection}{\numberline {3.4.5}Definisi History Interaksi pada mekanisme online}{19}{subsection.3.4.5}%
-\contentsline {subsection}{\numberline {3.4.6}Incomplete Information dan Pembentukan Belief}{20}{subsection.3.4.6}%
-\contentsline {section}{\numberline {3.5}Pemodelan Lawan}{20}{section.3.5}%
-\contentsline {section}{\numberline {3.6}RNN}{21}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Recurrent Neural Network untuk Opponent Modelling}{21}{subsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.6.2}Latent Belief Representation}{22}{subsection.3.6.2}%
-\contentsline {section}{\numberline {3.7}Long Short-Term Memory (LSTM)}{22}{section.3.7}%
-\contentsline {subsection}{\numberline {3.7.1}Input Gate}{23}{subsection.3.7.1}%
-\contentsline {subsection}{\numberline {3.7.2}Candidate Cell State}{23}{subsection.3.7.2}%
-\contentsline {subsection}{\numberline {3.7.3}Forget Gate}{23}{subsection.3.7.3}%
-\contentsline {subsection}{\numberline {3.7.4}Cell State (Memori Jangka Panjang)}{24}{subsection.3.7.4}%
-\contentsline {subsection}{\numberline {3.7.5}Output Gate}{24}{subsection.3.7.5}%
-\contentsline {subsection}{\numberline {3.7.6}Hidden State Update}{24}{subsection.3.7.6}%
-\contentsline {section}{\numberline {3.8}Prediksi Multi-Langkah}{25}{section.3.8}%
-\contentsline {subsection}{\numberline {3.8.1}Forecasting Rekursif dan Monte Carlo Rollout}{25}{subsection.3.8.1}%
-\contentsline {subsection}{\numberline {3.8.2}Dari Akurasi Prediksi ke Kinerja Strategis}{25}{subsection.3.8.2}%
-\contentsline {subsubsection}{Cumulative Regret (Classical Regret)}{26}{section*.18}%
-\contentsline {subsubsection}{Equilibrium Regret}{26}{section*.19}%
-\contentsline {subsubsection}{Dynamic Regret}{27}{section*.20}%
-\contentsline {subsection}{\numberline {3.8.3}Decoupled Opponent Modelling}{28}{subsection.3.8.3}%
-\contentsline {subsection}{\numberline {3.8.4}Risiko Propagasi Kesalahan pada Forecasting Rekursif}{29}{subsection.3.8.4}%
-\contentsline {subsection}{\numberline {3.8.5}Teacher Forcing}{29}{subsection.3.8.5}%
-\contentsline {subsection}{\numberline {3.8.6}Scheduled Sampling}{30}{subsection.3.8.6}%
-\contentsline {subsection}{\numberline {3.8.7}Fungsi Objektif Negative Log-Likelihood}{32}{subsection.3.8.7}%
-\contentsline {section}{\numberline {3.9}Optimisasi}{33}{section.3.9}%
-\contentsline {subsection}{\numberline {3.9.1}Pelatihan LSTM dengan Backpropagation Through Time}{33}{subsection.3.9.1}%
-\contentsline {chapter}{\numberline {IV}ANALISIS DAN PERANCANGAN}{35}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Deskripsi Umum}{35}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Formulasi Masalah}{35}{section.4.2}%
+\contentsline {subsection}{\numberline {2.1.3}Bagaimana efektivitas strategi \textit {opponent modelling} dievaluasi dalam \textit {Repeated Games}?}{11}{subsection.2.1.3}%
+\contentsline {chapter}{\numberline {III}LANDASAN TEORI}{15}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Dilema Sosial}{15}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Game Theory}{15}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Prisoner's Dilemma}{16}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Iterated Prisoner's Dilemma}{16}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Finite Horizon}{16}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Definisi History Interaksi pada mekanisme online}{17}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Incomplete Information dan Pembentukan Belief}{18}{subsection.3.4.3}%
+\contentsline {section}{\numberline {3.5}Pemodelan Lawan}{18}{section.3.5}%
+\contentsline {section}{\numberline {3.6}RNN}{19}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Recurrent Neural Network untuk Opponent Modelling}{19}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Latent Belief Representation}{19}{subsection.3.6.2}%
+\contentsline {section}{\numberline {3.7}Long Short-Term Memory (LSTM)}{20}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}Forget Gate}{20}{subsection.3.7.1}%
+\contentsline {subsection}{\numberline {3.7.2}Input Gate}{21}{subsection.3.7.2}%
+\contentsline {subsection}{\numberline {3.7.3}Candidate Cell State}{22}{subsection.3.7.3}%
+\contentsline {subsection}{\numberline {3.7.4}Cell State (Memori Jangka Panjang)}{22}{subsection.3.7.4}%
+\contentsline {subsection}{\numberline {3.7.5}Output Gate}{22}{subsection.3.7.5}%
+\contentsline {subsection}{\numberline {3.7.6}Hidden State Update}{23}{subsection.3.7.6}%
+\contentsline {section}{\numberline {3.8}Prediksi Multi-Langkah}{23}{section.3.8}%
+\contentsline {subsection}{\numberline {3.8.1}Forecasting Rekursif dan Monte Carlo Rollout (Fixed Horizon)}{23}{subsection.3.8.1}%
+\contentsline {subsection}{\numberline {3.8.2}Dari Akurasi Prediksi ke Kinerja Strategis}{24}{subsection.3.8.2}%
+\contentsline {subsubsection}{Cumulative Regret (Classical Regret)}{25}{section*.19}%
+\contentsline {subsubsection}{Equilibrium Regret}{25}{section*.20}%
+\contentsline {subsubsection}{Dynamic Regret (Fixed Horizon)}{26}{section*.21}%
+\contentsline {subsection}{\numberline {3.8.3}Decoupled Opponent Modelling}{27}{subsection.3.8.3}%
+\contentsline {subsection}{\numberline {3.8.4}Risiko Propagasi Kesalahan pada Forecasting Rekursif}{27}{subsection.3.8.4}%
+\contentsline {subsection}{\numberline {3.8.5}Teacher Forcing}{28}{subsection.3.8.5}%
+\contentsline {subsection}{\numberline {3.8.6}Scheduled Sampling}{29}{subsection.3.8.6}%
+\contentsline {subsection}{\numberline {3.8.7}Fungsi Objektif Negative Log-Likelihood}{30}{subsection.3.8.7}%
+\contentsline {section}{\numberline {3.9}Optimisasi}{32}{section.3.9}%
+\contentsline {subsection}{\numberline {3.9.1}Pelatihan LSTM dengan Backpropagation Through Time}{32}{subsection.3.9.1}%
+\contentsline {chapter}{\numberline {IV}ANALISIS DAN PERANCANGAN}{34}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Deskripsi Umum}{34}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Formulasi Masalah}{34}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Metodologi Penelitian}{35}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Setup Permainan}{36}{subsection.4.3.1}%
-\contentsline {subsubsection}{Matriks Payoff}{36}{section*.21}%
-\contentsline {subsubsection}{Horizon Permainan}{36}{section*.22}%
-\contentsline {subsubsection}{Trembling-Hand Noise}{37}{section*.23}%
-\contentsline {subsubsection}{Representasi Histori}{37}{section*.24}%
-\contentsline {subsection}{\numberline {4.3.2}Arsitektur Model}{37}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.1}Setup Permainan}{35}{subsection.4.3.1}%
+\contentsline {subsubsection}{Matriks Payoff}{35}{section*.22}%
+\contentsline {subsubsection}{Horizon Permainan}{36}{section*.23}%
+\contentsline {subsubsection}{Representasi Histori}{36}{section*.24}%
+\contentsline {subsection}{\numberline {4.3.2}Arsitektur Model}{36}{subsection.4.3.2}%
 \contentsline {subsubsection}{Representasi Input}{37}{section*.25}%
-\contentsline {subsubsection}{Dinamika LSTM}{38}{section*.26}%
-\contentsline {subsubsection}{Prediksi Aksi Lawan}{38}{section*.27}%
-\contentsline {subsubsection}{Prediksi Rekursif}{38}{section*.28}%
-\contentsline {subsection}{\numberline {4.3.3}Protokol Pelatihan}{39}{subsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.3.4}Evaluasi Kandidat Aksi dan Skalabilitas Arsitektur}{39}{subsection.4.3.4}%
-\contentsline {subsubsection}{Estimasi Ketidakpastian dengan Monte Carlo Dropout}{39}{section*.29}%
-\contentsline {subsubsection}{Pemilihan Aksi}{40}{section*.30}%
-\contentsline {subsubsection}{Parameter Eksperimen}{40}{section*.31}%
-\contentsline {subsection}{\numberline {4.3.5}Pengumpulan Data}{41}{subsection.4.3.5}%
-\contentsline {subsection}{\numberline {4.3.6}Evaluasi}{41}{subsection.4.3.6}%
-\contentsline {subsubsection}{Lingkungan Evaluasi dan Tipe Lawan}{42}{section*.32}%
-\contentsline {subsubsection}{Evaluasi Model Prediktif (Offline)}{42}{section*.33}%
-\contentsline {subsubsection}{Evaluasi Stabilitas Multi-Langkah (Open-loop)}{43}{section*.34}%
-\contentsline {subsubsection}{Evaluasi Estimasi Ketidakpastian}{43}{section*.35}%
-\contentsline {subsubsection}{Evaluasi Kualitas Perencanaan (Planning Quality)}{44}{section*.36}%
-\contentsline {subsubsection}{Evaluasi Performa Agen (Closed-loop)}{44}{section*.37}%
-\contentsline {subsubsection}{Baseline}{45}{section*.38}%
-\contentsline {subsubsection}{Ablation Study}{45}{section*.39}%
-\contentsline {chapter}{\numberline {V}JADWAL PENELITIAN}{46}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Jadwal Penelitian}{46}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Tahapan Penelitian}{46}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Rencana Waktu Pelaksanaan}{49}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}Dependensi dan Risiko}{50}{subsection.5.1.3}%
-\contentsline {chapter}{\numberline {VI}KESIMPULAN DAN SARAN}{51}{chapter.6}%
-\contentsline {chapter}{DAFTAR PUSTAKA}{52}{section*.41}%
-\contentsline {chapter}{LAMPIRAN}{55}{chapter*.43}%
+\contentsline {subsubsection}{Dinamika LSTM}{37}{section*.26}%
+\contentsline {subsubsection}{Evaluasi Prediksi Satu-Langkah}{37}{section*.27}%
+\contentsline {subsubsection}{Evaluasi Prediksi Multi-Langkah}{38}{section*.28}%
+\contentsline {subsubsection}{Evaluasi Nilai Aksi}{38}{section*.29}%
+\contentsline {subsubsection}{Evaluasi End-to-End}{38}{section*.30}%
+\contentsline {subsubsection}{Evaluasi Robustness}{39}{section*.31}%
+\contentsline {subsubsection}{Lingkungan Evaluasi dan Tipe Lawan}{39}{section*.32}%
+\contentsline {subsubsection}{Evaluasi Model Prediktif (Offline)}{41}{section*.33}%
+\contentsline {subsubsection}{Evaluasi Stabilitas Multi-Langkah (Open-loop)}{41}{section*.34}%
+\contentsline {subsubsection}{Evaluasi Estimasi Ketidakpastian}{42}{section*.35}%
+\contentsline {subsubsection}{Evaluasi Kualitas Perencanaan}{42}{section*.36}%
+\contentsline {subsubsection}{Evaluasi Performa Agen (Closed-loop)}{42}{section*.37}%
+\contentsline {subsubsection}{Baseline}{43}{section*.38}%
+\contentsline {subsubsection}{Ablation Study}{43}{section*.39}%
+\contentsline {chapter}{\numberline {V}JADWAL PENELITIAN}{44}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Jadwal Penelitian}{44}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Tahapan Penelitian}{44}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Rencana Waktu Pelaksanaan}{47}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Dependensi dan Risiko}{48}{subsection.5.1.3}%
+\contentsline {chapter}{\numberline {VI}KESIMPULAN DAN SARAN}{49}{chapter.6}%
+\contentsline {chapter}{DAFTAR PUSTAKA}{50}{section*.41}%
+\contentsline {chapter}{LAMPIRAN}{53}{chapter*.43}%

@@ -34,7 +34,7 @@ Menunjukan pilihan aksi selain $a_i^*$ tidak dapat memberikan keuntungan lebih b
 
 \section{Prisoner's Dilemma}
 
-Prisoner's Dilemma merepresentasikan konflik rasionalitas individu dan kolektif secara eksplisit~\cite{axelrod_evolution_1981}. Aksi yang dapat dipilih adalah \textit{Cooperate} ($C$) atau \textit{Defect} ($D$). Struktur payoff Prisoner's Dilemma diberikan oleh:
+Prisoner's Dilemma merepresentasikan konflik rasionalitas individu dan kolektif secara eksplisit (~\cite{axelrod_evolution_1981}). Aksi yang dapat dipilih adalah \textit{Cooperate} ($C$) atau \textit{Defect} ($D$). Struktur payoff Prisoner's Dilemma diberikan oleh:
 
 \begin{equation}
 \begin{array}{c|cc}
@@ -60,7 +60,7 @@ Namun, interaksi nyata jarang terjadi hanya satu kali.
 
 \section{Iterated Prisoner's Dilemma}
 
-Permainan PD diperluas menjadi bentuk berulang disebut Iterated Prisoner's Dilemma (IPD), permainan diulang selama $T$ atau \textit{Turn} tahap dengan payoff kumulatif atau terdiskonto. Dalam IPD, strategi dapat bergantung pada histori interaksi, memungkinkan untuk pembalasan dan kerja sama yang berkelanjutan.
+Permainan PD diperluas menjadi bentuk berulang disebut Iterated Prisoner's Dilemma (IPD), permainan diulang selama $T$ atau \textit{Turn} tahap dengan payoff kumulatif atau terdiskonto. Dalam IPD, strategi dapat bergantung pada histori interaksi, memungkinkan untuk pembalasan dan kerja sama yang berkelanjutan. IPD relevan untuk mempelajari dinamika manusia seperti: pembentukan hubungan, konflik berkepanjangan, siklus saling membalas, dan pemulihan kepercayaan.
 
 \subsection{Finite Horizon}
 
@@ -70,54 +70,7 @@ Pada formulasi finite horizon dengan panjang permainan tetap $T$, utilitas total
 U_i = \sum_{t=1}^{T} u_i(a_i^t, a_{-i}^t)
 \end{equation}
 
-Pada model ini, tidak digunakan faktor diskonto. Namun, secara teoretis, pendekatan ini cenderung menghasilkan strategi defeksi melalui mekanisme \textit{backward induction}.
-
-\subsection{Infinite Horizon dan Discount Factor}
-
-Alternatif formulasi adalah infinite horizon, di mana permainan berlangsung tanpa batas dengan faktor diskonto $\delta \in (0,1]$. Utilitas pemain didefinisikan sebagai:
-
-\begin{equation}
-U_i = \sum_{t=1}^{\infty} \delta^{t-1} u_i(a_i^t, a_{-i}^t)
-\end{equation}
-
-Faktor diskonto $\delta$ merepresentasikan preferensi terhadap reward di masa depan, di mana nilai yang lebih kecil menunjukkan orientasi jangka pendek, sedangkan nilai mendekati $1$ menunjukkan orientasi jangka panjang.
-
-
-IPD memungkinkan strategi adaptif berbasis riwayat~(\cite{axelrod_evolution_1981}). Namun, analisis keseimbangan klasik tetap mengasumsikan strategi tetap dan rasionalitas sempurna.
-
-\subsection{Stochastic Termination}
-
-Dalam banyak interaksi nyata, panjang permainan tidak tetap, melainkan mengikuti mekanisme terminasi stokastik. Misalkan permainan berlanjut dari tahap $t$ ke $t+1$ dengan probabilitas tetap $\gamma \in (0,1)$:
-
-\begin{equation}
-P(\text{continue at } t+1 \mid t) = \gamma
-\end{equation}
-
-Maka panjang permainan mengikuti distribusi geometrik, dan ekspektasi payoff menjadi:
-
-\begin{equation}
-\mathbb{E}[U_i]
-=
-\sum_{t=1}^{\infty}
-\gamma^{t-1}
-u_i(a_i^t, a_{-i}^t)
-\end{equation}
-
-Formulasi ini ekuivalen dengan permainan berulang dengan faktor diskonto $\gamma$ (\cite{sutton_reinforcement_2015}), namun memiliki interpretasi probabilistik sebagai proses berhenti geometrik. Ketidakpastian horizon ini mempengaruhi nilai eksplorasi sejak tahap awal interaksi.
-
-\subsection{Hubungan Stochastic Termination dan Discounted Return}
-
-Dalam repeated game dengan probabilitas terminasi tetap $1 - \gamma$,  interaksi berlanjut ke periode berikutnya dengan probabilitas $\gamma$ (\cite{sutton_reinforcement_2015}). Struktur ini ekuivalen secara matematis dengan discounted infinite-horizon return:
-
-\begin{equation}
-Q(a_t) = \mathbb{E} \left[ \sum_{k=0}^{\infty} \gamma^k 
-\, u_i(a_i^{t+k}, a_{-i}^{t+k}) \right]
-\end{equation}
-
-Dengan demikian, faktor diskonto $\gamma$ dapat diinterpretasikan  sebagai probabilitas kelanjutan permainan, sehingga discounted return merepresentasikan ekspektasi utilitas dalam repeated game dengan horizon stokastik.
-
-Penjelasan ini menghubungkan struktur teoretis permainan berulang dengan formulasi objektif evaluasi nilai yang digunakan dalam penelitian ini.
-
+Pada model ini, tidak digunakan faktor diskonto. Namun, secara teoretis, pendekatan ini cenderung menghasilkan strategi defeksi melalui mekanisme \textit{backward induction} (\cite{bonanno_game_2024}).
 
 \subsection{Definisi History Interaksi pada mekanisme online}
 
@@ -128,7 +81,7 @@ Secara formal, history didefinisikan sebagai:
 h_t = \left( (a_i^1, a_{-i}^1), (a_i^2, a_{-i}^2), \dots, (a_i^t, a_{-i}^t) \right)
 \end{equation}
 
-dengan $a_i^k$ menyatakan aksi pemain $i$ pada waktu $k$, dan $a_{-i}^k$ menyatakan aksi lawan pada waktu yang sama.
+dengan $a_i^k$ menyatakan aksi pemain $i$ pada waktu $k$, dan $a_{-i}^k$ menyatakan aksi lawan pada waktu yang sama (\cite{bonanno_game_2024}).
 
 Dalam pengaturan iteratif, history tidak tersedia secara sekaligus, melainkan terbentuk secara \textit{online}. Pada setiap putaran $t$, history diperbarui secara inkremental sebagai:
 
@@ -142,9 +95,9 @@ Formulasi ini menegaskan bahwa agen tidak memiliki akses terhadap trajectory int
 
 History interaksi menyediakan rekaman lengkap atas realisasi aksi kedua pemain. \textit{Namun}, history hanya merepresentasikan keluaran observabel dari proses pengambilan keputusan lawan, bukan mekanisme generatif yang mendasarinya. Agen tidak memiliki akses langsung terhadap strategi internal, parameter keputusan, ataupun aturan adaptasi yang digunakan oleh lawan.
 
-Dengan demikian, meskipun seluruh pasangan aksi teramati secara bertahap, struktur strategi lawan tetap bersifat laten. Kondisi ini menyebabkan interaksi dalam IPD tidak memenuhi asumsi informasi lengkap sebagaimana pada analisis keseimbangan statik klasik.
+Dengan demikian, meskipun seluruh pasangan aksi teramati secara bertahap, struktur strategi lawan tetap bersifat laten. Kondisi ini menyebabkan interaksi dalam IPD tidak memenuhi asumsi informasi lengkap sebagaimana pada analisis keseimbangan statik klasik (\cite{bonanno_game_2024}).
 
-Oleh karena itu, permasalahan strategis dalam IPD dengan agen adaptif berada dalam kerangka permainan dengan informasi tidak lengkap, di mana agen harus melakukan inferensi terhadap strategi lawan secara bertahap seiring pertambahan history.
+Oleh karena itu, permasalahan strategis dalam IPD dengan agen adaptif berada dalam kerangka permainan dengan informasi tidak lengkap, di mana agen harus melakukan inferensi terhadap strategi lawan secara bertahap seiring pertambahan history (\cite{bonanno_game_2024}).
 
 
 \subsection{Incomplete Information dan Pembentukan Belief}
@@ -159,7 +112,7 @@ b_t = P(\theta \mid h_t)
 
 dengan $\theta$ merepresentasikan representasi laten dari strategi lawan, dan $h_t$ adalah histori interaksi hingga waktu $t$.
 
-Formulasi ini menegaskan bahwa pengambilan keputusan dalam IPD adaptif bukan sekadar persoalan memilih aksi optimal terhadap strategi tetap, melainkan proses pembaruan belief secara sekuensial terhadap dinamika perilaku lawan. Dengan demikian, fokus analisis bergeser dari pencarian equilibrium statik menuju inferensi dinamis berbasis histori.
+Formulasi ini menegaskan bahwa pengambilan keputusan dalam IPD adaptif bukan sekadar persoalan memilih aksi optimal terhadap strategi tetap, melainkan proses pembaruan belief secara sekuensial terhadap dinamika perilaku lawan. Dengan demikian, fokus analisis bergeser dari pencarian equilibrium statik menuju inferensi dinamis berbasis histori (\cite{bonanno_game_2024}).
 
 \section{Pemodelan Lawan}
 
@@ -182,7 +135,7 @@ Pendekatan regresi linear sederhana mampu memodelkan hubungan statik, namun memi
 
 \section{RNN}
 
-Arsitektur berbasis jaringan saraf dapat menangkap dependensi temporal dan nonlinier untuk memodelkan dinamika yang lebih kompleks (\cite{hochreiter_long_1997}). RNN memperbarui keadaan tersembunyi sebagai:
+Arsitektur berbasis jaringan saraf dapat menangkap dependensi temporal dan nonlinier untuk memodelkan dinamika yang lebih kompleks (\cite{hochreiter_long_1997}).
 
 \subsection{Recurrent Neural Network untuk Opponent Modelling}
 
@@ -225,13 +178,27 @@ di mana:
     \item $\hat{b}_t$ adalah estimasi distribusi probabilitas aksi lawan.
 \end{itemize}
 
-Dengan demikian, $h_t$ tidak secara eksplisit  merepresentasikan strategi lawan, melainkan embedding laten yang digunakan untuk mengaproksimasi belief tersebut dalam pemodelan lawan. Namun, pada RNN dengan dependensi jangka panjang menimbulkan masalah \textit{vanishing gradient} yaitu gradient yang menumpuk panjang dan menggecil membuat model tidak dapat belajar dependensi jangka panjang dengan baik. 
+Dengan demikian, $h_t$ tidak secara eksplisit  merepresentasikan strategi lawan, melainkan embedding laten yang digunakan untuk mengaproksimasi belief tersebut dalam pemodelan lawan. Namun, pada RNN dengan dependensi jangka panjang menimbulkan masalah \textit{vanishing/exploding gradient} yaitu gradient yang menumpuk panjang dan mengecil/membesar membuat model tidak dapat belajar dependensi jangka panjang dengan baik. 
 
 \section{Long Short-Term Memory (LSTM)}
 
-Long Short-Term Memory (LSTM) merupakan pengembangan dari Recurrent Neural Network (RNN) yang dirancang untuk menangkap dependensi jangka panjang melalui mekanisme memori eksplisit. Dalam konteks \textit{opponent modelling}, LSTM digunakan untuk membangun representasi laten terhadap strategi lawan berdasarkan histori interaksi.
+Long Short-Term Memory (LSTM) merupakan pengembangan dari Recurrent Neural Network (RNN) yang dirancang untuk menangkap dependensi jangka panjang melalui mekanisme memori eksplisit (\cite{hochreiter_long_1997}). Dalam konteks \textit{opponent modelling}, LSTM digunakan untuk membangun representasi laten terhadap strategi lawan berdasarkan histori interaksi.
 
 Diberikan input $x_t$ (observasi pada waktu $t$, misalnya aksi lawan), hidden state sebelumnya $h_{t-1}$ (representasi laten sebelumnya), dan parameter bobot $W$, $U$, serta bias $b$, setiap komponen LSTM bekerja secara berurutan sebagai berikut.
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[height=0.4\textheight]{Images/LSTM.png}
+    \caption{Diagram metodologi.}\label{fig:LSTM}
+\end{figure}
+
+\subsection{Forget Gate}
+
+\begin{equation}
+f_t = \sigma(W_f x_t + U_f h_{t-1} + b_f)
+\end{equation}
+
+Cell state sebelumnya $c_{t-1}$ menyimpan histori panjang interaksi yang membentuk belief terhadap lawan. Namun, tidak semua informasi lama tetap relevan karena strategi lawan dapat berubah. Oleh karena itu, forget gate $f_t \in [0,1]^h$ menentukan bagian mana dari memori lama yang perlu dipertahankan atau dilupakan secara adaptif.
 
 \subsection{Input Gate}
 
@@ -248,14 +215,6 @@ Input $x_t \in \mathbb{R}^d$ merepresentasikan observasi saat ini, sedangkan $h_
 \end{equation}
 
 Informasi mentah dari $x_t$ tidak langsung disimpan karena dapat mengandung noise atau pola sementara yang belum representatif. Namun, model tetap membutuhkan representasi kandidat dari informasi baru tersebut. Oleh karena itu, $\tilde{c}_t \in [-1,1]^h$ dibentuk melalui transformasi non-linear $\tanh(\cdot)$ sebagai kandidat memori baru, dengan parameter $W_c, U_c, b_c$.
-
-\subsection{Forget Gate}
-
-\begin{equation}
-f_t = \sigma(W_f x_t + U_f h_{t-1} + b_f)
-\end{equation}
-
-Cell state sebelumnya $c_{t-1}$ menyimpan histori panjang interaksi yang membentuk belief terhadap lawan. Namun, tidak semua informasi lama tetap relevan karena strategi lawan dapat berubah. Oleh karena itu, forget gate $f_t \in [0,1]^h$ menentukan bagian mana dari memori lama yang perlu dipertahankan atau dilupakan secara adaptif.
 
 \subsection{Cell State (Memori Jangka Panjang)}
 
@@ -289,36 +248,66 @@ Struktur ini memungkinkan model mempertahankan dependensi jangka panjang sekalig
 
 Model LSTM menghasilkan distribusi prediktif satu langkah ke depan
 $p(a_{t+1}^{-i} \mid h_t)$.
-Namun, dalam permainan berulang dengan terminasi stokastik,
+Namun, dalam permainan berulang,
 nilai suatu aksi tidak hanya ditentukan oleh respons lawan pada tahap berikutnya,
 melainkan oleh konsekuensi jangka panjang sepanjang lintasan interaksi.
 
-\subsection{Forecasting Rekursif dan Monte Carlo Rollout}
+\subsection{Forecasting Rekursif dan Monte Carlo Rollout (Fixed Horizon)}
 
-Untuk memperoleh estimasi lintasan masa depan,
-model digunakan secara rekursif:
+Untuk memperoleh estimasi lintasan masa depan sepanjang horizon tetap $H$, 
+model perilaku lawan digunakan secara autoregresif. 
+Pada setiap langkah ke-$k$, prediksi aksi lawan dihasilkan dari distribusi:
 
 \begin{equation}
 \hat{a}_{t+k}^{-i}
 \sim
-p_\theta(\cdot \mid \hat{h}_{t+k-1})
+p_\theta(\cdot \mid \hat{h}_{t+k-1}),
+\quad k = 1, \dots, H
 \end{equation}
 
-Pendekatan ini menghasilkan distribusi atas lintasan aksi $\{\hat{a}_{t+1}^{-i}, \hat{a}_{t+2}^{-i}, \dots\}$. Karena ruang lintasan tumbuh secara eksponensial,ekspektasi payoff dihitung melalui simulasi Monte Carlo:
+dengan $\hat{h}_{t+k-1}$ merupakan history yang diperluas secara rekursif 
+menggunakan aksi yang telah direalisasikan pada langkah-langkah sebelumnya.
+
+Proses ini menghasilkan distribusi atas lintasan aksi sepanjang horizon terbatas:
 
 \begin{equation}
-\hat{Q}(a_t)
+\hat{\tau}_{t}^{(H)} =
+\left\{
+\hat{a}_{t+1}^{-i},
+\hat{a}_{t+2}^{-i},
+\dots,
+\hat{a}_{t+H}^{-i}
+\right\}
+\end{equation}
+
+Karena jumlah kemungkinan lintasan tumbuh secara eksponensial terhadap $H$, 
+ekspektasi payoff tidak dihitung secara analitik, 
+melainkan diaproksimasi menggunakan simulasi Monte Carlo.
+
+Untuk suatu aksi awal $a_t$, estimasi nilai diperoleh melalui $M$ simulasi independen:
+
+\begin{equation}
+\hat{Q}_H(a_t)
 =
 \frac{1}{M}
 \sum_{m=1}^{M}
-\sum_{k=0}^{\infty}
-\gamma^k
+\sum_{k=0}^{H-1}
 u_i^{(m)}(a_i^{t+k}, a_{-i}^{t+k})
 \end{equation}
 
-dengan $M$ jumlah simulasi independen.
+dengan:
+\begin{itemize}
+\item $H$ : horizon prediksi tetap,
+\item $M$ : jumlah rollout Monte Carlo,
+\item $u_i^{(m)}$ : payoff agen pada simulasi ke-$m$.
+\end{itemize}
 
-Dengan demikian, evaluasi nilai aksi diperoleh secara empiris melalui sampling lintasan interaksi.
+Karena horizon bersifat terbatas, faktor diskonto tidak diperlukan, 
+dan nilai aksi merepresentasikan akumulasi payoff sepanjang jendela prediksi tetap.
+
+Dengan demikian, evaluasi aksi dilakukan melalui aproksimasi ekspektasi 
+atas distribusi lintasan terbatas, 
+yang sepenuhnya ditentukan oleh model belief dan horizon yang telah ditetapkan.
 
 \subsection{Dari Akurasi Prediksi ke Kinerja Strategis}
 
@@ -373,7 +362,7 @@ $R_T$ mengukur kerugian akibat tidak mengetahui strategi optimal sejak awal.
 
 Pada permainan berulang,
 optimalitas strategi tidak hanya ditentukan oleh kualitas aksi pada satu waktu,
-melainkan oleh konsistensi keputusan sepanjang interaksi.
+melainkan oleh konsistensi keputusan sepanjang interaksi (\cite{bonanno_game_2024}).
 Namun, regret kumulatif membandingkan performa agen
 terhadap satu aksi tetap terbaik (\textit{best fixed action}),
 yang dipilih secara retrospektif.
@@ -393,7 +382,7 @@ tidak selalu menghasilkan payoff kumulatif yang optimal,
 karena keputusan saat ini dapat mempengaruhi respons lawan di masa depan.
 Dengan demikian,
 evaluasi berbasis aksi tetap menjadi kurang representatif
-terhadap kualitas strategi dalam konteks permainan berulang.
+terhadap kualitas strategi dalam konteks permainan berulang. (\cite{bonanno_game_2024})
 
 \subsubsection{Equilibrium Regret}
 
@@ -407,7 +396,7 @@ Secara umum,
 equilibrium regret dapat didefinisikan sebagai selisih antara
 payoff yang diperoleh agen
 dengan payoff yang akan diperoleh
-jika agen mengikuti strategi ekuilibrium.
+jika agen mengikuti strategi ekuilibrium. (\cite{bonanno_game_2024})
 Misalkan $\pi_i^*$ adalah strategi ekuilibrium untuk agen $i$,
 dan $\pi_i$ adalah strategi yang digunakan,
 maka equilibrium regret dapat dituliskan sebagai:
@@ -437,52 +426,53 @@ di mana strategi lawan dapat berubah sebagai respons terhadap histori permainan
 dan tindakan agen itu sendiri.
 Dengan demikian,
 bahkan strategi ekuilibrium atau respons terbaik yang relevan
-dapat bergeser dari waktu ke waktu.
+dapat bergeser equilibrium dari waktu ke waktu.
 
-\subsubsection{Dynamic Regret}
+\subsubsection{Dynamic Regret (Fixed Horizon)}
 
-Oleh karena itu,
-diperlukan metrik evaluasi yang mampu menangkap perubahan optimalitas secara temporal,
-tanpa mengasumsikan strategi pembanding yang statis.
-Untuk tujuan tersebut,
-digunakan dynamic regret yang membandingkan performa agen
-dengan aksi optimal yang dapat berubah pada setiap waktu.
-Oleh karena itu digunakan dynamic regret:
+Dalam lingkungan adaptif, aksi optimal dapat berubah
+seiring perubahan perilaku lawan.
+Oleh karena itu, digunakan dynamic regret
+yang membandingkan performa agen
+dengan aksi optimal yang dihitung ulang
+pada setiap waktu berdasarkan horizon tetap $H$.
+
+Dynamic regret didefinisikan sebagai:
 
 \begin{equation}
 R_T^{dyn}
 =
 \sum_{t=1}^{T}
 \left(
-u_i(a_t^*, a_t^{-i})
+Q_H(a_t^* \mid h_t)
 -
-u_i(a_t^i, a_t^{-i})
+Q_H(a_t^i \mid h_t)
 \right)
 \end{equation}
 
-di mana $a_t^* \in A_i$ adalah aksi optimal pada waktu $t$
-yang didefinisikan sebagai:
+dengan aksi optimal pada waktu $t$ diberikan oleh:
 
 \begin{equation}
-a_t^* = \arg\max_{a_i \in A_i} u_i(a_i, a_t^{-i})
+a_t^*
+=
+\arg\max_{a_i \in A_i}
+Q_H(a_i \mid h_t)
 \end{equation}
 
-Dengan demikian,
-dynamic regret membandingkan performa agen
-dengan strategi optimal yang dapat berubah di setiap waktu,
-sehingga lebih sesuai untuk mengevaluasi kinerja
-dalam lingkungan yang adaptif.
+di mana $Q_H(a_i \mid h_t)$
+merupakan estimasi nilai aksi
+berdasarkan rollout Monte Carlo
+sepanjang horizon tetap $H$.
 
-Meskipun nilai aksi secara teoritis sering didefinisikan
-dalam horizon tak hingga dengan faktor diskonto $\gamma \in (0,1)$,
-evaluasi empiris dilakukan dalam horizon terbatas $T$
-yang merepresentasikan panjang simulasi interaksi.
-Pendekatan ini tetap konsisten,
-karena untuk $\gamma < 1$,
-kontribusi payoff masa depan
-menurun secara eksponensial terhadap waktu,
-sehingga kontribusi pada horizon sangat panjang
-menjadi semakin kecil.
+Dengan formulasi ini,
+dynamic regret mengukur selisih performa agen
+terhadap keputusan optimal
+yang dihitung ulang pada setiap waktu,
+tanpa mengasumsikan strategi pembanding yang statis.
+
+Metrik ini lebih sesuai
+untuk mengevaluasi kinerja dalam lingkungan non-stasioner,
+karena comparator diperbolehkan berubah secara temporal.
 
 \subsection{Decoupled Opponent Modelling}
 
@@ -514,8 +504,8 @@ memisahkan proses pembelajaran model lawan
 dari kebijakan agen.
 Dalam kerangka ini,
 model bertujuan untuk memperkirakan distribusi aksi lawan
-$p(a_t^{-i} \mid h_{t-1})$
-berdasarkan riwayat interaksi $h_{t-1}$,
+$p(a_t^{-i} \mid h_{0:t-1})$
+berdasarkan riwayat interaksi $h_{0:t-1}$,
 tanpa secara langsung dioptimalkan terhadap reward agen.
 
 Pemisahan ini memungkinkan evaluasi model dilakukan
@@ -537,59 +527,66 @@ Hal ini menyebabkan adanya kesenjangan antara
 evaluasi berbasis akurasi prediksi
 dan dampaknya terhadap kinerja strategis agen.
 
-Dengan demikian, literatur membedakan secara konseptual
-antara kualitas representasi belief terhadap lawan
-dan kualitas keputusan aksi yang dihasilkan,
-yang menjadi dasar bagi berbagai pendekatan
-dalam \textit{opponent modelling}.
-
 \subsection{Risiko Propagasi Kesalahan pada Forecasting Rekursif}
 
-Pendekatan multi-step forecasting umumnya dilakukan secara rekursif, 
-di mana prediksi pada waktu $t+1$ digunakan sebagai input untuk 
-memprediksi waktu $t+2$, dan seterusnya.
+Pendekatan multi-step forecasting dilakukan secara rekursif,
+di mana prediksi pada waktu $t+1$ digunakan sebagai input
+untuk memprediksi waktu $t+2$, dan seterusnya
+hingga horizon tetap $H$.
 
-Namun pendekatan ini berpotensi menimbulkan \textit{compounding error}, 
-di mana kesalahan kecil pada prediksi awal dapat terakumulasi 
-dan memperbesar deviasi distribusi pada horizon yang lebih panjang (\cite{bengio_scheduled_2015}).
+Namun, pendekatan ini berpotensi menimbulkan \textit{compounding error},
+di mana kesalahan kecil pada prediksi awal dapat terakumulasi
+dan memperbesar deviasi distribusi pada langkah-langkah berikutnya
+(\cite{bengio_scheduled_2015}).
 
-Secara formal, jika model menghasilkan distribusi prediktif 
-$\hat{P}(a_{-i}^{t+1} \mid h_t)$, maka distribusi pada langkah ke-$k$ 
-bergantung pada distribusi hasil prediksi sebelumnya, sehingga 
-pergeseran distribusi (\textit{distribution shift}) dapat terjadi.
-
-Oleh karena itu, stabilitas pelatihan menjadi aspek penting dalam 
-pendekatan forecasting multi-langkah.
-
-
-Secara umum, nilai aksi $a_t$ didefinisikan sebagai ekspektasi
-akumulasi payoff terdiskonto:
+Secara formal, jika model menghasilkan distribusi prediktif
 
 \begin{equation}
-Q(a_t)
+\hat{P}(a_{-i}^{t+1} \mid h_t),
+\end{equation}
+
+maka distribusi pada langkah ke-$k$ diberikan oleh
+
+\begin{equation}
+\hat{P}(a_{-i}^{t+k} \mid \hat{h}_{t+k-1}),
+\end{equation}
+
+dengan $\hat{h}_{t+k-1}$ merupakan history yang diperluas
+menggunakan prediksi sebelumnya.
+Karena $\hat{h}_{t+k-1}$ sendiri merupakan hasil prediksi model,
+maka terjadi \textit{distribution shift}
+antara distribusi pelatihan dan distribusi saat inferensi rekursif.
+
+Dalam kerangka horizon tetap $H$,
+nilai suatu aksi $a_t$ didefinisikan sebagai ekspektasi
+akumulasi payoff sepanjang $H$ langkah ke depan:
+
+\begin{equation}
+Q_H(a_t \mid h_t)
 =
 \mathbb{E}
 \left[
-\sum_{k=0}^{\infty}
-\gamma^k
+\sum_{k=0}^{H-1}
 u_i(a_i^{t+k}, a_{-i}^{t+k})
-\right]
+\;\middle|\;
+h_t
+\right].
 \end{equation}
 
-dengan $\gamma \in (0,1)$ faktor diskonto
-yang ekuivalen dengan probabilitas kelanjutan permainan.
-
-Formulasi ini menunjukkan bahwa estimasi distribusi aksi
-pada waktu $t+1$ saja tidak cukup
-untuk mengevaluasi keputusan pada waktu $t$.
-Oleh karena itu, diperlukan prediksi lintasan masa depan
-melalui mekanisme multi-langkah.
+Formulasi ini menunjukkan bahwa evaluasi keputusan pada waktu $t$
+tidak hanya bergantung pada prediksi satu langkah,
+melainkan pada kualitas estimasi distribusi lintasan
+sepanjang horizon terbatas $H$.
+Akumulasi kesalahan prediksi dalam forecasting rekursif
+dapat menyebabkan bias pada estimasi $Q_H$,
+sehingga stabilitas pelatihan menjadi aspek krusial
+dalam pendekatan multi-langkah.
 
 \subsection{Teacher Forcing}
 
-Pada model sekuens autoregresif seperti RNN atau LSTM, 
-prediksi pada waktu $t$ bergantung pada output pada waktu sebelumnya. 
-Secara umum, dinamika sistem dapat dituliskan sebagai:
+Pada model sekuens autoregresif seperti RNN atau LSTM,
+prediksi pada waktu $t$ bergantung pada output sebelumnya.
+Secara umum, dinamika sistem dituliskan sebagai:
 
 \begin{equation}
 h_t = f(h_{t-1}, y_{t-1}; \theta)
@@ -599,48 +596,47 @@ h_t = f(h_{t-1}, y_{t-1}; \theta)
 \hat{y}_t = g(h_t; \theta)
 \end{equation}
 
-dengan $h_t$ adalah hidden state, $y_{t-1}$ input autoregresif, 
-$\hat{y}_t$ prediksi model, dan $\theta$ parameter yang dipelajari.
+dengan $h_t$ hidden state,
+$y_{t-1}$ input autoregresif,
+$\hat{y}_t$ prediksi model,
+dan $\theta$ parameter yang dipelajari.
 
-Dalam skema pelatihan standar tanpa intervensi, 
-model menerima ground-truth $y_{t-1}^{*}$ sebagai input pada setiap langkah waktu. 
-Pendekatan ini dikenal sebagai \textit{teacher forcing}. 
-Dinamika selama pelatihan menjadi:
+Dalam skema \textit{teacher forcing},
+input autoregresif selama pelatihan digantikan
+oleh ground-truth $y_{t-1}^{*}$:
 
 \begin{equation}
-h_t = f(h_{t-1}, y_{t-1}^{*}; \theta)
+h_t = f(h_{t-1}, y_{t-1}^{*}; \theta).
 \end{equation}
 
-Fungsi kerugian dihitung terhadap target aktual:
+Fungsi kerugian didefinisikan sebagai:
 
 \begin{equation}
-\mathcal{L}(\theta) =
+\mathcal{L}(\theta)
+=
 \sum_{t=1}^{T}
-\ell(\hat{y}_t, y_t^{*})
+\ell(\hat{y}_t, y_t^{*}),
 \end{equation}
 
-dengan $\ell(\cdot)$ merupakan fungsi loss, 
-misalnya Mean Squared Error untuk regresi atau Cross-Entropy untuk klasifikasi.
+dengan $\ell(\cdot)$ fungsi loss yang sesuai.
 
-Secara konseptual, teacher forcing mempercepat konvergensi 
-karena distribusi input selama pelatihan identik dengan distribusi data sebenarnya. 
-Hal ini mencegah akumulasi error pada tahap awal pembelajaran 
-dan menghasilkan gradien yang lebih stabil.
+Teacher forcing mempercepat konvergensi
+dan menghasilkan gradien yang lebih stabil,
+karena distribusi input selama pelatihan
+identik dengan distribusi data sebenarnya.
 
-Namun, pada fase inferensi, model tidak lagi menerima $y_{t-1}^{*}$, 
-melainkan prediksi sebelumnya $\hat{y}_{t-1}$:
+Namun, pada fase inferensi rekursif sepanjang horizon $H$,
+model menggunakan prediksinya sendiri:
 
 \begin{equation}
-h_t = f(h_{t-1}, \hat{y}_{t-1}; \theta)
+h_t = f(h_{t-1}, \hat{y}_{t-1}; \theta).
 \end{equation}
 
-Perbedaan distribusi antara pelatihan dan inferensi ini 
-menimbulkan \textit{exposure bias}, 
-di mana kesalahan kecil pada satu langkah dapat terpropagasi 
-dan membesar pada prediksi multi-langkah.
-
-Dengan demikian, teacher forcing efektif untuk stabilitas optimisasi, 
-namun berpotensi menurunkan robustnes model pada skenario prediksi rekursif jangka panjang.
+Perbedaan distribusi ini menimbulkan \textit{exposure bias},
+yang menjadi sumber utama \textit{compounding error}
+dalam forecasting multi-langkah.
+Semakin panjang horizon $H$,
+semakin besar potensi akumulasi kesalahan.
 
 \subsection{Scheduled Sampling}
 

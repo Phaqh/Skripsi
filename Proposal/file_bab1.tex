@@ -1,44 +1,29 @@
 \section{Latar Belakang}
 
-Interaksi strategis berulang antara agen merupakan salah satu topik utama dalam multi-agent reinforcement learning (MARL) \cite{hernandez-leal_survey_2019}. Salah satu kerangka klasik yang banyak digunakan untuk mempelajari dinamika tersebut adalah \textit{Repeated Iterated Prisoner’s Dilemma} (IPD) \cite{axelrod_evolution_1981}. Dalam permainan ini, dua agen berinteraksi secara berulang tanpa komunikasi eksplisit, dan penyesuaian strategi terjadi melalui pengamatan terhadap aksi lawan pada putaran sebelumnya.
+Interaksi strategis berulang merupakan permasalahan fundamental dalam \textit{multi-agent reinforcement learning} (MARL) \cite{hernandez-leal_survey_2019}. Dalam lingkungan multi-agen, setiap agen tidak hanya beradaptasi terhadap lingkungan, tetapi juga terhadap agen lain yang turut belajar. Kondisi ini menjadikan dinamika pembelajaran bersifat non-stasioner dan sangat bergantung pada pola interaksi historis.
 
-Pada IPD dengan \textit{stochastic termination} (geometric stopping), interaksi dapat berakhir secara acak pada setiap putaran \cite{axelrod_evolution_1981}. Kondisi ini menyebabkan panjang interaksi tidak pasti, meskipun memiliki nilai ekspektasi tertentu. Dalam situasi seperti ini, keputusan agen lebih bergantung pada dinamika jangka pendek dibandingkan analisis jangka panjang, karena selalu terdapat kemungkinan permainan berhenti pada langkah berikutnya \cite{nisan_algorithmic_2008}.
+\textit{Iterated Prisoner’s Dilemma} (IPD) \cite{axelrod_evolution_1981} merupakan kerangka klasik untuk menganalisis dinamika tersebut. Dalam IPD, strategi tidak hanya ditentukan oleh aksi pada satu langkah, tetapi oleh pola respons yang berkembang sepanjang beberapa putaran. Banyak strategi deterministik maupun adaptif—seperti \textit{Tit-for-Tat} dan variasinya—memperlihatkan struktur perilaku yang baru terlihat dalam rentang beberapa langkah interaksi.
 
-Tantangan menjadi lebih besar ketika lawan bersifat adaptif atau non-stasioner, misalnya menggunakan algoritma pembelajaran daring seperti \textit{Hedge} atau \textit{Online Mirror Descent}, maupun pendekatan berbasis reinforcement learning \cite{nisan_algorithmic_2008}. Dalam kondisi tersebut, agen tidak mengetahui mekanisme internal lawan dan hanya dapat mengamati urutan aksi yang terjadi selama interaksi.
+Dalam literatur \textit{opponent modelling}, pendekatan yang umum digunakan adalah prediksi satu langkah ke depan (\textit{one-step prediction}) \cite{nashed_survey_2022}. Model dilatih untuk meminimalkan kesalahan prediksi terhadap aksi lawan pada langkah berikutnya. Meskipun pendekatan ini konsisten dengan formulasi supervised learning standar, terdapat potensi ketidaksesuaian antara objektif pelatihan satu-langkah dan kebutuhan pengambilan keputusan dalam permainan berulang.
 
-Sebagian pendekatan opponent modelling dalam MARL membangun model lawan yang terintegrasi langsung dengan proses optimisasi kebijakan agen. Pembaruan model sering kali berkaitan erat dengan sinyal reward atau digunakan secara langsung untuk meningkatkan performa agen. Pendekatan ini efektif untuk tujuan performa, namun dapat menyulitkan pemisahan antara perubahan perilaku lawan dan perubahan kebijakan agen itu sendiri. Akibatnya, interpretasi terhadap dinamika strategi lawan menjadi kurang jelas.
+Dalam repeated games, keputusan agen pada waktu $t$ tidak hanya bergantung pada distribusi aksi lawan pada waktu $t+1$, tetapi juga pada konsekuensi strategis dalam beberapa langkah berikutnya. Strategi tertentu mungkin tidak optimal secara satu-langkah, namun menguntungkan secara multi-langkah. Dengan demikian, akurasi prediksi satu-langkah tidak selalu berbanding lurus dengan kualitas perencanaan strategis.
 
-Selain itu, banyak pendekatan berfokus pada prediksi satu-langkah (one-step prediction), yaitu memprediksi aksi lawan pada langkah berikutnya. Meskipun berguna, pendekatan ini mungkin belum cukup untuk menangkap pola strategi yang bergantung pada beberapa langkah ke depan. Dalam lingkungan dengan terminasi stokastik, kemampuan melakukan prediksi multi-langkah jangka pendek (k-step forecasting) berpotensi memberikan gambaran yang lebih lengkap mengenai kecenderungan strategi lawan sebelum interaksi berakhir.
+Selain itu, penggunaan prediksi secara recursive untuk menghasilkan trajectory multi-langkah berpotensi menimbulkan propagasi kesalahan (\textit{error propagation}). Kesalahan kecil pada prediksi awal dapat terakumulasi dan mengurangi kualitas estimasi pada horizon yang lebih panjang. Hal ini menimbulkan pertanyaan metodologis mengenai bagaimana horizon prediksi ($k$) sebaiknya dipilih dan bagaimana kualitas prediksi pada berbagai horizon memengaruhi kinerja strategis agen.
 
-Berdasarkan kondisi tersebut, masih terdapat ruang untuk mengembangkan kerangka opponent modelling. Sebagian besar pendekatan opponent modelling dalam MARL berfokus pada inferensi tipe eksplisit, estimasi utilitas, atau pelatihan bersama berbasis reward. Dalam praktiknya, pendekatan tersebut umumnya:
-\begin{enumerate}
-    \item Mengintegrasikan pembaruan model lawan secara langsung dengan objective reward agen,
-    \item Berorientasi pada prediksi satu langkah ke depan (one-step prediction).
-\end{enumerate}
+Berdasarkan kondisi tersebut, terdapat kebutuhan untuk secara sistematis menganalisis hubungan antara horizon prediksi dan kualitas pengambilan keputusan dalam IPD. Secara khusus, penting untuk mengevaluasi apakah prediksi multi-langkah jangka pendek ($k$-step forecasting) memberikan representasi strategi lawan yang lebih selaras dengan kebutuhan perencanaan dibandingkan prediksi satu-langkah.
 
-Pendekatan ini efektif untuk meningkatkan performa agen, namun pemisahan antara perubahan strategi lawan dan perubahan kebijakan agen tidak selalu terlihat secara jelas. Ketika model lawan diperbarui berdasarkan sinyal reward yang sama dengan yang digunakan untuk optimisasi kebijakan, interpretasi terhadap dinamika perilaku lawan dapat menjadi kurang terpisah secara konseptual.
-
-Selain itu, fokus pada prediksi satu langkah mungkin belum sepenuhnya menangkap pola strategi yang bergantung pada beberapa langkah interaksi. Dalam lingkungan dengan terminasi stokastik, kemampuan melakukan prediksi multi-langkah jangka pendek berpotensi memberikan informasi tambahan mengenai kecenderungan strategi lawan sebelum interaksi berakhir.
-
-Dalam konteks ini, ketidakpastian terhadap dinamika strategi lawan dapat dipandang sebagai bagian penting dari proses pengambilan keputusan. Ketidakpastian tersebut tidak hanya berkaitan dengan variasi acak, tetapi juga dengan keterbatasan informasi yang dimiliki agen terhadap mekanisme adaptasi lawan. Oleh karena itu, selain mempertimbangkan perolehan reward, agen juga dapat mempertimbangkan bagaimana observasi baru memperbarui keyakinannya terhadap model lawan.
-
-Berdasarkan pertimbangan tersebut, diperlukan suatu kerangka pemodelan yang (i) tidak bergantung pada asumsi eksplisit mengenai struktur algoritma internal lawan, (ii) memisahkan secara konseptual proses pembaruan belief terhadap lawan dari optimisasi reward agen, serta (iii) memungkinkan evaluasi perubahan keyakinan sebagai bagian dari analisis dinamika interaksi.
-
-Dalam kerangka yang diusulkan, sinyal reward tetap digunakan untuk evaluasi dan seleksi kebijakan agen, namun tidak digunakan sebagai sinyal langsung dalam pembaruan belief terhadap lawan. Dengan demikian, proses pemodelan perilaku lawan dilakukan berdasarkan observasi aksi, sementara optimisasi utilitas tetap berjalan sebagai modul terpisah.
-
-Melalui pendekatan ini, belief terhadap dinamika lawan berfungsi tidak hanya sebagai alat prediksi, tetapi juga sebagai dasar untuk menganalisis bagaimana observasi baru memengaruhi tingkat keyakinan agen terhadap pola strategi lawan.
-
-Dalam penelitian ini, peningkatan keyakinan (\textit{confidence improvement}) didefinisikan sebagai perubahan terukur pada distribusi prediktif belief setelah observasi trajectory aksi agen dan lawan. Perubahan ini digunakan sebagai indikator reduksi ketidakpastian jangka pendek dalam proses interaksi.
-
-Sebagai ilustrasi, estimasi perubahan keyakinan tersebut dapat dikaitkan dengan mekanisme seleksi aksi berbasis prinsip seperti \textit{Upper Confidence Bound} (UCB), meskipun perancangan mekanisme seleksi aksi bukan merupakan fokus utama penelitian ini.
+Dalam penelitian ini, pemisahan modul pemodelan lawan dari optimisasi reward diposisikan sebagai keputusan arsitektural untuk mengisolasi efek horizon forecasting terhadap kualitas prediksi dan dampaknya terhadap performa strategis. Dengan pemisahan ini, analisis dapat difokuskan pada hubungan antara akurasi prediksi multi-langkah, propagasi kesalahan, dan perolehan payoff dalam permainan berulang.
 
 \section{Rumusan Masalah}
 
 Berdasarkan latar belakang tersebut, penelitian ini merumuskan permasalahan sebagai berikut:
 
 \begin{enumerate}
-    \item Bagaimana merancang modul pemodelan lawan yang dipisahkan dari proses optimisasi reward agen, sehingga pembaruan model dilakukan secara observasional berdasarkan trajectory aksi yang teramati?
-    \item Bagaimana memformulasikan dan mengimplementasikan prediksi multi-langkah jangka pendek ($k$-step forecasting) terhadap distribusi aksi lawan untuk menangkap dinamika strategi dalam interaksi berulang dengan terminasi stokastik?
+    \item Apakah objektif prediksi satu-langkah (\textit{one-step prediction}) selaras dengan kebutuhan perencanaan strategis multi-langkah dalam permainan berulang seperti IPD?
+
+    \item Bagaimana merancang dan mengimplementasikan prediksi trajectory aksi lawan dalam horizon terbatas ($k$-step forecasting), serta bagaimana pengaruh pemilihan horizon $k$ terhadap kualitas prediksi dan perolehan payoff strategis?
+
+    \item Bagaimana membandingkan pendekatan prediksi recursive dan direct multi-step dalam hal propagasi kesalahan dan dampaknya terhadap performa agen?
 \end{enumerate}
 
 \section{Batasan Penelitian}
@@ -46,11 +31,15 @@ Berdasarkan latar belakang tersebut, penelitian ini merumuskan permasalahan seba
 Agar ruang lingkup penelitian tetap terfokus dan implementasi eksperimental terkendali, penelitian ini dibatasi pada:
 
 \begin{enumerate}
-    \item Lingkungan \textit{Repeated Iterated Prisoner’s Dilemma} dengan \textit{stochastic termination}.
-    \item Lawan adaptif yang algoritmanya tidak diketahui oleh agen, namun dibatasi pada kelas pembelajaran daring seperti \textit{Hedge}, \textit{Online Mirror Descent}, serta pendekatan reinforcement learning berbasis pembaruan kebijakan tanpa asumsi akses terhadap struktur internalnya.
-    \item Analisis difokuskan pada prediksi jangka pendek ($k$-step forecasting), tanpa membahas sifat asimtotik atau konvergensi jangka panjang.
-    \item Penelitian tidak melakukan inferensi eksplisit terhadap struktur parametrik atau bentuk algoritma internal lawan.
-    \item Evaluasi perubahan keyakinan dilakukan melalui perubahan distribusi prediktif belief, tanpa optimisasi eksplisit terhadap mutual information atau kriteria identifiabilitas struktural.
+    \item Lingkungan \textit{Iterated Prisoner’s Dilemma} (IPD) dengan struktur payoff standar dan interaksi berulang dalam horizon tetap.
+
+    \item Lawan adaptif yang algoritmanya tidak diketahui oleh agen, namun dibatasi pada kelas pembelajaran daring seperti \textit{Hedge}, \textit{Online Mirror Descent}, serta pendekatan reinforcement learning berbasis pembaruan kebijakan.
+
+    \item Analisis difokuskan pada prediksi trajectory aksi lawan dalam horizon terbatas ($k$-step forecasting), tanpa membahas konvergensi jangka panjang atau sifat asimtotik strategi.
+
+    \item Penelitian tidak melakukan inferensi terhadap struktur algoritma internal lawan, melainkan memodelkan distribusi aksi berdasarkan observasi historis.
+
+    \item Evaluasi difokuskan pada hubungan antara akurasi prediksi multi-langkah, propagasi kesalahan, dan perolehan payoff strategis, tanpa merancang algoritma eksplorasi baru.
 \end{enumerate}
 
 \section{Tujuan Penelitian}
@@ -58,9 +47,13 @@ Agar ruang lingkup penelitian tetap terfokus dan implementasi eksperimental terk
 Penelitian ini bertujuan untuk:
 
 \begin{enumerate}
-    \item Merancang dan mengimplementasikan modul pemodelan belief terhadap lawan yang dipisahkan dari proses optimisasi reward agen, serta dilatih berdasarkan kesalahan prediksi (forecasting loss) terhadap aksi yang terobservasi.
-    
-    \item Mengembangkan mekanisme prediksi multi-langkah jangka pendek ($k$-step forecasting) terhadap distribusi aksi lawan yang dikondisikan pada trajectory interaksi.
+    \item Menganalisis kesesuaian antara objektif prediksi satu-langkah (\textit{one-step prediction}) dan kebutuhan perencanaan strategis multi-langkah dalam permainan berulang seperti IPD.
+
+    \item Mengembangkan dan mengimplementasikan mekanisme prediksi trajectory aksi lawan dalam horizon terbatas ($k$-step forecasting).
+
+    \item Mengevaluasi pengaruh panjang horizon prediksi ($k$) terhadap akurasi prediksi, propagasi kesalahan, dan perolehan payoff strategis.
+
+    \item Membandingkan pendekatan recursive forecasting dan direct multi-step forecasting dalam konteks stabilitas prediksi dan dampaknya terhadap performa agen.
 \end{enumerate}
 
 \section{Manfaat Penelitian}
@@ -68,11 +61,13 @@ Penelitian ini bertujuan untuk:
 Manfaat dan kontribusi yang diharapkan dari penelitian ini adalah sebagai berikut:
 
 \begin{enumerate}
-    \item Menyediakan formulasi opponent modelling yang dipisahkan secara struktural dari optimisasi reward agen, sehingga proses pemodelan perilaku lawan dapat dianalisis secara lebih terfokus.
-    
-    \item Memperluas pendekatan prediksi dalam interaksi IPD adaptif melalui penerapan prediksi multi-langkah jangka pendek untuk menangkap dinamika strategi lawan.
-    
-    \item Mengusulkan penggunaan perubahan distribusi prediktif sebagai ukuran operasional untuk mengevaluasi pembaruan keyakinan terhadap lawan dalam horizon interaksi terbatas.
+    \item Memberikan analisis konseptual dan empiris mengenai potensi ketidaksesuaian antara objektif prediksi satu-langkah dan kebutuhan perencanaan strategis dalam permainan berulang.
+
+    \item Menyediakan evaluasi sistematis mengenai pengaruh horizon prediksi ($k$) terhadap kualitas trajectory forecasting dan dampaknya terhadap strategic payoff.
+
+    \item Memberikan perbandingan empiris antara pendekatan recursive dan direct multi-step forecasting dalam konteks interaksi strategis berulang.
+
+    \item Menyediakan dasar eksperimental untuk memahami hubungan antara prediction accuracy dan kualitas pengambilan keputusan dalam repeated games.
 \end{enumerate}
 
 \section{Sistematika Penelitian}
@@ -80,7 +75,8 @@ Manfaat dan kontribusi yang diharapkan dari penelitian ini adalah sebagai beriku
 \begin{enumerate}
     \item Bab 1: Pendahuluan: Latar belakang, rumusan masalah, batasan, tujuan, manfaat, dan sistematika penelitian.
     \item Bab 2: Tinjauan Pustaka: Kajian literatur terkait opponent modelling, IPD, dan pendekatan pembelajaran daring.
-    \item Bab 3: Kerangka Teoritis: Formulasi masalah, definisi metrik, dan arsitektur umum.
+    \item Bab 3: Kerangka Teoritis: Formulasi masalah, definisi formal belief dan forecasting loss, serta arsitektur umum.
     \item Bab 4: Metode Penelitian: Desain eksperimen, algoritma, dan prosedur evaluasi.
-    \item Bab 5: Jadwal Penelitian: Rencana waktu pelaksanaan penelitian.
+    \item Bab 5: Jadwal Penelitian: gant chart, depedensi, dan risiko.
+    \item Bab 6: Kesimpulan dan Saran.
 \end{enumerate}
