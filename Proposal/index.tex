@@ -1,5 +1,5 @@
 %Template pembuatan Tesis dengan ugmtesis.
-\documentclass[skripsi]{ugmskripsi}
+\documentclass[proposal]{ugmskripsi}
 % sec caption bold
 \usepackage[labelfont=bf]{caption}
 \renewcommand{\captionfont}{\bf}
@@ -25,10 +25,10 @@
   {}
   {\PackageWarning{ugmskripsi}{Failed to patch LoT spacing}}
 
-% Fix page numbering position (UGM class)
-\AtBeginDocument{%
-  \pagestyle{chapterheading}
-}
+% % Fix page numbering position (UGM class)
+% \AtBeginDocument{%
+%   \pagestyle{chapterheading}
+% }
 % \AtBeginShipout{%
 %   \typeout{PAGE \thepage\space STYLE=\meaning\@pagestyle}%
 % }

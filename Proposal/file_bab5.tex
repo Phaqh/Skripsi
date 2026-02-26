@@ -162,33 +162,31 @@ ditunjukkan pada Tabel berikut.
 \centering
 \caption{Rencana Jadwal Penelitian (2 Bulan / 8 Minggu)}
 \begin{tabular}{|p{5.8cm}|c|c|c|c|c|c|c|c|}
-\hline
+\toprule
 \textbf{Kegiatan} & \textbf{M1} & \textbf{M2} & \textbf{M3} & \textbf{M4} & \textbf{M5} & \textbf{M6} & \textbf{M7} & \textbf{M8} \\
-\hline
-Perancangan lingkungan IPD & \checkmark & \checkmark & & & & & & \\
-\hline
-Implementasi tipe lawan & \checkmark & \checkmark & & & & & & \\
-\hline
-Pengumpulan dan validasi dataset & & \checkmark & \checkmark & & & & & \\
-\hline
-Implementasi model LSTM & & & \checkmark & \checkmark & & & & \\
-\hline
-Pelatihan model & & & & \checkmark & \checkmark & & & \\
-\hline
-Evaluasi model offline (one-step) & & & & & \checkmark & & & \\
-\hline
-Evaluasi open-loop multi-step & & & & & \checkmark & \checkmark & & \\
-\hline
-Implementasi Monte Carlo rollout & & & & & & \checkmark & \checkmark & \\
-\hline
-Evaluasi closed-loop agen & & & & & & & \checkmark & \\
-\hline
-Studi ablasi & & & & & & & \checkmark & \\
-\hline
-Analisis statistik dan visualisasi & & & & & & & & \checkmark \\
-\hline
+\midrule
+Spesifikasi lingkungan IPD & \checkmark & \checkmark & & & & & & \\
+\midrule
+Desain Populasi Strategi Lawan & \checkmark & \checkmark & & & & & & \\
+\midrule
+Prosedur simulasi dan generasi data & & \checkmark & \checkmark & & & & & \\
+\midrule
+Representasi dan persiapan dataset & & & \checkmark & \checkmark & & & & \\
+\midrule
+Perancangan model prediksi (arsitektur) & & & \checkmark & \checkmark & & & & \\
+\midrule
+Implementasi protokol pelatihan satu langkah & & & & \checkmark & \checkmark & & & \\
+\midrule
+Implementasi pelatihan multi langkah (k=5,10 + ROC) & & & & & \checkmark & \checkmark & & \\
+\midrule
+Evaluasi terpisah (Confusion Matrix, NLL, CE) & & & & & & \checkmark & & \\
+\midrule
+Evaluasi terpasang (Multi-step, Regret, Reward) & & & & & & \checkmark & \checkmark & \\
+\midrule
+Analisis eksperimen dan komparasi model & & & & & & & \checkmark & \checkmark \\
+\midrule
 Penulisan dan revisi laporan & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
-\hline
+\bottomrule
 \end{tabular}
 \end{table}
 
