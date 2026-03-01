@@ -696,61 +696,6 @@
       \verb https://link.springer.com/10.1007/s10994-025-06823-z
       \endverb
     \endentry
-    \entry{lamb_professorforcing_2016}{inproceedings}{}
-      \name{author}{6}{}{%
-        {{un=0,uniquepart=base,hash=d54eb15dced6ed5d4d82bed3927424ad}{%
-           family={Lamb},
-           familyi={L\bibinitperiod},
-           given={Alex\bibnamedelima M.},
-           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=eb6a43771a55bde951c0119ac5c7ad13}{%
-           family={Goyal},
-           familyi={G\bibinitperiod},
-           given={Anirudh},
-           giveni={A\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=f5acec98b29ee91fa6b08b85a6a0adad}{%
-           family={Zhang},
-           familyi={Z\bibinitperiod},
-           given={Ying},
-           giveni={Y\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=5ddb374f636f20980ee704d638a01465}{%
-           family={Zhang},
-           familyi={Z\bibinitperiod},
-           given={Saizheng},
-           giveni={S\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=a3d08667a6a8eb5e5db5f779a499d3a5}{%
-           family={Courville},
-           familyi={C\bibinitperiod},
-           given={Aaron\bibnamedelima C.},
-           giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=40a8e4774982146adc2688546f54efb2}{%
-           family={Bengio},
-           familyi={B\bibinitperiod},
-           given={Yoshua},
-           giveni={Y\bibinitperiod},
-           givenun=0}}%
-      }
-      \strng{namehash}{46207231d1b050f0e28fa09443bf9aca}
-      \strng{fullhash}{0e14730b8ca10eeceeac5f65d1aaf696}
-      \strng{bibnamehash}{0e14730b8ca10eeceeac5f65d1aaf696}
-      \strng{authorbibnamehash}{0e14730b8ca10eeceeac5f65d1aaf696}
-      \strng{authornamehash}{46207231d1b050f0e28fa09443bf9aca}
-      \strng{authorfullhash}{0e14730b8ca10eeceeac5f65d1aaf696}
-      \field{sortinit}{L}
-      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{Advances in Neural Information Processing Systems}
-      \field{title}{Professor Forcing: A New Algorithm for Training Recurrent Networks}
-      \field{year}{2016}
-    \endentry
     \entry{li_exploiting_2025}{article}{}
       \name{author}{4}{}{%
         {{un=0,uniquepart=base,hash=4838f7fdd28d5cefb28f3b3c734976d4}{%
@@ -929,62 +874,6 @@
       \field{dateera}{ce}
       \verb{file}
       \verb PDF:/home/paqh/Zotero/storage/GK8TDDA8/Nashed and Zilberstein - A Survey on Opponent Modeling in Adversarial Domains.pdf:application/pdf
-      \endverb
-    \endentry
-    \entry{nisan_algorithmic_2008}{collection}{}
-      \name{editor}{4}{}{%
-        {{un=0,uniquepart=base,hash=dd03ed102537d5040adaf7ede9bad0ec}{%
-           family={Nisan},
-           familyi={N\bibinitperiod},
-           given={Noam},
-           giveni={N\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=efce6f6d496cdcc1bb07fb47dfecb3aa}{%
-           family={Roughgarden},
-           familyi={R\bibinitperiod},
-           given={Tim},
-           giveni={T\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=3b65c0aec42ebdc08432a6ece3a86584}{%
-           family={Tardos},
-           familyi={T\bibinitperiod},
-           given={Éva},
-           giveni={É\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=4391dea254c3bbcaff1fefed241caed0}{%
-           family={Vazirani},
-           familyi={V\bibinitperiod},
-           given={Vijay\bibnamedelima V.},
-           giveni={V\bibinitperiod\bibinitdelim V\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{location}{1}{%
-        {Cambridge}%
-      }
-      \list{publisher}{1}{%
-        {Cambridge Univ. Press}%
-      }
-      \strng{namehash}{a461b403bdb909ab1f593fcc8e04d108}
-      \strng{fullhash}{f3f9b9c1f783937a9e09835a23bf3b16}
-      \strng{bibnamehash}{f3f9b9c1f783937a9e09835a23bf3b16}
-      \strng{editorbibnamehash}{f3f9b9c1f783937a9e09835a23bf3b16}
-      \strng{editornamehash}{a461b403bdb909ab1f593fcc8e04d108}
-      \strng{editorfullhash}{f3f9b9c1f783937a9e09835a23bf3b16}
-      \field{sortinit}{N}
-      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{editor}
-      \field{labeltitlesource}{title}
-      \field{edition}{Repr., [Nachdr.]}
-      \field{isbn}{978-0-521-87282-9}
-      \field{langid}{english}
-      \field{pagetotal}{754}
-      \field{title}{Algorithmic game theory}
-      \field{year}{2008}
-      \field{dateera}{ce}
-      \verb{file}
-      \verb PDF:/home/paqh/Zotero/storage/E32E6JJY/Nisan et al. - 2008 - Algorithmic game theory.pdf:application/pdf
       \endverb
     \endentry
     \entry{perera_learning_2025}{article}{}
@@ -1239,14 +1128,86 @@
       \endverb
       \keyw{Deep learning,Opponent modeling,Reinforcement learning,Multi agent systems,Social dilemmas,Multi-agent reinforcement learning,Atomic actions,Cooperation degree,Detection networks,Fruits,Multiagent reinforcement learning approach,Mutual Cooperation}
     \endentry
+    \entry{zhu_negative_2018}{misc}{}
+      \name{author}{4}{}{%
+        {{un=1,uniquepart=given,hash=3bd1f9055cbba5d1e536fac32698af67}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Donglai},
+           giveni={D\bibinitperiod},
+           givenun=1}}%
+        {{un=0,uniquepart=base,hash=f17d6b9c135febd7ab6a3e84ebbbe23e}{%
+           family={Yao},
+           familyi={Y\bibinitperiod},
+           given={Hengshuai},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=215a6337e44399811a195bf368926c0b}{%
+           family={Jiang},
+           familyi={J\bibinitperiod},
+           given={Bei},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c476255801262401399b7c2ef207ff07}{%
+           family={Yu},
+           familyi={Y\bibinitperiod},
+           given={Peng},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {arXiv}%
+      }
+      \strng{namehash}{b054571a147f9d21fb1e1995ca5e87dc}
+      \strng{fullhash}{0a268f74df298665d897916e55280da4}
+      \strng{bibnamehash}{0a268f74df298665d897916e55280da4}
+      \strng{authorbibnamehash}{0a268f74df298665d897916e55280da4}
+      \strng{authornamehash}{b054571a147f9d21fb1e1995ca5e87dc}
+      \strng{authorfullhash}{0a268f74df298665d897916e55280da4}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In deep neural network, the cross-entropy loss function is commonly used for classification. Minimizing crossentropy is equivalent to maximizing likelihood under assumptions of uniform feature and class distributions. It belongs to generative training criteria which does not directly discriminate correct class from competing classes. We propose a discriminative loss function with negative log likelihood ratio between correct and competing classes. It significantly outperforms the cross-entropy loss on the {CIFAR}-10 image classification task.}
+      \field{day}{27}
+      \field{eprinttype}{arxiv}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{number}{{arXiv}:1804.10690}
+      \field{title}{Negative Log Likelihood Ratio Loss for Deep Neural Network Classification}
+      \field{urlday}{27}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.1804.10690
+      \endverb
+      \verb{eprint}
+      \verb 1804.10690 [cs]
+      \endverb
+      \verb{file}
+      \verb PDF:/home/paqh/Zotero/storage/WU9IBWBN/Zhu et al. - 2018 - Negative Log Likelihood Ratio Loss for Deep Neural Network Classification.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1804.10690
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1804.10690
+      \endverb
+      \keyw{Computer Science - Machine Learning,Statistics - Machine Learning}
+    \endentry
     \entry{zhu_evolutionary_2025}{inproceedings}{}
       \name{author}{3}{}{%
-        {{un=0,uniquepart=base,hash=2575ab10863fd0da6380e95fe7313bb2}{%
+        {{un=1,uniquepart=given,hash=2575ab10863fd0da6380e95fe7313bb2}{%
            family={Zhu},
            familyi={Z\bibinitperiod},
            given={Lei},
            giveni={L\bibinitperiod},
-           givenun=0}}%
+           givenun=1}}%
         {{un=0,uniquepart=base,hash=4661f09e00d8896b88d3fd0c8ae882d6}{%
            family={Zhu},
            familyi={Z\bibinitperiod},

@@ -5,7 +5,6 @@ Penelitian ini direncanakan berlangsung selama dua bulan
 dengan fokus utama penelitian, yaitu:
 
 \begin{enumerate}
-    \item Pemodelan lawan yang sepenuhnya terpisah dari sinyal reward (decoupled opponent modelling)
     \item Analisis stabilitas prediksi multi-langkah (multi-step forecasting)
 \end{enumerate}
 
@@ -13,145 +12,6 @@ Penyusunan jadwal dilakukan berdasarkan dependensi antar
 komponen sistem, dimulai dari pembangunan lingkungan deterministik,
 implementasi model prediktif, hingga evaluasi stabilitas dan
 analisis perencanaan berbasis rollout.
-
-\subsection{Tahapan Penelitian}
-
-Secara umum, tahapan penelitian dibagi menjadi sembilan fase utama
-sebagai berikut:
-
-\begin{enumerate}
-
-\item \textbf{Perancangan dan Validasi Lingkungan IPD Deterministik}
-
-Tahap awal mencakup implementasi lingkungan
-\textit{Iterated Prisoner's Dilemma} (IPD) dengan konfigurasi:
-
-\begin{itemize}
-    \item Implementasi matriks payoff klasik
-    \item Fixed horizon ($T = 100$)
-    \item Validasi konsistensi reward
-    \item Verifikasi determinisme transisi permainan
-\end{itemize}
-
-Lingkungan dibuat sepenuhnya deterministik untuk
-mengisolasi analisis pada dinamika model prediktif,
-tanpa gangguan noise maupun terminasi stokastik.
-
-\item \textbf{Implementasi Tipe Lawan}
-
-Meliputi pembangunan berbagai tipe lawan untuk
-menguji kapasitas representasi model:
-
-\begin{itemize}
-    \item Fixed mixed strategy
-    \item Tit-for-Tat
-    \item Win-Stay Lose-Shift
-    \item Fictitious Play
-    \item Q-Learning agent
-\end{itemize}
-
-Dilakukan validasi bahwa agen adaptif
-menunjukkan dinamika non-stasioner dalam episode.
-
-\item \textbf{Pengumpulan dan Validasi Dataset}
-
-Tahap ini mencakup:
-
-\begin{itemize}
-    \item Simulasi 10.000 episode pelatihan
-    \item Simulasi 2.000 episode validasi
-    \item Simulasi 2.000 episode pengujian
-    \item Verifikasi distribusi tipe lawan uniform
-    \item Pemeriksaan pemisahan data pelatihan dan pengujian
-\end{itemize}
-
-Dataset dikumpulkan tanpa memasukkan sinyal reward
-sebagai target pemodelan, untuk menjaga prinsip decoupling.
-
-\item \textbf{Implementasi Model Decoupled LSTM}
-
-Meliputi:
-
-\begin{itemize}
-    \item Implementasi arsitektur LSTM satu layer (hidden size 64)
-    \item Implementasi linear layer + softmax
-    \item Implementasi scheduled sampling
-    \item Pemisahan eksplisit modul belief dari modul evaluasi reward
-\end{itemize}
-
-Tahap ini memastikan bahwa pembentukan belief
-tidak bergantung pada utilitas agen.
-
-\item \textbf{Pelatihan Model Prediktif}
-
-Meliputi:
-
-\begin{itemize}
-    \item Pelatihan dengan loss cross-entropy one-step
-    \item Teacher forcing dengan scheduled sampling
-    \item Monitoring validation loss
-    \item Penyimpanan model terbaik
-\end{itemize}
-
-\item \textbf{Evaluasi Model Prediktif (One-step)}
-
-Evaluasi kapasitas lokal model menggunakan:
-
-\begin{itemize}
-    \item Accuracy
-    \item Cross-entropy loss
-    \item Entropy prediktif
-\end{itemize}
-
-Tahap ini memverifikasi kapasitas representasi
-sebelum analisis multi-langkah dilakukan.
-
-\item \textbf{Evaluasi Stabilitas Multi-Langkah (Open-loop)}
-
-Merupakan tahap inti penelitian.
-
-Meliputi:
-
-\begin{itemize}
-    \item Prediksi rekursif hingga horizon $k=10$
-    \item Analisis pertumbuhan error terhadap horizon
-    \item Analisis divergensi distribusi prediktif
-    \item Analisis akumulasi error akibat self-conditioning
-\end{itemize}
-
-Tahap ini menguji apakah representasi laten stabil
-dalam prediksi jangka panjang.
-
-\item \textbf{Implementasi dan Evaluasi Rollout Planning}
-
-Meliputi:
-
-\begin{itemize}
-    \item Implementasi estimator nilai aksi $\hat{Q}$
-    \item Integrasi prediksi multi-step dalam Monte Carlo rollout
-    \item Analisis sensitivitas terhadap horizon $k$
-    \item Analisis stabilitas estimasi nilai terhadap jumlah simulasi $n$
-\end{itemize}
-
-Fokus utama adalah mengevaluasi dampak kualitas
-forecasting terhadap kualitas perencanaan.
-
-\item \textbf{Evaluasi Closed-loop dan Studi Ablasi}
-
-Tahap akhir meliputi:
-
-\begin{itemize}
-    \item Simulasi episode penuh
-    \item Evaluasi reward rata-rata
-    \item Perbandingan dengan baseline greedy one-step
-    \item Ablasi tanpa scheduled sampling
-    \item Ablasi horizon $k=1$
-\end{itemize}
-
-Tahap ini mengukur kontribusi nyata
-multi-step forecasting terhadap performa agen.
-
-\end{enumerate}
 
 \subsection{Rencana Waktu Pelaksanaan}
 
@@ -175,13 +35,11 @@ Representasi dan persiapan dataset & & & \checkmark & \checkmark & & & & \\
 \midrule
 Perancangan model prediksi (arsitektur) & & & \checkmark & \checkmark & & & & \\
 \midrule
-Implementasi protokol pelatihan satu langkah & & & & \checkmark & \checkmark & & & \\
+Implementasi protokol pelatihan & & & & \checkmark & \checkmark & & & \\
 \midrule
-Implementasi pelatihan multi langkah (k=5,10 + ROC) & & & & & \checkmark & \checkmark & & \\
+Validasi (Confusion Matrix, NLL, CE) & & & & & & \checkmark & & \\
 \midrule
-Evaluasi terpisah (Confusion Matrix, NLL, CE) & & & & & & \checkmark & & \\
-\midrule
-Evaluasi terpasang (Multi-step, Regret, Reward) & & & & & & \checkmark & \checkmark & \\
+Evaluasi (Confusion Matrix, NLL, CE) & & & & & & \checkmark & & \\
 \midrule
 Analisis eksperimen dan komparasi model & & & & & & & \checkmark & \checkmark \\
 \midrule

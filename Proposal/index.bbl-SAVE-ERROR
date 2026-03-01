@@ -19,69 +19,6 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global}
-    \entry{albrecht_autonomous_2018}{article}{}
-      \name{author}{2}{}{%
-        {{un=0,uniquepart=base,hash=9da4f3f413d514d731efe34067976909}{%
-           family={Albrecht},
-           familyi={A\bibinitperiod},
-           given={Stefano\bibnamedelima V.},
-           giveni={S\bibinitperiod\bibinitdelim V\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=3f42a499da2cddc0bae71b76c81f7c46}{%
-           family={Stone},
-           familyi={S\bibinitperiod},
-           given={Peter},
-           giveni={P\bibinitperiod},
-           givenun=0}}%
-      }
-      \strng{namehash}{9350371115a0d7dab048a4452942a148}
-      \strng{fullhash}{9350371115a0d7dab048a4452942a148}
-      \strng{bibnamehash}{9350371115a0d7dab048a4452942a148}
-      \strng{authorbibnamehash}{9350371115a0d7dab048a4452942a148}
-      \strng{authornamehash}{9350371115a0d7dab048a4452942a148}
-      \strng{authorfullhash}{9350371115a0d7dab048a4452942a148}
-      \field{sortinit}{A}
-      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{shorttitle}
-      \field{abstract}{Much research in artiﬁcial intelligence is concerned with the development of autonomous agents that can interact eﬀectively with other agents. An important aspect of such agents is the ability to reason about the behaviours of other agents, by constructing models which make predictions about various properties of interest (such as actions, goals, beliefs) of the modelled agents. A variety of modelling approaches now exist which vary widely in their methodology and underlying assumptions, catering to the needs of the diﬀerent sub-communities within which they were developed and reﬂecting the diﬀerent practical uses for which they are intended. The purpose of the present article is to provide a comprehensive survey of the salient modelling methods which can be found in the literature. The article concludes with a discussion of open problems which may form the basis for fruitful future research.}
-      \field{annotation}{Comment: Final manuscript (46 pages), published in Artificial Intelligence Journal. The {arXiv} version also contains a table of contents after the abstract, but is otherwise identical to the {AIJ} version. Keywords: autonomous agents, multiagent systems, modelling other agents, opponent modelling}
-      \field{eprinttype}{arxiv}
-      \field{issn}{00043702}
-      \field{journaltitle}{Artificial Intelligence}
-      \field{langid}{english}
-      \field{month}{5}
-      \field{shortjournal}{Artificial Intelligence}
-      \field{shorttitle}{Autonomous Agents Modelling Other Agents}
-      \field{title}{Autonomous Agents Modelling Other Agents: A Comprehensive Survey and Open Problems}
-      \field{urlday}{21}
-      \field{urlmonth}{12}
-      \field{urlyear}{2025}
-      \field{volume}{258}
-      \field{year}{2018}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \field{pages}{66\bibrangedash 95}
-      \range{pages}{30}
-      \verb{doi}
-      \verb 10.1016/j.artint.2018.01.002
-      \endverb
-      \verb{eprint}
-      \verb 1709.08071 [cs]
-      \endverb
-      \verb{file}
-      \verb PDF:/home/paqh/Zotero/storage/RU7DVCZ9/Albrecht and Stone - 2018 - Autonomous Agents Modelling Other Agents A Comprehensive Survey and Open Problems.pdf:application/pdf
-      \endverb
-      \verb{urlraw}
-      \verb http://arxiv.org/abs/1709.08071
-      \endverb
-      \verb{url}
-      \verb http://arxiv.org/abs/1709.08071
-      \endverb
-      \keyw{Computer Science - Artificial Intelligence,Computer Science - Multiagent Systems}
-    \endentry
     \entry{axelrod_evolution_1981}{article}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=e46fddf6d412d66cae997840c9ba5f34}{%
@@ -118,77 +55,40 @@
       \verb PDF:/home/paqh/Zotero/storage/D45VFM7S/Axelrod and Hamilton - 1981 - The Evolution of Cooperation.pdf:application/pdf
       \endverb
     \endentry
-    \entry{bengio_scheduled_2015}{misc}{}
-      \name{author}{4}{}{%
-        {{un=0,uniquepart=base,hash=02404a92b0be3f52ec5ac08e41c13445}{%
-           family={Bengio},
+    \entry{barron1996decision}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=ab9b09e479d282b3c3604a912482ddac}{%
+           family={Barron},
            familyi={B\bibinitperiod},
-           given={Samy},
-           giveni={S\bibinitperiod},
+           given={F\bibnamedelima H},
+           giveni={F\bibinitperiod\bibinitdelim H\bibinitperiod},
            givenun=0}}%
-        {{un=0,uniquepart=base,hash=494b568c5dc85ba8f3f409635f9c5f25}{%
-           family={Vinyals},
-           familyi={V\bibinitperiod},
-           given={Oriol},
-           giveni={O\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=5a9f30e0c0441d2aea255916ff375e8c}{%
-           family={Jaitly},
-           familyi={J\bibinitperiod},
-           given={Navdeep},
-           giveni={N\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=62efade83d70f0323fe248755e6c90c5}{%
-           family={Shazeer},
-           familyi={S\bibinitperiod},
-           given={Noam},
-           giveni={N\bibinitperiod},
+        {{un=0,uniquepart=base,hash=a738013deb62bfc1e1a4a8bbffc5c531}{%
+           family={Barrett},
+           familyi={B\bibinitperiod},
+           given={B\bibnamedelima E},
+           giveni={B\bibinitperiod\bibinitdelim E\bibinitperiod},
            givenun=0}}%
       }
-      \list{publisher}{1}{%
-        {arXiv}%
-      }
-      \strng{namehash}{a7107fc44d58e0d53178f67bb2ce15f8}
-      \strng{fullhash}{408b3268fa483a5b87403a194fe84027}
-      \strng{bibnamehash}{408b3268fa483a5b87403a194fe84027}
-      \strng{authorbibnamehash}{408b3268fa483a5b87403a194fe84027}
-      \strng{authornamehash}{a7107fc44d58e0d53178f67bb2ce15f8}
-      \strng{authorfullhash}{408b3268fa483a5b87403a194fe84027}
+      \strng{namehash}{9aa585069d908bf6206da412594a88c1}
+      \strng{fullhash}{9aa585069d908bf6206da412594a88c1}
+      \strng{bibnamehash}{9aa585069d908bf6206da412594a88c1}
+      \strng{authorbibnamehash}{9aa585069d908bf6206da412594a88c1}
+      \strng{authornamehash}{9aa585069d908bf6206da412594a88c1}
+      \strng{authorfullhash}{9aa585069d908bf6206da412594a88c1}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{Recurrent Neural Networks can be trained to produce sequences of tokens given some input, as exempliﬁed by recent results in machine translation and image captioning. The current approach to training them consists of maximizing the likelihood of each token in the sequence given the current (recurrent) state and the previous token. At inference, the unknown previous token is then replaced by a token generated by the model itself. This discrepancy between training and inference can yield errors that can accumulate quickly along the generated sequence. We propose a curriculum learning strategy to gently change the training process from a fully guided scheme using the true previous token, towards a less guided scheme which mostly uses the generated token instead. Experiments on several sequence prediction tasks show that this approach yields signiﬁcant improvements. Moreover, it was used successfully in our winning entry to the {MSCOCO} image captioning challenge, 2015.}
-      \field{day}{23}
-      \field{eprinttype}{arxiv}
-      \field{langid}{english}
-      \field{month}{9}
-      \field{number}{{arXiv}:1506.03099}
-      \field{title}{Scheduled Sampling for Sequence Prediction with Recurrent Neural Networks}
-      \field{urlday}{16}
-      \field{urlmonth}{2}
-      \field{urlyear}{2026}
-      \field{year}{2015}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \verb{doi}
-      \verb 10.48550/arXiv.1506.03099
-      \endverb
-      \verb{eprint}
-      \verb 1506.03099 [cs]
-      \endverb
-      \verb{file}
-      \verb PDF:/home/paqh/Zotero/storage/DKABT7DP/Bengio et al. - 2015 - Scheduled Sampling for Sequence Prediction with Recurrent Neural Networks.pdf:application/pdf
-      \endverb
-      \verb{urlraw}
-      \verb http://arxiv.org/abs/1506.03099
-      \endverb
-      \verb{url}
-      \verb http://arxiv.org/abs/1506.03099
-      \endverb
-      \keyw{Computer Science - Machine Learning,Computer Science - Computation and Language,Computer Science - Computer Vision and Pattern Recognition}
+      \field{journaltitle}{Management Science}
+      \field{number}{11}
+      \field{title}{Decision quality using ranked attribute weights}
+      \field{volume}{42}
+      \field{year}{1996}
+      \field{pages}{1515\bibrangedash 1523}
+      \range{pages}{9}
     \endentry
     \entry{bonanno_game_2024}{book}{}
       \name{author}{1}{}{%
@@ -1183,6 +1083,47 @@
       \verb PDF:/home/paqh/Zotero/storage/V2H8HELF/Shoham - Multiagent Systems Algorithmic, Game-Theoretic, and Logical Foundations.pdf:application/pdf
       \endverb
     \endentry
+    \entry{stillwell1981preference}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=7a3eba5dc5f94b25195ab10b677678d7}{%
+           family={Stillwell},
+           familyi={S\bibinitperiod},
+           given={William\bibnamedelima G},
+           giveni={W\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4e9a506cc0d6b55a3c5f649a0a165a9c}{%
+           family={Seaver},
+           familyi={S\bibinitperiod},
+           given={David\bibnamedelima A},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=79a605bf085b35da9b81b07c324cc8f2}{%
+           family={Edwards},
+           familyi={E\bibinitperiod},
+           given={Ward},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{390620fde4c9d2cd8200a1203b6085aa}
+      \strng{fullhash}{d460dc5b1fd734fac70a3bdcc13a46f2}
+      \strng{bibnamehash}{d460dc5b1fd734fac70a3bdcc13a46f2}
+      \strng{authorbibnamehash}{d460dc5b1fd734fac70a3bdcc13a46f2}
+      \strng{authornamehash}{390620fde4c9d2cd8200a1203b6085aa}
+      \strng{authorfullhash}{d460dc5b1fd734fac70a3bdcc13a46f2}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Organizational Behavior and Human Performance}
+      \field{number}{1}
+      \field{title}{Preference modeling with ordinal data}
+      \field{volume}{28}
+      \field{year}{1981}
+      \field{pages}{62\bibrangedash 81}
+      \range{pages}{20}
+    \endentry
     \entry{wang_achieving_2019}{inproceedings}{}
       \name{author}{4}{}{%
         {{un=0,uniquepart=base,hash=29d73b73b328530ce54e9af1c6311a76}{%
@@ -1243,14 +1184,86 @@
       \endverb
       \keyw{Deep learning,Opponent modeling,Reinforcement learning,Multi agent systems,Social dilemmas,Multi-agent reinforcement learning,Atomic actions,Cooperation degree,Detection networks,Fruits,Multiagent reinforcement learning approach,Mutual Cooperation}
     \endentry
+    \entry{zhu_negative_2018}{misc}{}
+      \name{author}{4}{}{%
+        {{un=1,uniquepart=given,hash=3bd1f9055cbba5d1e536fac32698af67}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Donglai},
+           giveni={D\bibinitperiod},
+           givenun=1}}%
+        {{un=0,uniquepart=base,hash=f17d6b9c135febd7ab6a3e84ebbbe23e}{%
+           family={Yao},
+           familyi={Y\bibinitperiod},
+           given={Hengshuai},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=215a6337e44399811a195bf368926c0b}{%
+           family={Jiang},
+           familyi={J\bibinitperiod},
+           given={Bei},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c476255801262401399b7c2ef207ff07}{%
+           family={Yu},
+           familyi={Y\bibinitperiod},
+           given={Peng},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {arXiv}%
+      }
+      \strng{namehash}{b054571a147f9d21fb1e1995ca5e87dc}
+      \strng{fullhash}{0a268f74df298665d897916e55280da4}
+      \strng{bibnamehash}{0a268f74df298665d897916e55280da4}
+      \strng{authorbibnamehash}{0a268f74df298665d897916e55280da4}
+      \strng{authornamehash}{b054571a147f9d21fb1e1995ca5e87dc}
+      \strng{authorfullhash}{0a268f74df298665d897916e55280da4}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In deep neural network, the cross-entropy loss function is commonly used for classification. Minimizing crossentropy is equivalent to maximizing likelihood under assumptions of uniform feature and class distributions. It belongs to generative training criteria which does not directly discriminate correct class from competing classes. We propose a discriminative loss function with negative log likelihood ratio between correct and competing classes. It significantly outperforms the cross-entropy loss on the {CIFAR}-10 image classification task.}
+      \field{day}{27}
+      \field{eprinttype}{arxiv}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{number}{{arXiv}:1804.10690}
+      \field{title}{Negative Log Likelihood Ratio Loss for Deep Neural Network Classification}
+      \field{urlday}{27}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.1804.10690
+      \endverb
+      \verb{eprint}
+      \verb 1804.10690 [cs]
+      \endverb
+      \verb{file}
+      \verb PDF:/home/paqh/Zotero/storage/WU9IBWBN/Zhu et al. - 2018 - Negative Log Likelihood Ratio Loss for Deep Neural Network Classification.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1804.10690
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1804.10690
+      \endverb
+      \keyw{Computer Science - Machine Learning,Statistics - Machine Learning}
+    \endentry
     \entry{zhu_evolutionary_2025}{inproceedings}{}
       \name{author}{3}{}{%
-        {{un=0,uniquepart=base,hash=2575ab10863fd0da6380e95fe7313bb2}{%
+        {{un=1,uniquepart=given,hash=2575ab10863fd0da6380e95fe7313bb2}{%
            family={Zhu},
            familyi={Z\bibinitperiod},
            given={Lei},
            giveni={L\bibinitperiod},
-           givenun=0}}%
+           givenun=1}}%
         {{un=0,uniquepart=base,hash=4661f09e00d8896b88d3fd0c8ae882d6}{%
            family={Zhu},
            familyi={Z\bibinitperiod},

@@ -21,6 +21,7 @@
 \usepackage{graphicx}
 \usepackage{multirow}
 \usepackage[table,xcdraw]{xcolor}
+\usepackage{threeparttable} % letakkan di preamble
 
 \usepackage{hyperref}
 \usepackage{tabularx}
@@ -421,43 +422,43 @@ uniquelist=false
 %------------------------------------------------------------
 %Define titlepage in Indonesian
 %------------------------------------------------------------
-\def\titlepageind{%
-  \thispagestyle{empty}% suppress any headline
-  \pagenumbering{roman}
-  \setcounter{page}{1}
-    \begin{center}
-      \begin{singlespace}
-      \MakeUppercase{\normalfont\bfseries Skripsi}\\
-      \vspace{1.5cm}
-      \MakeUppercase{\normalfont\bfseries\@titleind}\par\nobreak
-      \vspace{1.0cm}
-      \MakeUppercase{\normalfont\slshape\bfseries\@titleeng}\par\nobreak
-      \vspace{1.5cm}
-       \if@msthesis%
-        {\normalfont Diajukan untuk memenuhi salah satu syarat memperoleh derajat\\
-         Sarjana Sains \@program{}}\\
-       \else
-        {\normalfont Usulan Penelitian}\\
-       \fi
-       \vfill
-       \includegraphics[width=180px]{Images/logougm}
-       \vfill
-       {\normalfont
-        \@fullname\\
-        \@idnum}\\
-       \vspace{1.5cm}
-       {\normalfont
-         \MakeUppercase{\normalfont\bfseries Program Studi \@program}\\
-         \MakeUppercase{\normalfont\bfseries Jurusan \@dept}\\
-         \MakeUppercase{\normalfont\bfseries\@faculty}\\
-         \MakeUppercase{\normalfont\bfseries\@university}\\
-         \MakeUppercase{\normalfont\bfseries\@city}\\
-         \vspace{0.5cm}
-         {\normalfont\bfseries\@yearsubmit}}\\
-      \end{singlespace}
-      \end{center}
-\addcontentsline{toc}{chapter}{Halaman Judul}
-}
+% \def\titlepageind{%
+%   \thispagestyle{empty}% suppress any headline
+%   \pagenumbering{roman}
+%   \setcounter{page}{1}
+%     \begin{center}
+%       \begin{singlespace}
+%       \MakeUppercase{\normalfont\bfseries Skripsi}\\
+%       \vspace{1.5cm}
+%       \MakeUppercase{\normalfont\bfseries\@titleind}\par\nobreak
+%       \vspace{1.0cm}
+%       \MakeUppercase{\normalfont\slshape\bfseries\@titleeng}\par\nobreak
+%       \vspace{1.5cm}
+%        \if@msthesis%
+%         {\normalfont Diajukan untuk memenuhi salah satu syarat memperoleh derajat\\
+%          Sarjana Sains \@program{}}\\
+%        \else
+%         {\normalfont Usulan Penelitian}\\
+%        \fi
+%        \vfill
+%        \includegraphics[width=180px]{Images/logougm}
+%        \vfill
+%        {\normalfont
+%         \@fullname\\
+%         \@idnum}\\
+%        \vspace{1.5cm}
+%        {\normalfont
+%          \MakeUppercase{\normalfont\bfseries Program Studi \@program}\\
+%          \MakeUppercase{\normalfont\bfseries Jurusan \@dept}\\
+%          \MakeUppercase{\normalfont\bfseries\@faculty}\\
+%          \MakeUppercase{\normalfont\bfseries\@university}\\
+%          \MakeUppercase{\normalfont\bfseries\@city}\\
+%          \vspace{0.5cm}
+%          {\normalfont\bfseries\@yearsubmit}}\\
+%       \end{singlespace}
+%       \end{center}
+% \addcontentsline{toc}{chapter}{Halaman Judul}
+% }
 
 % %------------------------------------------------------------
 % %Format proposal 
@@ -495,88 +496,88 @@ uniquelist=false
 %------------------------------------------------------------
 %Format proposal 
 %------------------------------------------------------------
-\def\agreementpage{
-  \clearpage\newpage
-  \thispagestyle{empty}
-  \begin{center}
-  \begin{singlespace}
-  \MakeUppercase{\normalfont\large\bfseries\expandafter{Halaman Persetujuan}}\\
-  \vspace{1.0cm}
-  \MakeUppercase{\normalfont\large\bfseries\expandafter{Proposal Skripsi}}\\
-  \vspace{0.5cm}
-    \MakeUppercase{\normalfont\bfseries\@titleind}\par\nobreak
-  \vspace{1.0cm}
-  Diusulkan oleh :
-  \vspace{1.5cm}\\
-  \textbf{\@fullname}
-  \vspace{0.5cm}\\
-  \textbf{\@idnum}
-  \vspace{1.5cm}\\
-  Telah disetujui pada
-  \vspace{0.5cm}\\
-  tanggal
-  \@agreedate
-  \vspace{1.5cm}\\
-  \underline{\@firstsupervisor}\\
-  Pembimbing
+% \def\agreementpage{
+%   \clearpage\newpage
+%   \thispagestyle{empty}
+%   \begin{center}
+%   \begin{singlespace}
+%   \MakeUppercase{\normalfont\large\bfseries\expandafter{Halaman Persetujuan}}\\
+%   \vspace{1.0cm}
+%   \MakeUppercase{\normalfont\large\bfseries\expandafter{Proposal Skripsi}}\\
+%   \vspace{0.5cm}
+%     \MakeUppercase{\normalfont\bfseries\@titleind}\par\nobreak
+%   \vspace{1.0cm}
+%   Diusulkan oleh :
+%   \vspace{1.5cm}\\
+%   \textbf{\@fullname}
+%   \vspace{0.5cm}\\
+%   \textbf{\@idnum}
+%   \vspace{1.5cm}\\
+%   Telah disetujui pada
+%   \vspace{0.5cm}\\
+%   tanggal
+%   \@agreedate
+%   \vspace{1.5cm}\\
+%   \underline{\@firstsupervisor}\\
+%   Pembimbing
 
 
-  \end{singlespace}
-  \end{center}
-  \addcontentsline{toc}{chapter}{HALAMAN PERSETUJUAN}
-}
+%   \end{singlespace}
+%   \end{center}
+%   \addcontentsline{toc}{chapter}{HALAMAN PERSETUJUAN}
+% }
 
-%------------------------------------------------------------
-%Approval Page
-%------------------------------------------------------------
-\def\approvalpage{%
-  \newpage\thispagestyle{empty}%
-  \begin{center}
-  \begin{singlespace}
-  \MakeUppercase{\normalfont\large\bfseries\expandafter{Halaman Pengesahan}}\\
-  \vspace{1.0cm}
-  \MakeUppercase{\normalfont\large\bfseries\expandafter{Usulan Penelitian S1}}\\
-  \vspace{0.5cm}
-      \MakeUppercase{\normalfont\bfseries\@titleind}\par\nobreak
-  \vspace{1.0cm}
-Telah dipersiapkan dan disusun oleh\\
-\vspace{0.5cm}
-\@fullname\\
-\@idnum\\
-\vspace{1.0cm}
-Telah dipertahankan di depan Tim Penguji\\
-pada tanggal \expandafter{\@examdate}\\
-\vspace{0.5cm}
-Susunan Tim Penguji\\
-\vspace{2.2cm}
-\begin{tabular}{p{8cm}p{6cm}}
-\@firstsupervisor&\@firstexaminer\\
-Pembimbing&Ketua Penguji
-\end{tabular}
+% %------------------------------------------------------------
+% %Approval Page
+% %------------------------------------------------------------
+% \def\approvalpage{%
+%   \newpage\thispagestyle{empty}%
+%   \begin{center}
+%   \begin{singlespace}
+%   \MakeUppercase{\normalfont\large\bfseries\expandafter{Halaman Pengesahan}}\\
+%   \vspace{1.0cm}
+%   \MakeUppercase{\normalfont\large\bfseries\expandafter{Usulan Penelitian S1}}\\
+%   \vspace{0.5cm}
+%       \MakeUppercase{\normalfont\bfseries\@titleind}\par\nobreak
+%   \vspace{1.0cm}
+% Telah dipersiapkan dan disusun oleh\\
+% \vspace{0.5cm}
+% \@fullname\\
+% \@idnum\\
+% \vspace{1.0cm}
+% Telah dipertahankan di depan Tim Penguji\\
+% pada tanggal \expandafter{\@examdate}\\
+% \vspace{0.5cm}
+% Susunan Tim Penguji\\
+% \vspace{2.2cm}
+% \begin{tabular}{p{8cm}p{6cm}}
+% \@firstsupervisor&\@firstexaminer\\
+% Pembimbing&Ketua Penguji
+% \end{tabular}
 
-\vspace{2.0cm}
-\begin{tabular}{p{8cm}p{6cm}}
-\@secondsupervisor&\@secondexaminer\\
-&Anggota Penguji
-\end{tabular}
+% \vspace{2.0cm}
+% \begin{tabular}{p{8cm}p{6cm}}
+% \@secondsupervisor&\@secondexaminer\\
+% &Anggota Penguji
+% \end{tabular}
 
-\bigskip
-\vspace{2.0cm}
-\begin{tabular}{p{8cm}p{6cm}}
-&\@thirdexaminer\\
-&
-\end{tabular}
-    \end{singlespace}
-    \end{center}
-\addcontentsline{toc}{chapter}{HALAMAN PENGESAHAN}
-}
+% \bigskip
+% \vspace{2.0cm}
+% \begin{tabular}{p{8cm}p{6cm}}
+% &\@thirdexaminer\\
+% &
+% \end{tabular}
+%     \end{singlespace}
+%     \end{center}
+% \addcontentsline{toc}{chapter}{HALAMAN PENGESAHAN}
+% }
 
-%signed
-\def\approvalpagesigned{
-  \setboolean{@twoside}{false}
-  \includepdf[pages=-, offset=75 -75]{PROPOSAL/a.pdf} % todo : change later
-  \addcontentsline{toc}{chapter}{HALAMAN PENGESAHAN}
-}
+% %signed
+% \def\approvalpagesigned{
+%   \setboolean{@twoside}{false}
+%   \includepdf[pages=-, offset=75 -75]{PROPOSAL/a.pdf} % todo : change later
+%   \addcontentsline{toc}{chapter}{HALAMAN PENGESAHAN}
+% }
 
 %------------------------------------------------------------
 %Declare Page
