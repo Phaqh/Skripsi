@@ -35,61 +35,61 @@
 \contentsline {subsection}{\numberline {3.7.1}Peramalan Rekursif dan Simulasi Monte Carlo (Horizon Tetap)}{24}{subsection.3.7.1}%
 \contentsline {subsection}{\numberline {3.7.2}Teacher Forcing}{26}{subsection.3.7.2}%
 \contentsline {subsection}{\numberline {3.7.3}Fungsi Objektif Negative Log-Likelihood}{27}{subsection.3.7.3}%
-\contentsline {subsection}{\numberline {3.7.4}Rank Order Centroid (ROC)}{28}{subsection.3.7.4}%
+\contentsline {subsection}{\numberline {3.7.4}Rank Order Centroid (ROC)}{29}{subsection.3.7.4}%
 \contentsline {chapter}{\numberline {IV}ANALISIS DAN PERANCANGAN}{30}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Deskripsi Umum}{30}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Formulasi Masalah}{30}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Rancangan Algoritma Metode}{31}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Gambaran Umum}{31}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}Spesifikasi Lingkungan Simulasi IPD}{32}{subsection.4.3.2}%
-\contentsline {subsubsection}{Konfigurasi Permainan}{32}{section*.21}%
-\contentsline {subsubsection}{Antarmuka Permainan}{33}{section*.22}%
-\contentsline {subsubsection}{Representasi Riwayat Interaksi}{33}{section*.24}%
+\contentsline {subsubsection}{Konfigurasi Permainan}{32}{section*.22}%
+\contentsline {subsubsection}{Antarmuka Permainan}{33}{section*.23}%
+\contentsline {subsubsection}{Representasi Riwayat Interaksi}{33}{section*.25}%
 \contentsline {subsection}{\numberline {4.3.3}Desain Populasi Strategi Lawan}{34}{subsection.4.3.3}%
 \contentsline {subsection}{\numberline {4.3.4}Prosedur dan Simulasi Generasi Data}{35}{subsection.4.3.4}%
 \contentsline {subsection}{\numberline {4.3.5}Representasi dan Persiapan Dataset}{37}{subsection.4.3.5}%
-\contentsline {subsubsection}{Representasi Dasar Aksi dan Strategi Lawan}{37}{section*.25}%
-\contentsline {subsubsection}{Padding Awal Sebelum Turn Pertama}{38}{section*.26}%
-\contentsline {subsubsection}{Augmentasi Simetri Peran}{39}{section*.27}%
-\contentsline {subsubsection}{Pembentukan Pasangan Input--Target}{39}{section*.28}%
-\contentsline {subsubsection}{Pengacakan dan Pembagian Data}{40}{section*.29}%
-\contentsline {subsubsection}{Implikasi terhadap Evaluasi Model}{40}{section*.30}%
+\contentsline {subsubsection}{Representasi Dasar Aksi dan Strategi Lawan}{37}{section*.26}%
+\contentsline {subsubsection}{Padding Awal Sebelum Turn Pertama}{38}{section*.27}%
+\contentsline {subsubsection}{Augmentasi Simetri Peran}{39}{section*.28}%
+\contentsline {subsubsection}{Pembentukan Pasangan Input--Target}{39}{section*.29}%
+\contentsline {subsubsection}{Pengacakan dan Pembagian Data}{40}{section*.30}%
+\contentsline {subsubsection}{Implikasi terhadap Evaluasi Model}{40}{section*.31}%
 \contentsline {subsection}{\numberline {4.3.6}Perancangan Model Prediksi Lawan}{40}{subsection.4.3.6}%
-\contentsline {subsubsection}{Model Satu Langkah}{41}{section*.31}%
-\contentsline {subsubsection}{Model Multi Langkah}{41}{section*.32}%
-\contentsline {subsubsection}{Perbedaan Konseptual Kedua Model}{42}{section*.33}%
-\contentsline {subsubsection}{Evaluasi Generalisasi}{42}{section*.34}%
+\contentsline {subsubsection}{Model Satu Langkah}{41}{section*.32}%
+\contentsline {subsubsection}{Model Multi Langkah}{41}{section*.33}%
+\contentsline {subsubsection}{Perbedaan Konseptual Kedua Model}{42}{section*.34}%
+\contentsline {subsubsection}{Evaluasi Generalisasi}{42}{section*.35}%
 \contentsline {subsection}{\numberline {4.3.7}Protokol Pelatihan}{42}{subsection.4.3.7}%
-\contentsline {subsubsection}{Pelatihan Satu Langkah}{42}{section*.35}%
-\contentsline {subsubsection}{Pelatihan Multi Langkah}{43}{section*.36}%
-\contentsline {subsubsection}{Fungsi Loss Multi Langkah}{43}{section*.37}%
-\contentsline {subparagraph}{Skema Pembobotan Rank Order Centroid (ROC)}{43}{section*.38}%
-\contentsline {subsubsection}{Konfigurasi Eksperimen}{44}{section*.39}%
-\contentsline {subsubsection}{Evaluasi Closed-Loop}{44}{section*.40}%
+\contentsline {subsubsection}{Pelatihan Satu Langkah}{42}{section*.36}%
+\contentsline {subsubsection}{Pelatihan Multi Langkah}{43}{section*.37}%
+\contentsline {subsubsection}{Fungsi Loss Multi Langkah}{43}{section*.38}%
+\contentsline {subparagraph}{Skema Pembobotan Rank Order Centroid (ROC)}{43}{section*.39}%
+\contentsline {subsubsection}{Konfigurasi Eksperimen}{44}{section*.40}%
+\contentsline {subsubsection}{Evaluasi Closed-Loop}{44}{section*.41}%
 \contentsline {subsection}{\numberline {4.3.8}Protokol Pelatihan}{44}{subsection.4.3.8}%
-\contentsline {subsubsection}{Pelatihan Satu Langkah}{45}{section*.41}%
-\contentsline {subsubsection}{Pelatihan Multi Langkah}{45}{section*.42}%
-\contentsline {subsubsection}{Fungsi Loss Multi Langkah}{45}{section*.43}%
-\contentsline {subparagraph}{Skema Pembobotan Rank Order Centroid (ROC)}{45}{section*.44}%
-\contentsline {subsubsection}{Konfigurasi Eksperimen}{46}{section*.45}%
-\contentsline {subsubsection}{Evaluasi Closed-Loop}{46}{section*.46}%
+\contentsline {subsubsection}{Pelatihan Satu Langkah}{45}{section*.42}%
+\contentsline {subsubsection}{Pelatihan Multi Langkah}{45}{section*.43}%
+\contentsline {subsubsection}{Fungsi Loss Multi Langkah}{45}{section*.44}%
+\contentsline {subparagraph}{Skema Pembobotan Rank Order Centroid (ROC)}{45}{section*.45}%
+\contentsline {subsubsection}{Konfigurasi Eksperimen}{46}{section*.46}%
+\contentsline {subsubsection}{Evaluasi Closed-Loop}{46}{section*.47}%
 \contentsline {subsection}{\numberline {4.3.9}Protokol Validasi}{47}{subsection.4.3.9}%
-\contentsline {subsubsection}{Konfigurasi Default}{48}{section*.47}%
-\contentsline {subsubsection}{Tahap 1: Tuning Stabilitas Optimisasi}{48}{section*.48}%
-\contentsline {subsubsection}{Tahap 2: Tuning Temporal Modelling}{48}{section*.49}%
-\contentsline {subsubsection}{Tahap 3: Tuning Kapasitas Model}{49}{section*.50}%
-\contentsline {subsubsection}{Tahap 4: Tuning Fungsi Loss dan Skema Pembobotan}{49}{section*.51}%
+\contentsline {subsubsection}{Konfigurasi Default}{48}{section*.48}%
+\contentsline {subsubsection}{Tahap 1: Tuning Stabilitas Optimisasi}{48}{section*.49}%
+\contentsline {subsubsection}{Tahap 2: Tuning Temporal Modelling}{48}{section*.50}%
+\contentsline {subsubsection}{Tahap 3: Tuning Kapasitas Model}{49}{section*.51}%
+\contentsline {subsubsection}{Tahap 4: Tuning Fungsi Loss dan Skema Pembobotan}{49}{section*.52}%
 \contentsline {subsection}{\numberline {4.3.10}Protokol Evaluasi}{50}{subsection.4.3.10}%
-\contentsline {subsubsection}{Evaluasi Terpasang (Coupled)}{50}{section*.52}%
-\contentsline {subsubsection}{Validasi dan Pengujian}{51}{section*.53}%
+\contentsline {subsubsection}{Evaluasi Terpasang (Coupled)}{50}{section*.53}%
+\contentsline {subsubsection}{Validasi dan Pengujian}{51}{section*.54}%
 \contentsline {subsection}{\numberline {4.3.11}Analisis Eksperimen}{51}{subsection.4.3.11}%
-\contentsline {subsubsection}{Sensitivitas terhadap Perubahan Fase Strategi}{51}{section*.54}%
-\contentsline {subsubsection}{Strategi Deterministik vs Adaptif}{51}{section*.55}%
-\contentsline {subsubsection}{Pelaporan Hasil}{52}{section*.56}%
+\contentsline {subsubsection}{Sensitivitas terhadap Perubahan Fase Strategi}{51}{section*.55}%
+\contentsline {subsubsection}{Strategi Deterministik vs Adaptif}{51}{section*.56}%
+\contentsline {subsubsection}{Pelaporan Hasil}{52}{section*.57}%
 \contentsline {chapter}{\numberline {V}JADWAL PENELITIAN}{53}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Jadwal Penelitian}{53}{section.5.1}%
 \contentsline {subsection}{\numberline {5.1.1}Rencana Waktu Pelaksanaan}{53}{subsection.5.1.1}%
 \contentsline {subsection}{\numberline {5.1.2}Dependensi dan Risiko}{54}{subsection.5.1.2}%
 \contentsline {chapter}{\numberline {VI}KESIMPULAN DAN SARAN}{56}{chapter.6}%
-\contentsline {chapter}{DAFTAR PUSTAKA}{57}{section*.58}%
-\contentsline {chapter}{LAMPIRAN}{60}{chapter*.60}%
+\contentsline {chapter}{DAFTAR PUSTAKA}{57}{section*.59}%
+\contentsline {chapter}{LAMPIRAN}{58}{chapter*.61}%

@@ -74,7 +74,7 @@ beberapa algoritma tersebut dapat dipahami melalui gambar \ref{fig:dfa} finite s
 \begin{figure}[!htbp]
     \centering
     \includegraphics[height=0.8\textheight]{Images/dfa.png}
-    \caption{Finite Automata untuk strategi IPD.}\label{fig:dfa}
+    \caption{Finite Automata untuk strategi IPD \cite{reiter_deterministic_strategies_2014}}\label{fig:dfa}
 \end{figure}
 
 
@@ -97,9 +97,9 @@ Secara formal, riwayat didefinisikan sebagai:
 h_t = \left( (a_i^1, a_{-i}^1), (a_i^2, a_{-i}^2), \dots, (a_i^t, a_{-i}^t) \right)
 \]
 
-dengan $a_i^k$ menyatakan aksi pemain $i$ pada waktu $k$, dan $a_{-i}^k$ menyatakan aksi lawan pada waktu yang sama (\cite{bonanno_game_2024}).
+dengan $a_i^k$ menyatakan aksi pemain $i$ pada waktu $k$, dan $a_{-i}^k$ menyatakan aksi lawan pada waktu yang sama.
 
-Dalam pengaturan iteratif, riwayat tidak tersedia secara sekaligus, melainkan terbentuk secara \textit{online}. Pada setiap putaran $t$, riwayat diperbarui secara inkremental sebagai:
+Dalam pengaturan iteratif, riwayat tidak tersedia secara sekaligus, melainkan terbentuk secara \textit{online} (\cite{bonanno_game_2024}). Pada setiap putaran $t$, riwayat diperbarui secara inkremental sebagai:
 
 \[
 h_t = (h_{t-1}, (a_i^t, a_{-i}^t))
@@ -118,19 +118,19 @@ Oleh karena itu, permasalahan strategis dalam IPD dengan agen adaptif berada dal
 
 \subsection{Informasi tidak lengkap dan Pembentukan kepercayaan}
 
-Dalam permainan dengan informasi tidak lengkap, ketidakpastian terhadap strategi lawan direpresentasikan melalui distribusi probabilitas atas kemungkinan tipe atau parameter strategi. Alih-alih mengasumsikan strategi tetap dan diketahui, agen memelihara suatu \textit{belief state} yang diperbarui seiring bertambahnya histori interaksi.
+Dalam permainan dengan informasi tidak lengkap, ketidakpastian terhadap strategi lawan direpresentasikan melalui distribusi probabilitas atas kemungkinan tipe atau parameter strategi. Alih-alih mengasumsikan strategi tetap dan diketahui, agen memelihara suatu state kepercayaan yang diperbarui seiring bertambahnya histori interaksi.
 
-Secara konseptual, belief state pada waktu $t$ dapat dituliskan sebagai:
+Secara konseptual, state kepercayaan pada waktu $t$ dapat dituliskan sebagai:
 \[
 b_t = P(\theta \mid h_t)
 \]
 dengan $\theta$ merepresentasikan representasi laten dari strategi lawan, dan $h_t$ adalah histori interaksi hingga waktu $t$.
 
-Formulasi ini menegaskan bahwa pengambilan keputusan dalam IPD adaptif bukan sekadar persoalan memilih aksi optimal terhadap strategi tetap, melainkan proses pembaruan belief secara sekuensial terhadap dinamika perilaku lawan. Dengan demikian, fokus analisis bergeser dari pencarian equilibrium statik menuju inferensi dinamis berbasis histori (\cite{bonanno_game_2024}).
+Formulasi ini menegaskan bahwa pengambilan keputusan dalam IPD adaptif bukan sekadar persoalan memilih aksi optimal terhadap strategi tetap, melainkan proses pembaruan kepercayaan secara sekuensial terhadap dinamika perilaku lawan. Dengan demikian, fokus analisis bergeser dari pencarian equilibrium statik menuju inferensi dinamis berbasis histori (\cite{bonanno_game_2024}).
 
 \section{Pemodelan Lawan}
 
-Pemodelan lawan atau \textit{pemodelan lawan} memungkinkan untuk mempelajari perilaku ataupun strategi lawan (\cite{shoham_multiagent_2009}). 
+Pemodelan lawan memungkinkan untuk mempelajari perilaku ataupun strategi lawan (\cite{shoham_multiagent_2009}). 
 
 Diberikan riwayat interaksi penuh:
 
@@ -146,7 +146,7 @@ Pendekatan regresi linear sederhana mampu memodelkan hubungan statik, namun memi
 
 \section{Long Short-Term Memory (LSTM)}
 
-Long Short-Term Memory (LSTM) merupakan pengembangan dari Recurrent Neural Network (RNN) yang dirancang untuk menangkap dependensi jangka panjang melalui mekanisme memori eksplisit (\cite{hochreiter_long_1997}). Dalam konteks \textit{pemodelan lawan}, LSTM digunakan untuk membangun representasi laten terhadap strategi lawan berdasarkan histori interaksi.
+Long Short-Term Memory (LSTM) merupakan pengembangan dari Recurrent Neural Network (RNN) yang dirancang untuk menangkap dependensi jangka panjang melalui mekanisme memori eksplisit (\cite{hochreiter_long_1997}). Dalam konteks pemodelan lawan, LSTM digunakan untuk membangun representasi laten terhadap strategi lawan berdasarkan histori interaksi.
 
 Diberikan input $x_t$ (observasi pada waktu $t$, misalnya aksi lawan), hidden state sebelumnya $h_{t-1}$ (representasi laten sebelumnya), dan parameter bobot $W$, $U$, serta bias $b$, setiap komponen LSTM bekerja secara berurutan sebagai berikut.
 
@@ -165,7 +165,7 @@ f_t = \sigma(W_f x_t + U_f h_{t-1} + b_f)
 
 \subsection{Input Gate}
 
-Input $x_t \in \mathbb{R}^d$ merepresentasikan observasi saat ini, sedangkan $h_{t-1} \in \mathbb{R}^h$ adalah ringkasan historis interaksi sebelumnya. Namun, tidak semua informasi baru relevan atau stabil untuk memperbarui belief terhadap strategi lawan. Oleh karena itu, input gate $i_t \in [0,1]^h$ mengontrol seberapa besar setiap dimensi informasi baru akan diterima ke dalam memori, dengan $\sigma(\cdot)$ sebagai fungsi sigmoid dan $W_i, U_i, b_i$ sebagai parameter yang dipelajari.
+Input $x_t \in \mathbb{R}^d$ merepresentasikan observasi saat ini, sedangkan $h_{t-1} \in \mathbb{R}^h$ adalah ringkasan historis interaksi sebelumnya. Namun, tidak semua informasi baru relevan atau stabil untuk memperbarui kepercayaan terhadap strategi lawan. Oleh karena itu, input gate $i_t \in [0,1]^h$ mengontrol seberapa besar setiap dimensi informasi baru akan diterima ke dalam memori, dengan $\sigma(\cdot)$ sebagai fungsi sigmoid dan $W_i, U_i, b_i$ sebagai parameter yang dipelajari.
 
 \begin{equation}
 i_t = \sigma(W_i x_t + U_i h_{t-1} + b_i)
@@ -182,7 +182,7 @@ Informasi mentah dari $x_t$ tidak langsung disimpan karena dapat mengandung nois
 
 \subsection{Cell State (Memori Jangka Panjang)}
 
-Cell state $c_t \in \mathbb{R}^h$ merupakan jalur utama propagasi informasi jangka panjang dalam LSTM yang berfungsi sebagai \textit{latent belief representation} terhadap strategi lawan. Namun, memori ini harus mampu menjaga stabilitas sekaligus tetap adaptif terhadap informasi baru. Oleh karena itu, pembaruannya dirumuskan sebagai:
+Cell state $c_t \in \mathbb{R}^h$ merupakan jalur utama propagasi informasi jangka panjang dalam LSTM yang berfungsi sebagai \textit{latent kepercayaan representation} terhadap strategi lawan. Namun, memori ini harus mampu menjaga stabilitas sekaligus tetap adaptif terhadap informasi baru. Oleh karena itu, pembaruannya dirumuskan sebagai:
 
 \begin{equation}
 c_t = f_t \odot c_{t-1} + i_t \odot \tilde{c}_t
@@ -276,7 +276,7 @@ dan nilai aksi merepresentasikan akumulasi payoff sepanjang jendela prediksi tet
 
 Dengan demikian, evaluasi aksi dilakukan melalui aproksimasi ekspektasi 
 atas distribusi lintasan terbatas, 
-yang sepenuhnya ditentukan oleh model belief dan horizon yang telah ditetapkan.
+yang sepenuhnya ditentukan oleh model kepercayaan dan horizon yang telah ditetapkan.
 
 \subsection{Teacher Forcing}
 
@@ -329,6 +329,13 @@ Teacher forcing mempercepat konvergensi
 dan menghasilkan estimasi gradien yang lebih stabil,
 karena distribusi input selama pelatihan
 sesuai dengan distribusi data observasi.
+
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Images/teacherForcing.png}
+    \caption{Teacher Forcing.}\label{fig:teacherForcing}
+\end{figure}
 
 Namun, pada fase inferensi (deployment),
 model tidak lagi memiliki akses ke ground-truth.
@@ -396,7 +403,7 @@ Negative Log-Likelihood untuk satu segmen horizon sepanjang $H$ kemudian didefin
 
 Nilai NLL yang lebih kecil menunjukkan bahwa model memberikan probabilitas yang lebih tinggi terhadap aksi aktual yang benar-benar terjadi. Karena NLL merupakan proper scoring rule, metrik ini tidak hanya mengevaluasi ketepatan klasifikasi, tetapi juga kualitas kalibrasi probabilitas yang dihasilkan model.
 
-Dalam konteks IPD dengan lawan adaptif, penggunaan NLL multi-step memungkinkan pengukuran efek \textit{compounding error} akibat prediksi rekursif. Jika distribusi prediksi menjadi semakin bias pada horizon yang lebih panjang, maka akumulasi log-loss akan meningkat secara signifikan, mencerminkan degradasi kualitas belief seiring waktu.
+Dalam konteks IPD dengan lawan adaptif, penggunaan NLL multi-step memungkinkan pengukuran efek \textit{compounding error} akibat prediksi rekursif. Jika distribusi prediksi menjadi semakin bias pada horizon yang lebih panjang, maka akumulasi log-loss akan meningkat secara signifikan, mencerminkan degradasi kualitas kepercayaan seiring waktu.
 
 \subsection{Rank Order Centroid (ROC)}
 
