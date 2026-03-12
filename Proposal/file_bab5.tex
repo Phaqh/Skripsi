@@ -1,37 +1,23 @@
 \section{Jadwal Penelitian}
 
 Penelitian ini direncanakan berlangsung selama dua bulan
-(8 minggu) dengan pembagian tahapan yang terstruktur sesuai
-dengan fokus utama penelitian, yaitu:
-
-\begin{enumerate}
-    \item Analisis stabilitas prediksi multi-langkah (multi-step forecasting)
-\end{enumerate}
-
-Penyusunan jadwal dilakukan berdasarkan dependensi antar
-komponen sistem, dimulai dari pembangunan lingkungan deterministik,
-implementasi model prediktif, hingga evaluasi stabilitas dan
-analisis perencanaan berbasis rollout.
-
-\subsection{Rencana Waktu Pelaksanaan}
-
-Rencana waktu pelaksanaan penelitian selama enam bulan
-ditunjukkan pada Tabel berikut.
+(8 minggu) dengan pembagian tahapan yang terstruktur Penyusunan jadwal dilakukan berdasarkan dependensi antar komponen sistem, dimulai dari pembangunan lingkungan deterministik, implementasi model prediktif, hingga evaluasi stabilitas dan
+analisis perencanaan berbasis rollout. Jadwal rinci disajikan dalam bentuk \textit{Gantt chart} pada Tabel~\ref{tab:gantt_chart}.
 
 \begin{table}[H]
 \centering
-\caption{Rencana Jadwal Penelitian (2 Bulan / 8 Minggu)}
+\caption{Rencana Jadwal Penelitian (2 Bulan / 8 Minggu)}\label{tab:gantt_chart}
 \begin{tabular}{|p{5.8cm}|c|c|c|c|c|c|c|c|}
 \toprule
 \textbf{Kegiatan} & \textbf{M1} & \textbf{M2} & \textbf{M3} & \textbf{M4} & \textbf{M5} & \textbf{M6} & \textbf{M7} & \textbf{M8} \\
 \midrule
 Spesifikasi lingkungan IPD & \checkmark & \checkmark & & & & & & \\
 \midrule
-Desain Populasi Strategi Lawan & \checkmark & \checkmark & & & & & & \\
+Desain Populasi Strategi Lawan & & \checkmark & & & & & & \\
 \midrule
 Prosedur simulasi dan generasi data & & \checkmark & \checkmark & & & & & \\
 \midrule
-Representasi dan persiapan dataset & & & \checkmark & \checkmark & & & & \\
+Representasi dan persiapan dataset & & & \checkmark & & & & & \\
 \midrule
 Perancangan model prediksi (arsitektur) & & & \checkmark & \checkmark & & & & \\
 \midrule
@@ -48,24 +34,3 @@ Penulisan dan revisi laporan & \checkmark & \checkmark & \checkmark & \checkmark
 \end{tabular}
 \end{table}
 
-\subsection{Dependensi dan Risiko}
-
-Beberapa dependensi penting dalam penelitian ini:
-
-\begin{itemize}
-    \item Implementasi rollout planning bergantung pada stabilitas model prediktif pada evaluasi open-loop.
-    \item Evaluasi closed-loop tidak dapat dilakukan sebelum estimator nilai $\hat{Q}$ tervalidasi.
-    \item Studi ablasi dilakukan setelah konfigurasi utama sistem stabil.
-\end{itemize}
-
-Risiko utama penelitian meliputi:
-
-\begin{itemize}
-    \item Akumulasi error prediksi pada horizon panjang
-    \item Kompleksitas komputasi akibat $\mathcal{O}(N \cdot n \cdot k \cdot M)$
-    \item Ketidakstabilan model pada lawan non-stasioner
-\end{itemize}
-
-Strategi mitigasi meliputi pengujian bertahap (offline → open-loop → closed-loop),
-monitoring konvergensi estimator, serta pembatasan parameter eksperimen
-untuk menjaga efisiensi komputasi.

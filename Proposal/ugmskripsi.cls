@@ -6,7 +6,7 @@
 
 \LoadClass[a4paper,12pt]{report}
 
-\usepackage[provide=*,english,indonesian]{babel}
+\usepackage[provide=*,indonesian,english]{babel}
 \RequirePackage{indentfirst}
 \RequirePackage{setspace}
 \RequirePackage[T1]{fontenc}
@@ -91,7 +91,9 @@ citestyle=authoryear,
 firstinits=true,
 maxbibnames=99,
 maxcitenames=2,
-uniquelist=false
+uniquelist=false,
+language=auto,
+uniquename=init
 ]{biblatex}
 \addbibresource{referensi.bib}
 
@@ -318,8 +320,8 @@ uniquelist=false
 \newcommand{\@idnum}{}
 \newcommand{\examdate}[1]{\gdef\@examdate{#1}}
 \newcommand{\@examdate}{\number\day~\ifcase\month\or
-    Januari\or Pebruari\or Maret\or April\or Mei\or Juni\or
-    Juli\or Agustus\or September\or Oktober\or Nopember\or Desember\fi
+    Januari\or Februari\or Maret\or April\or Mei\or Juni\or
+    Juli\or Agustus\or September\or Oktober\or November\or Desember\fi
     \space \number\year}
 \newcommand{\degree}[1]{\gdef\@degree{#1}}
 \newcommand{\@degree}{}
@@ -347,8 +349,8 @@ uniquelist=false
 %------------------------------------------------------------
 \newcommand{\agreedate}[1]{\gdef\@agreedate{#1}}
 \newcommand{\@agreedate}{\number\day~\ifcase\month\or
-    Januari\or Pebruari\or Maret\or April\or Mei\or Juni\or
-    Juli\or Agustus\or September\or Oktober\or Nopember\or Desember\fi
+    Januari\or Februari\or Maret\or April\or Mei\or Juni\or
+    Juli\or Agustus\or September\or Oktober\or November\or Desember\fi
     \space \number\year}
     
 %------------------------------------------------------------
@@ -708,6 +710,7 @@ dalam naskah ini dan disebutkan dalam daftar pustaka.
 \AtBeginDocument{%
 \if@langindo%
 \selectlanguage{indonesian}%
+\setquotestyle{english} % biar kutipan pakai tanda petik bahasa Inggris
 \else
 \selectlanguage{english}%
 \fi

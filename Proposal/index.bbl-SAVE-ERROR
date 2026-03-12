@@ -19,6 +19,35 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global}
+    \entry{albrecht_autonomous_2024}{book}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=9da4f3f413d514d731efe34067976909}{%
+           family={Albrecht},
+           familyi={A\bibinitperiod},
+           given={Stefano\bibnamedelima V.},
+           giveni={S\bibinitperiod\bibinitdelim V\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {MIT Press}%
+      }
+      \strng{namehash}{2399b7bc1ddbf337ba5d505312bf70c2}
+      \strng{fullhash}{2399b7bc1ddbf337ba5d505312bf70c2}
+      \strng{bibnamehash}{2399b7bc1ddbf337ba5d505312bf70c2}
+      \strng{authorbibnamehash}{2399b7bc1ddbf337ba5d505312bf70c2}
+      \strng{authornamehash}{2399b7bc1ddbf337ba5d505312bf70c2}
+      \strng{authorfullhash}{2399b7bc1ddbf337ba5d505312bf70c2}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Autonomous Agents and Multiagent Systems}
+      \field{year}{2024}
+    \endentry
     \entry{axelrod_evolution_1981}{article}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=e46fddf6d412d66cae997840c9ba5f34}{%
@@ -441,6 +470,35 @@
       \verb https://www.sciencedirect.com/science/article/pii/S0004370225000268
       \endverb
       \keyw{Aggregative games,Cooperative {AI},Group productivity theory,Multiagent multi-armed bandits}
+    \endentry
+    \entry{hardin_tragedy_1968}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=e4ca7243ceeb4db20fa37fdf6dcabe27}{%
+           family={Hardin},
+           familyi={H\bibinitperiod},
+           given={Garrett},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{e4ca7243ceeb4db20fa37fdf6dcabe27}
+      \strng{fullhash}{e4ca7243ceeb4db20fa37fdf6dcabe27}
+      \strng{bibnamehash}{e4ca7243ceeb4db20fa37fdf6dcabe27}
+      \strng{authorbibnamehash}{e4ca7243ceeb4db20fa37fdf6dcabe27}
+      \strng{authornamehash}{e4ca7243ceeb4db20fa37fdf6dcabe27}
+      \strng{authorfullhash}{e4ca7243ceeb4db20fa37fdf6dcabe27}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Science}
+      \field{number}{3859}
+      \field{title}{The tragedy of the commons}
+      \field{volume}{162}
+      \field{year}{1968}
+      \field{pages}{1243\bibrangedash 1248}
+      \range{pages}{6}
     \endentry
     \entry{hernandez-leal_survey_2019}{article}{}
       \name{author}{3}{}{%
@@ -876,62 +934,6 @@
       \verb PDF:/home/paqh/Zotero/storage/GK8TDDA8/Nashed and Zilberstein - A Survey on Opponent Modeling in Adversarial Domains.pdf:application/pdf
       \endverb
     \endentry
-    \entry{nisan_algorithmic_2008}{collection}{}
-      \name{editor}{4}{}{%
-        {{un=0,uniquepart=base,hash=dd03ed102537d5040adaf7ede9bad0ec}{%
-           family={Nisan},
-           familyi={N\bibinitperiod},
-           given={Noam},
-           giveni={N\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=efce6f6d496cdcc1bb07fb47dfecb3aa}{%
-           family={Roughgarden},
-           familyi={R\bibinitperiod},
-           given={Tim},
-           giveni={T\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=3b65c0aec42ebdc08432a6ece3a86584}{%
-           family={Tardos},
-           familyi={T\bibinitperiod},
-           given={Éva},
-           giveni={É\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=4391dea254c3bbcaff1fefed241caed0}{%
-           family={Vazirani},
-           familyi={V\bibinitperiod},
-           given={Vijay\bibnamedelima V.},
-           giveni={V\bibinitperiod\bibinitdelim V\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{location}{1}{%
-        {Cambridge}%
-      }
-      \list{publisher}{1}{%
-        {Cambridge Univ. Press}%
-      }
-      \strng{namehash}{a461b403bdb909ab1f593fcc8e04d108}
-      \strng{fullhash}{f3f9b9c1f783937a9e09835a23bf3b16}
-      \strng{bibnamehash}{f3f9b9c1f783937a9e09835a23bf3b16}
-      \strng{editorbibnamehash}{f3f9b9c1f783937a9e09835a23bf3b16}
-      \strng{editornamehash}{a461b403bdb909ab1f593fcc8e04d108}
-      \strng{editorfullhash}{f3f9b9c1f783937a9e09835a23bf3b16}
-      \field{sortinit}{N}
-      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{editor}
-      \field{labeltitlesource}{title}
-      \field{edition}{Repr., [Nachdr.]}
-      \field{isbn}{978-0-521-87282-9}
-      \field{langid}{english}
-      \field{pagetotal}{754}
-      \field{title}{Algorithmic game theory}
-      \field{year}{2008}
-      \field{dateera}{ce}
-      \verb{file}
-      \verb PDF:/home/paqh/Zotero/storage/E32E6JJY/Nisan et al. - 2008 - Algorithmic game theory.pdf:application/pdf
-      \endverb
-    \endentry
     \entry{perera_learning_2025}{article}{}
       \name{author}{3}{}{%
         {{un=0,uniquepart=base,hash=824fe3df7605deb4c1f5917feea275d0}{%
@@ -1053,6 +1055,59 @@
       \verb https://ieeexplore.ieee.org/document/10899996/
       \endverb
       \keyw{Artificial intelligence,Heuristic algorithms,Multi-agent systems,Robots,Games,Faces,Matrix Game,Online learning,Opponent modeling}
+    \endentry
+    \entry{reiter_deterministic_strategies_2014}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=efaa1da6ebe32c66da2140a6a6367362}{%
+           family={Reiter},
+           familyi={R\bibinitperiod},
+           given={Johannes},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{efaa1da6ebe32c66da2140a6a6367362}
+      \strng{fullhash}{efaa1da6ebe32c66da2140a6a6367362}
+      \strng{bibnamehash}{efaa1da6ebe32c66da2140a6a6367362}
+      \strng{authorbibnamehash}{efaa1da6ebe32c66da2140a6a6367362}
+      \strng{authornamehash}{efaa1da6ebe32c66da2140a6a6367362}
+      \strng{authorfullhash}{efaa1da6ebe32c66da2140a6a6367362}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.researchgate.net/figure/Deterministic-strategies-in-the-Prisoners-Dilemma-Each-automaton-defines-a-different_fig1_259354712}}
+      \field{note}{Figure published on ResearchGate. Accessed: 3 March 2026}
+      \field{title}{Deterministic Strategies in the Prisoner's Dilemma}
+      \field{year}{2014}
+    \endentry
+    \entry{roughgarden_selfish_2005}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=efce6f6d496cdcc1bb07fb47dfecb3aa}{%
+           family={Roughgarden},
+           familyi={R\bibinitperiod},
+           given={Tim},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {MIT Press}%
+      }
+      \strng{namehash}{efce6f6d496cdcc1bb07fb47dfecb3aa}
+      \strng{fullhash}{efce6f6d496cdcc1bb07fb47dfecb3aa}
+      \strng{bibnamehash}{efce6f6d496cdcc1bb07fb47dfecb3aa}
+      \strng{authorbibnamehash}{efce6f6d496cdcc1bb07fb47dfecb3aa}
+      \strng{authornamehash}{efce6f6d496cdcc1bb07fb47dfecb3aa}
+      \strng{authorfullhash}{efce6f6d496cdcc1bb07fb47dfecb3aa}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Selfish Routing and the Price of Anarchy}
+      \field{year}{2005}
     \endentry
     \entry{shoham_multiagent_2009}{article}{}
       \name{author}{1}{}{%

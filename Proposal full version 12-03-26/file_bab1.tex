@@ -1,0 +1,141 @@
+\section{Latar Belakang}
+
+Interaksi strategis berulang merupakan permasalahan fundamental dalam lingkungan sosial ataupun \textit{multi-agent reinforcement learning} (MARL) (\cite{hernandez-leal_survey_2019}). Dalam lingkungan multi-agen, setiap agen tidak hanya beradaptasi terhadap lingkungan, tetapi juga terhadap agen lain yang turut belajar. Kondisi ini menjadikan dinamika pembelajaran bersifat non-stasioner dan sangat bergantung pada pola interaksi historis.
+
+\textit{Iterated Prisoner's Dilemma} (IPD) merupakan kerangka klasik untuk menganalisis dinamika tersebut (\cite{axelrod_evolution_1981}). Dalam IPD, strategi tidak hanya ditentukan oleh aksi pada satu langkah, tetapi oleh pola respons yang berkembang sepanjang beberapa putaran. Banyak strategi deterministik maupun adaptif seperti \textit{Tit-for-Tat} dan variasinya memperlihatkan struktur perilaku yang baru terlihat dalam rentang beberapa langkah interaksi.
+
+Dalam literatur Pemodelan lawan, pendekatan yang umum digunakan adalah prediksi satu langkah ke depan (\textit{one-step prediction}). Model dilatih untuk meminimalkan kesalahan prediksi terhadap aksi lawan pada langkah berikutnya. Meskipun pendekatan ini konsisten dengan formulasi supervised learning standar, terdapat potensi ketidaksesuaian antara objektif pelatihan satu-langkah dan kebutuhan pengambilan keputusan dalam permainan berulang (\cite{nashed_survey_2022}).
+
+Dalam repeated games, keputusan agen pada waktu $t$ tidak hanya bergantung pada distribusi aksi lawan pada waktu $t-1$, tetapi juga pada konsekuensi strategis dalam beberapa langkah berikutnya (\cite{nashed_survey_2022}). Strategi tertentu mungkin tidak optimal secara satu-langkah, namun menguntungkan secara beberapa langkah. Dengan demikian, akurasi prediksi satu-langkah tidak selalu berbanding lurus dengan kualitas perencanaan strategis.
+
+Berdasarkan kondisi tersebut, terdapat kebutuhan untuk secara sistematis menganalisis hubungan antara horizon prediksi dan kualitas pengambilan keputusan dalam IPD. Secara khusus, penting untuk mengevaluasi apakah prediksi beberapa langkah jangka pendek ($h$-step forecasting) memberikan representasi strategi lawan yang lebih selaras dengan kebutuhan perencanaan dibandingkan prediksi satu-langkah.
+
+\section{Rumusan Masalah}
+Dalam permainan berulang seperti \textit{Iterated Prisoner's Dilemma}, interaksi antar-agen berlangsung secara sekuensial dan memiliki horizon yang panjang, sehingga keputusan pada suatu langkah dapat memengaruhi dinamika strategi pada langkah-langkah berikutnya. Dengan demikian, pemahaman terhadap pola perilaku lawan idealnya mempertimbangkan ketergantungan antar-langkah dalam trajektori interaksi.
+
+Namun demikian, dalam praktik pemodelan lawan, prediksi perilaku lawan sering diformulasikan sebagai prediksi satu-langkah (\textit{one-step prediction}) yang dioptimalkan berdasarkan kesalahan prediksi jangka pendek. Formulasi ini berfokus pada akurasi prediksi lokal pada setiap langkah, tanpa secara eksplisit mempertimbangkan konsistensi prediksi dalam horizon interaksi yang lebih panjang.
+
+Perbedaan antara sifat interaksi yang bersifat sekuensial dan objektif pembelajaran yang miopik tersebut menimbulkan potensi ketidaksesuaian antara kebutuhan perencanaan strategis dan mekanisme pembelajaran model lawan. Akibatnya, model berpotensi mengalami keterbatasan dalam merepresentasikan pola strategi yang bergantung pada beberapa langkah interaksi.
+
+\section{Batasan Penelitian}
+
+Agar ruang lingkup penelitian tetap terfokus dan implementasi eksperimental dapat dikendalikan, penelitian ini dibatasi pada beberapa aspek berikut:
+
+\begin{enumerate}
+    \item Lingkungan permainan yang digunakan adalah \textit{Iterated Prisoner's Dilemma} (IPD) dengan struktur \textit{payoff} standar serta interaksi berulang dalam horizon permainan yang tetap.
+
+    \item Lawan yang dimodelkan dibatasi pada strategi reaktif dan deterministik, seperti \textit{Tit-for-Tat} (TFT) dan \textit{Grim Trigger}.
+
+    \item Analisis difokuskan pada prediksi trajektori aksi lawan dalam horizon terbatas ($k$-step forecasting), tanpa membahas konvergensi jangka panjang maupun sifat asimtotik dari dinamika strategi.
+
+    \item Penelitian tidak melakukan inferensi terhadap struktur algoritmik internal lawan, melainkan memodelkan distribusi aksi lawan berdasarkan observasi historis dari interaksi yang terjadi.
+
+    \item Evaluasi difokuskan pada kinerja prediksi multi-langkah, khususnya hubungan antara akurasi prediksi pada berbagai langkah dalam horizon prediksi, tanpa merancang mekanisme eksplorasi strategi baru.
+
+    \item Agen yang digunakan dalam generasi data memiliki strategi yang sama, di mana pembaruan keputusan dilakukan berdasarkan prediksi perilaku lawan tanpa optimisasi eksplisit terhadap fungsi \textit{reward}. Konfigurasi ini digunakan secara konsisten pada tahap pelatihan maupun evaluasi.
+
+    \item Prediksi interaksi dibatasi pada skenario \textit{closed-loop}, yaitu kondisi di mana keputusan agen dan lawan saling memengaruhi selama interaksi berlangsung. Skenario \textit{open-loop}, di mana prediksi dilakukan secara independen dari dinamika interaksi aktual, tidak dipertimbangkan dalam penelitian ini.
+\end{enumerate}
+
+\section{Tujuan Penelitian}
+
+Penelitian ini bertujuan untuk:
+
+\begin{enumerate}
+    \item Menganalisis kesesuaian antara objektif prediksi satu-langkah (\textit{one-step prediction}) dan kebutuhan perencanaan strategis beberapa langkah dalam permainan berulang seperti IPD.
+
+    \item Mengembangkan dan mengimplementasikan mekanisme prediksi trajectory aksi lawan dalam horizon terbatas ($h$-step forecasting).
+
+    \item Mengevaluasi pengaruh panjang horizon prediksi ($h$) terhadap akurasi prediksi, propagasi kesalahan, dan perolehan payoff strategis.
+
+    \item Menganalisis pendekatan recursive forecasting dalam konteks stabilitas prediksi.
+\end{enumerate}
+
+\section{Manfaat Penelitian}
+
+Manfaat dan kontribusi yang diharapkan dari penelitian ini adalah sebagai berikut:
+
+\begin{enumerate}
+
+    \item Memberikan analisis konseptual mengenai perbedaan antara objektif prediksi satu-langkah (one-step prediction) dan prediksi beberapa langkah (multi-step trajectory forecasting) dalam konteks interaksi strategis berulang.
+
+    \item Menyediakan evaluasi sistematis mengenai pengaruh horizon prediksi ($h$) terhadap degradasi akurasi dalam skema \textit{closed-loop} forecasting.
+
+    \item Mengembangkan kerangka evaluasi berbasis likelihood yang memungkinkan perbandingan performa model secara lebih robust.
+
+    \item Menyediakan dasar eksperimental untuk memahami sejauh mana kualitas prediksi trajectory dalam repeated games, tanpa mengasumsikan optimalitas strategis.
+    
+\end{enumerate}
+
+\section{Sistematika Penelitian}
+
+\begin{enumerate}
+    \item Bab 1: Pendahuluan: Latar belakang, rumusan masalah, batasan, tujuan, manfaat, dan sistematika penelitian.
+    \item Bab 2: Tinjauan Pustaka: Kajian literatur terkait pemodelan lawan, IPD, dan pendekatan pembelajaran daring.
+    \item Bab 3: Landasan Teori: Formulasi masalah, definisi formal belief dan forecasting loss, serta arsitektur umum.
+    \item Bab 4: Metode Penelitian: Desain eksperimen, algoritma, dan prosedur evaluasi.
+    \item Bab 5: Jadwal Penelitian: gant chart, depedensi, dan risiko.
+    \item Bab 6: Kesimpulan dan Saran.
+\end{enumerate}
+
+\section{Inventaris Notasi}
+
+Tabel berikut merangkum notasi matematis yang digunakan dalam penelitian ini beserta deskripsinya.
+
+\begin{table}[h]
+\centering
+\caption{Inventaris Notasi Penelitian}
+\begin{tabular}{ll}
+\hline
+\textbf{Notasi} & \textbf{Deskripsi} \\
+\hline
+
+$n$ & indeks trajektori atau episode dalam dataset \\
+
+$t$ & indeks giliran permainan saat ini (current turn) \\
+
+$T$ & panjang total permainan dalam satu episode \\
+
+$H$ & panjang horizon prediksi multi-langkah \\
+
+$h$ & indeks langkah dalam horizon prediksi ($1 \le h \le H$) \\
+
+$x_t$ & vektor input LSTM pada waktu $t$ \\
+
+$h_t$ & hidden state LSTM pada waktu $t$ \\
+
+$W$ & matriks bobot pada layer linear output \\
+
+$b$ & bias pada layer linear output \\
+
+$a_t^{agent}$ & aksi agent pada waktu $t$ \\
+
+$a_t^{opp}$ & aksi lawan pada waktu $t$ \\
+
+$a_t^{agent,oracle}$ & aksi agent yang dihasilkan oleh oracle agent \\
+
+$\hat{y}_{n,t,h}$ & probabilitas prediksi aksi lawan pada trajektori $n$, turn $t$, dan langkah prediksi $h$ \\
+
+$\hat{a}_{t+h}^{opp}$ & aksi lawan hasil prediksi model pada langkah masa depan $t+h$ \\
+
+$y_{n,t,h}$ & label aksi lawan pada trajektori $n$, turn $t$, dan langkah prediksi $h$ \\
+
+$\mathcal{L}$ & fungsi loss total yang digunakan pada proses pelatihan \\
+
+$\mathcal{L}_h$ & komponen loss pada langkah prediksi ke-$h$ \\
+
+$w_h$ & bobot kontribusi loss pada langkah prediksi ke-$h$ \\
+
+$\text{Acc}_{t,h}$ & akurasi prediksi pada turn $t$ untuk langkah prediksi $h$ \\
+
+$\mathbf{1}(\cdot)$ & fungsi indikator bernilai 1 jika prediksi benar \\
+
+$R^{oracle}$ & reward kumulatif trajektori oracle \\
+
+$R^{pred}$ & reward kumulatif trajektori menggunakan prediksi model \\
+
+$\text{Regret}$ & dynamic regret antara trajektori oracle dan trajektori prediksi \\
+
+\hline
+\end{tabular}
+\end{table}

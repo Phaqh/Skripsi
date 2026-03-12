@@ -18,43 +18,15 @@ Penelitian ini mempertimbangkan skenario
 \textit{Iterated Prisoner's Dilemma} (IPD)
 dengan horizon tetap $T$.
 
-Pada setiap langkah waktu $t = 1, \dots, T$,
-agen dan lawan masing-masing memilih aksi:
-
-\[
-a_t^{agent}, a_t^{opp} \in \{C, D\}.
-\]
-
-Reward diperoleh berdasarkan matriks payoff standar IPD.
-
-Lawan diasumsikan dapat bersifat adaptif maupun non-stasioner,
-namun algoritma internalnya tidak diketahui.
-Lawan dapat berupa strategi tetap, strategi reaktif,
-atau strategi adapatif.
-
-Agen tidak memiliki akses terhadap parameter internal,
-fungsi utilitas, maupun mekanisme pembelajaran lawan.
-Satu-satunya informasi yang tersedia adalah riwayat interaksi:
-
-\[
-H_t = \{a_1^{agent}, a_1^{opp}, \dots, a_t^{agent}, a_t^{opp}\}.
-\]
-
-Tujuan agen adalah memilih aksi yang memaksimalkan
-reward kumulatif selama horizon $T$,
-dengan memanfaatkan modul pemodelan lawan
+Pada setiap langkah waktu $t = 1, \dots, T$, agen dan lawan masing-masing memilih aksi $a_t^{agent}, a_t^{opp} \in \{C, D\}$Reward diperoleh berdasarkan matriks payoff standar IPD. Reward diperoleh berdasarkan matriks payoff standar IPD. Lawan diasumsikan dapat bersifat adaptif maupun non-stasioner, namun algoritma internalnya tidak diketahui. Lawan dapat berupa strategi tetap, strategi reaktif,
+atau strategi adapatif. Agen tidak memiliki akses terhadap parameter internal, fungsi utilitas, maupun mekanisme pembelajaran lawan. Satu-satunya informasi yang tersedia adalah riwayat interaksi$ H_t = \{a_1^{agent}, a_1^{opp}, \dots, a_t^{agent}, a_t^{opp}\}$ Tujuan agen adalah memilih aksi yang memaksimalkan reward kumulatif selama panjang permainan $T$, dengan memanfaatkan modul pemodelan lawan
 yang dilatih secara terpisah dari sinyal reward.
 
-Model pemodelan lawan menghasilkan distribusi prediktif
-\[
-p(a_{t+1}^{opp} \mid H_t),
-\]
-yang kemudian digunakan dalam simulasi multi-langkah
-untuk mengestimasi nilai aksi kandidat agen.
+Model pemodelan lawan menghasilkan distribusi prediktif $p(a_{t+1}^{opp} \mid H_t)$ yang kemudian digunakan dalam simulasi multi-langkah untuk mengestimasi nilai aksi kandidat agen.
 
 \section{Rancangan Algoritma Metode}
 \subsection{Gambaran Umum}
-Algoritma yang digunakan dalam penelitian ini menggunakan LSTM dan Monte Carlo Simulation untuk memprediksi aksi lawan dalam horizon multi-langkah diperlihatkan pada gambar \ref{AlurBesar}.
+Algoritma yang digunakan dalam penelitian ini menggunakan LSTM untuk memprediksi aksi lawan dalam horizon multi-langkah diperlihatkan pada gambar \ref{fig:AlurBesar}.
 Metode dimulai dengan Spesifikasi lingkungan simulasi dengan konfigurasi permainan, antarmuka permainan serta representasi riwayat ynag digunakan. Selanjutnya, dilakukan desain populasi strategi lawan yang mencakup berbagai tipe strategi untuk memastikan keberagaman dinamika interaksi. Prosedur simulasi generasi data kemudian dijalankan untuk menghasilkan trajektori interaksi antara agen dan lawan berdasarkan konfigurasi yang telah ditetapkan. Trajektori yang dihasilkan kemudian diproses dalam tahap representasi dan persiapan dataset. 
 
 Setelah persiapan data selesai dilakukan perancangan model prediksi lawan menggunakan arsitektur LSTM untuk menangkap dependensi temporal dalam interaksi dilakukan pembentukan komponen LSTM seperti forget gate, input gate, dan output gate. Kemudian Model akan dikembangkan lebih lanjut agar dapat melakukan prediksi multi-langkah menggunakan konsep Monte Carlo Simulation secara recursive.
@@ -69,7 +41,7 @@ Kemudian dilakukan interpertasi dan Analisis dari data pengujian yang didapatkan
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=0.9\textwidth]{Images/Alur_besar.png}
+    \includegraphics[width=0.8\textwidth]{Images/Alur_besar.png}
     \caption{Rancangan Algoritma Metode.}\label{fig:AlurBesar}
 \end{figure}
 
@@ -88,36 +60,13 @@ Struktur payoff mengikuti formulasi klasik
 Prisoner's Dilemma dengan Nilai numerik yang digunakan sesuai pada~\ref{sec:PrisonersDilemma}
 Permainan dijalankan dengan horizon tetap sepanjang $T = 100$ langkah per episode. Penggunaan horizon tetap bertujuan untuk mengisolasi analisis stabilitas prediksi multi-langkah tanpa pengaruh terminasi stokastik. Kemudian diberikan Trembling Hand dengan probabilitas $\epsilon = 0.05$ untuk menghindari trajektori deterministik yang sepenuhnya dapat diprediksi, serta untuk menguji robustnes model terhadap deviasi lokal yang dapat menyebabkan propagasi error pada prediksi multi-langkah.
 
-\subsubsection{Antarmuka Permainan}
-Akan dibuat antarmuka permainan yang memungkinkan interaksi antara agen dan lawan dalam bentuk sekuens aksi. Antarmuka ini akan menyediakan fungsi untuk menjalankan episode permainan, merekam histori interaksi, dan mengembalikan reward kumulatif berdasarkan matriks payoff. Permainan ini akan menggunakan antarmuka FE dan BE dari repositori github (ref gitub ncase 2017) yang telah dimodifikasi untuk kebutuhan penelitian ini. 
-
-
-\begin{figure}[!htbp]
-    \centering
-    \includegraphics[width=0.5\textwidth]{Images/Trust.png}
-    \caption{Trust oleh Ncase 2017.}\label{fig:AlurBesar}
-\end{figure}
-
-\subsubsection{Representasi Riwayat Interaksi}
-Riwayat interaksi antara agen dan lawan direpresentasikan sebagai sekuens pasangan aksi sepanjang episode. Setiap langkah waktu $t$ menghasilkan pasangan aksi $(a_t^{agent}, a_t^{opp})$. Representasi ini memungkinkan model untuk menangkap pola interaksi temporal dan dependensi antar langkah waktu. Riwayat interaksi ini akan digunakan sebagai input untuk model prediksi lawan, yang kemudian menghasilkan distribusi prediktif atas aksi lawan pada langkah berikutnya. Serta ditambahkan variabel strategi agen dan lawan yang digunakan untuk mengidentifikasi strategi yang digunakan oleh agen dan lawan pada setiap langkah waktu. Variabel ini akan digunakan untuk mereproduksi trajectory langkah saat training, validasi, dan evaluasi model, untuk mengurangi bias yang mungkin muncul akibat perbedaan strategi yang digunakan oleh agen dan lawan pada saat training, validasi, dan evaluasi model. sebagai contoh jika menggunakan strategi tft saja akan bias terhadap pelatihan untuk model akan memodelkan interaksi dengan trajectory tft meskipun agent bukan tft.
-
 \subsection{Desain Populasi Strategi Lawan}\label{sec:PopulasiStrategi}
 
-Desain populasi strategi lawan dalam penelitian ini bertujuan untuk membentuk lingkungan interaksi yang heterogen, sehingga model prediksi diuji pada spektrum perilaku yang representatif terhadap dinamika Iterated Prisoner's Dilemma (IPD). Landasan konseptual mengenai karakteristik masing-masing strategi telah dijelaskan pada bagian~\ref{sec:IPD}, sehingga pada bagian ini difokuskan pada rasionalisasi desain eksperimental dan konfigurasi populasi.
+Desain populasi strategi lawan dalam penelitian ini bertujuan untuk membentuk lingkungan interaksi yang heterogen, sehingga model prediksi diuji pada spektrum perilaku yang representatif terhadap dinamika Iterated Prisoner's Dilemma (IPD). Landasan konseptual mengenai karakteristik masing-masing strategi telah dijelaskan pada sub-bab~\ref{sec:IPD}, sehingga pada bagian ini difokuskan pada rasionalisasi desain eksperimental dan konfigurasi populasi.
 
-Populasi lawan terdiri atas seluruh strategi pada bagian~\ref{sec:IPD} yang mencakup strategi deterministik berbasis memori (misalnya TFT, Grim Trigger), strategi adaptif berbasis pembelajaran daring (misalnya Hedge, OMD), serta strategi dengan pola siklik (misalnya Cycle). Keberagaman ini dirancang untuk menguji kemampuan model dalam menangkap berbagai dinamika interaksi, termasuk transisi rezim perilaku, pola siklik, dan adaptasi terhadap perubahan strategi lawan. Heterogenitas populasi dirancang untuk menguji tiga aspek utama model prediksi:
-
-\begin{enumerate}
-    \item \textbf{Kemampuan identifikasi rezim perilaku}, khususnya pada strategi dengan titik perubahan (misalnya Grim Trigger).
-    \item \textbf{Kemampuan memodelkan dependensi temporal lebih dari satu langkah}, terutama pada strategi yang menghasilkan pola siklik.
-    \item \textbf{Kemampuan menangani dinamika adaptif non-deterministik}, seperti pada Hedge dan OMD.
-\end{enumerate}
-
-Dengan komposisi ini, model tidak hanya diuji pada stabilitas jangka pendek (one-step prediction), tetapi juga pada konsistensi trajektori prediksi dalam horizon multi-langkah.
+Populasi lawan terdiri atas seluruh strategi pada sub-bab~\ref{sec:IPD} yang mencakup strategi deterministik berbasis memori (misalnya TFT, Grim Trigger), strategi adaptif berbasis pembelajaran daring (misalnya Hedge, OMD), serta strategi dengan pola siklik (misalnya Cycle). Keberagaman ini dirancang untuk menguji kemampuan model dalam menangkap berbagai dinamika interaksi, termasuk transisi rezim perilaku, pola siklik, dan adaptasi terhadap perubahan strategi lawan. 
 
 Setiap strategi dalam populasi diberikan proporsi yang seimbang pada tahap generasi data untuk menghindari bias distribusi kelas. Dalam setiap simulasi, lawan dipilih secara acak dari himpunan strategi dengan probabilitas seragam. Pendekatan ini memastikan bahwa performa model tidak dipengaruhi oleh dominasi strategi tertentu dalam dataset pelatihan maupun pengujian.
-
-Jika diperlukan, eksperimen tambahan dapat dilakukan dengan distribusi tidak seimbang untuk menguji robustnes model terhadap pergeseran distribusi populasi (distribution shift).
 
 \subsection{Prosedur dan Simulasi Generasi Data}
 
@@ -130,75 +79,15 @@ Misalkan $\mathcal{S}$ adalah himpunan strategi lawan yang digunakan
 dalam eksperimen. Untuk setiap strategi $s \in \mathcal{S}$,
 dilakukan simulasi sebanyak $R$ ronde independen.
 
-Setiap ronde ke-$r$ menghasilkan satu trajektori
-\[
-\tau^{(s,r)} =
-\Big(
-s,\,
-\{(a^{agent}_{1}, a^{opp}_{1}),
-(a^{agent}_{2}, a^{opp}_{2}),
-\dots,
-(a^{agent}_{T}, a^{opp}_{T})\}
-\Big),
-\]
-di mana strategi $s$ bersifat tetap sepanjang trajektori dan
-tidak berubah antar waktu.
-
-Keseluruhan dataset didefinisikan sebagai
-\[
-\mathcal{D}
-=
-\bigcup_{s \in \mathcal{S}}
-\bigcup_{r=1}^{R}
-\tau^{(s,r)}.
-\]
-
-Untuk setiap tipe strategi lawan, jumlah ronde $R$
-ditetapkan konstan guna menjaga keseimbangan distribusi data
-antar strategi serta memastikan stabilitas variasi trajektori
-yang diamati.
+Keseluruhan dataset didefinisikan dengan himpunan trajektori sebnayak $N = |\mathcal{S}| \times R$ yang mencakup seluruh kombinasi strategi dan ronde simulasi. Untuk setiap tipe strategi lawan, jumlah ronde $R$ ditetapkan konstan guna menjaga keseimbangan distribusi data antar strategi serta memastikan stabilitas variasi trajektori yang diamati.
 
 Untuk menghindari trajektori deterministik yang sepenuhnya dapat diprediksi, diterapkan mekanisme \textit{trembling hand} dengan probabilitas $\epsilon = 0.05$. Pada setiap langkah waktu, baik agent maupun lawan memiliki peluang sebesar 5\% untuk secara acak membalik aksi yang dipilih.
 
-Secara formal, jika aksi asli adalah $a_t$, maka aksi aktual yang dieksekusi $\tilde{a}_t$ didefinisikan sebagai:
-
-\[
-\tilde{a}_t =
-\begin{cases}
-a_t, & \text{dengan probabilitas } 1 - \epsilon, \\
-\text{flip}(a_t), & \text{dengan probabilitas } \epsilon.
-\end{cases}
-\]
-
-Penambahan noise ini memiliki dua fungsi utama:
+Secara formal, jika aksi asli adalah $a_t$, maka aksi aktual yang dieksekusi $\tilde{a}_t$ didefinisikan sebagai aksi sebaliknya. Penambahan noise ini memiliki dua fungsi utama:
 \begin{enumerate}
     \item Menghindari konvergensi deterministik sempurna pada strategi berbasis memori seperti TFT atau Grim Trigger.
     \item Menguji robustnes model terhadap deviasi lokal yang dapat menyebabkan propagasi error pada prediksi multi-langkah.
 \end{enumerate}
-
-Untuk setiap episode, seluruh pasangan aksi agent dan lawan pada setiap langkah waktu disimpan sebagai satu trajektori lengkap. Dataset akhir terdiri atas kumpulan trajektori:
-
-\[
-\mathcal{D} = \{\tau^{(1)}, \tau^{(2)}, \dots, \tau^{(N)}\},
-\]
-
-dengan setiap trajektori $\tau^{(i)}$ berupa urutan pasangan aksi sepanjang 100 langkah waktu.
-
-Struktur data ini memungkinkan pembentukan sampel pelatihan dalam bentuk:
-\begin{itemize}
-    \item Prediksi satu langkah ke depan,
-    \item Prediksi multi-langkah dengan horizon $k$,
-    \item Prediksi trajektori penuh berbasis conditioning pada histori parsial.
-\end{itemize}
-
-Karena data dihasilkan melalui interaksi berulang dalam horizon panjang dengan adanya noise, trajektori yang terbentuk mencerminkan kombinasi antara:
-\begin{itemize}
-    \item dinamika deterministik strategi,
-    \item transisi rezim akibat hukuman atau adaptasi,
-    \item deviasi stokastik akibat trembling hand.
-\end{itemize}
-
-Kombinasi ini penting untuk mengevaluasi fenomena akumulasi error pada prediksi multi-langkah serta menguji apakah model yang dioptimalkan untuk objektif satu langkah mampu mempertahankan konsistensi trajektori dalam horizon yang lebih panjang.
 
 \subsection{Representasi dan Persiapan Dataset}
 
@@ -217,136 +106,18 @@ adalah label strategi lawan, dengan
 \mathcal{S}_{opp} = \{S_1, S_2, \dots, S_K\}.
 \]
 
-Pada setiap langkah waktu $t$, interaksi direpresentasikan sebagai vektor dua dimensi:
-
-\[
-x_t =
-\begin{bmatrix}
-a_t^{agent} \\
-a_t^{opp}
-\end{bmatrix},
-\qquad
-a_t^{agent}, a_t^{opp} \in \{C, D\}.
-\]
-
-Untuk kebutuhan komputasional, aksi dikodekan dalam bentuk numerik biner, misalnya:
-\[
-C = 0, 
-\quad 
-D = 1.
-\]
-
-Satu episode sepanjang $T$ langkah direpresentasikan sebagai matriks:
-
-\[
-X = [x_1, x_2, \dots, x_T]^\top \in \mathbb{R}^{T \times 2}.
-\]
-
+Pada setiap langkah waktu $t$, interaksi direpresentasikan sebagai vektor dua dimensi yang memuat aksi agent dan aksi lawan. Untuk kebutuhan komputasional, aksi dikodekan dalam bentuk numerik biner, $C = 0, \quad D = 1$.
 Dengan demikian, setiap trajektori merupakan deret waktu dua kanal (\textit{two-channel time series}) yang memuat histori aksi kedua pemain.
-
-Jika strategi lawan digunakan sebagai fitur eksplisit dalam model, maka dilakukan transformasi one-hot:
-
-\[
-\phi(s^{opp}) \in \{0,1\}^K.
-\]
-
-Input pada setiap waktu $t$ menjadi:
-
-\[
-\tilde{x}_t =
-\begin{bmatrix}
-a_t^{agent} \\
-a_t^{opp} \\
-\phi(s^{opp})
-\end{bmatrix}.
-\]
-
-Dalam hal ini, satu episode direpresentasikan sebagai:
-
-\[
-\tilde{X} \in \mathbb{R}^{T \times (2 + K)}.
-\]
-
-Jika strategi tidak diberikan sebagai fitur, maka $s^{opp}$ tetap disimpan sebagai metadata untuk keperluan analisis, evaluasi per strategi, dan studi ablation, namun tidak dimasukkan ke dalam tensor input model.
-
-\subsubsection{Padding Awal Sebelum Turn Pertama}
-
-Untuk mengakomodasi skenario prediksi berbasis \textit{lag window} sepanjang $k$ langkah, ditambahkan padding awal sepanjang $k$ langkah sebelum turn pertama.
-
-Didefinisikan vektor nol sebagai:
-
-\[
-\mathbf{O} =
-\begin{bmatrix}
-0 \\
-0
-\end{bmatrix}.
-\]
-
-Maka trajektori yang telah dipadding menjadi:
-
-\[
-\tilde{X} =
-[\underbrace{\mathbf{O}, \mathbf{O}, \dots, \mathbf{O}}_{k \text{ kali}}, x_1, x_2, \dots, x_T]^\top.
-\]
-
-Padding ini memastikan bahwa pada saat $t = 1$, model tetap menerima window historis sepanjang $k$ langkah, meskipun histori aktual permainan belum tersedia.
-
-Secara konseptual, padding nol merepresentasikan kondisi sebelum permainan dimulai, sehingga model dapat mempelajari dinamika strategi awal tanpa kehilangan konsistensi dimensi input.
-
-\subsubsection{Augmentasi Simetri Peran}
-
-Untuk meningkatkan keberagaman distribusi interaksi dan mengurangi bias peran (\textit{role bias}), dilakukan augmentasi data melalui pertukaran dimensi:
-
-\[
-x_t' =
-\begin{bmatrix}
-a_t^{opp} \\
-a_t^{agent}
-\end{bmatrix}.
-\]
-
-Artinya, setiap trajektori asli $\tau$ menghasilkan satu trajektori tambahan $\tau'$ dengan peran agent dan lawan dipertukarkan.
-
-Augmentasi ini berasumsi bahwa struktur permainan bersifat simetris terhadap pertukaran pemain. Secara eksperimental, langkah ini bertujuan untuk:
-
-\begin{itemize}
-    \item meningkatkan ukuran dataset,
-    \item mendorong model mempelajari pola interaksi, bukan identitas tetap pemain,
-    \item meningkatkan generalisasi terhadap variasi distribusi lawan.
-\end{itemize}
-
-\subsubsection{Pembentukan Pasangan Input--Target}
-
-Dari trajektori yang telah dipadding $\tilde{X}$, dibentuk pasangan input-target berbasis window sepanjang $k$ langkah sebelumnya.
-
-Untuk prediksi satu langkah:
-
-\[
-(\tilde{x}_{t-k}, \dots, \tilde{x}_{t-1}) 
-\rightarrow 
-a_t^{opp}.
-\]
-
-Untuk prediksi multi-langkah dengan horizon $h$:
-
-\[
-(\tilde{x}_{t-k}, \dots, \tilde{x}_{t-1}) 
-\rightarrow 
-(a_t^{opp}, \dots, a_{t+h-1}^{opp}).
-\]
-
-Dengan pendekatan ini, setiap sampel pelatihan selalu memiliki dimensi input tetap sebesar $k \times 2$, termasuk pada fase awal permainan.
 
 \subsubsection{Pengacakan dan Pembagian Data}
 
 Seluruh sampel yang terbentuk kemudian diacak secara acak (\textit{random shuffle}) untuk menghilangkan korelasi urutan antar episode. Setelah proses pengacakan, dataset dibagi menjadi:
 
-\begin{itemize}
+\begin{enumerate}
     \item 70\% data pelatihan (\textit{training set}),
     \item 15\% data validasi (\textit{validation set}),
     \item 15\% data uji (\textit{test set}).
-\end{itemize}
+\end{enumerate}
 
 Pembagian dilakukan pada level trajektori (bukan pada level langkah waktu) untuk mencegah kebocoran informasi temporal antar subset. Dengan demikian, tidak terdapat fragmen dari satu episode yang muncul sekaligus pada data pelatihan dan validasi.
 
@@ -360,39 +131,17 @@ Pemisahan berbasis trajektori memastikan evaluasi dilakukan pada distribusi inte
 
 Model prediksi lawan dibangun menggunakan arsitektur Long Short-Term Memory (LSTM) sebagai encoder temporal untuk menangkap dependensi historis dalam interaksi IPD. Arsitektur terdiri atas:
 
-\begin{itemize}
+\begin{enumerate}
     \item Satu lapisan LSTM dengan \textit{hidden size} 64,
     \item Lapisan linear sebagai proyeksi ke ruang aksi lawan,
     \item Fungsi softmax untuk menghasilkan distribusi probabilitas atas aksi $\{C, D\}$.
-\end{itemize}
-
-Diberikan histori hingga waktu $t$:
-
-\[
-h_t = \text{LSTM}(x_1, \dots, x_t),
-\qquad
-\hat{y}_{t+1} = \text{softmax}(W h_t + b),
-\]
-
-dengan $\hat{y}_{t+1}$ distribusi prediksi aksi lawan.
+\end{enumerate}
 
 \subsubsection{Model Satu Langkah}
 
 Model satu langkah dioptimalkan untuk memprediksi aksi lawan pada waktu $t+1$ berdasarkan histori hingga waktu $t$.
 
-Fungsi objektif yang digunakan adalah \textit{cross-entropy loss} satu langkah:
-
-\[
-\mathcal{L}_{1-step}
-=
--
-\sum_{t=1}^{T-1}
-y_{t+1}
-\log
-\hat{y}_{t+1}.
-\]
-
-Optimisasi ini mendorong model memaksimalkan akurasi prediksi lokal tanpa mempertimbangkan konsistensi trajektori jangka panjang.
+Fungsi objektif yang digunakan adalah \textit{cross-entropy loss} satu langkah yang didefinisikan pada persamaan \ref{eq:ChrossEnthropy}. Optimisasi ini mendorong model memaksimalkan akurasi prediksi lokal tanpa mempertimbangkan konsistensi trajektori jangka panjang.
 
 \subsubsection{Model Multi Langkah}
 
@@ -406,17 +155,8 @@ Untuk setiap histori awal hingga waktu $t$, model menghasilkan distribusi:
 (\hat{y}_{t+1}, \hat{y}_{t+2}, \dots, \hat{y}_{t+k}),
 \]
 
-dengan input rekursif:
-
-\[
-x_{t+i} =
-\begin{bmatrix}
-a_{t+i}^{agent, oracle} \\
-a_{t+i}^{opp, groundtruth}
-\end{bmatrix}.
-\]
-
-Oracle pada konteks ini merepresentasikan agent yang diketahui secara deterministik dalam simulasi. Oracle digunakan untuk menghasilkan aksi agent yang konsisten terhadap trajektori ground-truth lawan selama proses pelatihan.
+\noindent di mana $\hat{y}_{t+i}$ adalah distribusi prediksi untuk aksi lawan pada langkah ke-$i$ setelah waktu $t$.
+dengan input rekursif riwayat interaksi yang diperbarui dengan aksi hasil prediksi pada langkah sebelumnya. Pada konteks ini digunakan agen sesungguhnya secara deterministik dalam simulasi untuk menghasilkan aksi agent yang konsisten terhadap trajektori ground-truth lawan selama proses pelatihan.
 
 Fungsi loss multi langkah didefinisikan sebagai akumulasi cross-entropy sepanjang horizon:
 
@@ -430,29 +170,8 @@ y_{t+i}
 \hat{y}_{t+i}.
 \]
 
+\noindent
 Dengan formulasi ini, model secara eksplisit dioptimalkan untuk mempertahankan konsistensi prediksi sepanjang beberapa langkah, bukan hanya pada langkah berikutnya.
-
-\subsubsection{Perbedaan Konseptual Kedua Model}
-
-Perbedaan utama antara kedua pendekatan terletak pada:
-
-\begin{itemize}
-    \item \textbf{Ruang optimisasi}: satu langkah bersifat lokal, sedangkan multi langkah bersifat trajektorial.
-    \item \textbf{Distribusi error}: model multi langkah menerima sinyal kesalahan dari seluruh horizon $k$, sehingga lebih sensitif terhadap dinamika jangka menengah.
-    \item \textbf{Tujuan pembelajaran}: model satu langkah meminimalkan error prediksi langsung, sedangkan model multi langkah meminimalkan deviasi trajektori.
-\end{itemize}
-
-\subsubsection{Evaluasi Generalisasi}
-
-Untuk menguji robustnes dan generalisasi, kedua model dievaluasi pada strategi lawan yang tidak terlihat selama pelatihan. Evaluasi dilakukan pada:
-
-\begin{itemize}
-    \item akurasi satu langkah,
-    \item akurasi trajektori multi langkah,
-    \item degradasi performa seiring bertambahnya horizon prediksi.
-\end{itemize}
-
-Pendekatan ini memungkinkan analisis empiris terhadap potensi misalignment antara objektif satu langkah dan kebutuhan prediksi trajektori dalam repeated games.
 
 \subsection{Protokol Pelatihan}
 
@@ -470,36 +189,15 @@ Model yang dihasilkan merepresentasikan baseline prediksi lokal tanpa optimisasi
 
 \subsubsection{Pelatihan Multi Langkah}
 
-Pada tahap ini, model dilatih untuk memprediksi trajektori aksi lawan sepanjang horizon $k$ menggunakan mekanisme \textit{teacher forcing}. 
-
-Untuk setiap histori hingga waktu $t$, model menghasilkan prediksi:
-
-\[
-(\hat{y}_{t+1}, \hat{y}_{t+2}, \dots, \hat{y}_{t+k}).
-\]
-
-Selama pelatihan, input pada setiap langkah dalam horizon menggunakan aksi ground-truth (teacher forcing). Namun, untuk membentuk trajektori interaksi dua arah, digunakan oracle agent untuk menghasilkan aksi respon terhadap aksi lawan pada setiap langkah. Dengan demikian, dinamika interaksi tetap konsisten terhadap kebijakan agent yang diasumsikan diketahui.
+Pada tahap ini, model dilatih untuk memprediksi trajektori aksi lawan sepanjang horizon $k$ menggunakan mekanisme \textit{teacher forcing}. Selama pelatihan, input pada setiap langkah dalam horizon menggunakan aksi ground-truth (teacher forcing). Namun, untuk membentuk trajektori interaksi dua arah, digunakan agent untuk menghasilkan aksi respon terhadap aksi lawan pada setiap langkah. Dengan demikian, dinamika interaksi tetap konsisten terhadap kebijakan agent yang diasumsikan diketahui.
 
 \subsubsection{Fungsi Loss Multi Langkah}
 
-Loss dasar didefinisikan sebagai akumulasi cross-entropy sepanjang horizon:
+Loss dasar didefinisikan sebagai akumulasi cross-entropy sepanjang horizon
 
-\[
-\mathcal{L}_{multi}
-=
--
-\sum_{i=1}^{k}
-w_i \,
-y_{t+i}
-\log
-\hat{y}_{t+i},
-\]
+\subsubsection{Skema Pembobotan Rank Order Centroid (ROC)}
 
-dengan $w_i$ merupakan bobot pada langkah ke-$i$.
-
-\paragraph{Skema Pembobotan Rank Order Centroid (ROC)}
-
-Untuk mengontrol kontribusi error pada tiap langkah, digunakan pembobotan berbasis Rank Order Centroid (ROC). 
+Untuk mengontrol kontribusi error pada tiap langkah, digunakan pembobotan berbasis Rank Order Centroid (ROC) pada sub-bab \ref{sec:ROC}
 
 Bobot ROC untuk horizon $k$ didefinisikan sebagai:
 
@@ -509,36 +207,30 @@ w_i
 \frac{1}{k}
 \sum_{j=i}^{k}
 \frac{1}{j},
-\]
-
+\]\noindent
 yang kemudian dinormalisasi sehingga:
 
 \[
 \sum_{i=1}^{k} w_i = 1.
 \]
+\noindent
+tiga varian pembobotan digunakan:
 
-Dua varian pembobotan digunakan:
-
-\begin{itemize}
-    \item \textbf{ROC Newest}: langkah terdekat ($i=1$) diberi bobot terbesar.
-    \item \textbf{ROC Latest}: langkah terjauh ($i=k$) diberi bobot terbesar (urutan dibalik).
-\end{itemize}
-
-Sebagai pembanding, digunakan juga skema tanpa ROC, yaitu bobot seragam:
-
-\[
-w_i = \frac{1}{k}.
-\]
+\begin{enumerate}
+    \item \textbf{ROC terbaru}: langkah terdekat ($i=1$) diberi bobot terbesar.
+    \item \textbf{ROC terlama}: langkah terjauh ($i=k$) diberi bobot terbesar (urutan dibalik).
+    \item \textbf{ROC seragam}: semua langkah diberi bobot yang sama.
+\end{enumerate}
 
 \subsubsection{Konfigurasi Eksperimen}
 
-Model dilatih dengan kombinasi berikut:
+Model dilatih dengan kombinasi berbeda.
 
-\begin{itemize}
-    \item Teacher Forcing + uniform, $k = 10$, 
-    \item Teacher Forcing + ROC Newest, $k = 10$
-    \item Teacher Forcing + ROC Latest, $k = 10$
-\end{itemize}
+\begin{enumerate}
+    \item seragam, $k = 10$, 
+    \item ROC terbaru, $k = 10$
+    \item ROC terlama, $k = 10$
+\end{enumerate}
 
 Seluruh loss dinormalisasi terhadap jumlah langkah horizon agar dapat dibandingkan secara adil antar konfigurasi $k$.
 
@@ -548,138 +240,16 @@ Meskipun pelatihan menggunakan teacher forcing, evaluasi dilakukan secara rekurs
 
 \begin{enumerate}
     \item Model memprediksi aksi lawan pada langkah berikutnya.
-    \item Oracle agent menghasilkan aksi respon berdasarkan prediksi tersebut.
+    \item Agent menghasilkan aksi respon berdasarkan prediksi tersebut.
     \item Pasangan aksi hasil prediksi dimasukkan kembali sebagai input.
-    \item Proses diulang hingga horizon $k$.
+    \item Proses diulang hingga horizon $h$.
 \end{enumerate}
 
-Loss trajektori kemudian dihitung terhadap ground-truth untuk menilai akumulasi error akibat propagasi prediksi sendiri.
-
-Pendekatan ini memungkinkan analisis empiris terhadap potensi misalignment antara objektif satu langkah dan kebutuhan prediksi trajektori dalam repeated games.
-
-\subsection{Protokol Pelatihan}
-
-Pelatihan model dilakukan dalam dua skema utama: (1) pelatihan satu langkah dan (2) pelatihan multi langkah. Kedua skema menggunakan arsitektur yang sama, namun berbeda dalam objektif optimisasi dan mekanisme pembentukan loss.
-
-\subsubsection{Pelatihan Satu Langkah}
-
-Pada tahap ini, model dioptimalkan untuk memprediksi aksi lawan pada waktu $t+1$ berdasarkan histori hingga waktu $t$.
-
-Fungsi objektif yang digunakan adalah \textit{cross-entropy loss} satu langkah:
-
-\[
-\mathcal{L}_{1-step}
-=
--
-\frac{1}{T-1}
-\sum_{t=1}^{T-1}
-y_{t+1} \log \hat{y}_{t+1}.
-\]
-
-Optimisasi dilakukan menggunakan algoritma Adam dengan parameter pembelajaran yang ditetapkan sebelumnya. Pelatihan berlangsung selama sejumlah epoch tertentu dengan \textit{batch size} tetap, serta validasi dilakukan pada setiap epoch untuk memantau konvergensi dan mencegah overfitting.
-
-Model yang dihasilkan merepresentasikan baseline prediksi lokal tanpa optimisasi eksplisit terhadap konsistensi trajektori.
-
-\subsubsection{Pelatihan Multi Langkah}
-
-Pada tahap ini, model dilatih untuk memprediksi trajektori aksi lawan sepanjang horizon $k$ menggunakan mekanisme \textit{teacher forcing}. 
-
-Untuk setiap histori hingga waktu $t$, model menghasilkan prediksi:
-
-\[
-(\hat{y}_{t+1}, \hat{y}_{t+2}, \dots, \hat{y}_{t+k}).
-\]
-
-Selama pelatihan, input pada setiap langkah dalam horizon menggunakan aksi ground-truth (teacher forcing). Namun, untuk membentuk trajektori interaksi dua arah, digunakan oracle agent untuk menghasilkan aksi respon terhadap aksi lawan pada setiap langkah. Dengan demikian, dinamika interaksi tetap konsisten terhadap kebijakan agent yang diasumsikan diketahui.
-
-\subsubsection{Fungsi Loss Multi Langkah}
-
-Loss dasar didefinisikan sebagai akumulasi cross-entropy sepanjang horizon:
-
-\[
-\mathcal{L}_{multi}
-=
--
-\sum_{i=1}^{k}
-w_i \,
-y_{t+i}
-\log
-\hat{y}_{t+i},
-\]
-
-dengan $w_i$ merupakan bobot pada langkah ke-$i$.
-
-\paragraph{Skema Pembobotan Rank Order Centroid (ROC)}
-
-Untuk mengontrol kontribusi error pada tiap langkah, digunakan pembobotan berbasis Rank Order Centroid (ROC). 
-
-Bobot ROC untuk horizon $k$ didefinisikan sebagai:
-
-\[
-w_i
-=
-\frac{1}{k}
-\sum_{j=i}^{k}
-\frac{1}{j},
-\]
-
-yang kemudian dinormalisasi sehingga:
-
-\[
-\sum_{i=1}^{k} w_i = 1.
-\]
-
-Dua varian pembobotan digunakan:
-
-\begin{itemize}
-    \item \textbf{ROC Newest}: langkah terdekat ($i=1$) diberi bobot terbesar.
-    \item \textbf{ROC Latest}: langkah terjauh ($i=k$) diberi bobot terbesar (urutan dibalik).
-\end{itemize}
-
-Sebagai pembanding, digunakan juga skema tanpa ROC, yaitu bobot seragam:
-
-\[
-w_i = \frac{1}{k}.
-\]
-
-\subsubsection{Konfigurasi Eksperimen}
-
-Model dilatih dengan kombinasi berikut:
-
-\begin{itemize}
-    \item Teacher Forcing + uniform, $k = 10$, 
-    \item Teacher Forcing + ROC Newest, $k = 10$
-    \item Teacher Forcing + ROC Latest, $k = 10$
-\end{itemize}
-
-Seluruh loss dinormalisasi terhadap jumlah langkah horizon agar dapat dibandingkan secara adil antar konfigurasi $k$.
-
-\subsubsection{Evaluasi Closed-Loop}
-
-Meskipun pelatihan menggunakan teacher forcing, evaluasi dilakukan secara rekursif (\textit{closed-loop rollout}). Pada tahap ini:
-
-\begin{enumerate}
-    \item Model memprediksi aksi lawan pada langkah berikutnya.
-    \item Oracle agent menghasilkan aksi respon berdasarkan prediksi tersebut.
-    \item Pasangan aksi hasil prediksi dimasukkan kembali sebagai input.
-    \item Proses diulang hingga horizon $k$.
-\end{enumerate}
-
-Loss trajektori kemudian dihitung terhadap ground-truth untuk menilai akumulasi error akibat propagasi prediksi sendiri.
+Loss trajektori kemudian dihitung terhadap ground-truth untuk menilai akumulasi error akibat propagasi prediksi sendiri. Pendekatan ini memungkinkan analisis empiris terhadap potensi misalignment antara objektif satu langkah dan kebutuhan prediksi trajektori dalam repeated games.
 
 \subsection{Protokol Validasi}
 
-Validasi dilakukan untuk memilih konfigurasi hiperparameter terbaik berdasarkan performa prediksi trajektorial pada data yang tidak digunakan selama pelatihan. 
-
-Evaluasi dilakukan pada \textit{validation set} dengan tetap mempertahankan pemisahan berbasis trajektori, sehingga tidak terdapat fragmen episode yang muncul pada data pelatihan.
-
-Fokus evaluasi adalah konsistensi prediksi multi-langkah terhadap aksi lawan. Untuk setiap horizon $h$, dihitung:
-
-\begin{itemize}
-    \item \textit{Confusion matrix} per langkah prediksi,
-    \item Akurasi per langkah,
-    \item Akurasi kumulatif sepanjang horizon.
-\end{itemize}
+Validasi dilakukan untuk memilih konfigurasi hiperparameter terbaik berdasarkan performa prediksi trajektorial pada data yang tidak digunakan selama pelatihan. Evaluasi dilakukan pada \textit{validation set} dengan tetap mempertahankan pemisahan berbasis trajektori, sehingga tidak terdapat fragmen episode yang muncul pada data pelatihan.Fokus evaluasi adalah konsistensi prediksi multi-langkah terhadap aksi lawan. Untuk setiap horizon $h$, dihitung dengan Akurasi kumulatif sepanjang horizon.
 
 Misalkan target horizon adalah $h$, maka akurasi kumulatif didefinisikan sebagai:
 
@@ -689,9 +259,9 @@ Misalkan target horizon adalah $h$, maka akurasi kumulatif didefinisikan sebagai
 \sum_{i=1}^{h}
 \text{Acc}_i,
 \]
-
+\noindent
 dengan $\text{Acc}_i$ adalah akurasi pada langkah prediksi ke-$i$.
-
+\noindent
 Karena jumlah kombinasi hiperparameter yang diuji cukup besar, proses tuning dilakukan secara hierarkis dalam empat tahap utama:
 
 \begin{enumerate}
@@ -703,18 +273,17 @@ Karena jumlah kombinasi hiperparameter yang diuji cukup besar, proses tuning dil
 
 Pada setiap tahap, parameter lain dikunci pada nilai terbaik hasil tahap sebelumnya.
 
-\subsubsection{Konfigurasi Default}
+\subsubsection{Konfigurasi Dasar}
 
 Konfigurasi awal (baseline) yang digunakan sebelum tuning adalah sebagai berikut:
 
 \begin{enumerate}
     \item Steps (horizon) = 10,
-    \item Window size ($k$) = 10,
+    \item Window size ($lag$) = 10,
     \item Hidden units = 64,
-    \item Jumlah layer = 1,
+    \item Jumlah hidden layer = 1,
     \item Dropout = 0.0,
-    \item Teacher Forcing = True,
-    \item Pembobotan ROC = Uniform,
+    \item Pembobotan ROC = seragam,
     \item Epoch = 25.
 \end{enumerate}
 
@@ -767,10 +336,9 @@ Tahap terakhir mengevaluasi pengaruh mekanisme pembelajaran sekuensial terhadap 
 Parameter yang diuji:
 
 \begin{enumerate}
-    \item Teacher Forcing $\in \{\text{True}, \text{False}\}$,
     \item Skema Pembobotan ROC:
     \begin{enumerate}
-        \item Uniform,
+        \item seragam,
         \item Bobot lebih besar pada langkah awal,
         \item Bobot lebih besar pada langkah akhir.
     \end{enumerate}
@@ -778,7 +346,7 @@ Parameter yang diuji:
 
 Jika $h$ adalah horizon prediksi, maka fungsi loss berbobot didefinisikan sebagai:
 
-\[
+\begin{equation}
 \mathcal{L} =
 \sum_{i=1}^{h}
 w_i \cdot \mathcal{L}_i,
@@ -786,73 +354,26 @@ w_i \cdot \mathcal{L}_i,
 \text{dengan}
 \quad
 \sum_{i=1}^{h} w_i = 1.
-\]
+\end{equation}
 
-Skema bobot awal menekankan akurasi pada fase pembukaan trajektori, sedangkan skema bobot akhir menekankan stabilitas prediksi jangka panjang.
-
-Konfigurasi akhir dipilih berdasarkan performa validasi terbaik sebelum dievaluasi secara final pada \textit{test set}.
+Skema bobot awal menekankan akurasi pada fase pembukaan trajektori, sedangkan skema bobot akhir menekankan stabilitas prediksi jangka panjang. Konfigurasi akhir dipilih berdasarkan performa validasi terbaik sebelum dievaluasi secara final pada \textit{test set}.
 
 
 \subsection{Protokol Evaluasi}
 
-Evaluasi dilakukan dalam dua skema utama, yaitu evaluasi terpisah (\textit{decoupled evaluation}) dan evaluasi terpasang (\textit{coupled evaluation}). Kedua skema ini dirancang untuk mengukur perbedaan performa model pada prediksi lokal satu langkah dan pada dinamika interaksi trajektorial multi-langkah.
+Evaluasi dilakukan menggunakan prediksi multi langkah secara rekursif (\textit{closed-loop rollout}). Pada skema ini, model: Memprediksi aksi lawan pada langkah berikutnya, kemudian agent menghasilkan respon terhadap prediksi tersebut, kemudian Hasil pasangan aksi dimasukkan kembali sebagai input, kemudian Proses diulang hingga horizon $h$. Dengan pendekatan ini terbentuk trajektori prediksi sepanjang horizon $h$ yang kemudian dibandingkan dengan trajektori ground-truth.
 
-\subsubsection{Evaluasi Terpasang (Coupled)}
+Metrik evaluasi Akurasi Multi Langkah:
 
-Evaluasi terpasang dilakukan menggunakan prediksi multi langkah secara rekursif (\textit{closed-loop rollout}). Pada skema ini, model:
-
-\begin{enumerate}
-    \item Memprediksi aksi lawan pada langkah berikutnya,
-    \item Oracle agent menghasilkan respon terhadap prediksi tersebut,
-    \item Hasil pasangan aksi dimasukkan kembali sebagai input,
-    \item Proses diulang hingga horizon $k$.
-\end{enumerate}
-
-Dengan pendekatan ini, terbentuk trajektori prediksi sepanjang horizon $k$ yang kemudian dibandingkan dengan trajektori ground-truth.
-
-Metrik evaluasi meliputi:
-
-\begin{itemize}
-    \item \textbf{Akurasi Multi Langkah}:
-    \[
-    \text{Acc}_k
-    =
-    \frac{1}{k}
-    \sum_{i=1}^{k}
-    \mathbf{1}
-    (\hat{a}_{t+i}^{opp} = a_{t+i}^{opp}),
-    \]
-    yang mengukur konsistensi prediksi sepanjang horizon.
-    
-    \item \textbf{Dynamic Regret}, yaitu selisih antara reward kumulatif yang diperoleh agent berdasarkan trajektori prediksi dibandingkan dengan reward pada trajektori aktual:
-    \[
-    \text{Regret}_k
-    =
-    R^{oracle}_k
-    -
-    R^{pred}_k.
-    \]
-    
-    \item \textbf{Reward Kumulatif}, yaitu total payoff agent sepanjang horizon $k$ berdasarkan interaksi dengan trajektori prediksi.
-\end{itemize}
-
-Metrik-metrik ini menangkap dampak kesalahan prediksi terhadap kualitas interaksi strategis dalam repeated game.
-
-\subsubsection{Validasi dan Pengujian}
-
-Perbandingan performa dilakukan pada:
-
-\begin{itemize}
-    \item \textbf{Validation set}, untuk memilih konfigurasi terbaik berdasarkan performa trajektorial.
-    \item \textbf{Test set}, untuk mengukur generalisasi akhir model terhadap distribusi yang tidak terlihat selama pelatihan.
-\end{itemize}
-
-Evaluasi dilakukan baik pada skenario strategi yang telah terlihat selama pelatihan maupun pada strategi yang sepenuhnya baru, guna menguji kemampuan generalisasi terhadap dinamika interaksi yang tidak dikenal sebelumnya.
+\[
+\text{Acc}_k = \frac{1}{k} \sum_{i=1}^{k} \mathbf{1}(\hat{a}_{t+i}^{opp} = a_{t+i}^{opp}),
+\]
+\noindent
+Mengukur konsistensi prediksi sepanjang horizon. Metrik-metrik ini menangkap dampak kesalahan prediksi terhadap kualitas interaksi strategis dalam repeated game.
 
 \subsection{Analisis Eksperimen}
 
 Analisis eksperimen difokuskan pada pengujian hipotesis utama penelitian, yaitu adanya potensi misalignment antara objektif prediksi satu langkah dan kebutuhan konsistensi trajektori dalam repeated games. 
-
 
 \subsubsection{Sensitivitas terhadap Perubahan Fase Strategi}
 
@@ -865,21 +386,6 @@ Strategi dengan perubahan rezim (misalnya strategi dengan mekanisme hukuman perm
 \end{itemize}
 
 Analisis ini bertujuan untuk mengidentifikasi apakah model mampu menangkap dinamika non-stasioner dan apakah pembobotan ROC mempengaruhi stabilitas prediksi pada fase transisi.
-
-\subsubsection{Strategi Deterministik vs Adaptif}
-
-Strategi deterministik dan strategi adaptif dianalisis secara terpisah untuk mengukur robustnes model terhadap dinamika yang berbeda.
-
-Perbandingan dilakukan berdasarkan:
-
-\begin{itemize}
-    \item Confusion matrix per kategori strategi,
-    \item Rata-rata NLL,
-    \item Dynamic regret,
-    \item Average payoff.
-\end{itemize}
-
-Hipotesis yang diuji adalah bahwa strategi adaptif menghasilkan degradasi performa yang lebih besar pada skema one-step dibandingkan model multi-step berbobot, khususnya pada horizon lebih panjang.
 
 \subsubsection{Pelaporan Hasil}
 

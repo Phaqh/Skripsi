@@ -22,233 +22,32 @@ Beberapa studi menekankan pentingnya struktur interaksi dan kopling dinamika. En
 
 Dalam konteks pemodelan internal dan kesadaran pembelajaran, Internal Model dilaporkan mencapai konvergensi lebih cepat dibanding TD-learning standar, meskipun performanya menurun ketika perilaku lawan bergantung langsung pada aksi agen (\cite{freire_modeling_2023}). Symmetric Learning Awareness (SLA) meningkatkan stabilitas keseimbangan dan mengurangi siklikitas pada metode gradien standar melalui pemodelan eksplisit terhadap proses pembelajaran lawan (\cite{hu_modeling_2023}). Pendekatan Higher-order Theory of Mind (ToM $k$) menunjukkan bahwa peningkatan level ToM memberikan pengaruh signifikan hingga tingkat tertentu, dengan \textit{diminishing returns} setelah ToM-3 (\cite{de_weerd_higher-order_2022}). Sementara itu, mekanisme Suggestion Sharing meningkatkan kerja sama dibandingkan skema berbagi nilai atau kebijakan (\cite{jin_achieving_2025}), dan pendekatan Ensemble-Training Cooperative Agent menunjukkan peningkatan robustnes dan generalisasi meskipun dengan biaya komputasi yang lebih tinggi (\cite{perera_learning_2025}).
 
-Secara keseluruhan, literatur menunjukkan keberagaman pendekatan dalam memodelkan dan merespons dinamika perilaku lawan, baik melalui pembelajaran eksplisit, mekanisme kopling lingkungan, maupun adaptasi berbasis populasi. Namun demikian, fokus evaluasi dalam studi-studi tersebut umumnya diarahkan pada peningkatan reward, stabilitas kerja sama, atau konvergensi, sehingga membuka ruang analisis lebih lanjut mengenai hubungan antara kualitas prediksi perilaku lawan dan implikasinya terhadap perencanaan strategis lintas-horizon.
-
-\section{Asumsi Perilaku Lawan dalam pemodelan lawan untuk \textit{Repeated Games}}
-
-Untuk mengoperasionalkan asumsi perilaku lawan secara konsisten pada 
-pengaturan permainan yang beragam, tinjauan ini mengkarakterisasi perilaku 
-berdasarkan dependensi yang dapat diamati dari riwayat interaksi. 
-Secara khusus, aksi lawan dianalisis berdasarkan apakah ia:
-
-\begin{enumerate}
-    \item Bervariasi lintas kondisi lingkungan dalam permainan yang sama,
-    \item Dimediasi oleh dinamika tingkat populasi,
-    \item Merespons secara langsung aksi agen,
-    \item Menunjukkan divergensi aksi pada riwayat interaksi terkini yang ekuivalen.
-\end{enumerate}
-
-Kriteria-kriteria ini sepenuhnya berbasis observasi eksternal dan tidak 
-mengasumsikan akses terhadap model internal, mekanisme pembelajaran, 
-maupun fungsi objektif lawan. Dengan demikian, kategorisasi ini bukan 
-taksonomi formal algoritma, melainkan kerangka analitis untuk memungkinkan 
-perbandingan lintas paradigma pembelajaran.
-
-Dalam studi yang tidak menyatakan asumsi perilaku secara eksplisit, 
-klasifikasi diturunkan secara konservatif dari desain eksperimen dan dinamika 
-interaksi yang dilaporkan. Hasil kategorisasi dirangkum pada 
-Tabel~\ref{tab:opponent-behavior}.
-
-Distribusi asumsi dependensi perilaku lawan dalam literatur menunjukkan variasi tingkat kompleksitas interaksi yang dimodelkan. Studi pada \cite{jin_achieving_2025} berfokus pada respons langsung terhadap aksi agen tanpa mempertimbangkan efek populasi maupun variasi lintas lingkungan. Pendekatan pada \cite{gomez_grounded_2025} menempatkan perilaku dalam konteks populasi, namun tanpa asumsi respons langsung terhadap agen atau divergensi pada riwayat yang ekuivalen. Sementara itu, \cite{elhamer_effects_2020} menggabungkan dinamika populasi dan respons agen, tetapi tidak secara eksplisit memasukkan asumsi divergensi perilaku pada riwayat identik.
-
-Sebaliknya, sejumlah studi secara eksplisit mengasumsikan adanya respons agen sekaligus potensi divergensi perilaku. Pendekatan pada \cite{qiao_o2m_2024}, \cite{lv_inducing_2023}, \cite{li_exploiting_2025}, \cite{freire_modeling_2023}, \cite{hu_modeling_2023}, \cite{wang_achieving_2019}, dan \cite{de_weerd_higher-order_2022} memodelkan lawan yang secara langsung merespons aksi agen serta memungkinkan terjadinya divergensi aksi meskipun riwayat interaksi terkini setara. Studi pada \cite{perera_learning_2025} memperluas asumsi ini dengan memasukkan dimensi populasi, sehingga perilaku lawan dipengaruhi baik oleh interaksi agen maupun struktur populasi, serta tetap memungkinkan divergensi. Pada tingkat kompleksitas yang lebih tinggi, \cite{zhu_evolutionary_2025} dan \cite{di_coupling_2023} mempertimbangkan variasi lintas lingkungan sekaligus dinamika populasi, dengan potensi divergensi perilaku yang muncul dari interaksi struktural dan evolusioner.
-
-
-\begin{table}[!htbp]
-\centering
-\caption{Asumsi perilaku lawan berdasarkan dependensi perilaku yang dapat diamati.}\label{tab:opponent-behavior}
-\renewcommand{\arraystretch}{1.1}
-\setlength{\tabcolsep}{4pt}
-
-\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X cccc}
-\toprule
-\textbf{Referensi}
-& \textbf{Lingkungan} 
-& \textbf{Populasi} 
-& \textbf{Agen}
-& \textbf{divergensi} \\
-\midrule
-
-~\cite{jin_achieving_2025} 
-& --- & --- & \checkmark{} & --- \\
-
-\addlinespace{}
-
-~\cite{gomez_grounded_2025} 
-& --- & \checkmark{} & --- & --- \\
-
-\addlinespace{}
-
-~\cite{elhamer_effects_2020} 
-& --- & \checkmark{} & \checkmark{} & --- \\
-
-\addlinespace{}
-
-~\cite{qiao_o2m_2024}
-& --- & --- & \checkmark{} & \checkmark{} \\
-
-\addlinespace{}
-
-~\cite{lv_inducing_2023}
-& --- & --- & \checkmark{} & \checkmark{} \\
-
-\addlinespace{}
-
-~\cite{li_exploiting_2025}
-& --- & --- & \checkmark{} & \checkmark{} \\
-
-\addlinespace{}
-
-~\cite{freire_modeling_2023}
-& --- & --- & \checkmark{} & \checkmark{} \\
-
-\addlinespace{}
-
-~\cite{hu_modeling_2023}
-& --- & --- & \checkmark{} & \checkmark{} \\
-
-\addlinespace{}
-
-~\cite{wang_achieving_2019}
-& --- & --- & \checkmark{} & \checkmark{} \\
-
-\addlinespace{}
-
-~\cite{de_weerd_higher-order_2022}
-& --- & --- & \checkmark{} & \checkmark{} \\
-
-\addlinespace{}
-
-~\cite{perera_learning_2025}
-& --- & \checkmark{} & \checkmark{} & \checkmark{} \\
-
-\addlinespace{}
-
-~\cite{zhu_evolutionary_2025}
-& \checkmark{} & \checkmark{} & --- & \checkmark{} \\
-
-\addlinespace{}
-
-~\cite{di_coupling_2023}
-& \checkmark{} & \checkmark{} & \checkmark{} & \checkmark{} \\
-
-\bottomrule
-\end{tabularx}
-
-\begin{flushleft}
-\vspace{2pt}
-\footnotesize
-\noindent~\textit{Catatan:} \\
-Lingkungan — perilaku bervariasi lintas lingkungan dalam permainan yang sama;\\
-Populasi — perilaku dimediasi oleh interaksi tingkat populasi;\\
-Agen — perilaku merespons secara langsung aksi agen;\\
-Divergen — divergensi aksi terjadi pada riwayat interaksi terkini yang ekuivalen.\\
-Tanda centang menunjukkan adanya dependensi.
-\end{flushleft}
-\end{table}
-
-Sejumlah pola konsisten muncul dari Tabel~\ref{tab:opponent-behavior}. 
-Mayoritas studi terkini mengasumsikan lawan yang responsif terhadap aksi agen 
-serta menunjukkan divergensi perilaku pada riwayat interaksi yang setara. 
-Hal ini mencerminkan pergeseran fokus riset dari optimisasi terhadap strategi 
-lawan yang tetap menuju interaksi dengan lawan yang adaptif dan dinamis.
+Secara keseluruhan, literatur menunjukkan keberagaman pendekatan dalam memodelkan dan merespons dinamika perilaku lawan, baik melalui pembelajaran eksplisit, mekanisme kopling lingkungan, maupun adaptasi berbasis populasi. 
 
 \section{Pendekatan metodologis dalam pemodelan lawan untuk \textit{Repeated Games}}
 
-Distribusi asumsi perilaku lawan pada Tabel~\ref{tab:opponent-behavior} mencerminkan pergeseran metodologis yang lebih luas dalam riset pemodelan lawan, dari pengaturan dengan asumsi lawan yang tetap dan terkontrol menuju lawan yang adaptif, heterogen, dan berperilaku tidak stasioner. Namun, karakterisasi berbasis asumsi perilaku semata belum menjelaskan bagaimana kompleksitas tersebut dihadapi secara komputasional di sisi agen. Untuk itu, Tabel~\ref{tab:klasifikasi_pemodelan_lawan} mereorganisasi studi-studi terdahulu berdasarkan paradigma pemodelan dominan dan mekanisme pembelajaran yang digunakan oleh agen.
-
-Pendekatan-pendekatan tersebut dapat dibedakan lebih lanjut berdasarkan apakah adaptasi terhadap lawan ditangani secara eksplisit atau implisit. Paradigma pemodelan lawan yang eksplisit—seperti \textit{gradient-based opponent shaping}~\cite{qiao_o2m_2024, hu_modeling_2023, wang_achieving_2019}, \textit{recursive belief reasoning}~\cite{freire_modeling_2023, de_weerd_higher-order_2022}, serta \textit{system identification}~\cite{li_exploiting_2025}—secara langsung membangun representasi internal perilaku lawan untuk memprediksi atau memengaruhi respons lawan di masa depan. Sebaliknya, pendekatan implisit, termasuk \textit{reactive reinforcement learning}~\cite{lv_inducing_2023}, \textit{population-based training}~\cite{perera_learning_2025}, dinamika evolusioner~\cite{zhu_evolutionary_2025, di_coupling_2023, elhamer_effects_2020}, dan \textit{bandit-based learning-in-games}~\cite{gomez_grounded_2025}, beradaptasi terhadap lawan tanpa mempertahankan model perilaku lawan yang terpisah.
+Pendekatan-pendekatan dalam pemodelan lawan dapat dibedakan berdasarkan apakah adaptasi terhadap lawan ditangani secara eksplisit atau implisit. Paradigma pemodelan lawan yang eksplisit, seperti \textit{gradient-based opponent shaping}~\cite{qiao_o2m_2024, hu_modeling_2023, wang_achieving_2019}, \textit{recursive belief reasoning}~\cite{freire_modeling_2023, de_weerd_higher-order_2022}, serta identifikasi sistem~\cite{li_exploiting_2025} secara langsung membangun representasi internal perilaku lawan untuk memprediksi atau memengaruhi respons lawan di masa depan. Sebaliknya, pendekatan implisit, termasuk \textit{reactive reinforcement learning}~\cite{lv_inducing_2023}, \textit{population-based training}~\cite{perera_learning_2025}, dinamika evolusioner~\cite{zhu_evolutionary_2025, di_coupling_2023, elhamer_effects_2020}, dan \textit{bandit-based learning-in-games}~\cite{gomez_grounded_2025}, beradaptasi terhadap lawan tanpa mempertahankan model perilaku lawan yang terpisah.
 
 Meskipun demikian, baik pendekatan eksplisit maupun implisit pada umumnya merumuskan dan mengevaluasi adaptasi terhadap lawan hanya pada tingkat respons satu langkah (\textit{one-step interaction}), tanpa melakukan pemodelan atau evaluasi eksplisit terhadap konsekuensi perilaku lawan dalam horizon multi-langkah.
 
-\begin{table}[ht]
-\centering
-\caption{Klasifikasi Pendekatan Pemodelan Lawan}
-\label{tab:klasifikasi_pemodelan_lawan}
-\begin{tabular}{p{2cm} p{2.0cm} p{4cm} p{4cm}}
-\toprule
-\textbf{Ref} & \textbf{Kategori} & \textbf{Pendekatan} & \textbf{Model} \\
-\midrule
+Kebanyakan Pendekatan yang memperlakukan perilaku lawan sebagai proses sekuensial yang dapat dipelajari, serta dievaluasi berdasarkan kualitas prediksi terhadap lintasan aksi di masa depan, bukan semata-mata berdasarkan payoff agregat jangka panjang. Pendekatan semacam ini secara alami menekankan pentingnya \textit{forecasting} multi-langkah dalam menghadapi dinamika interaksi berulang, terutama ketika keputusan pada fase awal interaksi memiliki implikasi strategis terhadap lintasan berikutnya. 
 
-\cite{wang_achieving_2019} 
-& Implisit 
-& Bandit-based Learning 
-& Multi-Armed Bandit \\
+Pendekatan berbasis model sekuensial memori seperti \textit{Long Short-Term Memory} (LSTM) menawarkan alternatif metodologis yang berbeda. LSTM dapat dipandang sebagai pendekatan yang memodelkan perilaku lawan sebagai proses dinamis berbasis riwayat interaksi. Model LSTM dilatih untuk meminimalkan kesalahan prediksi perilaku lawan tanpa melibatkan sinyal reward agen. Dengan demikian, kualitas model lawan dapat dievaluasi secara independen menggunakan metrik prediksi sekuensial, sebelum diintegrasikan ke dalam proses pengambilan keputusan.
 
-\cite{gomez_grounded_2025} 
-& Implisit 
-& Bandit-based Learning 
-& Multi-Armed Bandit (MA-MAB) \\
+Struktur rekuren pada LSTM memungkinkan forecast multi-langkah (\textit{multi-step forecasting}) terhadap aksi lawan memanfaatkan skema prediksi rekursif atau \textit{rolling horizon}. Kemampuan ini relevan dalam \textit{repeated games}, di mana keputusan optimal agen sering kali bergantung pada ekspektasi terhadap respons lawan tidak hanya pada langkah berikutnya, tetapi juga pada beberapa langkah interaksi selanjutnya. Dengan menyediakan estimasi lintasan perilaku lawan pada horizon terbatas, agen dapat melakukan evaluasi strategi secara lebih prospektif dibandingkan pendekatan satu-langkah.
 
-\cite{zhu_evolutionary_2025} 
-& Implisit 
-& Dinamika Evolusioner 
-& Strategi berbasis fitness \\
-
-\cite{elhamer_effects_2020} 
-& Implisit 
-& Dinamika Evolusioner 
-& Extended Social Particle Swarm (SPS) \\
-
-\cite{perera_learning_2025} 
-& Implisit 
-& Population-based Training 
-& MARL berbasis ensemble \\
-
-\cite{wang_achieving_2019} 
-& Implisit 
-& Reactive Reinforcement Learning 
-& Deep RL (DQN) \\
-
-\cite{lv_inducing_2023} 
-& Eksplisit 
-& Gradient-based Opponent Shaping 
-& Pembaruan sadar lawan \\
-
-\cite{hu_modeling_2023} 
-& Eksplisit 
-& Gradient-based Opponent Shaping 
-& Symmetric Learning Awareness (SLA) \\
-
-\cite{de_weerd_higher-order_2022} 
-& Eksplisit 
-& Recursive Belief Reasoning 
-& Higher-order Theory of Mind \\
-
-\cite{li_exploiting_2025} 
-& Eksplisit 
-& System Identification 
-& NARX / LSTM Strategy \\
-
-\bottomrule
-\end{tabular}
-\end{table}
-
-Kebanyakan Pendekatan yang memperlakukan perilaku lawan sebagai proses sekuensial yang dapat 
-dipelajari, serta dievaluasi berdasarkan 
-kualitas prediksi terhadap lintasan aksi di masa depan, bukan semata-mata 
-berdasarkan payoff agregat jangka panjang. Pendekatan semacam ini secara 
-alami menekankan pentingnya \textit{forecasting} multi-langkah dalam 
-menghadapi dinamika interaksi berulang, terutama ketika keputusan pada 
-fase awal interaksi memiliki implikasi strategis terhadap lintasan berikutnya.
-
-Dalam konteks ini, pendekatan berbasis model sekuensial memori seperti \textit{Long Short-Term Memory} (LSTM) menawarkan alternatif metodologis yang berbeda. LSTM dapat dipandang sebagai pendekatan yang memodelkan perilaku lawan sebagai proses dinamis berbasis riwayat interaksi. Aksi agen diperlakukan sebagai sinyal eksogen, sementara urutan aksi lawan dipelajari sebagai keluaran yang bergantung pada dependensi temporal jangka pendek maupun jangka panjang.
-
-Model LSTM dilatih untuk meminimalkan kesalahan prediksi perilaku lawan tanpa melibatkan sinyal reward agen. Dengan demikian, kualitas model lawan dapat dievaluasi secara independen menggunakan metrik prediksi sekuensial, sebelum diintegrasikan ke dalam proses pengambilan keputusan.
-
-Selain itu, struktur rekuren pada LSTM memungkinkan forecast multi-langkah (\textit{multi-step forecasting}) terhadap aksi lawan memanfaatkan skema prediksi rekursif atau \textit{rolling horizon}. Kemampuan ini relevan dalam \textit{repeated games}, di mana keputusan optimal agen sering kali bergantung pada ekspektasi terhadap respons lawan tidak hanya pada langkah berikutnya, tetapi juga pada beberapa langkah interaksi selanjutnya. Dengan menyediakan estimasi lintasan perilaku lawan pada horizon terbatas, agen dapat melakukan evaluasi strategi secara lebih prospektif dibandingkan pendekatan satu-langkah.
-
-Literatur yang sepenuhnya memisahkan pembelajaran model lawan dari sinyal reward kebijakan masih relatif terbatas, khususnya dalam konteks \textit{repeated games} dengan lawan adaptif dan tidak stasioner.
-
-\section{Bagaimana efektivitas strategi pemodelan lawan dievaluasi dalam \textit{Repeated Games}?}
+\section{Efektivitas strategi pemodelan lawan dievaluasi dalam \textit{Repeated Games}}
 
 Praktik evaluasi secara implisit mendefinisikan apa yang dianggap sebagai keberhasilan dalam interaksi multi-agent yang adaptif, baik dalam bentuk hasil kerja sama, ketahanan terhadap eksploitasi, stabilitas perilaku, maupun akurasi prediksi. Tabel~\ref{tab:evaluation_metrics} merangkum lingkungan evaluasi dan metrik yang digunakan dalam penelitian-penelitian terdahulu, dengan tujuan mengidentifikasi pola evaluasi yang berulang serta aspek-aspek yang relatif terabaikan.
 
-Berbagai penelitian terdahulu mengevaluasi pendekatan pemodelan lawan dalam lingkungan dan metrik yang beragam.~(\cite{qiao_o2m_2024}) mengevaluasi metode mereka dalam pengaturan \textit{self-play} simetris dengan fokus pada eror prediksi (MSE) selama pelatihan \textit{offline} serta akurasi representasi memori laten.~(\cite{zhu_evolutionary_2025}) menggunakan jaringan \textit{scale-free} dengan strategi \textit{zero-determinant} dan menilai dinamika melalui frekuensi kerja sama dan eksploitasi. Pendekatan \textit{reactive reinforcement learning} yang diajukan ~(\cite{lv_inducing_2023}) dievaluasi terhadap lawan adaptif dengan metrik utama berupa nilai reward yang dirata-ratakan pada beberapa tipe lawan.~(\cite{gomez_grounded_2025}) menguji pendekatan mereka dalam simulator \textit{teamwork-game} khusus, menggunakan produktivitas tim agregat, konvergensi menuju \textit{Nash equilibrium}, serta kontribusi individu sebagai indikator kinerja.
+Berbagai penelitian terdahulu mengevaluasi pendekatan pemodelan lawan dalam lingkungan eksperimen dan metrik evaluasi yang beragam. Evaluasi dalam pengaturan \textit{self-play} simetris dilakukan dengan menilai kesalahan prediksi selama pelatihan \textit{offline}, seperti \textit{mean squared error} (MSE), serta kualitas representasi memori laten (\cite{qiao_o2m_2024}). Dalam konteks dinamika evolusioner pada jaringan \textit{scale-free} dengan strategi \textit{zero-determinant}, kinerja model dianalisis melalui frekuensi kerja sama dan tingkat eksploitasi antar agen (\cite{zhu_evolutionary_2025}). Pendekatan \textit{reactive reinforcement learning} dalam interaksi berulang juga dievaluasi terhadap lawan adaptif dengan menggunakan rata-rata nilai \textit{reward} sebagai indikator utama performa (\cite{lv_inducing_2023}).
 
-Dalam konteks dinamika evolusioner~(\cite{di_coupling_2023}) dan~(\cite{elhamer_effects_2020}) memanfaatkan simulator permainan evolusioner dan ruang kontinu, dengan metrik seperti tingkat kerja sama, fraksi kooperator, serta stabilitas klaster.~(\cite{perera_learning_2025}) mengevaluasi pendekatan berbasis populasi dalam \textit{repeated matrix games} menggunakan populasi sintetis, dengan fokus pada payoff rata-rata, robustness, dan generalisasi. ~(\cite{li_exploiting_2025}) pada \textit{repeated zero-sum games} mengukur galat prediksi dan payoff kumulatif sebagai indikator efektivitas eksploitasi lawan. (\cite{freire_modeling_2023}) dan ~(\cite{hu_modeling_2023}) mengkaji \textit{repeated matrix games} dengan menilai efektivitas, stabilitas, akurasi prediksi, payoff rata-rata, serta kecepatan konvergensi.
+Beberapa penelitian lain menggunakan lingkungan simulasi yang lebih spesifik untuk menilai dinamika koordinasi antar agen. Dalam simulator \textit{teamwork-game}, performa dievaluasi melalui produktivitas tim agregat, konvergensi menuju \textit{Nash equilibrium}, serta kontribusi individu dalam tim (\cite{gomez_grounded_2025}). Pada studi dinamika evolusioner dalam permainan berulang dan ruang strategi kontinu, evaluasi sering dilakukan melalui metrik seperti tingkat kerja sama, fraksi kooperator dalam populasi, serta stabilitas klaster strategi (\cite{di_coupling_2023}; \cite{elhamer_effects_2020}). Pendekatan berbasis populasi pada \textit{repeated matrix games} juga dianalisis menggunakan populasi sintetis dengan fokus pada payoff rata-rata, \textit{robustness}, dan kemampuan generalisasi terhadap berbagai tipe lawan (\cite{perera_learning_2025}).
 
-Selain itu ~(\cite{wang_achieving_2019}) mengembangkan lingkungan SPD dua dimensi khusus dan mengevaluasi reward rata-rata serta kesejahteraan sosial, sementara ~(\cite{jin_achieving_2025}) memanfaatkan benchmark MARL dengan metrik return ternormalisasi dan konvergensi.~(\cite{de_weerd_higher-order_2022}) menggunakan simulasi \textit{Colored Trails} dan menilai performa melalui skor agen serta kesejahteraan sosial. Secara keseluruhan, variasi lingkungan dan metrik ini menunjukkan bahwa evaluasi dalam literatur cenderung berfokus pada indikator payoff, konvergensi, atau tingkat kerja sama, sementara pengukuran eksplisit terhadap kualitas peramalan trajektori perilaku lawan dalam horizon multi-langkah masih relatif terbatas.
+Galat prediksi perilaku lawan dan payoff kumulatif yang diperoleh agen dalam Permainan \textit{repeated zero-sum} sering digunakan sebagai indikator evaluasi (\cite{li_exploiting_2025}). Studi lain pada \textit{repeated matrix games} menilai efektivitas model melalui indikator seperti akurasi prediksi, payoff rata-rata, stabilitas strategi, serta kecepatan konvergensi selama interaksi berulang (\cite{freire_modeling_2023}; \cite{hu_modeling_2023}). Selain itu, beberapa penelitian mengembangkan lingkungan eksperimen khusus, seperti lingkungan SPD dua dimensi dengan metrik reward rata-rata dan kesejahteraan sosial (\cite{wang_achieving_2019}), serta benchmark MARL dengan indikator return ternormalisasi dan konvergensi pembelajaran (\cite{jin_achieving_2025}). Simulasi negosiasi berbasis permainan \textit{Colored Trails} juga digunakan untuk mengevaluasi performa agen melalui skor individu dan kesejahteraan sosial kolektif (\cite{de_weerd_higher-order_2022}).
+
+Secara keseluruhan, variasi lingkungan eksperimen dan metrik evaluasi tersebut menunjukkan bahwa sebagian besar penelitian menilai performa pemodelan lawan melalui indikator seperti payoff, konvergensi strategi, atau tingkat kerja sama. Namun demikian, pengukuran eksplisit terhadap kualitas peramalan trajektori perilaku lawan dalam horizon multi-langkah masih relatif terbatas dalam literatur yang ada.
+
 
 \begin{table}[!htbp]
 \centering
@@ -257,7 +56,7 @@ Selain itu ~(\cite{wang_achieving_2019}) mengembangkan lingkungan SPD dua dimens
 \setlength{\tabcolsep}{4pt}
 \begin{tabularx}{\columnwidth}{c >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X}
 \midrule
-\textbf{Ref.} & \textbf{Lingkungan Evaluasi} & \textbf{Metrik} \\
+\textbf{Referensi} & \textbf{Lingkungan Evaluasi} & \textbf{Metrik} \\
 \midrule
 ~\cite{qiao_o2m_2024} & Self-play simetris & MSE selama pelatihan offline; akurasi memori laten \\
 ~\cite{zhu_evolutionary_2025} & Jaringan scale-free dengan strategi zero-determinant & Frekuensi kerja sama (C) dan eksploitasi (E) \\
@@ -276,13 +75,14 @@ Selain itu ~(\cite{wang_achieving_2019}) mengembangkan lingkungan SPD dua dimens
 \end{tabularx}
 \end{table}
 
+\noindent
 Sebagaimana terlihat pada Tabel~\ref{tab:evaluation_metrics}, mayoritas studi mengevaluasi efektivitas pemodelan lawan melalui metrik kinerja agregat jangka panjang, seperti payoff rata-rata, tingkat kerja sama, stabilitas, serta konvergensi menuju equilibrium. Evaluasi semacam ini menilai keberhasilan berdasarkan hasil akhir interaksi, tanpa secara eksplisit mengkaji bagaimana kualitas prediksi perilaku lawan pada berbagai horizon mempengaruhi proses pengambilan keputusan strategis.
 
-Selain itu, sebagian besar pendekatan yang melibatkan komponen prediktif melaporkan kinerja berdasarkan galat satu langkah (\textit{one-step prediction error}). Meskipun metrik ini relevan untuk mengukur konsistensi lokal model terhadap data historis, ia tidak secara langsung mencerminkan kebutuhan perencanaan dalam \textit{repeated games}. Dalam konteks permainan berulang seperti IPD, keputusan pada suatu langkah mempengaruhi respons lawan pada langkah-langkah berikutnya, sehingga pengambilan keputusan bersifat intrinsik multi-langkah.
+Sebagian besar pendekatan yang melibatkan komponen prediktif melaporkan kinerja berdasarkan galat satu langkah (\textit{one-step prediction error}). Meskipun metrik ini relevan untuk mengukur konsistensi lokal model terhadap data historis, ia tidak secara langsung mencerminkan kebutuhan perencanaan dalam \textit{repeated games}. Permainan berulang seperti IPD, keputusan pada suatu langkah mempengaruhi respons lawan pada langkah-langkah berikutnya, sehingga pengambilan keputusan bersifat intrinsik multi-langkah.
 
 \begin{table}
 \centering
-\caption{Ringkasan Penelitian Terkait}\label{ringkasan_terkait}
+\caption{Ringkasan Penelitian Terkait}\label{tab:ringkasan_terkait}
 \begin{tabularx}{\textwidth}{{p{1.5cm} p{3.5cm} p{8.0cm}}}
 \toprule
 \textbf{Ref} & \textbf{Nama Model} & \textbf{Temuan Utama} \\
@@ -333,7 +133,8 @@ Selain itu, sebagian besar pendekatan yang melibatkan komponen prediktif melapor
 
 Ketergantungan pada objektif prediksi satu langkah berpotensi menimbulkan ketidaksesuaian antara objektif statistik dan objektif strategis. Model yang dioptimalkan untuk meminimalkan galat satu langkah belum tentu menghasilkan estimasi lintasan perilaku lawan yang stabil ketika digunakan untuk perencanaan lintas-horizon. Dalam skema \textit{recursive forecasting}, kesalahan prediksi awal dapat terpropagasi dan mempengaruhi estimasi payoff kumulatif secara non-linear. Namun demikian, literatur yang ada jarang menguji secara eksplisit bagaimana kualitas prediksi multi-langkah berhubungan dengan performa strategis agen.
 
-Lebih lanjut, belum banyak studi yang secara sistematis membandingkan implikasi penggunaan prediksi satu langkah, \textit{recursive multi-step forecasting}, dan \textit{direct multi-step forecasting} terhadap payoff strategis. Analisis mengenai keberadaan horizon prediksi optimal ($k^*$) yang memberikan trade-off terbaik antara stabilitas prediksi dan manfaat strategis juga masih terbatas.
+\section{Celah Penelitian}
+Belum banyak studi yang secara sistematis membandingkan implikasi penggunaan prediksi satu langkah, \textit{recursive multi-step forecasting}, dan \textit{direct multi-step forecasting} terhadap payoff strategis. Analisis mengenai keberadaan horizon prediksi optimal ($h^*$) yang memberikan trade-off terbaik antara stabilitas prediksi dan manfaat strategis juga masih terbatas.
 
 Berdasarkan sintesis tersebut, terdapat celah penelitian yang signifikan, yaitu belum adanya analisis sistematis mengenai ketidaksesuaian antara objektif prediksi satu langkah dan kebutuhan perencanaan strategis multi-langkah dalam \textit{repeated games}. Secara khusus, hubungan antara akurasi prediksi lintas-horizon, propagasi kesalahan dalam skema rekursif, dan dampaknya terhadap payoff strategis belum dievaluasi secara terintegrasi dan terkontrol.
 

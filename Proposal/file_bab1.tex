@@ -1,76 +1,65 @@
 \section{Latar Belakang}
 
-Interaksi strategis berulang merupakan permasalahan fundamental dalam lingkungan sosial ataupun \textit{multi-agent reinforcement learning} (MARL)(\cite{hernandez-leal_survey_2019}). Dalam lingkungan multi-agen, setiap agen tidak hanya beradaptasi terhadap lingkungan, tetapi juga terhadap agen lain yang turut belajar. Kondisi ini menjadikan dinamika pembelajaran bersifat non-stasioner dan sangat bergantung pada pola interaksi historis.
+Interaksi strategis antar individu merupakan komponen penting dalam berbagai proses pengambilan keputusan kolektif, terutama pada sistem sosial, ekonomi, dan kebijakan publik. Dalam banyak situasi, hasil yang diperoleh oleh suatu pihak tidak hanya ditentukan oleh keputusan yang diambil sendiri, tetapi juga oleh keputusan pihak lain yang berinteraksi dalam sistem yang sama. Kerangka \textit{game theory} telah lama digunakan untuk menganalisis fenomena tersebut dan memberikan pemahaman formal mengenai bagaimana keputusan rasional individu dapat menghasilkan dinamika kolektif tertentu.
 
-\textit{Iterated Prisoner's Dilemma} (IPD) merupakan kerangka klasik untuk menganalisis dinamika tersebut (\cite{axelrod_evolution_1981}). Dalam IPD, strategi tidak hanya ditentukan oleh aksi pada satu langkah, tetapi oleh pola respons yang berkembang sepanjang beberapa putaran. Banyak strategi deterministik maupun adaptif seperti \textit{Tit-for-Tat} dan variasinya memperlihatkan struktur perilaku yang baru terlihat dalam rentang beberapa langkah interaksi.
+Beberapa fenomena kebijakan publik menunjukkan bahwa hasil dari interaksi strategis sering kali tidak bersifat intuitif. Contohnya adalah \textit{tragedy of the commons}, yaitu situasi di mana individu secara rasional mengeksploitasi sumber daya bersama sehingga pada akhirnya merugikan seluruh kelompok (\cite{hardin_tragedy_1968}). Fenomena lain adalah \textit{Braess paradox}, di mana penambahan infrastruktur jalan justru dapat memperburuk kemacetan karena setiap pengguna memilih rute yang secara individual paling menguntungkan (\cite{roughgarden_selfish_2005}). Contoh-contoh tersebut menunjukkan bahwa keputusan rasional pada tingkat individu dapat menghasilkan hasil kolektif yang tidak optimal apabila interaksi strategis antar pihak tidak diperhitungkan secara tepat.
 
-Dalam literatur Pemodelan lawan, pendekatan yang umum digunakan adalah prediksi satu langkah ke depan (\textit{one-step prediction}) (\cite{nashed_survey_2022}). Model dilatih untuk meminimalkan kesalahan prediksi terhadap aksi lawan pada langkah berikutnya. Meskipun pendekatan ini konsisten dengan formulasi supervised learning standar, terdapat potensi ketidaksesuaian antara objektif pelatihan satu-langkah dan kebutuhan pengambilan keputusan dalam permainan berulang.
+Dalam konteks komputasional, permasalahan interaksi strategis juga muncul pada bidang \textit{multi-agent reinforcement learning} (MARL), di mana beberapa agen belajar secara simultan dalam lingkungan yang sama. Berbeda dengan pembelajaran penguatan pada agen tunggal, dalam lingkungan multi-agen setiap agen tidak hanya beradaptasi terhadap lingkungan statis, tetapi juga terhadap agen lain yang turut belajar dan mengubah strateginya. Interaksi ini membentuk dinamika pembelajaran yang bersifat non-stasioner dan berlangsung dalam mekanisme \textit{closed-loop}, di mana keputusan yang diambil oleh suatu agen memengaruhi perilaku agen lain yang kemudian kembali memengaruhi keputusan agen tersebut pada langkah berikutnya (\cite{hernandez-leal_survey_2019}).
 
-Dalam repeated games, keputusan agen pada waktu $t$ tidak hanya bergantung pada distribusi aksi lawan pada waktu $t+1$, tetapi juga pada konsekuensi strategis dalam beberapa langkah berikutnya (\cite{nashed_survey_2022}). Strategi tertentu mungkin tidak optimal secara satu-langkah, namun menguntungkan secara beberapa langkah. Dengan demikian, akurasi prediksi satu-langkah tidak selalu berbanding lurus dengan kualitas perencanaan strategis.
+Salah satu kerangka klasik yang sering digunakan untuk mempelajari dinamika interaksi strategis berulang adalah \textit{Iterated Prisoner's Dilemma} (IPD) (\cite{axelrod_evolution_1981}). Dalam permainan ini, dua agen berinteraksi secara berulang dengan memilih antara aksi kooperatif atau defektif pada setiap putaran. Berbeda dengan permainan satu langkah, strategi dalam IPD tidak hanya ditentukan oleh aksi saat ini, tetapi juga oleh pola respons terhadap sejarah interaksi sebelumnya. Strategi seperti \textit{Tit-for-Tat} dan berbagai variasinya menunjukkan bahwa perilaku kooperatif dapat muncul melalui mekanisme respons timbal balik yang berlangsung dalam beberapa langkah interaksi.
 
-Berdasarkan kondisi tersebut, terdapat kebutuhan untuk secara sistematis menganalisis hubungan antara horizon prediksi dan kualitas pengambilan keputusan dalam IPD. Secara khusus, penting untuk mengevaluasi apakah prediksi beberapa langkah jangka pendek ($k$-step forecasting) memberikan representasi strategi lawan yang lebih selaras dengan kebutuhan perencanaan dibandingkan prediksi satu-langkah.
+Dalam literatur pemodelan lawan (\textit{opponent modeling}), pendekatan yang umum digunakan adalah prediksi aksi lawan satu langkah ke depan (\textit{one-step prediction}). Model dilatih untuk meminimalkan kesalahan prediksi terhadap aksi lawan pada langkah berikutnya. Pendekatan ini selaras dengan formulasi standar dalam \textit{supervised learning}, di mana model dioptimalkan untuk memprediksi target pada langkah selanjutnya berdasarkan observasi historis (\cite{nashed_survey_2022}). Namun dalam interaksi yang bersifat \textit{closed-loop}, prediksi yang dihasilkan model tidak hanya berfungsi sebagai estimasi pasif terhadap perilaku lawan, tetapi juga memengaruhi keputusan agen yang menggunakan prediksi tersebut untuk menentukan tindakannya.
+
+Akibatnya, keputusan yang diambil berdasarkan prediksi tersebut dapat memengaruhi respons lawan pada langkah berikutnya dan membentuk trajektori interaksi secara keseluruhan. Dalam konteks permainan berulang, keputusan optimal sering kali bergantung pada konsekuensi strategis yang terjadi dalam beberapa langkah ke depan. Strategi tertentu mungkin tampak tidak optimal secara satu langkah, tetapi menghasilkan keuntungan strategis apabila dilihat dalam beberapa langkah interaksi.
+
+Selain dalam konteks teori permainan klasik, kemampuan untuk memodelkan dan memprediksi strategi lawan juga memiliki implikasi praktis dalam berbagai sistem interaktif modern. Contohnya meliputi permainan strategis berbasis komputer, sistem negosiasi otomatis, serta simulasi ekonomi komputasional di mana agen perlu mengantisipasi respons pihak lain dalam beberapa langkah ke depan (\cite{albrecht_autonomous_2024}). Dalam konteks tersebut, representasi perilaku lawan yang mampu menangkap pola respons jangka pendek menjadi penting untuk mendukung proses perencanaan keputusan yang lebih adaptif.
+
+Berdasarkan kondisi tersebut, muncul kebutuhan untuk menganalisis hubungan antara horizon prediksi dan kualitas pengambilan keputusan dalam permainan berulang. Secara khusus, penting untuk mengevaluasi apakah prediksi beberapa langkah jangka pendek (\textit{$h$-step forecasting}) dapat memberikan representasi strategi lawan yang lebih sesuai dengan kebutuhan perencanaan dibandingkan pendekatan prediksi satu langkah yang umum digunakan dalam literatur.
+
 
 \section{Rumusan Masalah}
 
-Dalam permainan berulang seperti \textit{Iterated Prisoner's Dilemma}, interaksi antar-agen secara konseptual dipandang memiliki horizon yang panjang dan keputusan bersifat saling bergantung antar-langkah. Namun, dalam praktik pemodelan lawan, prediksi perilaku lawan sering diformulasikan sebagai prediksi satu-langkah (\textit{one-step prediction}) yang dioptimalkan berdasarkan kesalahan prediksi jangka pendek.
+Pendekatan pemodelan lawan dalam permainan berulang umumnya diformulasikan sebagai prediksi satu langkah (\textit{one-step prediction}) yang dioptimalkan berdasarkan kesalahan prediksi jangka pendek. Formulasi ini berfokus pada akurasi prediksi lokal tanpa secara eksplisit mempertimbangkan kebutuhan perencanaan strategis dalam horizon beberapa langkah interaksi.
 
-Perbedaan antara horizon interaksi yang bersifat sekuensial dan objektif pembelajaran yang miopik tersebut menunjukkan adanya potensi ketidaksesuaian antara tujuan perencanaan strategis dan mekanisme pembelajaran model lawan. Kondisi ini dapat membatasi representasi pola strategi yang bergantung pada beberapa langkah interaksi serta memengaruhi dinamika adaptasi yang terbentuk selama permainan berlangsung.
+Ketidaksesuaian antara objektif prediksi satu langkah dan kebutuhan perencanaan strategis tersebut menimbulkan potensi bahwa model lawan tidak merepresentasikan dinamika strategi secara memadai, sehingga interaksi yang dihasilkan berpotensi berkembang menuju ekuilibrium yang suboptimal.
 
 \section{Batasan Penelitian}
 
-Agar ruang lingkup penelitian tetap terfokus dan implementasi eksperimental terkendali, penelitian ini dibatasi pada:
+Agar ruang lingkup penelitian tetap terfokus dan implementasi eksperimental dapat dikendalikan, penelitian ini dibatasi pada beberapa aspek berikut:
 
 \begin{enumerate}
-    \item Lingkungan \textit{Iterated Prisoner's Dilemma} (IPD) dengan struktur payoff standar dan interaksi berulang dalam horizon tetap.
 
-    \item Lawan reaktif seperti TFT, Grimm trigger, dan adaptif yang algoritmanya tidak diketahui oleh agen, namun dibatasi pada kelas pembelajaran \textit{online} seperti \textit{Hedge}, \textit{Online Mirror Descent}.
+\item Lingkungan permainan yang digunakan adalah \textit{Iterated Prisoner's Dilemma} (IPD) klasik dengan struktur \textit{payoff} standar dan horizon permainan yang tetap.
 
-    \item Analisis difokuskan pada prediksi trajectory aksi lawan dalam horizon terbatas ($k$-step forecasting), tanpa membahas konvergensi jangka panjang atau sifat asimtotik strategi.
+\item Lawan yang dimodelkan dibatasi pada strategi deterministik yang dapat direpresentasikan sebagai \textit{finite state machine}.
 
-    \item Penelitian tidak melakukan inferensi terhadap struktur algoritma internal lawan, melainkan memodelkan distribusi aksi berdasarkan observasi historis.
+\item Penelitian tidak merancang mekanisme eksplorasi strategi baru maupun proses pembelajaran kebijakan agen, melainkan berfokus pada pemodelan dan prediksi perilaku lawan.
 
-    \item Evaluasi difokuskan pada hubungan antara akurasi prediksi beberapa langkah dan propagasi kesalahan tanpa merancang algoritma eksplorasi baru.
-    
-    \item Aktor yang digunakan dalam model adalah agen dengan strategi yang sama pada saat geneari data di mana pembaruan keputusan dilakukan berdasarkan prediksi perilaku lawan tanpa optimisasi eksplisit terhadap fungsi reward. Konfigurasi ini diterapkan baik pada tahap pelatihan maupun evaluasi.
+\item Interaksi antar agen dianalisis dalam skenario \textit{closed-loop}, di mana keputusan agen dan lawan saling memengaruhi sepanjang trajektori permainan.
+
 \end{enumerate}
+
 
 \section{Tujuan Penelitian}
 
-Penelitian ini bertujuan untuk:
-
-\begin{enumerate}
-    \item Menganalisis kesesuaian antara objektif prediksi satu-langkah (\textit{one-step prediction}) dan kebutuhan perencanaan strategis beberapa langkah dalam permainan berulang seperti IPD.
-
-    \item Mengembangkan dan mengimplementasikan mekanisme prediksi trajectory aksi lawan dalam horizon terbatas ($k$-step forecasting).
-
-    \item Mengevaluasi pengaruh panjang horizon prediksi ($k$) terhadap akurasi prediksi, propagasi kesalahan, dan perolehan payoff strategis.
-
-    \item Membandingkan pendekatan recursive forecasting dan direct multi-step forecasting dalam konteks stabilitas prediksi dan dampaknya terhadap performa agen.
-\end{enumerate}
+Penelitian ini bertujuan untuk mengembangkan pendekatan peramalan trajektori aksi lawan dalam interaksi \textit{closed-loop} pada permainan berulang melalui pemodelan lawan, serta menganalisis peran horizon prediksi dalam merepresentasikan dinamika strategi pada lingkungan \textit{Iterated Prisoner's Dilemma}.
 
 \section{Manfaat Penelitian}
 
-Manfaat dan kontribusi yang diharapkan dari penelitian ini adalah sebagai berikut:
+Manfaat yang diharapkan dari penelitian ini adalah sebagai berikut:
 
 \begin{enumerate}
 
-    \item Memberikan analisis konseptual dan empiris mengenai perbedaan antara objektif prediksi satu-langkah (one-step prediction) dan prediksi beberapa langkah (multi-step trajectory forecasting) dalam konteks interaksi strategis berulang.
+\item Memberikan pemahaman eksperimental mengenai peran horizon prediksi dalam pemodelan lawan pada interaksi strategis berulang.
 
-    \item Menyediakan evaluasi sistematis mengenai pengaruh horizon prediksi ($k$) terhadap degradasi akurasi dalam skema open-loop forecasting, termasuk analisis propagasi error sepanjang trajectory.
+\item Menyediakan pendekatan peramalan trajektori aksi lawan dalam skenario interaksi \textit{closed-loop} pada lingkungan \textit{Iterated Prisoner's Dilemma}.
 
-    \item Mengembangkan kerangka evaluasi berbasis likelihood yang memungkinkan perbandingan performa model secara lebih robust dalam lingkungan dengan stochasticity.
+\item Menyediakan kerangka simulasi yang dapat digunakan untuk mengevaluasi hubungan antara kualitas prediksi trajektori dan dinamika interaksi dalam permainan berulang.
 
-    \item Menyediakan dasar eksperimental untuk memahami sejauh mana kualitas prediksi trajectory mencerminkan konsistensi dan stabilitas pola perilaku agen dalam repeated games, tanpa mengasumsikan optimalitas strategis.
-    
 \end{enumerate}
 
 \section{Sistematika Penelitian}
 
-\begin{enumerate}
-    \item Bab 1: Pendahuluan: Latar belakang, rumusan masalah, batasan, tujuan, manfaat, dan sistematika penelitian.
-    \item Bab 2: Tinjauan Pustaka: Kajian literatur terkait pemodelan lawan, IPD, dan pendekatan pembelajaran daring.
-    \item Bab 3: Kerangka Teoritis: Formulasi masalah, definisi formal belief dan forecasting loss, serta arsitektur umum.
-    \item Bab 4: Metode Penelitian: Desain eksperimen, algoritma, dan prosedur evaluasi.
-    \item Bab 5: Jadwal Penelitian: gant chart, depedensi, dan risiko.
-    \item Bab 6: Kesimpulan dan Saran.
-\end{enumerate}
+Sistematika penulisan penelitian ini disusun dalam beberapa bab untuk memudahkan pemahaman terhadap alur penelitian yang dilakukan. Bab I merupakan pendahuluan yang memuat latar belakang penelitian, rumusan masalah, batasan penelitian, tujuan penelitian, manfaat penelitian, serta sistematika penulisan. Bab II berisi tinjauan pustaka yang mengkaji berbagai literatur terkait topik penelitian, khususnya mengenai pemodelan lawan, \textit{Iterated Prisoner's Dilemma}, serta pendekatan pembelajaran dalam lingkungan interaksi berulang.
+
+Bab III memuat landasan teori yang digunakan dalam penelitian, meliputi formulasi masalah secara formal, definisi konsep yang digunakan seperti \textit{belief} dan \textit{forecasting loss}, serta gambaran umum arsitektur pendekatan yang digunakan. Bab IV menjelaskan metode penelitian yang meliputi desain eksperimen, algoritma yang digunakan dalam pemodelan dan prediksi, serta prosedur evaluasi yang diterapkan untuk menilai kinerja model. Bab V memaparkan jadwal pelaksanaan penelitian dalam bentuk \textit{Gantt chart}.
