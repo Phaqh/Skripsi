@@ -3,16 +3,16 @@
 
 Dilema sosial merupakan situasi di mana keputusan rasional secara individual menghasilkan luaran yang tidak optimal secara kolektif(~\cite{axelrod_evolution_1981}). Secara formal, kondisi ini dapat dinyatakan sebagai adanya konflik antara rasionalitas individu dan optimalitas sosial.
 
-Teori permainan memberikan kerangka formal yang memodelkan pemain, strategi, dan payoff secara terstruktur (\cite{bonanno_game_2024}), dalam bentuk normal didefinisikan sebagai $G = (N, A, U)$ dengan $N$ himpunan pemain, $A = A_1 \times A_2$ himpunan profil strategi atau \textit{Action space }, dan $U = (u_1, u_2)$ fungsi payoff atau\textit{utility}. Setiap pemain $i \in N$ memilih strategi $a_i \in A_i$ untuk memaksimalkan payoff $u_i(a_i, a_{-i})$, di mana $a_{-i}$ adalah profil strategi lawan. Strategi yang dipilih oleh pemain lain mempengaruhi payoff yang diterima, sehingga interaksi ini bersifat strategis. Dalam konteks ini, konsep keseimbangan Nash menjadi penting untuk memahami hasil yang mungkin terjadi ketika setiap pemain bertindak secara rasional dengan mempertimbangkan strategi lawan.\textit{Nash Equilibrium} adalah profil strategi $a^*$ yang memenuhi $u_i(a_i^*, a_{-i}^*) \ge u_i(a_i, a_{-i}^*) \quad \forall a_i \in A_i$ Menunjukan pilihan aksi selain $a_i^*$ tidak dapat memberikan keuntungan lebih besar dari strategi keseimbangan. Kerangka ini memungkinkan analisis rasionalitas strategis dalam interaksi statik. Namun, model bentuk normal bersifat satu tahap dan mengasumsikan struktur payoff tetap. 
+Teori permainan memberikan kerangka formal yang memodelkan pemain, strategi, dan hasil secara terstruktur (\cite{bonanno_game_2024}), dalam bentuk normal didefinisikan sebagai $G = (N, A, U)$ dengan $N$ himpunan pemain, $A = A_1 \times A_2$ himpunan profil strategi atau \textit{Action space }, dan $U = (u_1, u_2)$ fungsi hasil atau \textit{utility}. Setiap pemain $i \in N$ memilih strategi $a_i \in A_i$ untuk memaksimalkan hasil $u_i(a_i, a_{-i})$, di mana $a_{-i}$ adalah profil strategi lawan. Strategi yang dipilih oleh pemain lain mempengaruhi hasil yang diterima, sehingga interaksi ini bersifat strategis. Dalam konteks ini, konsep keseimbangan Nash menjadi penting untuk memahami hasil yang mungkin terjadi ketika setiap pemain bertindak secara rasional dengan mempertimbangkan strategi lawan. \textit{Nash Equilibrium} adalah profil strategi $a^*$ yang memenuhi $u_i(a_i^*, a_{-i}^*) \ge u_i(a_i, a_{-i}^*) \quad \forall a_i \in A_i$ Menunjukan pilihan aksi selain $a_i^*$ tidak dapat memberikan keuntungan lebih besar dari strategi keseimbangan. Kerangka ini memungkinkan analisis rasionalitas strategis dalam interaksi statik. Namun, model bentuk normal bersifat satu tahap dan mengasumsikan struktur hasil tetap.
 
 \subsection{Prisoner's Dilemma}\label{sec:PrisonersDilemma}
 
-Prisoner's Dilemma merepresentasikan konflik rasionalitas individu dan kolektif secara eksplisit (~\cite{axelrod_evolution_1981}). Aksi yang dapat dipilih adalah \textit{Cooperate} ($C$) atau \textit{Defect} ($D$). Struktur payoff Prisoner's Dilemma diberikan oleh:
-
+Prisoner's Dilemma merepresentasikan konflik rasionalitas individu dan kolektif secara eksplisit (~\cite{axelrod_evolution_1981}). Aksi yang dapat dipilih adalah \textit{Cooperate} ($C$) atau \textit{Defect} ($D$). Struktur hasil Prisoner's Dilemma diberikan 
+pada tabel \ref{tab:Payoff}
 
 \begin{table}[h]
 \centering
-\caption{Payoff Matrix Prisoner's Dilemma}
+\caption{hasil Matrix Prisoner's Dilemma}\label{tab:Payoff}
 \begin{tabular}{c|cc}
 & C & D \\
 \hline
@@ -21,24 +21,29 @@ D & $(T,S)$ & $(P,P)$
 \end{tabular}
 \end{table}
 
-Dengan $R$ (Reward) adalah payoff jika kedua pemain bekerja sama, $T$ (Temptation) adalah payoff bagi pemain yang berkhianat sementara yang lain bekerja sama, $S$ (Sucker's payoff) adalah payoff bagi pemain yang bekerja sama sementara yang lain berkhianat, dan $P$ (Punishment) adalah payoff jika kedua pemain berkhianat.
-dengan ketidaksamaan $T > R > P > S \quad \text{dan} \quad 2R > T + S$ Dalam permainan satu tahap, strategi dominan adalah defeksi ($D$), sehingga keseimbangan Nash berada pada $(D,D)$ meskipun $(C,C)$ lebih optimal secara kolektif. Namun, interaksi nyata jarang terjadi hanya satu kali. 
+Dengan $R$ (Reward) adalah hasil jika kedua pemain bekerja sama, $T$ (Temptation) adalah hasil bagi pemain yang berkhianat sementara yang lain bekerja sama, $S$ (Sucker's) adalah hasil bagi pemain yang bekerja sama sementara yang lain berkhianat, dan $P$ (Punishment) adalah hasil jika kedua pemain berkhianat.
+dengan ketidaksamaan $T > R > P > S \quad \text{dan} \quad 2R > T + S$ Dalam permainan satu tahap, strategi dominan adalah defeksi ($D$), sehingga keseimbangan Nash berada pada $(D,D)$ meskipun $(C,C)$ lebih optimal secara kolektif.
 
 \subsubsection{Prisoner's Dilemma Berulang}\label{sec:IPD}
 
-Permainan PD diperluas menjadi bentuk berulang disebut Iterated Prisoner's Dilemma (IPD), permainan diulang selama $T$ atau \textit{Turn} tahap dengan payoff kumulatif atau terdiskonto. Dalam IPD, strategi dapat bergantung pada histori interaksi, memungkinkan untuk pembalasan dan kerja sama yang berkelanjutan. IPD relevan untuk mempelajari dinamika manusia seperti pembentukan hubungan, konflik berkepanjangan, siklus saling membalas, dan pemulihan kepercayaan.
+Permainan PD diperluas menjadi bentuk berulang, permainan diulang selama $T$ atau \textit{Turn} tahap dengan hasil kumulatif. Dalam IPD, strategi dapat bergantung pada histori interaksi, memungkinkan untuk pembalasan dan kerja sama yang berkelanjutan. IPD relevan untuk mempelajari dinamika manusia seperti pembentukan hubungan, konflik berkepanjangan, siklus saling membalas, dan pemulihan kepercayaan.
 
-Beberapa strategi terkenal dalam IPD meliputi \textit{Tit-for-Tat}: Mulai dengan bekerja sama, kemudian meniru aksi lawan pada langkah sebelumnya. \textit{Cooperator}: Selalu bekerja sama. \textit{Defector}: Selalu berkhianat. \textit{Random}: Memilih secara acak antara bekerja sama dan berkhianat. beberapa algoritma tersebut dapat dipahami melalui gambar \ref{fig:dfa} finite state machine.
+Beberapa strategi terkenal dalam IPD meliputi \textit{Tit-for-Tat}: Mulai dengan bekerja sama, kemudian meniru aksi lawan pada langkah sebelumnya. \textit{Cooperator}: Selalu bekerja sama. \textit{Defector}: Selalu berkhianat. beberapa algoritma tersebut dapat dipahami melalui gambar \ref{fig:dfa}.
 
-\begin{figure}[!htbp]
+\begin{figure}[!ht]
     \centering
-    \caption{Finite Automata untuk strategi IPD \cite{reiter_deterministic_strategies_2014}}\label{fig:dfa}
-    \includegraphics[height=0.8\textheight]{Images/dfa.png}
+    \caption{Finite State Machine untuk strategi IPD oleh \cite{reiter_deterministic_strategies_2014}}\label{fig:dfa}
+    \includegraphics[height=0.7\textheight]{Images/dfa.png}
 \end{figure}
 
 \section{Pemodelan Lawan}
 
-Pemodelan lawan memungkinkan untuk mempelajari perilaku ataupun strategi lawan (\cite{shoham_multiagent_2009}). Diberikan riwayat interaksi penuh $h_t = \left( (a_i^1, a_{-i}^1), \dots, (a_i^t, a_{-i}^t) \right)$ model parametrik $f_\theta$ mempelajari distribusi kondisional $p_\theta(a_{t+1}^{-i} \mid h_t)$. Meskipun pendekatan regresi linear sederhana mampu memodelkan hubungan statik, namun memiliki keterbatasan dalam menangkap dependensi temporal dan pola nonlinier (\cite{hochreiter_long_1997}).
+Pemodelan lawan (\textit{opponent modeling}) bertujuan untuk mempelajari perilaku atau strategi lawan berdasarkan riwayat interaksi yang diamati \cite{shoham_multiagent_2009}. Dalam konteks permainan berulang, interaksi antara agen $i$ dan lawan $-i$ pada setiap langkah waktu direpresentasikan sebagai pasangan aksi. Riwayat interaksi hingga langkah ke-$t$ dinotasikan sebagai
+$H_t = \left((a_i^1, a_{-i}^1), (a_i^2, a_{-i}^2), \dots, (a_i^t, a_{-i}^t)\right),$ di mana $a_i^k$ menyatakan aksi yang dipilih oleh agen $i$ pada langkah ke-$k$, sedangkan $a_{-i}^k$ menyatakan aksi yang dipilih oleh lawan pada langkah yang sama.
+
+Berdasarkan riwayat interaksi tersebut, modul pemodelan lawan bertujuan untuk memprediksi distribusi probabilitas aksi lawan pada langkah berikutnya, yang dapat dituliskan sebagai $P(a_{-i}^{t+1} \mid H_t)$. Distribusi ini merepresentasikan keyakinan model terhadap kemungkinan aksi lawan pada langkah waktu $t+1$ dengan mempertimbangkan seluruh riwayat interaksi sebelumnya.
+
+Pendekatan sederhana seperti regresi linear dapat digunakan untuk memodelkan hubungan antara riwayat interaksi dan aksi lawan berikutnya. Namun, metode tersebut memiliki keterbatasan dalam menangkap dependensi temporal jangka panjang dan pola hubungan nonlinier yang sering muncul dalam interaksi strategis berulang \cite{hochreiter_long_1997}. Oleh karena itu, pendekatan berbasis model sekuensial seperti \textit{Long Short-Term Memory} (LSTM) lebih sesuai untuk merepresentasikan dinamika strategi lawan dalam konteks permainan berulang.
 
 \section{Long Short-Term Memory (LSTM)}
 
@@ -48,24 +53,32 @@ Diberikan input $x_t$ (observasi pada waktu $t$, misalnya aksi lawan), hidden st
 
 \begin{figure}[!htbp]
     \centering
-    \caption{Diagram LSTM.}\label{fig:LSTM}
+    \caption{Diagram Cell LSTM.}\label{fig:LSTM}
     \includegraphics[height=0.4\textheight]{Images/LSTM.png}
 \end{figure}
 
 \subsection{Forget Gate}
 
-Forget gate mengontrol sejauh mana informasi pada state memori sebelumnya dipertahankan atau diabaikan pada waktu $t$ (\cite{hochreiter_long_1997}). Secara formal, nilai gerbang pelupaan $f_t$ dihitung melalui fungsi aktivasi sigmoid terhadap kombinasi linear antara input saat ini $x_t$, hidden state sebelumnya $h_{t-1}$, serta bias $b_f$. Parameter $W_f$ dan $U_f$ masing-masing merepresentasikan matriks bobot yang memetakan input dan hidden state ke ruang gerbang. Karena fungsi sigmoid menghasilkan keluaran pada rentang $(0,1)$, setiap elemen dalam $f_t$ berperan sebagai koefisien penskalaan yang mengatur proporsi informasi dari cell state sebelumnya yang akan dipertahankan. Nilai yang mendekati $1$ menunjukkan bahwa informasi tersebut dipertahankan hampir sepenuhnya, sedangkan nilai yang mendekati $0$ menyebabkan informasi tersebut dilupakan. Dengan demikian, forget gate memungkinkan model menyesuaikan horizon memori secara adaptif, sehingga dependensi temporal jangka panjang dapat dipertahankan atau dihapus sesuai kebutuhan dinamika data.
+Forget gate mengontrol sejauh mana informasi pada state memori sebelumnya dipertahankan atau diabaikan pada waktu $t$ (\cite{hochreiter_long_1997}). Secara formal, nilai gerbang pelupaan $f_t$ dihitung melalui fungsi aktivasi sigmoid terhadap kombinasi linear antara input saat ini $x_t$, hidden state sebelumnya $h_{t-1}$, serta bias $b_f$. 
+
 \begin{equation}
 f_t = \sigma(W_f x_t + U_f h_{t-1} + b_f)
 \end{equation}
 
+\noindent
+Parameter $W_f$ dan $U_f$ masing-masing merepresentasikan matriks bobot yang memetakan input dan hidden state ke ruang gerbang. Karena fungsi sigmoid menghasilkan keluaran pada rentang $(0,1)$, setiap elemen dalam $f_t$ berperan sebagai koefisien penskalaan yang mengatur proporsi informasi dari cell state sebelumnya yang akan dipertahankan. Nilai yang mendekati $1$ menunjukkan bahwa informasi tersebut dipertahankan hampir sepenuhnya, sedangkan nilai yang mendekati $0$ menyebabkan informasi tersebut dilupakan. Dengan demikian, forget gate memungkinkan model menyesuaikan horizon memori secara adaptif, sehingga dependensi temporal jangka panjang dapat dipertahankan atau dihapus sesuai kebutuhan dinamika data.
+
+
 \subsection{Input Gate}
 
-Input $x_t \in \mathbb{R}^d$ merepresentasikan observasi saat ini, sedangkan $h_{t-1} \in \mathbb{R}^h$ adalah ringkasan historis interaksi sebelumnya (\cite{hochreiter_long_1997}). Namun, tidak semua informasi baru relevan atau stabil untuk memperbarui kepercayaan terhadap strategi lawan. Oleh karena itu, input gate $i_t \in [0,1]^h$ mengontrol seberapa besar setiap dimensi informasi baru akan diterima ke dalam memori, dengan $\sigma(\cdot)$ sebagai fungsi sigmoid dan $W_i, U_i, b_i$ sebagai parameter yang dipelajari.
-
+Input $x_t \in \mathbb{R}^d$ merepresentasikan observasi saat ini, sedangkan $h_{t-1} \in \mathbb{R}^h$ adalah ringkasan historis interaksi sebelumnya (\cite{hochreiter_long_1997}). Namun, tidak semua informasi baru relevan atau stabil untuk memperbarui kepercayaan terhadap strategi lawan.
 \begin{equation}
 i_t = \sigma(W_i x_t + U_i h_{t-1} + b_i)
 \end{equation}
+
+\noindent
+Oleh karena itu, input gate $i_t \in [0,1]^h$ mengontrol seberapa besar setiap dimensi informasi baru akan diterima ke dalam memori, dengan $\sigma(\cdot)$ sebagai fungsi sigmoid dan $W_i, U_i, b_i$ sebagai parameter yang dipelajari.
+
 
 
 \subsection{Candidate Cell State}
@@ -99,7 +112,7 @@ Pada persamaan di~\ref{output_Gate}, $x_t \in \mathbb{R}^{d}$ menyatakan vektor 
 
 \section{Prediksi Multi-Langkah}
 
-Model LSTM menghasilkan distribusi prediktif satu langkah ke depan $p(a_{t+1}^{-i} \mid h_t)$. Namun, dalam permainan berulang, nilai suatu aksi tidak hanya ditentukan oleh respons lawan pada tahap berikutnya, melainkan oleh konsekuensi jangka panjang sepanjang lintasan interaksi (\cite{nashed_survey_2022}).
+Model LSTM menghasilkan distribusi prediktif satu langkah ke depan dalam setting \textit{closed loop} $p(a_{t+1}^{-i} \mid h_t)$. Namun, dalam permainan berulang, nilai suatu aksi tidak hanya ditentukan oleh respons lawan pada tahap berikutnya, melainkan oleh konsekuensi jangka panjang sepanjang lintasan interaksi (\cite{nashed_survey_2022}).
 
 \subsection{Peramalan Rekursif}
 
@@ -116,25 +129,24 @@ dengan $a$ merepresentasikan aksi lawan yang mungkin terjadi, $P_{\text{actual}}
 
 \subsection{Negative Log-Likelihood}
 
-Untuk mengevaluasi kualitas prediksi sekuensial lawan dalam horizon  multi-step, digunakan metrik \textit{Negative Log-Likelihood} (NLL) sebagai proper scoring rule yang konsisten terhadap estimasi distribusi probabilistik (\cite{zhu_negative_2018}).Misalkan pada waktu $t$ tersedia riwayat interaksi $h_t = \{(a_i^1, a_{-i}^1), \dots, (a_i^t, a_{-i}^t)\}.$ Model pemodelan lawan menghasilkan distribusi probabilitas atas aksi lawan pada langkah berikutnya, yang dinotasikan sebagai $P_\theta(a_{-i}^{t+1} \mid h_t)$ dengan $\theta$ merepresentasikan parameter model (misalnya parameter LSTM). Untuk prediksi multi-step sepanjang horizon $H$, model digunakan secara autoregresif, sehingga distribusi pada langkah ke-$k$ bergantung pada riwayat yang telah diperluas hingga waktu tersebut. Secara umum, probabilitas gabungan untuk urutan aksi aktual lawan $a_{-i}^{t+1:t+H}$ diberikan oleh:
+Untuk mengevaluasi kualitas prediksi sekuensial lawan pada horizon multi-step, digunakan metrik \textit{Negative Log-Likelihood} (NLL) sebagai \textit{proper scoring rule} yang konsisten dalam menilai kualitas estimasi distribusi probabilistik (\cite{zhu_negative_2018}). 
 
-\begin{equation}\label{}
-P_\theta(a_{-i}^{t+1:t+H} \mid h_t) 
-= \prod_{k=1}^{H} 
-P_\theta(a_{-i}^{t+k} \mid \hat{h}_{t+k-1})
-\end{equation}
+Misalkan suatu permainan memiliki panjang maksimum $T$ langkah. Pada langkah permainan ke-$t$, tersedia riwayat interaksi hingga waktu tersebut yang dinotasikan sebagai $h_t = \{(a_i^1, a_{-i}^1), \dots, (a_i^t, a_{-i}^t)\}$, yaitu pasangan aksi agen $i$ dan lawannya pada setiap langkah sebelumnya. Berdasarkan riwayat tersebut, model pemodelan lawan dengan parameter $\theta$ menghasilkan distribusi probabilitas atas aksi lawan pada langkah berikutnya, yang dinyatakan sebagai $P_\theta(a_{-i}^{t+1} \mid h_t)$.
 
-dengan $a_{-i}^{t+k}$ sebagai aksi aktual lawan pada waktu $t+k$, $\hat{h}_{t+k-1}$ sebagai riwayat yang digunakan model pada langkah ke-$k$, yang terdiri dari riwayat asli $h_t$ yang diperluas secara rekursif menggunakan observasi aktual hingga waktu $t+k-1$, $H$ sebagai panjang horizon prediksi multi-step. Negative Log-Likelihood untuk satu segmen horizon sepanjang $H$ kemudian didefinisikan sebagai persamaan \ref{eq:NLL}.
+Untuk melakukan prediksi beberapa langkah ke depan, model digunakan secara autoregresif sepanjang horizon prediksi $H$. Artinya, prediksi pada langkah ke-$h$ menggunakan riwayat yang diperbarui hingga waktu $t+h-1$. Dengan demikian, probabilitas aksi aktual lawan pada langkah $t+1$ hingga $t+H$ dapat dinyatakan sebagai hasil perkalian probabilitas kondisional $P_\theta(a_{-i}^{t+h} \mid \hat{h}_{t+h-1})$ untuk setiap langkah prediksi $h = 1, \dots, H$, dengan $\hat{h}_{t+h-1}$ sebagai riwayat yang telah diperluas hingga langkah tersebut.
+
+Berdasarkan probabilitas tersebut, nilai \textit{Negative Log-Likelihood} untuk satu segmen horizon sepanjang $H$ didefinisikan sebagai
 
 \begin{equation}\label{eq:NLL}
 \mathcal{L}_{\text{NLL}}^{(H)} 
-= - \sum_{k=1}^{H} 
-\log P_\theta(a_{-i}^{t+k} \mid \hat{h}_{t+k-1})
+= - \sum_{h=1}^{H} 
+\log P_\theta(a_{-i}^{t+h} \mid \hat{h}_{t+h-1}).
 \end{equation}
 
-Nilai NLL yang lebih kecil menunjukkan bahwa model memberikan probabilitas yang lebih tinggi terhadap aksi aktual yang benar-benar terjadi. Karena NLL merupakan \textit{proper scoring rule}, metrik ini tidak hanya mengevaluasi ketepatan klasifikasi, tetapi juga kualitas kalibrasi probabilitas yang dihasilkan model.
+\noindent
+Nilai NLL yang lebih kecil menunjukkan bahwa model memberikan probabilitas yang lebih tinggi terhadap aksi aktual yang benar-benar terjadi. Karena NLL merupakan \textit{proper scoring rule}, metrik ini tidak hanya mengevaluasi ketepatan prediksi aksi, tetapi juga kualitas kalibrasi probabilitas yang dihasilkan model.
 
-Penggunaan NLL multi-step memungkinkan pengukuran efek \textit{compounding error} akibat prediksi rekursif. Jika distribusi prediksi menjadi semakin bias pada horizon yang lebih panjang, maka akumulasi log-loss akan meningkat secara signifikan, mencerminkan degradasi kualitas kepercayaan seiring waktu.
+Dalam konteks prediksi multi-step, penggunaan NLL juga memungkinkan pengamatan efek \textit{compounding error}. Kesalahan prediksi pada langkah awal dapat memengaruhi distribusi prediksi pada langkah berikutnya, sehingga jika bias meningkat pada horizon yang lebih panjang, nilai akumulasi log-loss akan meningkat dan mencerminkan penurunan kualitas prediksi.
 
 \subsection{Confusion Matrix}
 

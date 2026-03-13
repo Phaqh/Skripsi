@@ -5,10 +5,10 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Finite Automata untuk strategi IPD \blx@tocontentsinit {0}\cite {reiter_deterministic_strategies_2014}}}{15}{figure.caption.16}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Diagram LSTM.}}{16}{figure.caption.17}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Finite State Machine untuk strategi IPD oleh \blx@tocontentsinit {0}\cite {reiter_deterministic_strategies_2014}}}{14}{figure.caption.16}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Diagram Cell LSTM.}}{15}{figure.caption.17}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Diagram metodologi.}}{24}{figure.caption.22}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Rancangan Algoritma Metode.}}{26}{figure.caption.23}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Diagram metodologi.}}{23}{figure.caption.22}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Rancangan Algoritma Metode.}}{25}{figure.caption.23}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

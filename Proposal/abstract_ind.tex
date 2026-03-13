@@ -1,7 +1,11 @@
 \abstractind
-Pendekatan pemodelan lawan dalam permainan berulang umumnya diformulasikan sebagai prediksi satu-langkah terhadap aksi lawan, meskipun interaksi strategis berlangsung dalam horizon yang panjang dan bersifat sekuensial. Kondisi ini berpotensi menimbulkan ketidaksesuaian antara objektif pembelajaran model lawan dan kebutuhan perencanaan multi-langkah agen.
+Pemodelan lawan (\textit{opponent modeling}) dalam permainan berulang umumnya diformulasikan sebagai prediksi aksi lawan pada satu langkah berikutnya berdasarkan riwayat interaksi sebelumnya. Namun, interaksi strategis dalam permainan berulang berlangsung secara sekuensial dalam horizon yang panjang dan bersifat \textit{closed-loop}, di mana aksi agen pada setiap langkah dapat memengaruhi respons lawan pada langkah berikutnya. Kondisi ini menjadikan ramalan beberapa langkah tidak trivial, karena distribusi aksi lawan pada masa depan juga dipengaruhi oleh rangkaian aksi agen sendiri.
 
-Penelitian ini mengkaji peran horizon prediksi dalam konteks \textit{Iterated Prisoner's Dilemma} dengan mengimplementasikan modul pemodelan lawan berbasis \textit{h-step forecasting} yang dilatih menggunakan kesalahan prediksi distribusi aksi teramati. Analisis difokuskan pada akurasi prediksi multi-langkah serta implikasinya terhadap interaksi strategis jangka pendek.
+Penelitian ini mengkaji peran horizon prediksi dalam pemodelan lawan pada lingkungan \textit{Iterated Prisoner's Dilemma}. Model yang diusulkan melakukan prediksi aksi lawan untuk beberapa langkah ke depan (\textit{h-step forecasting}) berdasarkan riwayat interaksi yang diamati. Proses pembelajaran dilakukan dengan meminimalkan kesalahan prediksi terhadap distribusi aksi lawan pada beberapa langkah mendatang.
 
-Hasil eksperimen diharapkan menunjukkan bahwa perluasan horizon prediksi dapat memberikan representasi yang lebih kaya terhadap pola strategi lawan yang bergantung pada trajectory interaksi. Diharapkan ini menyoroti pentingnya mempertimbangkan keselarasan antara objektif prediksi dan horizon perencanaan dalam perancangan sistem pemodelan lawan untuk permainan berulang.
+Analisis difokuskan pada kemampuan model dalam melakukan prediksi multi-langkah dalam konteks interaksi \textit{closed-loop}, serta bagaimana horizon prediksi memengaruhi representasi pola strategi lawan sepanjang trajectory interaksi. Hasil penelitian diharapkan menunjukkan bahwa perluasan horizon prediksi dapat memberikan representasi yang lebih informatif terhadap dinamika strategi lawan yang bergantung pada interaksi sekuensial antara kedua agen. Dengan demikian, penelitian ini menyoroti pentingnya keselarasan antara horizon prediksi dalam pemodelan lawan dan kebutuhan perencanaan strategi dalam permainan berulang.\\
+
+\noindent\textbf{Kata kunci:} pemodelan lawan, permainan berulang, prediksi multi-langkah, interaksi closed-loop, Iterated Prisoner’s Dilemma.
 \endabstractind
+
+

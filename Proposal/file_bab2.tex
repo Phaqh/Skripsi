@@ -32,7 +32,7 @@ Meskipun demikian, baik pendekatan eksplisit maupun implisit pada umumnya merumu
 
 Kebanyakan Pendekatan yang memperlakukan perilaku lawan sebagai proses sekuensial yang dapat dipelajari, serta dievaluasi berdasarkan kualitas prediksi terhadap lintasan aksi di masa depan, bukan semata-mata berdasarkan payoff agregat jangka panjang. Pendekatan semacam ini secara alami menekankan pentingnya \textit{forecasting} multi-langkah dalam menghadapi dinamika interaksi berulang, terutama ketika keputusan pada fase awal interaksi memiliki implikasi strategis terhadap lintasan berikutnya. 
 
-Pendekatan berbasis model sekuensial memori seperti \textit{Long Short-Term Memory} (LSTM) menawarkan alternatif metodologis yang berbeda. LSTM dapat dipandang sebagai pendekatan yang memodelkan perilaku lawan sebagai proses dinamis berbasis riwayat interaksi. Model LSTM dilatih untuk meminimalkan kesalahan prediksi perilaku lawan tanpa melibatkan sinyal reward agen. Dengan demikian, kualitas model lawan dapat dievaluasi secara independen menggunakan metrik prediksi sekuensial, sebelum diintegrasikan ke dalam proses pengambilan keputusan.
+Pendekatan berbasis model sekuensial memori seperti \textit{Long Short-Term Memory} (LSTM) menawarkan alternatif metodologis yang berbeda. LSTM dapat dipandang sebagai pendekatan yang memodelkan perilaku lawan sebagai proses dinamis berbasis riwayat interaksi. Model LSTM dilatih untuk meminimalkan kesalahan prediksi perilaku lawan tanpa melibatkan sinyal reward agen. Dengan demikian, kualitas model lawan dapat dievaluasi secara independen menggunakan metrik prediksi sekuensial, sebelum diintegrasikan ke dalam proses pengambilan keputusan (\cite{li_exploiting_2025}).
 
 Struktur rekuren pada LSTM memungkinkan forecast multi-langkah (\textit{multi-step forecasting}) terhadap aksi lawan memanfaatkan skema prediksi rekursif atau \textit{rolling horizon}. Kemampuan ini relevan dalam \textit{repeated games}, di mana keputusan optimal agen sering kali bergantung pada ekspektasi terhadap respons lawan tidak hanya pada langkah berikutnya, tetapi juga pada beberapa langkah interaksi selanjutnya. Dengan menyediakan estimasi lintasan perilaku lawan pada horizon terbatas, agen dapat melakukan evaluasi strategi secara lebih prospektif dibandingkan pendekatan satu-langkah.
 
@@ -49,7 +49,7 @@ Galat prediksi perilaku lawan dan payoff kumulatif yang diperoleh agen dalam Per
 Secara keseluruhan, variasi lingkungan eksperimen dan metrik evaluasi tersebut menunjukkan bahwa sebagian besar penelitian menilai performa pemodelan lawan melalui indikator seperti payoff, konvergensi strategi, atau tingkat kerja sama. Namun demikian, pengukuran eksplisit terhadap kualitas peramalan trajektori perilaku lawan dalam horizon multi-langkah masih relatif terbatas dalam literatur yang ada.
 
 
-\begin{table}[!htbp]
+\begin{table}[!h]
 \centering
 \caption{Lingkungan evaluasi dan metrik dalam penelitian}\label{tab:evaluation_metrics}
 \renewcommand{\arraystretch}{1.2}
@@ -80,7 +80,7 @@ Sebagaimana terlihat pada Tabel~\ref{tab:evaluation_metrics}, mayoritas studi me
 
 Sebagian besar pendekatan yang melibatkan komponen prediktif melaporkan kinerja berdasarkan galat satu langkah (\textit{one-step prediction error}). Meskipun metrik ini relevan untuk mengukur konsistensi lokal model terhadap data historis, ia tidak secara langsung mencerminkan kebutuhan perencanaan dalam \textit{repeated games}. Permainan berulang seperti IPD, keputusan pada suatu langkah mempengaruhi respons lawan pada langkah-langkah berikutnya, sehingga pengambilan keputusan bersifat intrinsik multi-langkah.
 
-\begin{table}
+\begin{table}[!h]
 \centering
 \caption{Ringkasan Penelitian Terkait}\label{tab:ringkasan_terkait}
 \begin{tabularx}{\textwidth}{{p{1.5cm} p{3.5cm} p{8.0cm}}}
@@ -134,8 +134,17 @@ Sebagian besar pendekatan yang melibatkan komponen prediktif melaporkan kinerja 
 Ketergantungan pada objektif prediksi satu langkah berpotensi menimbulkan ketidaksesuaian antara objektif statistik dan objektif strategis. Model yang dioptimalkan untuk meminimalkan galat satu langkah belum tentu menghasilkan estimasi lintasan perilaku lawan yang stabil ketika digunakan untuk perencanaan lintas-horizon. Dalam skema \textit{recursive forecasting}, kesalahan prediksi awal dapat terpropagasi dan mempengaruhi estimasi payoff kumulatif secara non-linear. Namun demikian, literatur yang ada jarang menguji secara eksplisit bagaimana kualitas prediksi multi-langkah berhubungan dengan performa strategis agen.
 
 \section{Celah Penelitian}
-Belum banyak studi yang secara sistematis membandingkan implikasi penggunaan prediksi satu langkah, \textit{recursive multi-step forecasting}, dan \textit{direct multi-step forecasting} terhadap payoff strategis. Analisis mengenai keberadaan horizon prediksi optimal ($h^*$) yang memberikan trade-off terbaik antara stabilitas prediksi dan manfaat strategis juga masih terbatas.
 
-Berdasarkan sintesis tersebut, terdapat celah penelitian yang signifikan, yaitu belum adanya analisis sistematis mengenai ketidaksesuaian antara objektif prediksi satu langkah dan kebutuhan perencanaan strategis multi-langkah dalam \textit{repeated games}. Secara khusus, hubungan antara akurasi prediksi lintas-horizon, propagasi kesalahan dalam skema rekursif, dan dampaknya terhadap payoff strategis belum dievaluasi secara terintegrasi dan terkontrol.
+Sebagian besar penelitian pemodelan lawan mengasumsikan interaksi panjang permaianan dalam \textit{repeated games} namun memformulasikan tugas prediksi sebagai prediksi satu langkah terhadap aksi lawan berikutnya. Pendekatan ini belum sepenuhnya mencerminkan dinamika interaksi yang bersifat \textit{closed-loop}, di mana aksi agen pada suatu langkah dapat memengaruhi respons lawan pada langkah-langkah berikutnya.
 
-Penelitian ini berangkat dari celah tersebut dengan memfokuskan analisis pada evaluasi kinerja prediksi multi-langkah serta implikasinya terhadap pengambilan keputusan strategis dalam IPD, tanpa memosisikan arsitektur model sebagai kontribusi utama, melainkan sebagai instrumen untuk mengisolasi efek horizon peramalan.
+Akibatnya, kemampuan model dalam melakukan prediksi multi-langkah secara rekursif dalam interaksi \textit{closed-loop} belum banyak dievaluasi secara sistematis. Penelitian ini bertujuan mengisi celah tersebut dengan menguji secara eksperimental kinerja metode prediksi multi-langkah rekursif terhadap aksi lawan dalam lingkungan \textit{Iterated Prisoner's Dilemma}.
+
+% \section{Celah Penelitian}
+
+% Sebagian besar penelitian pemodelan lawan dalam \textit{repeated games} memformulasikan masalah prediksi sebagai prediksi satu langkah terhadap aksi lawan berikutnya. Evaluasi kinerja model umumnya dilakukan menggunakan metrik jangka panjang seperti nilai payoff akhir atau konvergensi menuju ekuilibrium strategi. Pendekatan ini memberikan gambaran performa strategis secara agregat, namun tidak secara langsung mengevaluasi kemampuan model dalam memprediksi dinamika aksi lawan pada beberapa langkah ke depan.
+
+% Di sisi lain, pendekatan prediksi multi-langkah telah banyak dikaji dalam literatur peramalan deret waktu melalui dua skema utama, yaitu \textit{recursive multi-step forecasting} dan \textit{direct multi-step forecasting}. Meskipun demikian, implikasi penggunaan kedua pendekatan tersebut dalam konteks pemodelan lawan pada permainan berulang, khususnya terhadap hasil strategis yang diperoleh agen, masih jarang dianalisis secara sistematis.
+
+% Akibatnya, terdapat celah penelitian berupa belum adanya kajian yang secara terintegrasi mengevaluasi hubungan antara horizon prediksi, akurasi prediksi lintas langkah, propagasi kesalahan pada skema rekursif, serta dampaknya terhadap payoff strategis dalam interaksi permainan berulang. Selain itu, keberadaan horizon prediksi optimal ($h^*$) yang memberikan keseimbangan terbaik antara stabilitas prediksi dan manfaat strategis juga belum banyak dibahas dalam literatur.
+
+% Penelitian ini bertujuan mengisi celah tersebut dengan melakukan analisis sistematis terhadap kinerja prediksi multi-langkah dalam lingkungan \textit{Iterated Prisoner’s Dilemma}. Fokus utama penelitian bukan pada pengembangan arsitektur model baru, melainkan pada evaluasi bagaimana perbedaan horizon prediksi memengaruhi kualitas representasi strategi lawan dan implikasinya terhadap pengambilan keputusan strategis dalam interaksi berulang.
