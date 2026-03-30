@@ -3,12 +3,12 @@
 
 Dilema sosial merupakan situasi di mana keputusan rasional secara individual menghasilkan luaran yang tidak optimal secara kolektif(~\cite{axelrod_evolution_1981}). Secara formal, kondisi ini dapat dinyatakan sebagai adanya konflik antara rasionalitas individu dan optimalitas sosial.
 
-Teori permainan memberikan kerangka formal yang memodelkan pemain, strategi, dan hasil secara terstruktur (\cite{bonanno_game_2024}), dalam bentuk normal didefinisikan sebagai $G = (N, A, U)$ dengan $N$ himpunan pemain, $A = A_1 \times A_2$ himpunan profil strategi atau \textit{Action space }, dan $U = (u_1, u_2)$ fungsi hasil atau \textit{utility}. Setiap pemain $i \in N$ memilih strategi $a_i \in A_i$ untuk memaksimalkan hasil $u_i(a_i, a_{-i})$, di mana $a_{-i}$ adalah profil strategi lawan. Strategi yang dipilih oleh pemain lain mempengaruhi hasil yang diterima, sehingga interaksi ini bersifat strategis. Dalam konteks ini, konsep keseimbangan Nash menjadi penting untuk memahami hasil yang mungkin terjadi ketika setiap pemain bertindak secara rasional dengan mempertimbangkan strategi lawan. \textit{Nash Equilibrium} adalah profil strategi $a^*$ yang memenuhi $u_i(a_i^*, a_{-i}^*) \ge u_i(a_i, a_{-i}^*) \quad \forall a_i \in A_i$ Menunjukan pilihan aksi selain $a_i^*$ tidak dapat memberikan keuntungan lebih besar dari strategi keseimbangan. Kerangka ini memungkinkan analisis rasionalitas strategis dalam interaksi statik. Namun, model bentuk normal bersifat satu tahap dan mengasumsikan struktur hasil tetap.
+Teori permainan memberikan kerangka formal yang memodelkan pemain, strategi, dan hasil secara terstruktur (\cite{bonanno_game_2024}), dalam bentuk normal didefinisikan sebagai $G = (N, A, U)$ dengan $N$ himpunan pemain, $A = A_1 \times A_2$ himpunan profil strategi atau \textit{Action space }, dan $U = (u_1, u_2)$ fungsi hasil atau \textit{utility}. Setiap pemain $i \in N$ memilih strategi $a_i \in A_i$ untuk memaksimalkan hasil $u_i(a_i, a_{-i})$, di mana $a_{-i}$ adalah profil strategi lawan. Strategi yang dipilih oleh pemain lain mempengaruhi hasil yang diterima, sehingga interaksi ini bersifat strategis. Konsep keseimbangan Nash menjadi penting untuk memahami hasil yang mungkin terjadi ketika setiap pemain bertindak secara rasional dengan mempertimbangkan strategi lawan. \textit{Nash Equilibrium} $a^*$ adalah profil strategi yang memenuhi $u_i(a_i^*, a_{-i}^*) \ge u_i(a_i, a_{-i}^*) \quad \forall a_i \in A_i$ Menunjukan pilihan aksi selain $a_i^*$ tidak dapat memberikan keuntungan lebih besar dari strategi keseimbangan. Kerangka ini memungkinkan analisis rasionalitas strategis dalam interaksi statik. Namun, model bentuk normal bersifat satu tahap dan mengasumsikan struktur hasil tetap.
 
 \subsection{Prisoner's Dilemma}\label{sec:PrisonersDilemma}
 
 Prisoner's Dilemma merepresentasikan konflik rasionalitas individu dan kolektif secara eksplisit (~\cite{axelrod_evolution_1981}). Aksi yang dapat dipilih adalah \textit{Cooperate} ($C$) atau \textit{Defect} ($D$). Struktur hasil Prisoner's Dilemma diberikan 
-pada tabel \ref{tab:Payoff}
+pada Tabel \ref{tab:Payoff}
 
 \begin{table}[h]
 \centering
@@ -22,39 +22,46 @@ D & $(T,S)$ & $(P,P)$
 \end{table}
 
 Dengan $R$ (Reward) adalah hasil jika kedua pemain bekerja sama, $T$ (Temptation) adalah hasil bagi pemain yang berkhianat sementara yang lain bekerja sama, $S$ (Sucker's) adalah hasil bagi pemain yang bekerja sama sementara yang lain berkhianat, dan $P$ (Punishment) adalah hasil jika kedua pemain berkhianat.
-dengan ketidaksamaan $T > R > P > S \quad \text{dan} \quad 2R > T + S$ Dalam permainan satu tahap, strategi dominan adalah defeksi ($D$), sehingga keseimbangan Nash berada pada $(D,D)$ meskipun $(C,C)$ lebih optimal secara kolektif.
+dengan ketidaksamaan $T > R > P > S \quad \text{dan} \quad 2R > T + S$. Dalam permainan satu tahap, strategi dominan adalah defeksi ($D$), sehingga keseimbangan Nash berada pada $(D,D)$ meskipun $(C,C)$ lebih optimal secara kolektif.
 
 \subsubsection{Prisoner's Dilemma Berulang}\label{sec:IPD}
 
-Permainan PD diperluas menjadi bentuk berulang, permainan diulang selama $T$ atau \textit{Turn} tahap dengan hasil kumulatif. Dalam IPD, strategi dapat bergantung pada histori interaksi, memungkinkan untuk pembalasan dan kerja sama yang berkelanjutan. IPD relevan untuk mempelajari dinamika manusia seperti pembentukan hubungan, konflik berkepanjangan, siklus saling membalas, dan pemulihan kepercayaan.
+Permainan PD diperluas menjadi bentuk berulang, permainan diulang selama $T$ \textit{Turn} atau tahap dengan hasil kumulatif. Dalam IPD, strategi dapat bergantung pada riwayat interaksi, memungkinkan untuk pembalasan dan kerja sama yang berkelanjutan. IPD relevan untuk mempelajari dinamika manusia seperti pembentukan hubungan, konflik berkepanjangan, siklus saling membalas, dan pemulihan kepercayaan.
 
-Beberapa strategi terkenal dalam IPD meliputi \textit{Tit-for-Tat}: Mulai dengan bekerja sama, kemudian meniru aksi lawan pada langkah sebelumnya. \textit{Cooperator}: Selalu bekerja sama. \textit{Defector}: Selalu berkhianat. beberapa algoritma tersebut dapat dipahami melalui gambar \ref{fig:dfa}.
+Beberapa strategi terkenal dalam IPD meliputi \textit{Tit-for-Tat}: Mulai dengan bekerja sama, kemudian meniru aksi lawan pada langkah sebelumnya. \textit{Cooperator}: Selalu bekerja sama. \textit{Defector}: Selalu berkhianat. beberapa algoritma tersebut dapat dipahami melalui Gambar \ref{fig:dfa}.
 
 \begin{figure}[!ht]
     \centering
-    \caption{Finite State Machine untuk strategi IPD oleh \cite{reiter_deterministic_strategies_2014}}\label{fig:dfa}
     \includegraphics[height=0.7\textheight]{Images/dfa.png}
+    \caption{Finite State Machine untuk strategi IPD oleh \cite{reiter_deterministic_strategies_2014}}\label{fig:dfa}
+\end{figure}
+
+Beberapa strategi juga memiliki komopleksitas lebih dalam berinteraksi dapat dipahamai pada gambar \ref{fig:dfa2}.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[height=0.5\textheight]{Images/dfa2.png}
+    \caption{Finite State Machine untuk strategi IPD oleh \cite{knight_evolution_2018}}\label{fig:dfa2}
 \end{figure}
 
 \section{Pemodelan Lawan}
 
-Pemodelan lawan (\textit{opponent modeling}) bertujuan untuk mempelajari perilaku atau strategi lawan berdasarkan riwayat interaksi yang diamati \cite{shoham_multiagent_2009}. Dalam konteks permainan berulang, interaksi antara agen $i$ dan lawan $-i$ pada setiap langkah waktu direpresentasikan sebagai pasangan aksi. Riwayat interaksi hingga langkah ke-$t$ dinotasikan sebagai
-$H_t = \left((a_i^1, a_{-i}^1), (a_i^2, a_{-i}^2), \dots, (a_i^t, a_{-i}^t)\right),$ di mana $a_i^k$ menyatakan aksi yang dipilih oleh agen $i$ pada langkah ke-$k$, sedangkan $a_{-i}^k$ menyatakan aksi yang dipilih oleh lawan pada langkah yang sama.
+Pemodelan lawan (\textit{opponent modeling}) bertujuan untuk mempelajari perilaku atau strategi lawan berdasarkan riwayat interaksi yang diamati (\cite{shoham_multiagent_2009}). Dalam konteks permainan berulang, setiap interaksi antara agen $i$ dan lawan $-i$ direpresentasikan sebagai pasangan aksi biner yang terjadi secara simultan pada setiap giliran permainan. Untuk setiap baris data atau satu episode permainan yang dinotasikan dengan indeks $n$, aksi aktual yang diambil oleh agen $i$ pada giliran ke-$t$ dituliskan sebagai $a_{n,t,i}$, sedangkan aksi aktual lawan pada giliran yang sama dituliskan sebagai $a_{n,t,-i}$. Dengan demikian, riwayat interaksi yang tersedia hingga giliran ke-$t$ pada episode ke-$n$ dapat dipandang sebagai urutan pasangan aksi $\{(a_{n,1,i}, a_{n,1,-i}), (a_{n,2,i}, a_{n,2,-i}), \dots, (a_{n,t,i}, a_{n,t,-i})\}$.
 
-Berdasarkan riwayat interaksi tersebut, modul pemodelan lawan bertujuan untuk memprediksi distribusi probabilitas aksi lawan pada langkah berikutnya, yang dapat dituliskan sebagai $P(a_{-i}^{t+1} \mid H_t)$. Distribusi ini merepresentasikan keyakinan model terhadap kemungkinan aksi lawan pada langkah waktu $t+1$ dengan mempertimbangkan seluruh riwayat interaksi sebelumnya.
+Berdasarkan riwayat interaksi tersebut, modul pemodelan lawan bertujuan untuk mempelajari distribusi probabilitas aksi lawan pada masa depan. Dalam pengaturan prediksi multi-langkah, horizon prediksi dinyatakan dengan indeks $h \in \{1, \dots, H\}$ yang menunjukkan jarak langkah ke depan dari waktu observasi terakhir $t$. Target prediksi yang ingin dipelajari model adalah distribusi probabilitas aksi aktual lawan pada waktu $t+h$, yaitu $P(a_{n,t+h,-i} \mid \mathcal{H}_{n,t})$, di mana $\mathcal{H}_{n,t}$ merepresentasikan seluruh riwayat interaksi hingga giliran ke-$t$ pada episode ke-$n$. Secara operasional, model menghasilkan estimasi distribusi tersebut melalui prediksi aksi lawan yang dinotasikan sebagai $\hat{a}_{n,t,h,-i}$, yang merepresentasikan keluaran model untuk aksi lawan pada horizon ke-$h$ berdasarkan informasi yang tersedia hingga waktu $t$.
 
-Pendekatan sederhana seperti regresi linear dapat digunakan untuk memodelkan hubungan antara riwayat interaksi dan aksi lawan berikutnya. Namun, metode tersebut memiliki keterbatasan dalam menangkap dependensi temporal jangka panjang dan pola hubungan nonlinier yang sering muncul dalam interaksi strategis berulang \cite{hochreiter_long_1997}. Oleh karena itu, pendekatan berbasis model sekuensial seperti \textit{Long Short-Term Memory} (LSTM) lebih sesuai untuk merepresentasikan dinamika strategi lawan dalam konteks permainan berulang.
+Pendekatan sederhana seperti regresi linear dapat digunakan untuk memodelkan hubungan antara riwayat interaksi dan aksi lawan berikutnya. Namun, metode tersebut memiliki keterbatasan dalam menangkap dependensi temporal jangka panjang dan pola hubungan nonlinier yang sering muncul dalam interaksi strategis berulang (\cite{hochreiter_long_1997}). Oleh karena itu, pendekatan berbasis model sekuensial seperti \textit{Long Short-Term Memory} (LSTM) lebih sesuai untuk merepresentasikan dinamika strategi lawan dalam konteks permainan berulang.
 
 \section{Long Short-Term Memory (LSTM)}
 
-Long Short-Term Memory (LSTM) merupakan pengembangan dari Recurrent Neural Network (RNN) yang dirancang untuk menangkap dependensi jangka panjang melalui mekanisme memori eksplisit (\cite{hochreiter_long_1997}). Dalam konteks pemodelan lawan, LSTM digunakan untuk membangun representasi laten terhadap strategi lawan berdasarkan histori interaksi.
+Long Short-Term Memory (LSTM) merupakan pengembangan dari Recurrent Neural Network (RNN) yang dirancang untuk menangkap dependensi jangka panjang melalui mekanisme memori eksplisit (\cite{hochreiter_long_1997}). Dalam konteks pemodelan lawan, LSTM digunakan untuk membangun representasi laten terhadap strategi lawan berdasarkan riwayat interaksi.
 
-Diberikan input $x_t$ (observasi pada waktu $t$, misalnya aksi lawan), hidden state sebelumnya $h_{t-1}$ (representasi laten sebelumnya), dan parameter bobot $W$, $U$, serta bias $b$, setiap komponen LSTM bekerja secara berurutan dengan ilustrasi gambar \ref{fig:LSTM}.
+Diberikan input $x_t$ (observasi pada waktu $t$, berupa aksi lawan), dengan hidden state sebelumnya $h_{t-1}$ (representasi laten sebelumnya), dan parameter bobot $W$, $U$, serta bias $b$, setiap komponen LSTM bekerja secara berurutan dengan ilustrasi Gambar \ref{fig:LSTM}.
 
 \begin{figure}[!htbp]
     \centering
-    \caption{Diagram Cell LSTM.}\label{fig:LSTM}
     \includegraphics[height=0.4\textheight]{Images/LSTM.png}
+    \caption{Diagram Cell LSTM.}\label{fig:LSTM}
 \end{figure}
 
 \subsection{Forget Gate}
@@ -71,7 +78,7 @@ Parameter $W_f$ dan $U_f$ masing-masing merepresentasikan matriks bobot yang mem
 
 \subsection{Input Gate}
 
-Input $x_t \in \mathbb{R}^d$ merepresentasikan observasi saat ini, sedangkan $h_{t-1} \in \mathbb{R}^h$ adalah ringkasan historis interaksi sebelumnya (\cite{hochreiter_long_1997}). Namun, tidak semua informasi baru relevan atau stabil untuk memperbarui kepercayaan terhadap strategi lawan.
+Input $x_t \in \mathbb{R}^d$ merepresentasikan observasi saat ini, sedangkan $h_{t-1} \in \mathbb{R}^h$ adalah ringkasan riwayat interaksi sebelumnya (\cite{hochreiter_long_1997}). Namun, tidak semua informasi baru relevan atau stabil untuk memperbarui kepercayaan terhadap strategi lawan.
 \begin{equation}
 i_t = \sigma(W_i x_t + U_i h_{t-1} + b_i)
 \end{equation}
@@ -107,52 +114,56 @@ Meskipun $c_t$ menyimpan informasi lengkap, tidak seluruhnya relevan untuk predi
 o_t = \sigma(W_o x_t + U_o h_{t-1} + b_o)
 \end{equation}
 
-Pada persamaan di~\ref{output_Gate}, $x_t \in \mathbb{R}^{d}$ menyatakan vektor input pada waktu $t$ dengan dimensi fitur $d$, sedangkan $h_{t-1} \in \mathbb{R}^{h}$ adalah hidden state pada waktu sebelumnya dengan dimensi laten $h$. Matriks bobot $W_o \in \mathbb{R}^{h \times d}$ memetakan input ke ruang gerbang keluaran, dan $U_o \in \mathbb{R}^{h \times h}$ memetakan hidden state sebelumnya ke ruang yang sama. Vektor bias $b_o \in \mathbb{R}^{h}$ memungkinkan pergeseran afine dalam transformasi linear tersebut. Fungsi aktivasi sigmoid $\sigma(\cdot)$ diterapkan secara elemen-per-elemen sehingga menghasilkan $o_t \in (0,1)^h$, yaitu vektor koefisien yang mengatur proporsi informasi dari cell state $c_t$ yang akan diekspos ke hidden state saat ini. Dengan demikian, output gate berperan sebagai mekanisme penyaringan adaptif yang menentukan komponen representasi memori internal yang relevan untuk menghasilkan representasi laten $h_t$ dan prediksi pada waktu $t$.
+Pada persamaan ~\ref{output_Gate}, $x_t \in \mathbb{R}^{d}$ menyatakan vektor input pada waktu $t$ dengan dimensi fitur $d$, sedangkan $h_{t-1} \in \mathbb{R}^{h}$ adalah hidden state pada waktu sebelumnya dengan dimensi laten $h$. Matriks bobot $W_o \in \mathbb{R}^{h \times d}$ memetakan input ke ruang gerbang keluaran, dan $U_o \in \mathbb{R}^{h \times h}$ memetakan hidden state sebelumnya ke ruang yang sama. Vektor bias $b_o \in \mathbb{R}^{h}$ memungkinkan pergeseran afine dalam transformasi linear tersebut. Fungsi aktivasi sigmoid $\sigma(\cdot)$ diterapkan secara elemen-per-elemen sehingga menghasilkan $o_t \in (0,1)^h$, yaitu vektor koefisien yang mengatur proporsi informasi dari cell state $c_t$ yang akan diekspos ke hidden state saat ini. Dengan demikian, output gate berperan sebagai mekanisme penyaringan adaptif yang menentukan komponen representasi memori internal yang relevan untuk menghasilkan representasi laten $h_t$ dan prediksi pada waktu $t$.
 
 
 \section{Prediksi Multi-Langkah}
 
-Model LSTM menghasilkan distribusi prediktif satu langkah ke depan dalam setting \textit{closed loop} $p(a_{t+1}^{-i} \mid h_t)$. Namun, dalam permainan berulang, nilai suatu aksi tidak hanya ditentukan oleh respons lawan pada tahap berikutnya, melainkan oleh konsekuensi jangka panjang sepanjang lintasan interaksi (\cite{nashed_survey_2022}).
+Model LSTM menghasilkan distribusi prediktif satu langkah ke depan dalam pengaturan \textit{closed loop}, yaitu distribusi probabilitas aksi lawan pada langkah waktu berikutnya yang bersyarat pada riwayat interaksi hingga waktu observasi terakhir. Untuk setiap episode permainan yang dinotasikan dengan indeks $n$, distribusi satu langkah ke depan dapat dipandang sebagai $p(a_{n,t+1,-i} \mid \mathcal{H}_{n,t})$, di mana $\mathcal{H}_{n,t}$ merepresentasikan seluruh riwayat pasangan aksi hingga giliran ke-$t$. Namun, dalam permainan berulang, kualitas suatu aksi tidak hanya ditentukan oleh respons lawan pada langkah berikutnya, melainkan oleh konsekuensi jangka panjang sepanjang lintasan interaksi yang terbentuk di masa depan (\cite{nashed_survey_2022}). Oleh karena itu, diperlukan mekanisme prediksi multi-langkah yang mampu memproyeksikan evolusi perilaku lawan sepanjang horizon waktu terbatas.
 
-\subsection{Peramalan Rekursif}
+\subsection{Peramalan Rekursif dalam Closed Loop}
 
-Untuk memperoleh estimasi lintasan masa depan sepanjang horizon tetap $H$, model perilaku lawan digunakan secara autoregresif. Pada setiap langkah ke-$h$, prediksi aksi lawan dihasilkan dari distribusi $\hat{a}_{t+h}^{-i} \sim p_\theta(\cdot \mid \hat{H}_{t+h-1}), \quad h = 1, \dots, H$ dengan $t$ menyatakan waktu keputusan saat ini, sedangkan $H \in \mathbb{N}$ adalah horizon prediksi tetap yang menentukan panjang lintasan masa depan yang dipertimbangkan. Indeks $h$ merepresentasikan langkah prediksi ke-$h$ relatif terhadap waktu $t$. Simbol $\hat{a}_{t+h}^{-i}$ menyatakan aksi lawan yang diprediksi pada waktu $t+h$, dengan superskrip $-i$ menunjukkan pemain lawan terhadap agen $i$. Distribusi prediktif $p_\theta(\cdot \mid \hat{H}_{t+h-1})$ merupakan model parametrik dengan parameter $\theta$ yang mengaproksimasi probabilitas aksi lawan bersyarat pada riwayat yang tersedia. Notasi $\hat{H}_{t+h-1}$ menyatakan riwayat interaksi yang telah diperluas secara rekursif hingga waktu $t+h-1$, termasuk aksi-aksi yang sebelumnya diprediksi atau direalisasikan selama proses rollout. Proses ini menghasilkan distribusi atas lintasan aksi sepanjang horizon terbatas $\hat{\tau}_{t}^{(H)} = \left\{ \hat{a}_{t+1}^{-i}, \hat{a}_{t+2}^{-i}, \dots, \hat{a}_{t+H}^{-i} \right\}$ Lintasan prediksi sepanjang horizon $H$ dinotasikan sebagai $\hat{\tau}_{t}^{(H)}$, yaitu himpunan berurutan dari aksi lawan yang diproyeksikan mulai dari $t+1$ hingga $t+H$. 
+Pendekatan prediksi multi-langkah yang digunakan dalam penelitian ini dipandang sebagai pemodelan sekuens autoregresif probabilistik, di mana distribusi prediktif pada setiap langkah difaktorkan berdasarkan riwayat interaksi yang tersedia melalui kaidah rantai probabilitas (\cite{goodfellow_2016_dl}). Dalam kerangka ini, prediksi pada langkah sebelumnya menjadi bagian dari kondisi pada langkah berikutnya, sehingga proses prediksi dilakukan secara rekursif sepanjang horizon prediksi tetap. Untuk setiap episode ke-$n$ dan waktu keputusan saat ini $t$, horizon prediksi dinyatakan dengan indeks $h \in \{1, \dots, H\}$ yang merepresentasikan jarak langkah ke depan relatif terhadap waktu $t$. Pada setiap langkah ke-$h$, model menghasilkan prediksi aksi lawan yang dinotasikan sebagai $\hat{a}_{n,t,h,-i}$, yang merepresentasikan estimasi aksi lawan pada waktu target $t+h$ berdasarkan informasi yang tersedia hingga waktu $t$ serta prediksi-prediksi yang telah dihasilkan pada langkah sebelumnya.
+
+Distribusi prediktif yang digunakan untuk menghasilkan aksi tersebut dituliskan sebagai $p_{\theta}(\cdot \mid \hat{\mathcal{H}}_{n,t,h-1})$, di mana $\theta$ menyatakan parameter model dan $\hat{\mathcal{H}}_{n,t,h-1}$ merepresentasikan riwayat interaksi yang telah diperluas secara rekursif hingga horizon ke-$(h-1)$. Riwayat yang diperluas ini mencakup kombinasi antara aksi aktual yang diamati hingga waktu $t$ dan aksi-aksi yang diprediksi selama proses rollout, sehingga mencerminkan dinamika interaksi dalam pengaturan \textit{closed loop}. Melalui mekanisme ini, model secara implisit memproyeksikan distribusi atas lintasan aksi lawan sepanjang horizon terbatas, yang dapat dinyatakan sebagai urutan prediksi $\hat{\tau}_{n,t}^{(H)} = \{ \hat{a}_{n,t,1,-i}, \hat{a}_{n,t,2,-i}, \dots, \hat{a}_{n,t,H,-i} \}$, yaitu lintasan aksi lawan yang diperkirakan akan terjadi mulai dari waktu $t+1$ hingga $t+H$.
 
 \section{Metriks Loss dan Evaluasi}
 
-\subsection{Cross-Entropy}
-Fungsi objektif cross-entropy digunakan untuk mengukur perbedaan antara distribusi prediksi model $P_\theta$ dan distribusi aktual dari aksi lawan $P_{\text{actual}}$ pada setiap langkah prediksi (\cite{goodfellow_deep_2016}). Cross-entropy didefinisikan sebagai persamaan \ref{eq:ChrossEnthropy}.
+\subsection{Cross-Entropy}\label{sec:CrossEntropy}
+Fungsi objektif cross-entropy digunakan untuk mengukur perbedaan antara distribusi prediksi model $P_\theta$ dan distribusi aktual dari aksi lawan $P_{\text{actual}}$ pada setiap langkah prediksi (\cite{rosasco_are_2004}). Cross-entropy didefinisikan sebagai persamaan \ref{eq:CrossEntropy}.
+
 \begin{equation}\label{eq:ChrossEnthropy}
 \mathcal{L}_{\text{CE}} = - \sum_{a} P_{\text{actual}}(a) \log P_\theta(a \mid h_t)
 \end{equation}
-dengan $a$ merepresentasikan aksi lawan yang mungkin terjadi, $P_{\text{actual}}(a)$ adalah distribusi aktual (biasanya berupa distribusi one-hot yang menunjukkan aksi yang benar-benar terjadi), dan $P_\theta(a \mid h_t)$ adalah distribusi prediksi model berdasarkan riwayat interaksi $h_t$. Fungsi objektif ini memberikan penalti yang lebih besar ketika model memberikan probabilitas rendah terhadap aksi aktual, sehingga mendorong model untuk meningkatkan kepercayaan pada aksi yang benar-benar terjadi. Cross-entropy merupakan metrik yang umum digunakan dalam klasifikasi probabilistik karena sifatnya yang konsisten dan diferensiabel, memungkinkan optimisasi parameter model melalui algoritma seperti gradient descent.
 
-\subsection{Negative Log-Likelihood}
+dengan $a$ merepresentasikan aksi lawan yang mungkin terjadi, $P_{\text{actual}}(a)$ adalah distribusi aktual (biasanya berupa distribusi one-hot yang menunjukkan aksi yang benar-benar terjadi), dan $P_\theta(a \mid h_t)$ adalah distribusi prediksi model berdasarkan riwayat interaksi $h_t$. Fungsi objektif ini memberikan penalti yang lebih besar ketika model memberikan probabilitas rendah terhadap aksi aktual. Sehingga mendorong model untuk meningkatkan kepercayaan pada aksi yang benar-benar terjadi. Cross-entropy merupakan metrik yang umum digunakan dalam klasifikasi probabilistik karena sifatnya yang konsisten dan diferensiabel, memungkinkan optimisasi parameter model melalui algoritma seperti gradient descent.
+
+\subsection{Negative Log-Likelihood}\label{sec:NLL}
 
 Untuk mengevaluasi kualitas prediksi sekuensial lawan pada horizon multi-step, digunakan metrik \textit{Negative Log-Likelihood} (NLL) sebagai \textit{proper scoring rule} yang konsisten dalam menilai kualitas estimasi distribusi probabilistik (\cite{zhu_negative_2018}). 
 
-Misalkan suatu permainan memiliki panjang maksimum $T$ langkah. Pada langkah permainan ke-$t$, tersedia riwayat interaksi hingga waktu tersebut yang dinotasikan sebagai $h_t = \{(a_i^1, a_{-i}^1), \dots, (a_i^t, a_{-i}^t)\}$, yaitu pasangan aksi agen $i$ dan lawannya pada setiap langkah sebelumnya. Berdasarkan riwayat tersebut, model pemodelan lawan dengan parameter $\theta$ menghasilkan distribusi probabilitas atas aksi lawan pada langkah berikutnya, yang dinyatakan sebagai $P_\theta(a_{-i}^{t+1} \mid h_t)$.
+Misalkan suatu permainan pada episode ke-$n$ memiliki panjang maksimum $T$ langkah. Pada giliran permainan ke-$t$, tersedia riwayat interaksi hingga waktu tersebut yang direpresentasikan sebagai $\mathcal{H}_{n,t} = \{(a_{n,1,i}, a_{n,1,-i}), \dots, (a_{n,t,i}, a_{n,t,-i})\}$, yaitu pasangan aksi aktual agen $i$ dan lawannya pada setiap langkah sebelumnya. Berdasarkan riwayat ini, model pemodelan lawan dengan parameter $\theta$ menghasilkan distribusi probabilitas atas aksi lawan pada langkah waktu berikutnya, yang dapat dinyatakan sebagai $P_\theta(a_{n,t+1,-i} \mid \mathcal{H}_{n,t})$.
 
-Untuk melakukan prediksi beberapa langkah ke depan, model digunakan secara autoregresif sepanjang horizon prediksi $H$. Artinya, prediksi pada langkah ke-$h$ menggunakan riwayat yang diperbarui hingga waktu $t+h-1$. Dengan demikian, probabilitas aksi aktual lawan pada langkah $t+1$ hingga $t+H$ dapat dinyatakan sebagai hasil perkalian probabilitas kondisional $P_\theta(a_{-i}^{t+h} \mid \hat{h}_{t+h-1})$ untuk setiap langkah prediksi $h = 1, \dots, H$, dengan $\hat{h}_{t+h-1}$ sebagai riwayat yang telah diperluas hingga langkah tersebut.
+Untuk melakukan prediksi beberapa langkah ke depan, model digunakan secara autoregresif sepanjang horizon prediksi tetap $H$. Horizon prediksi dinyatakan dengan indeks $h \in \{1,\dots,H\}$ yang merepresentasikan jarak langkah ke depan relatif terhadap waktu observasi terakhir $t$. Pada setiap langkah prediksi ke-$h$, model menghasilkan estimasi distribusi probabilitas aksi lawan pada waktu target $t+h$, yaitu $P_\theta(a_{n,t+h,-i} \mid \hat{\mathcal{H}}_{n,t,h-1})$, di mana $\hat{\mathcal{H}}_{n,t,h-1}$ menyatakan riwayat interaksi yang telah diperluas secara rekursif hingga horizon ke-$(h-1)$ dengan memasukkan aksi-aksi yang diprediksi selama proses rollout.
 
-Berdasarkan probabilitas tersebut, nilai \textit{Negative Log-Likelihood} untuk satu segmen horizon sepanjang $H$ didefinisikan sebagai
+Dengan demikian, probabilitas lintasan aksi aktual lawan sepanjang horizon terbatas dari $t+1$ hingga $t+H$ dapat dinyatakan sebagai hasil faktorisasi autoregresif dari probabilitas kondisional tersebut. Berdasarkan probabilitas ini, nilai \textit{Negative Log-Likelihood} untuk satu segmen horizon sepanjang $H$ pada episode ke-$n$ dan waktu keputusan $t$ didefinisikan sebagai
 
 \begin{equation}\label{eq:NLL}
-\mathcal{L}_{\text{NLL}}^{(H)} 
+\mathcal{L}_{\text{NLL}}^{(n,t,H)} 
 = - \sum_{h=1}^{H} 
-\log P_\theta(a_{-i}^{t+h} \mid \hat{h}_{t+h-1}).
+\log P_\theta(a_{n,t+h,-i} \mid \hat{\mathcal{H}}_{n,t,h-1}).
 \end{equation}
 
 \noindent
-Nilai NLL yang lebih kecil menunjukkan bahwa model memberikan probabilitas yang lebih tinggi terhadap aksi aktual yang benar-benar terjadi. Karena NLL merupakan \textit{proper scoring rule}, metrik ini tidak hanya mengevaluasi ketepatan prediksi aksi, tetapi juga kualitas kalibrasi probabilitas yang dihasilkan model.
+Nilai NLL yang lebih kecil menunjukkan bahwa model memberikan probabilitas yang lebih tinggi terhadap aksi aktual yang benar-benar terjadi. Karena NLL merupakan \textit{proper scoring rule}, metrik ini tidak hanya mengevaluasi ketepatan prediksi aksi, tetapi juga kualitas kalibrasi probabilitas yang dihasilkan model (\cite{zhu_negative_2018}).
 
 Dalam konteks prediksi multi-step, penggunaan NLL juga memungkinkan pengamatan efek \textit{compounding error}. Kesalahan prediksi pada langkah awal dapat memengaruhi distribusi prediksi pada langkah berikutnya, sehingga jika bias meningkat pada horizon yang lebih panjang, nilai akumulasi log-loss akan meningkat dan mencerminkan penurunan kualitas prediksi.
 
 \subsection{Confusion Matrix}
 
-Untuk menganalisis performa prediksi multi-step secara lebih granular, digunakan matriks kebingungan (\textit{confusion matrix}) yang diperluas untuk setiap langkah prediksi dalam horizon $H$. Matriks ini memberikan informasi mengenai frekuensi prediksi benar dan salah untuk setiap kelas aksi lawan pada setiap langkah prediksi ke-$k$. Dengan demikian, evaluasi tidak hanya melihat akurasi agregat model, tetapi juga memungkinkan analisis terhadap jenis kesalahan prediksi yang terjadi pada setiap langkah horizon.
+Untuk menganalisis performa prediksi multi-step secara lebih granular, digunakan matriks kebingungan (\textit{confusion matrix}) yang diperluas untuk setiap langkah prediksi dalam horizon $H$. Matriks ini memberikan informasi mengenai frekuensi prediksi benar dan salah untuk setiap kelas aksi lawan pada setiap langkah prediksi ke-$k$. Dengan demikian, evaluasi tidak hanya melihat akurasi agregat model, tetapi juga memungkinkan analisis terhadap jenis kesalahan prediksi yang terjadi pada setiap langkah horizon (\cite{sathyanarayanan_confusion_2024}).
 
-Dalam konteks klasifikasi biner pada permainan \textit{Iterated Prisoner's Dilemma}, aksi lawan direpresentasikan sebagai dua kelas, yaitu kerja sama ($C$) dan defeksi ($D$). Berdasarkan hasil prediksi model dan aksi aktual lawan, setiap prediksi dapat dikategorikan menjadi empat kemungkinan, yaitu \textit{true positive} (TP), \textit{true negative} (TN), \textit{false positive} (FP), dan \textit{false negative} (FN). Nilai-nilai ini kemudian digunakan untuk menghitung beberapa metrik evaluasi klasifikasi.
+Klasifikasi biner pada permainan \textit{Iterated Prisoner's Dilemma} sebagai konteks, aksi lawan direpresentasikan sebagai dua kelas, yaitu kerja sama ($C$) dan defeksi ($D$). Berdasarkan hasil prediksi model dan aksi aktual lawan, setiap prediksi dapat dikategorikan menjadi empat kemungkinan, yaitu \textit{true positive} (TP), \textit{true negative} (TN), \textit{false positive} (FP), dan \textit{false negative} (FN). Nilai-nilai ini kemudian digunakan untuk menghitung beberapa metrik evaluasi klasifikasi.
 
 \subsubsection{Accuracy}
 
@@ -180,7 +191,7 @@ Recall = \frac{TP}{TP + FN}
 
 \subsubsection{F1-Score}
 
-F1-Score merupakan rata-rata harmonik dari precision dan recall. Metrik ini digunakan untuk memberikan keseimbangan antara kedua ukuran tersebut, terutama ketika distribusi kelas tidak seimbang.
+F1-Score merupakan rata-rata harmonik dari precision dan recall. Metrik ini digunakan untuk memberikan keseimbangan antara kedua ukuran tersebut, terutama ketika distribusi kelas tidak seimbang (\cite{sathyanarayanan_confusion_2024}).
 
 \begin{equation}
 F1 = 2 \cdot \frac{Precision \cdot Recall}{Precision + Recall}

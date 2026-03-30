@@ -202,7 +202,7 @@ uniquelist=false
 %------------------------------------------------------------
 %Redefine chapter and sections
 %------------------------------------------------------------
-\setcounter{secnumdepth}{2}
+\setcounter{secnumdepth}{3}
 \renewcommand \thepart {\@Roman\c@part}
 \renewcommand \thechapter {\@Roman\c@chapter}
 %\renewcommand \thesection {\@arabic\c@section.}
@@ -246,14 +246,18 @@ uniquelist=false
                                      {-3.25ex\@plus -1ex \@minus -.2ex}%
                                      {1.5ex \@plus .2ex}%
                                      {\normalfont\normalsize\bfseries}}
-%\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{\parindent}%
+% \renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{\parindent}%
 %                                    {3.25ex \@plus1ex \@minus.2ex}%
 %                                    {-1em}%
 %                                    {\normalfont\normalsize\bfseries}}
-\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{\z@}%
-                                    {3.25ex \@plus1ex \@minus.2ex}%
-                                    {-1em}%
-                                    {\normalfont\normalsize\bfseries}}
+\renewcommand{\subsubsection}[1]{%
+  \par % end previous paragraph
+  \vspace{1ex}%
+  \noindent\textbf{#1}%
+  \par % force new line AFTER title
+  \vspace{0.5ex}%
+}
+
 \renewcommand{\paragraph}{\subparagraph}
 
 \@addtoreset {equation}{chapter}
@@ -416,6 +420,10 @@ uniquelist=false
        {\normalfont
          \MakeUppercase{\normalfont\bfseries Program Studi \@program}\\
          \MakeUppercase{\normalfont\bfseries Departemen \@dept}\\
+        %  \MakeUppercase{\normalfont\bfseries\\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{\z@}%
+        %                             {-3.25ex\@plus -1ex \@minus -.2ex}%
+        %                             {0.5ex}%
+        %                             {\normalfont\normalsize\bfseries\leavevmode\newline}}@faculty}\\
          \MakeUppercase{\normalfont\bfseries\@faculty}\\
          \MakeUppercase{\normalfont\bfseries\@university}\\
          \MakeUppercase{\normalfont\bfseries\@city}\\

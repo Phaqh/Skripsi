@@ -471,6 +471,48 @@
       \endverb
       \keyw{Aggregative games,Cooperative {AI},Group productivity theory,Multiagent multi-armed bandits}
     \endentry
+    \entry{goodfellow_2016_dl}{book}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=5d2585c11210cf1d4512e6e0a03ec315}{%
+           family={Goodfellow},
+           familyi={G\bibinitperiod},
+           given={Ian},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=40a8e4774982146adc2688546f54efb2}{%
+           family={Bengio},
+           familyi={B\bibinitperiod},
+           given={Yoshua},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ccec1ccd2e1aa86960eb2e872c6b7020}{%
+           family={Courville},
+           familyi={C\bibinitperiod},
+           given={Aaron},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {MIT Press}%
+      }
+      \strng{namehash}{d17e6557c5836d2d978179999ea1037f}
+      \strng{fullhash}{3ae53fe582e8a815b118d26947eaa326}
+      \strng{bibnamehash}{3ae53fe582e8a815b118d26947eaa326}
+      \strng{authorbibnamehash}{3ae53fe582e8a815b118d26947eaa326}
+      \strng{authornamehash}{d17e6557c5836d2d978179999ea1037f}
+      \strng{authorfullhash}{3ae53fe582e8a815b118d26947eaa326}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Deep Learning}
+      \field{year}{2016}
+      \verb{doi}
+      \verb 10.5555/3086952
+      \endverb
+    \endentry
     \entry{hardin_tragedy_1968}{article}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=e4ca7243ceeb4db20fa37fdf6dcabe27}{%
@@ -752,6 +794,87 @@
       \endverb
       \verb{url}
       \verb https://link.springer.com/10.1007/s10994-025-06823-z
+      \endverb
+    \endentry
+    \entry{knight_evolution_2018}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=283a403c6ad7ec862a8eccd1aa1b9135}{%
+           family={Knight},
+           familyi={K\bibinitperiod},
+           given={Vincent},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7171ed4ebe3e8eb0df4d7c58eb0f4b74}{%
+           family={Harper},
+           familyi={H\bibinitperiod},
+           given={Marc},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a89e6986c6152c44db01b729757924a3}{%
+           family={Glynatsi},
+           familyi={G\bibinitperiod},
+           given={Nikoleta\bibnamedelima E.},
+           giveni={N\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=79e3596977f5125d5a9f3f375bf84936}{%
+           family={Campbell},
+           familyi={C\bibinitperiod},
+           given={Owen},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=83ecf503e9f7bab960ff39352d9ae1ae}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Long},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{fa349fc2b6ce0aad2ff744e6cbf47fc3}
+      \strng{fullhash}{4613aa954178c0b863908a0189fee584}
+      \strng{bibnamehash}{4613aa954178c0b863908a0189fee584}
+      \strng{authorbibnamehash}{4613aa954178c0b863908a0189fee584}
+      \strng{authornamehash}{fa349fc2b6ce0aad2ff744e6cbf47fc3}
+      \strng{authorfullhash}{4613aa954178c0b863908a0189fee584}
+      \strng{editorbibnamehash}{83ecf503e9f7bab960ff39352d9ae1ae}
+      \strng{editornamehash}{83ecf503e9f7bab960ff39352d9ae1ae}
+      \strng{editorfullhash}{83ecf503e9f7bab960ff39352d9ae1ae}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{We present insights and empirical results from an extensive numerical study of the evolutionary dynamics of the iterated prisoner’s dilemma. Fixation probabilities for Moran processes are obtained for all pairs of 164 different strategies including classics such as {TitForTat}, zero determinant strategies, and many more sophisticated strategies. Players with long memories and sophisticated behaviours outperform many strategies that perform well in a two player setting. Moreover we introduce several strategies trained with evolutionary algorithms to excel at the Moran process. These strategies are excellent invaders and resistors of invasion and in some cases naturally evolve handshaking mechanisms to resist invasion. The best invaders were those trained to maximize total payoff while the best resistors invoke handshake mechanisms. This suggests that while maximizing individual payoff can lead to the evolution of cooperation through invasion, the relatively weak invasion resistance of payoff maximizing strategies are not as evolutionarily stable as strategies employing handshake mechanisms.}
+      \field{day}{25}
+      \field{issn}{1932-6203}
+      \field{journaltitle}{{PLOS} {ONE}}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{number}{10}
+      \field{shortjournal}{{PLoS} {ONE}}
+      \field{shorttitle}{Evolution reinforces cooperation with the emergence of self-recognition mechanisms}
+      \field{title}{Evolution reinforces cooperation with the emergence of self-recognition mechanisms: An empirical study of strategies in the Moran process for the iterated prisoner's dilemma}
+      \field{urlday}{14}
+      \field{urlmonth}{3}
+      \field{urlyear}{2026}
+      \field{volume}{13}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{e0204981}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1371/journal.pone.0204981
+      \endverb
+      \verb{file}
+      \verb PDF:/home/paqh/Zotero/storage/NCBR6G94/Knight et al. - 2018 - Evolution reinforces cooperation with the emergence of self-recognition mechanisms An empirical stu.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://dx.plos.org/10.1371/journal.pone.0204981
+      \endverb
+      \verb{url}
+      \verb https://dx.plos.org/10.1371/journal.pone.0204981
       \endverb
     \endentry
     \entry{li_exploiting_2025}{article}{}
@@ -1082,6 +1205,82 @@
       \field{title}{Deterministic Strategies in the Prisoner's Dilemma}
       \field{year}{2014}
     \endentry
+    \entry{rosasco_are_2004}{article}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=50d9bfec9f6162486e5504b41791de0d}{%
+           family={Rosasco},
+           familyi={R\bibinitperiod},
+           given={Lorenzo},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=221336d2d92e157107ce0ac924955faa}{%
+           family={Vito},
+           familyi={V\bibinitperiod},
+           given={Ernesto\bibnamedelima De},
+           giveni={E\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=62046847d21ed822220f9acbe1c2f244}{%
+           family={Caponnetto},
+           familyi={C\bibinitperiod},
+           given={Andrea},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=333907d7c07a009ce84922f7c67eaf00}{%
+           family={Piana},
+           familyi={P\bibinitperiod},
+           given={Michele},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e56db0c2247cc015feff1be538dd96ef}{%
+           family={Verri},
+           familyi={V\bibinitperiod},
+           given={Alessandro},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{79a75712055a373e2a837935819d51a1}
+      \strng{fullhash}{672a9e0c8783506dd623cb33eb66d2d2}
+      \strng{bibnamehash}{672a9e0c8783506dd623cb33eb66d2d2}
+      \strng{authorbibnamehash}{672a9e0c8783506dd623cb33eb66d2d2}
+      \strng{authornamehash}{79a75712055a373e2a837935819d51a1}
+      \strng{authorfullhash}{672a9e0c8783506dd623cb33eb66d2d2}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In this paper we investigate the impact of choosing diﬀerent loss functions from the viewpoint of statistical learning theory. We introduce a convexity assumption - which is met by all loss functions commonly used in the literature, and study how the bound on the estimation error changes with the loss. We also derive a general result on the minimizer of the expected risk for a convex loss function in the case of classiﬁcation. The main outcome of our analysis is that, for classiﬁcation, the hinge loss appears to be the loss of choice. Other things being equal, the hinge loss leads to a convergence rate practically indistinguishable from the logistic loss rate and much better than the square loss rate. Furthermore, if the hypothesis space is suﬃciently rich, the bounds obtained for the hinge loss are not loosened by the thresholding stage.}
+      \field{day}{1}
+      \field{issn}{0899-7667, 1530-888X}
+      \field{journaltitle}{Neural Computation}
+      \field{langid}{english}
+      \field{month}{5}
+      \field{number}{5}
+      \field{shortjournal}{Neural Computation}
+      \field{title}{Are Loss Functions All the Same?}
+      \field{urlday}{13}
+      \field{urlmonth}{3}
+      \field{urlyear}{2026}
+      \field{volume}{16}
+      \field{year}{2004}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1063\bibrangedash 1076}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1162/089976604773135104
+      \endverb
+      \verb{file}
+      \verb PDF:/home/paqh/Zotero/storage/9DWU8SE7/Rosasco et al. - 2004 - Are Loss Functions All the Same.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://direct.mit.edu/neco/article/16/5/1063-1076/6828
+      \endverb
+      \verb{url}
+      \verb https://direct.mit.edu/neco/article/16/5/1063-1076/6828
+      \endverb
+    \endentry
     \entry{roughgarden_selfish_2005}{book}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=efce6f6d496cdcc1bb07fb47dfecb3aa}{%
@@ -1108,6 +1307,55 @@
       \field{labeltitlesource}{title}
       \field{title}{Selfish Routing and the Price of Anarchy}
       \field{year}{2005}
+    \endentry
+    \entry{sathyanarayanan_confusion_2024}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=7597392b7ab9def1e265ff33e4a79636}{%
+           family={Sathyanarayanan},
+           familyi={S\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{7597392b7ab9def1e265ff33e4a79636}
+      \strng{fullhash}{7597392b7ab9def1e265ff33e4a79636}
+      \strng{bibnamehash}{7597392b7ab9def1e265ff33e4a79636}
+      \strng{authorbibnamehash}{7597392b7ab9def1e265ff33e4a79636}
+      \strng{authornamehash}{7597392b7ab9def1e265ff33e4a79636}
+      \strng{authorfullhash}{7597392b7ab9def1e265ff33e4a79636}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Confusion matrices offer an insightful and detailed technique for evaluating classifier performance, which is essential for data science. This paper presents a comprehensive insight into the confusion matrix and its vital role in evaluating machine learning classification models. The fundamental concepts underlying the confusion matrix and its components are examined. Furthermore, the role of the confusion matrix in determining critical performance indicators, such as accuracy, precision, recall, sensitivity, and specificity, as well as false positive rate and F1 score, are discussed. The significance of more sophisticated measures for assessing classifier performance, such as the {ROC}, {AUC}, and precision-recall curves, is also discussed. The study also highlights other significant metrics, such as G-mean, Cohen's Kappa, prevalence, null error rate, markedness, average precision, and balanced accuracy, outlining their special uses and relevance. These metrics help in making informed choices regarding how to optimise and fine-tune classification models for problems with real-world data.}
+      \field{day}{30}
+      \field{journaltitle}{African Journal of Biomedical Research}
+      \field{langid}{english}
+      \field{month}{11}
+      \field{shortjournal}{{AJBR}}
+      \field{title}{Confusion Matrix-Based Performance Evaluation Metrics}
+      \field{urlday}{14}
+      \field{urlmonth}{3}
+      \field{urlyear}{2026}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{4023\bibrangedash 4031}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.53555/AJBR.v27i4S.4345
+      \endverb
+      \verb{file}
+      \verb PDF:/home/paqh/Zotero/storage/N88K877D/Sathyanarayanan - 2024 - Confusion Matrix-Based Performance Evaluation Metrics.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://africanjournalofbiomedicalresearch.com/index.php/AJBR/article/view/4345/3327
+      \endverb
+      \verb{url}
+      \verb https://africanjournalofbiomedicalresearch.com/index.php/AJBR/article/view/4345/3327
+      \endverb
     \endentry
     \entry{shoham_multiagent_2009}{article}{}
       \name{author}{1}{}{%
@@ -1374,7 +1622,6 @@
       \keyw{Mathematical models,Game theory,Games,Analytical models,Couplings,Dynamical equations,Evolutionary dynamics,Evolutionary game dynamics,Network topology,Numerical models,Simulation,Social networking (online),Steady-state,Zero determinant strategy,Multi agent systems,Dynamics,Dynamical equation,Evolutionary game dynamic,Evolutionary games,Intelligent agents,Modelling framework,Multi-Agent Model,Prisoner dilemma game,Regular networks,Social dilemmas}
     \endentry
   \enddatalist
-  \missing{goodfellow_deep_2016}
 \endrefsection
 \endinput
 

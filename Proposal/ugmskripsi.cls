@@ -97,6 +97,9 @@ uniquename=init
 ]{biblatex}
 \addbibresource{referensi.bib}
 
+% nama dan tahun dipisahkan koma
+\renewcommand*{\nameyeardelim}{\addcomma\space}
+
 % ubah titik jadi koma untuk pemisah
 \renewcommand*{\newunitpunct}{\addcomma\space}
 
@@ -249,9 +252,9 @@ uniquename=init
 %                                    {-1em}%
 %                                    {\normalfont\normalsize\bfseries}}
 \renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{\z@}%
-                                    {3.25ex \@plus1ex \@minus.2ex}%
-                                    {-1em}%
-                                    {\normalfont\normalsize\bfseries}}
+                                    {-1.5ex\@plus -0.5ex \@minus -.2ex}%
+                                    {0.5ex}%
+                                    {\normalfont\normalsize\bfseries\leavevmode\newline}}
 \renewcommand{\paragraph}{\subparagraph}
 
 \@addtoreset {equation}{chapter}

@@ -12,70 +12,69 @@
 \contentsline {section}{\numberline {1.1}Latar Belakang}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Rumusan Masalah}{3}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Batasan Penelitian}{3}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Tujuan Penelitian}{3}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Manfaat Penelitian}{3}{section.1.5}%
+\contentsline {section}{\numberline {1.4}Tujuan Penelitian}{4}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Manfaat Penelitian}{4}{section.1.5}%
 \contentsline {section}{\numberline {1.6}Sistematika Penelitian}{4}{section.1.6}%
-\contentsline {chapter}{\numberline {II}TINJAUAN PUSTAKA}{5}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Pendekatan metodologis dalam pemodelan lawan untuk \textit {Repeated Games}}{6}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Efektivitas strategi pemodelan lawan dievaluasi dalam \textit {Repeated Games}}{7}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Celah Penelitian}{10}{section.2.3}%
-\contentsline {chapter}{\numberline {III}LANDASAN TEORI}{12}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Game Theory}{12}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Dilema Sosial}{12}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Prisoner's Dilemma}{12}{subsection.3.1.2}%
-\contentsline {subsubsection}{Prisoner's Dilemma Berulang}{13}{section*.15}%
-\contentsline {section}{\numberline {3.2}Pemodelan Lawan}{13}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Long Short-Term Memory (LSTM)}{15}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Forget Gate}{15}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Input Gate}{16}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Candidate Cell State}{16}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Cell State (Memori Jangka Panjang)}{17}{subsection.3.3.4}%
-\contentsline {subsection}{\numberline {3.3.5}Output Gate}{17}{subsection.3.3.5}%
-\contentsline {section}{\numberline {3.4}Prediksi Multi-Langkah}{18}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Peramalan Rekursif}{18}{subsection.3.4.1}%
-\contentsline {section}{\numberline {3.5}Metriks Loss dan Evaluasi}{18}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Cross-Entropy}{18}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Negative Log-Likelihood}{19}{subsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.5.3}Confusion Matrix}{20}{subsection.3.5.3}%
-\contentsline {subsubsection}{Accuracy}{20}{section*.18}%
-\contentsline {subsubsection}{Precision}{20}{section*.19}%
-\contentsline {subsubsection}{Recall}{21}{section*.20}%
-\contentsline {subsubsection}{F1-Score}{21}{section*.21}%
-\contentsline {subsection}{\numberline {3.5.4}Rank Order Centroid (ROC)}{21}{subsection.3.5.4}%
-\contentsline {chapter}{\numberline {IV}ANALISIS DAN PERANCANGAN}{23}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Deskripsi Umum}{23}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Formulasi Masalah}{23}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Rancangan Algoritma Metode}{24}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Gambaran Umum}{24}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Spesifikasi Lingkungan Simulasi IPD}{26}{subsection.4.3.2}%
-\contentsline {subsubsection}{Konfigurasi Permainan}{26}{section*.24}%
-\contentsline {subsection}{\numberline {4.3.3}Desain Populasi Strategi Lawan}{26}{subsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.3.4}Prosedur dan Simulasi Generasi Data}{27}{subsection.4.3.4}%
-\contentsline {subsection}{\numberline {4.3.5}Representasi dan Persiapan Dataset}{27}{subsection.4.3.5}%
-\contentsline {subsubsection}{Representasi Dasar Aksi dan Strategi Lawan}{28}{section*.25}%
-\contentsline {subsubsection}{Pengacakan dan Pembagian Data}{28}{section*.26}%
-\contentsline {subsubsection}{Implikasi terhadap Evaluasi Model}{29}{section*.27}%
-\contentsline {subsection}{\numberline {4.3.6}Perancangan Model Prediksi Lawan}{29}{subsection.4.3.6}%
-\contentsline {subsubsection}{Model Satu Langkah}{29}{section*.28}%
-\contentsline {subsubsection}{Model Multi Langkah}{29}{section*.29}%
-\contentsline {subsubsection}{Pelatihan Multi Langkah}{30}{section*.30}%
-\contentsline {subsubsection}{Fungsi Loss Multi Langkah}{30}{section*.31}%
-\contentsline {subsubsection}{Skema Pembobotan Rank Order Centroid (ROC)}{30}{section*.32}%
-\contentsline {subsubsection}{Konfigurasi Eksperimen}{31}{section*.33}%
-\contentsline {subsubsection}{Evaluasi Closed-Loop}{31}{section*.34}%
-\contentsline {subsection}{\numberline {4.3.7}Protokol Validasi}{32}{subsection.4.3.7}%
-\contentsline {subsubsection}{Konfigurasi Dasar}{32}{section*.35}%
-\contentsline {subsubsection}{Tahap 1: Tuning Stabilitas Optimisasi}{33}{section*.36}%
-\contentsline {subsubsection}{Tahap 2: Tuning Temporal Modelling}{33}{section*.37}%
-\contentsline {subsubsection}{Tahap 3: Tuning Kapasitas Model}{33}{section*.38}%
-\contentsline {subsubsection}{Tahap 4: Tuning Fungsi Loss dan Skema Pembobotan}{34}{section*.39}%
-\contentsline {subsection}{\numberline {4.3.8}Protokol Evaluasi}{34}{subsection.4.3.8}%
-\contentsline {section}{\numberline {4.4}Analisis Eksperimen}{35}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Perbandingan Model Prediksi}{35}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Analisis Ablasi Model}{35}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}Analisis Perilaku Strategi Lawan}{36}{subsection.4.4.3}%
-\contentsline {subsection}{\numberline {4.4.4}Pelaporan Hasil}{36}{subsection.4.4.4}%
-\contentsline {chapter}{\numberline {V}JADWAL PENELITIAN}{37}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Jadwal Penelitian}{37}{section.5.1}%
-\contentsline {chapter}{DAFTAR PUSTAKA}{38}{section*.41}%
-\contentsline {chapter}{LAMPIRAN}{41}{chapter*.43}%
+\contentsline {chapter}{\numberline {II}TINJAUAN PUSTAKA}{6}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Metodologi pemodelan lawan \textit {Repeated Games}}{8}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Efektivitas strategi pemodelan lawan dievaluasi dalam \textit {Repeated Games}}{9}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Celah Penelitian}{12}{section.2.3}%
+\contentsline {chapter}{\numberline {III}LANDASAN TEORI}{13}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Game Theory}{13}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Dilema Sosial}{13}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Prisoner's Dilemma}{13}{subsection.3.1.2}%
+\contentsline {subsubsection}{Prisoner's Dilemma Berulang}{14}{section*.15}%
+\contentsline {section}{\numberline {3.2}Pemodelan Lawan}{14}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Long Short-Term Memory (LSTM)}{16}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Forget Gate}{17}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Input Gate}{18}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Candidate Cell State}{18}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Cell State (Memori Jangka Panjang)}{18}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.5}Output Gate}{19}{subsection.3.3.5}%
+\contentsline {section}{\numberline {3.4}Prediksi Multi-Langkah}{19}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Peramalan Rekursif dalam Closed Loop}{20}{subsection.3.4.1}%
+\contentsline {section}{\numberline {3.5}Metriks Loss dan Evaluasi}{21}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Cross-Entropy}{21}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Negative Log-Likelihood}{21}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Confusion Matrix}{22}{subsection.3.5.3}%
+\contentsline {subsubsection}{Accuracy}{23}{section*.19}%
+\contentsline {subsubsection}{Precision}{23}{section*.20}%
+\contentsline {subsubsection}{Recall}{23}{section*.21}%
+\contentsline {subsubsection}{F1-Score}{23}{section*.22}%
+\contentsline {subsection}{\numberline {3.5.4}Rank Order Centroid (ROC)}{24}{subsection.3.5.4}%
+\contentsline {chapter}{\numberline {IV}ANALISIS DAN PERANCANGAN}{25}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Deskripsi Umum}{25}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Formulasi Masalah}{25}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Rancangan Algoritma Metode}{26}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Gambaran Umum}{26}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Spesifikasi Lingkungan Simulasi IPD}{27}{subsection.4.3.2}%
+\contentsline {subsubsection}{Konfigurasi Permainan}{27}{section*.25}%
+\contentsline {subsection}{\numberline {4.3.3}Desain Populasi Strategi Lawan}{28}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Prosedur dan Simulasi Generasi Data}{29}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.3.5}Representasi dan Persiapan Dataset}{30}{subsection.4.3.5}%
+\contentsline {subsubsection}{Representasi Dasar Aksi dan Strategi Lawan}{30}{section*.26}%
+\contentsline {subsubsection}{Pengacakan dan Pembagian Data}{30}{section*.27}%
+\contentsline {subsubsection}{Implikasi terhadap Evaluasi Model}{31}{section*.28}%
+\contentsline {subsection}{\numberline {4.3.6}Perancangan Model Prediksi Lawan}{31}{subsection.4.3.6}%
+\contentsline {subsubsection}{Model Satu Langkah}{31}{section*.29}%
+\contentsline {subsubsection}{Model Multi Langkah}{31}{section*.30}%
+\contentsline {subsubsection}{Pelatihan Multi Langkah}{32}{section*.31}%
+\contentsline {subsubsection}{Fungsi Loss Multi Langkah}{33}{section*.32}%
+\contentsline {subsubsection}{Skema Pembobotan Rank Order Centroid (ROC)}{33}{section*.33}%
+\contentsline {subsubsection}{Konfigurasi Eksperimen}{33}{section*.34}%
+\contentsline {subsubsection}{Evaluasi Closed-Loop}{34}{section*.35}%
+\contentsline {subsection}{\numberline {4.3.7}Protokol Validasi}{34}{subsection.4.3.7}%
+\contentsline {subsubsection}{Konfigurasi Dasar}{35}{section*.36}%
+\contentsline {subsubsection}{Tahap 1: Tuning Stabilitas Optimisasi}{35}{section*.37}%
+\contentsline {subsubsection}{Tahap 2: Tuning Temporal Modelling}{36}{section*.38}%
+\contentsline {subsubsection}{Tahap 3: Tuning Kapasitas Model}{36}{section*.39}%
+\contentsline {subsubsection}{Tahap 4: Tuning Fungsi Loss dan Skema Pembobotan}{36}{section*.40}%
+\contentsline {subsection}{\numberline {4.3.8}Protokol Evaluasi}{37}{subsection.4.3.8}%
+\contentsline {section}{\numberline {4.4}Analisis Eksperimen}{38}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Analisis Ablasi Model}{38}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Analisis Perilaku Strategi Lawan}{39}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Pelaporan Hasil}{39}{subsection.4.4.3}%
+\contentsline {chapter}{\numberline {V}JADWAL PENELITIAN}{40}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Jadwal Penelitian}{40}{section.5.1}%
+\contentsline {chapter}{DAFTAR PUSTAKA}{41}{section*.42}%
+\contentsline {chapter}{LAMPIRAN}{44}{chapter*.44}%
