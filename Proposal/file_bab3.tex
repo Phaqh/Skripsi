@@ -44,6 +44,19 @@ Beberapa strategi juga memiliki komopleksitas lebih dalam berinteraksi dapat dip
     \caption{Finite State Machine untuk strategi IPD oleh \cite{knight_evolution_2018}}\label{fig:dfa2}
 \end{figure}
 
+\subsubsection{Prisoner's Dilemma Berulang Perbandingan dengan Permainan Berobservasi Penuh}\label{sec:POMDP}
+
+Perbedaan utama antara IPD dan permainan seperti catur (\textit{chess}) terletak pada bagaimana state direpresentasikan dan sejauh mana state tersebut dapat diamati. Pada catur, state permainan didefinisikan sebagai konfigurasi papan yang dapat diamati secara lengkap oleh kedua pemain \cite{russell_artificial_2016}. State ini bersifat Markov, dalam arti kondisi saat ini sudah cukup untuk menentukan distribusi state berikutnya tanpa memerlukan informasi tambahan dari masa lalu. Oleh karena itu, proses pengambilan keputusan pada catur dapat dimodelkan sebagai \textit{Markov Decision Process} (MDP).
+
+Sebaliknya, dalam IPD, perilaku lawan ditentukan oleh strategi yang dapat bergantung pada riwayat interaksi \cite{axelrod_evolution_1984}. Dari perspektif agen tunggal, strategi ini mempengaruhi dinamika interaksi, namun tidak dapat diamati secara langsung. Agen hanya dapat mengamati aksi lawan tanpa mengetahui aturan yang mendasarinya.
+
+Akibatnya, observasi pada satu langkah tidak cukup untuk menjelaskan perilaku lawan secara keseluruhan. Dua lawan dengan strategi berbeda dapat menghasilkan aksi yang sama pada kondisi saat ini, tetapi merespon secara berbeda pada langkah berikutnya. Hal ini menunjukkan bahwa informasi masa lalu diperlukan untuk menginferensikan kondisi sebenarnya dari lawan.
+
+Dengan demikian, dari perspektif agen, proses dalam IPD tidak memenuhi sifat Markov terhadap observasi yang tersedia. State yang sebenarnya, yaitu strategi lawan bersifat laten dan harus diinferensikan dari riwayat interaksi.
+
+Untuk merepresentasikan kondisi ini, digunakan kerangka \textit{Partially Observable Markov Decision Process} (POMDP) \cite{russell_artificial_2010}, yang memodelkan pengambilan keputusan ketika state tidak dapat diamati secara langsung. Dalam konteks IPD, strategi lawan dipandang sebagai state laten, sedangkan riwayat aksi menjadi sumber informasi untuk menginferensikannya. 
+
+
 \section{Pemodelan Lawan}
 
 Pemodelan lawan (\textit{opponent modeling}) bertujuan untuk mempelajari perilaku atau strategi lawan berdasarkan riwayat interaksi yang diamati (\cite{shoham_multiagent_2009}). Dalam konteks permainan berulang, setiap interaksi antara agen $i$ dan lawan $-i$ direpresentasikan sebagai pasangan aksi biner yang terjadi secara simultan pada setiap giliran permainan. Untuk setiap baris data atau satu episode permainan yang dinotasikan dengan indeks $n$, aksi aktual yang diambil oleh agen $i$ pada giliran ke-$t$ dituliskan sebagai $a_{n,t,i}$, sedangkan aksi aktual lawan pada giliran yang sama dituliskan sebagai $a_{n,t,-i}$. Dengan demikian, riwayat interaksi yang tersedia hingga giliran ke-$t$ pada episode ke-$n$ dapat dipandang sebagai urutan pasangan aksi $\{(a_{n,1,i}, a_{n,1,-i}), (a_{n,2,i}, a_{n,2,-i}), \dots, (a_{n,t,i}, a_{n,t,-i})\}$.

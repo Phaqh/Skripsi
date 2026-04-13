@@ -1308,6 +1308,68 @@
       \field{title}{Selfish Routing and the Price of Anarchy}
       \field{year}{2005}
     \endentry
+    \entry{russell_artificial_2016}{book}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=18ee0a7bfc995f40254c9d425c977a49}{%
+           family={Russell},
+           familyi={R\bibinitperiod},
+           given={Stuart\bibnamedelima J.},
+           giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5de798d5fa3c0236c0478134cd23f52a}{%
+           family={Norvig},
+           familyi={N\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editora}{2}{}{%
+        {{hash=5e313a551f14d86a5958c804b661f644}{%
+           family={Davis},
+           familyi={D\bibinitperiod},
+           given={Ernest},
+           giveni={E\bibinitperiod}}}%
+        {{hash=c56f5f10ae9b9cd4ad33bc0d09b6446d}{%
+           family={Edwards},
+           familyi={E\bibinitperiod},
+           given={Douglas},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Boston Columbus Indianapolis}%
+      }
+      \list{publisher}{1}{%
+        {Pearson}%
+      }
+      \strng{namehash}{a4f50258a14156905c8d2b1b4704be30}
+      \strng{fullhash}{a4f50258a14156905c8d2b1b4704be30}
+      \strng{bibnamehash}{a4f50258a14156905c8d2b1b4704be30}
+      \strng{authorbibnamehash}{a4f50258a14156905c8d2b1b4704be30}
+      \strng{authornamehash}{a4f50258a14156905c8d2b1b4704be30}
+      \strng{authorfullhash}{a4f50258a14156905c8d2b1b4704be30}
+      \strng{editorabibnamehash}{754b502b2e716efb687a1f1b9e6d0345}
+      \strng{editoranamehash}{754b502b2e716efb687a1f1b9e6d0345}
+      \strng{editorafullhash}{754b502b2e716efb687a1f1b9e6d0345}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{annotation}{"Authorized adaption from the United States edition, entitled 'Artificial intelligence: a modern approach', third edition, {ISBN} 9780136042594, by Stuart J. Russell and Peter Norvig published by Pearson Education © 2010." - Rückseite der Titelseite}
+      \field{edition}{Third edition, Global edition}
+      \field{editoratype}{collaborator}
+      \field{isbn}{978-0-13-604259-4 978-1-292-15397-1}
+      \field{pagetotal}{1}
+      \field{series}{Prentice Hall series in artificial intelligence}
+      \field{shorttitle}{Artificial intelligence}
+      \field{title}{Artificial intelligence: a modern approach}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \verb{file}
+      \verb ISBN 978-0-13-604259-4:/home/paqh/Zotero/storage/ZFTCIC5M/Artificial Intelligence-A Modern Approach (3rd Edition) ISBN 9780136042594.pdf:application/pdf
+      \endverb
+    \endentry
     \entry{sathyanarayanan_confusion_2024}{article}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=7597392b7ab9def1e265ff33e4a79636}{%
@@ -1622,6 +1684,8 @@
       \keyw{Mathematical models,Game theory,Games,Analytical models,Couplings,Dynamical equations,Evolutionary dynamics,Evolutionary game dynamics,Network topology,Numerical models,Simulation,Social networking (online),Steady-state,Zero determinant strategy,Multi agent systems,Dynamics,Dynamical equation,Evolutionary game dynamic,Evolutionary games,Intelligent agents,Modelling framework,Multi-Agent Model,Prisoner dilemma game,Regular networks,Social dilemmas}
     \endentry
   \enddatalist
+  \missing{axelrod_evolution_1984}
+  \missing{russell_artificial_2010}
 \endrefsection
 \endinput
 

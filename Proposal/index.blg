@@ -1,15 +1,19 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
-[1] Config.pm:310> INFO - Logfile is 'index.blg'
-[168] biber:340> INFO - === Min Mar 22, 2026, 07:19:52
-[195] Biber.pm:419> INFO - Reading 'index.bcf'
-[340] Biber.pm:979> INFO - Found 30 citekeys in bib section 0
-[365] Biber.pm:4419> INFO - Processing section 0
-[384] Biber.pm:4610> INFO - Looking for bibtex file 'referensi.bib' for section 0
-[397] bibtex.pm:1713> INFO - LaTeX decoding ...
-[535] bibtex.pm:1519> INFO - Found BibTeX data source 'referensi.bib'
-[1024] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[1024] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[1024] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
-[1024] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
-[1104] bbl.pm:660> INFO - Writing 'index.bbl' with encoding 'UTF-8'
-[1138] bbl.pm:763> INFO - Output to index.bbl
+[0] Config.pm:310> INFO - Logfile is 'index.blg'
+[87] biber:340> INFO - === Sen Apr 13, 2026, 20:08:10
+[100] Biber.pm:419> INFO - Reading 'index.bcf'
+[159] Biber.pm:979> INFO - Found 33 citekeys in bib section 0
+[171] Biber.pm:4419> INFO - Processing section 0
+[180] Biber.pm:4610> INFO - Looking for bibtex file 'referensi.bib' for section 0
+[186] bibtex.pm:1713> INFO - LaTeX decoding ...
+[253] bibtex.pm:1519> INFO - Found BibTeX data source 'referensi.bib'
+[486] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[486] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[486] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[486] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[524] bbl.pm:660> INFO - Writing 'index.bbl' with encoding 'UTF-8'
+[541] bbl.pm:763> INFO - Output to index.bbl
+[541] Biber.pm:131> WARN - ISBN '978-0-13-604259-4 978-1-292-15397-1' in entry 'russell_artificial_2016' is invalid - run biber with '--validate_datamodel' for details.
+[541] Biber.pm:131> WARN - I didn't find a database entry for 'axelrod_evolution_1984' (section 0)
+[541] Biber.pm:131> WARN - I didn't find a database entry for 'russell_artificial_2010' (section 0)
+[541] Biber.pm:133> INFO - WARNINGS: 3
