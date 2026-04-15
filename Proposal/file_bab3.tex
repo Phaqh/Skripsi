@@ -28,7 +28,7 @@ dengan ketidaksamaan $T > R > P > S \quad \text{dan} \quad 2R > T + S$. Dalam pe
 
 Permainan PD diperluas menjadi bentuk berulang, permainan diulang selama $T$ \textit{Turn} atau tahap dengan hasil kumulatif. Dalam IPD, strategi dapat bergantung pada riwayat interaksi, memungkinkan untuk pembalasan dan kerja sama yang berkelanjutan. IPD relevan untuk mempelajari dinamika manusia seperti pembentukan hubungan, konflik berkepanjangan, siklus saling membalas, dan pemulihan kepercayaan.
 
-Beberapa strategi terkenal dalam IPD meliputi \textit{Tit-for-Tat}: Mulai dengan bekerja sama, kemudian meniru aksi lawan pada langkah sebelumnya. \textit{Cooperator}: Selalu bekerja sama. \textit{Defector}: Selalu berkhianat. beberapa algoritma tersebut dapat dipahami melalui Gambar \ref{fig:dfa}.
+Beberapa strategi terkenal dalam IPD meliputi \textit{Tit-for-Tat}: Mulai dengan bekerja sama, kemudian meniru aksi lawan pada langkah sebelumnya. \textit{Generous Tit-for-Tat}: Tit-for-tat dengan toleransi. \textit{Grim Trigger} atau \textit{Friedman}: akan bekerja sama jika lawan bekerja sama, tetapi akan berkhianat terus jika lawan pernah berkhianat. ALgoritma tersebut didapatkan dari repositori turnamen Axelrod \cite{axelrod_evolution_2006}. Beberapa algoritma tersebut dapat dipahami melalui Gambar \ref{fig:dfa}.
 
 \begin{figure}[!ht]
     \centering
@@ -44,18 +44,26 @@ Beberapa strategi juga memiliki komopleksitas lebih dalam berinteraksi dapat dip
     \caption{Finite State Machine untuk strategi IPD oleh \cite{knight_evolution_2018}}\label{fig:dfa2}
 \end{figure}
 
-\subsubsection{Prisoner's Dilemma Berulang Perbandingan dengan Permainan Berobservasi Penuh}\label{sec:POMDP}
 
-Perbedaan utama antara IPD dan permainan seperti catur (\textit{chess}) terletak pada bagaimana state direpresentasikan dan sejauh mana state tersebut dapat diamati. Pada catur, state permainan didefinisikan sebagai konfigurasi papan yang dapat diamati secara lengkap oleh kedua pemain \cite{russell_artificial_2016}. State ini bersifat Markov, dalam arti kondisi saat ini sudah cukup untuk menentukan distribusi state berikutnya tanpa memerlukan informasi tambahan dari masa lalu. Oleh karena itu, proses pengambilan keputusan pada catur dapat dimodelkan sebagai \textit{Markov Decision Process} (MDP).
+\subsubsection{Perbandingan Iterated Prisoner's Dilemma dengan Permainan Informasi Sempurna}
 
-Sebaliknya, dalam IPD, perilaku lawan ditentukan oleh strategi yang dapat bergantung pada riwayat interaksi \cite{axelrod_evolution_1984}. Dari perspektif agen tunggal, strategi ini mempengaruhi dinamika interaksi, namun tidak dapat diamati secara langsung. Agen hanya dapat mengamati aksi lawan tanpa mengetahui aturan yang mendasarinya.
+Perbedaan fundamental antara \textit{Iterated Prisoner's Dilemma} (IPD) dan permainan seperti catur terletak pada kelengkapan observasi terhadap state yang relevan untuk pengambilan keputusan. Dalam catur, seluruh state permainan direpresentasikan secara eksplisit melalui konfigurasi papan, yang bersifat \textit{fully observable} dan mencukupi sebagai \textit{sufficient statistic} untuk menentukan langkah optimal. Dengan demikian, dinamika permainan memenuhi asumsi \textbf{Markov}, di mana transisi state hanya bergantung pada kondisi saat ini tanpa memerlukan informasi historis \cite{russell_artificial_2016}. Oleh karena itu, catur secara alami dapat dimodelkan sebagai \textit{Markov Decision Process} (MDP).
 
-Akibatnya, observasi pada satu langkah tidak cukup untuk menjelaskan perilaku lawan secara keseluruhan. Dua lawan dengan strategi berbeda dapat menghasilkan aksi yang sama pada kondisi saat ini, tetapi merespon secara berbeda pada langkah berikutnya. Hal ini menunjukkan bahwa informasi masa lalu diperlukan untuk menginferensikan kondisi sebenarnya dari lawan.
+Sebaliknya, pada IPD, observasi terhadap aksi lawan (misalnya bekerja sama atau berkhianat) tidak sepenuhnya merepresentasikan state yang mendasari perilaku lawan. Strategi lawan bertindak sebagai \textit{state laten} yang tidak dapat diakses secara langsung, melainkan hanya dapat diinferensikan melalui riwayat interaksi (\cite{axelrod_evolution_1981}). Akibatnya, observasi pada satu langkah waktu tidak memenuhi sifat \textit{sufficient statistic}, sehingga informasi historis menjadi esensial untuk membentuk estimasi terhadap state tersebut.
 
-Dengan demikian, dari perspektif agen, proses dalam IPD tidak memenuhi sifat Markov terhadap observasi yang tersedia. State yang sebenarnya, yaitu strategi lawan bersifat laten dan harus diinferensikan dari riwayat interaksi.
+Secara formal, meskipun IPD dapat direpresentasikan sebagai proses Markov dengan mendefinisikan state sebagai keseluruhan riwayat interaksi, representasi tersebut tidak praktis, tidak praktis karena membutuhkan representasi state berdimensi sangat tinggi yang tumbuh seiring panjang riwayat interaks. Selanjutnya, representasi tidak tersedia secara langsung bagi agen dalam bentuk yang terstruktur. Oleh karena itu, dari perspektif agen yang memiliki keterbatasan observasi, permasalahan ini lebih tepat dimodelkan sebagai \textit{Partially Observable Markov Decision Process} (POMDP) (\cite{kaelbling_planning_1998}), di mana agen harus membangun \textit{belief state} terhadap strategi lawan berdasarkan observasi parsial.
 
-Untuk merepresentasikan kondisi ini, digunakan kerangka \textit{Partially Observable Markov Decision Process} (POMDP) \cite{russell_artificial_2010}, yang memodelkan pengambilan keputusan ketika state tidak dapat diamati secara langsung. Dalam konteks IPD, strategi lawan dipandang sebagai state laten, sedangkan riwayat aksi menjadi sumber informasi untuk menginferensikannya. 
+Perbedaan fundamental dalam struktur observasi antara IPD dan catur juga menimbulkan sejumlah batasan metodologis yang signifikan.
 
+Pertama, pada catur, karena state bersifat \textit{fully observable} dan memenuhi \textit{sufficient statistic}, proses pengambilan keputusan dapat diformulasikan sebagai optimasi langsung terhadap state saat ini. Hal ini memungkinkan penggunaan algoritma berbasis pencarian seperti \textit{minimax} atau \textit{Monte Carlo Tree Search} tanpa memerlukan estimasi terhadap variabel tersembunyi. Sebaliknya, dalam IPD, keputusan optimal tidak dapat ditentukan hanya dari observasi saat ini, karena strategi lawan tidak teramati secara langsung. Akibatnya, agen harus melakukan inferensi terhadap state laten, yang memperkenalkan ketidakpastian tambahan dalam proses pengambilan keputusan.
+
+Kedua, dalam catur, evaluasi terhadap suatu posisi bersifat relatif stabil dan deterministik, karena aturan permainan dan transisi state tidak bergantung pada identitas atau dinamika internal lawan. Sebaliknya, dalam IPD, respons lawan dapat berubah secara dinamis tergantung pada riwayat interaksi, sehingga fungsi transisi menjadi bergantung pada strategi yang tidak diketahui. Hal ini menyebabkan lingkungan menjadi bersifat non-stasioner dari perspektif agen, yang menyulitkan proses pembelajaran model prediktif.
+
+Ketiga, pada catur, optimalitas strategi dapat didefinisikan secara global berdasarkan aturan permainan yang tetap, meskipun secara komputasional sulit. Sebaliknya, dalam IPD, optimalitas strategi bersifat relatif terhadap distribusi strategi lawan yang dihadapi. Dengan kata lain, tidak ada strategi tunggal yang optimal secara universal, melainkan bergantung pada konteks interaksi. Hal ini membatasi penggunaan pendekatan optimasi klasik yang mengasumsikan objective function yang tetap.
+
+Keempat, dari sisi representasi state, catur memungkinkan penggunaan representasi state yang eksplisit dan berdimensi terbatas (misalnya konfigurasi papan), sedangkan pada IPD, representasi state yang relevan melibatkan riwayat interaksi yang secara teoritis tidak terbatas panjangnya. Oleh karena itu, diperlukan mekanisme aproksimasi, seperti model berbasis memori, untuk menangkap dependensi temporal yang relevan.
+
+Dengan demikian, perbedaan antara kedua permainan ini bukan semata pada kompleksitas atau panjang riwayat interaksi, melainkan pada sifat dasar informasi yang tersedia: catur bergantung pada state yang eksplisit dan sepenuhnya teramati, sedangkan IPD melibatkan state laten yang harus diinferensikan. Perbedaan ini menyebabkan pergeseran dari optimasi langsung berbasis state menuju permasalahan estimasi state (\textit{state estimation}) dan inferensi perilaku dalam proses pengambilan keputusan.
 
 \section{Pemodelan Lawan}
 
@@ -67,7 +75,7 @@ Pendekatan sederhana seperti regresi linear dapat digunakan untuk memodelkan hub
 
 \section{Long Short-Term Memory (LSTM)}
 
-Long Short-Term Memory (LSTM) merupakan pengembangan dari Recurrent Neural Network (RNN) yang dirancang untuk menangkap dependensi jangka panjang melalui mekanisme memori eksplisit (\cite{hochreiter_long_1997}). Dalam konteks pemodelan lawan, LSTM digunakan untuk membangun representasi laten terhadap strategi lawan berdasarkan riwayat interaksi.
+Long Short-Term Memory (LSTM) merupakan pengembangan dari Recurrent Neural Network (RNN) yang dirancang untuk menangkap dependensi jangka panjang melalui mekanisme memori eksplisit (\cite{hochreiter_long_1997}). LSTM bekerja secara autoregresive di mana model memiliki dependensi terhadap riwayat input. Dalam konteks pemodelan lawan, LSTM digunakan untuk membangun representasi laten terhadap strategi lawan berdasarkan riwayat interaksi, dengan statenya diatur menggunakan hidden state.
 
 Diberikan input $x_t$ (observasi pada waktu $t$, berupa aksi lawan), dengan hidden state sebelumnya $h_{t-1}$ (representasi laten sebelumnya), dan parameter bobot $W$, $U$, serta bias $b$, setiap komponen LSTM bekerja secara berurutan dengan ilustrasi Gambar \ref{fig:LSTM}.
 
@@ -145,7 +153,7 @@ Distribusi prediktif yang digunakan untuk menghasilkan aksi tersebut dituliskan 
 \subsection{Cross-Entropy}\label{sec:CrossEntropy}
 Fungsi objektif cross-entropy digunakan untuk mengukur perbedaan antara distribusi prediksi model $P_\theta$ dan distribusi aktual dari aksi lawan $P_{\text{actual}}$ pada setiap langkah prediksi (\cite{rosasco_are_2004}). Cross-entropy didefinisikan sebagai persamaan \ref{eq:CrossEntropy}.
 
-\begin{equation}\label{eq:ChrossEnthropy}
+\begin{equation}\label{eq:CrossEntropy}
 \mathcal{L}_{\text{CE}} = - \sum_{a} P_{\text{actual}}(a) \log P_\theta(a \mid h_t)
 \end{equation}
 

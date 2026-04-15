@@ -1,14 +1,14 @@
 # Fdb version 4
-["biber index"] 1773125487.22775 "index.bcf" "index.bbl" "index" 1773125536.78572 0
-  "index.bcf" 1773125536.42221 117651 219f210e2ea2d4a50af23d1f15631d4a "pdflatex"
+["biber index"] 1773125487.22775 "index.bcf" "index.bbl" "index" 1776096611.53958 0
+  "index.bcf" 1776096611.42116 117651 219f210e2ea2d4a50af23d1f15631d4a "pdflatex"
   "referensi.bib" 1772980282.28649 57271 57adcf84875908368b36827d4ebbb2e3 ""
   (generated)
   "index.bbl"
   "index.blg"
   (rewritten before read)
-["pdflatex"] 1773125519.83174 "/home/paqh/Documents/Skripsi/Proposal/index.tex" "index.pdf" "index" 1773125536.78661 0
+["pdflatex"] 1776096605.60944 "/home/paqh/Documents/Skripsi/ProposalFullVersion12-03-26/index.tex" "index.pdf" "index" 1776096611.53983 0
   "/etc/texmf/web2c/texmf.cnf" 1732769992.1592 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/paqh/Documents/Skripsi/Proposal/index.tex" 1772981262.69609 7371 45492271b4cae8ea0de222c9563ab834 ""
+  "/home/paqh/Documents/Skripsi/ProposalFullVersion12-03-26/index.tex" 1772981262.69609 7371 45492271b4cae8ea0de222c9563ab834 ""
   "/home/paqh/texmf/tex/latex/beramono/bera/tex/latex/bera/t1fvm.fd" 1094557730 819 be55b7e3c5cc7c059be8eb7852d712b5 ""
   "/home/paqh/texmf/tex/latex/beramono/beramono.sty" 1075568832 767 619e175cf21788218aa95de61f93b82f ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -335,17 +335,17 @@
   "file_bab5.tex" 1772380484.58548 2704 dd3e88e2ee6bddd4ffa0bd36c4b864c6 ""
   "file_bab6.tex" 1772179564.62117 1217 c217b5fb5b12ecfffe21caaae4b425b3 ""
   "hasil_eksperimen.tex" 1769665962.7588 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "index.aux" 1773125536.37821 32048 314d0647c718e42503818e6fb95cbd51 "pdflatex"
-  "index.bbl" 1773125489.4787 79335 8687602bb53b9e82db6f8a04f5ec9356 "biber index"
-  "index.lof" 1773125536.42421 957 dd07b80976913fd6b49b043651384237 "pdflatex"
-  "index.lot" 1773125536.42421 1234 b3ef88c6dbaa058787b8cbfb0706105d "pdflatex"
-  "index.out" 1773125536.40521 11298 6f61185fa3540664857fa7f40db15359 "pdflatex"
-  "index.run.xml" 1773125536.42421 2317 2ef8a75ff9e3adf8e9c6a2ca8f59f116 "pdflatex"
+  "index.aux" 1776096611.40716 32048 314d0647c718e42503818e6fb95cbd51 "pdflatex"
+  "index.bbl" 1775776364.74521 79335 8687602bb53b9e82db6f8a04f5ec9356 "biber index"
+  "index.lof" 1776096611.42216 957 dd07b80976913fd6b49b043651384237 "pdflatex"
+  "index.lot" 1776096611.42216 1234 b3ef88c6dbaa058787b8cbfb0706105d "pdflatex"
+  "index.out" 1776096611.41516 11298 6f61185fa3540664857fa7f40db15359 "pdflatex"
+  "index.run.xml" 1776096611.42216 2317 2ef8a75ff9e3adf8e9c6a2ca8f59f116 "pdflatex"
   "index.tex" 1772981262.69609 7371 45492271b4cae8ea0de222c9563ab834 ""
-  "index.toc" 1773125536.42421 8644 1853e609def6f5f2da451e503c5267c5 "pdflatex"
+  "index.toc" 1776096611.42216 8644 1853e609def6f5f2da451e503c5267c5 "pdflatex"
   "motto.tex" 1771691256.25432 0 d41d8cd98f00b204e9800998ecf8427e ""
   "prakata.tex" 1769665410.50711 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "ugmskripsi.cls" 1772983441.00226 22298 b10e7bd2c6a632212fbacd9f0b0dbe6b ""
+  "ugmskripsi.cls" 1775775088.98683 22152 1230feb1e088ef6009b32e3877e71e95 ""
   (generated)
   "index.aux"
   "index.bcf"

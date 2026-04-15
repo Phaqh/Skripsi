@@ -50,12 +50,12 @@
     \endentry
     \entry{axelrod_evolution_1981}{article}{}
       \name{author}{2}{}{%
-        {{un=0,uniquepart=base,hash=e46fddf6d412d66cae997840c9ba5f34}{%
+        {{un=1,uniquepart=given,hash=e46fddf6d412d66cae997840c9ba5f34}{%
            family={Axelrod},
            familyi={A\bibinitperiod},
            given={Robert},
            giveni={R\bibinitperiod},
-           givenun=0}}%
+           givenun=1}}%
         {{un=0,uniquepart=base,hash=7187734982dc7773b27d5232ed742347}{%
            family={Hamilton},
            familyi={H\bibinitperiod},
@@ -82,6 +82,44 @@
       \field{dateera}{ce}
       \verb{file}
       \verb PDF:/home/paqh/Zotero/storage/D45VFM7S/Axelrod and Hamilton - 1981 - The Evolution of Cooperation.pdf:application/pdf
+      \endverb
+    \endentry
+    \entry{axelrod_evolution_2006}{book}{}
+      \name{author}{1}{}{%
+        {{un=1,uniquepart=given,hash=5806c3a1826ab7800a84dc8c5a4fb566}{%
+           family={Axelrod},
+           familyi={A\bibinitperiod},
+           given={Robert\bibnamedelima M.},
+           giveni={R\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=1}}%
+      }
+      \list{location}{1}{%
+        {New York, {NY}}%
+      }
+      \list{publisher}{1}{%
+        {Basic Books}%
+      }
+      \strng{namehash}{5806c3a1826ab7800a84dc8c5a4fb566}
+      \strng{fullhash}{5806c3a1826ab7800a84dc8c5a4fb566}
+      \strng{bibnamehash}{5806c3a1826ab7800a84dc8c5a4fb566}
+      \strng{authorbibnamehash}{5806c3a1826ab7800a84dc8c5a4fb566}
+      \strng{authornamehash}{5806c3a1826ab7800a84dc8c5a4fb566}
+      \strng{authorfullhash}{5806c3a1826ab7800a84dc8c5a4fb566}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{Rev. ed}
+      \field{isbn}{978-0-465-02121-5 978-0-465-00564-2 978-0-465-02122-2}
+      \field{langid}{english}
+      \field{pagetotal}{241}
+      \field{title}{The evolution of cooperation}
+      \field{year}{2006}
+      \field{dateera}{ce}
+      \verb{file}
+      \verb PDF:/home/paqh/Zotero/storage/PBS83W75/Axelrod - 2006 - The evolution of cooperation.pdf:application/pdf
       \endverb
     \endentry
     \entry{barron1996decision}{article}{}
@@ -794,6 +832,69 @@
       \endverb
       \verb{url}
       \verb https://link.springer.com/10.1007/s10994-025-06823-z
+      \endverb
+    \endentry
+    \entry{kaelbling_planning_1998}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=72fdc7bf3120e1cff12e3ecf7e892b9a}{%
+           family={Kaelbling},
+           familyi={K\bibinitperiod},
+           given={Leslie\bibnamedelima Pack},
+           giveni={L\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=211e529e9f10ad1bfacff2284da10ea7}{%
+           family={Littman},
+           familyi={L\bibinitperiod},
+           given={Michael\bibnamedelima L.},
+           giveni={M\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2206f2c6c327af01902e88ec6bef588b}{%
+           family={Cassandra},
+           familyi={C\bibinitperiod},
+           given={Anthony\bibnamedelima R.},
+           giveni={A\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{de0459216776f13d0c066c506b4cdf29}
+      \strng{fullhash}{55978656d14c32546fe5d19b1598192d}
+      \strng{bibnamehash}{55978656d14c32546fe5d19b1598192d}
+      \strng{authorbibnamehash}{55978656d14c32546fe5d19b1598192d}
+      \strng{authornamehash}{de0459216776f13d0c066c506b4cdf29}
+      \strng{authorfullhash}{55978656d14c32546fe5d19b1598192d}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In this paper, we bring techniques from operations research to bear on the problem of choosing optimal actions in partially observable stochastic domains. We begin by introducing the theory of Markov decision processes ({MDPs}) and partially observable {MDPs} ({POMDPs}). We then outline a novel algorithm for solving {POMDPs} off line and show how, in some cases, a ﬁnite-memory controller can be extracted from the solution to a {POMDP}. We conclude with a discussion of how our approach relates to previous work, the complexity of ﬁnding exact solutions to {POMDPs}, and of some possibilities for ﬁnding approximate solutions.  1998 Elsevier Science B.V. All rights reserved.}
+      \field{issn}{00043702}
+      \field{journaltitle}{Artificial Intelligence}
+      \field{langid}{english}
+      \field{month}{5}
+      \field{number}{1}
+      \field{shortjournal}{Artificial Intelligence}
+      \field{title}{Planning and acting in partially observable stochastic domains}
+      \field{urlday}{13}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{volume}{101}
+      \field{year}{1998}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{99\bibrangedash 134}
+      \range{pages}{36}
+      \verb{doi}
+      \verb 10.1016/S0004-3702(98)00023-X
+      \endverb
+      \verb{file}
+      \verb PDF:/home/paqh/Zotero/storage/8YYGDHRL/Kaelbling et al. - 1998 - Planning and acting in partially observable stochastic domains.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S000437029800023X
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S000437029800023X
       \endverb
     \endentry
     \entry{knight_evolution_2018}{article}{}
@@ -1684,8 +1785,6 @@
       \keyw{Mathematical models,Game theory,Games,Analytical models,Couplings,Dynamical equations,Evolutionary dynamics,Evolutionary game dynamics,Network topology,Numerical models,Simulation,Social networking (online),Steady-state,Zero determinant strategy,Multi agent systems,Dynamics,Dynamical equation,Evolutionary game dynamic,Evolutionary games,Intelligent agents,Modelling framework,Multi-Agent Model,Prisoner dilemma game,Regular networks,Social dilemmas}
     \endentry
   \enddatalist
-  \missing{axelrod_evolution_1984}
-  \missing{russell_artificial_2010}
 \endrefsection
 \endinput
 

@@ -1,9 +1,9 @@
-PWD /home/paqh/Documents/Skripsi/Proposal
+PWD /home/paqh/Documents/Skripsi/ProposalFullVersion12-03-26
 INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /home/paqh/Documents/Skripsi/Proposal/index.tex
+INPUT /home/paqh/Documents/Skripsi/ProposalFullVersion12-03-26/index.tex
 OUTPUT index.log
 INPUT ./ugmskripsi.cls
 INPUT ugmskripsi.cls

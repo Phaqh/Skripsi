@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Laporan Revisi Proposal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            background-color: #f8f9fb;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+        h3 {
+            color: #34495e;
+            margin-top: 0;
+        }
+        .section {
+            max-width: 900px;
+            margin: auto;
+        }
+        .card {
+            background: #ffffff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+        ul {
+            margin-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .label {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-top: 10px;
+        }
+        .tindak-lanjut {
+            margin-left: 15px;
+            padding-left: 15px;
+            border-left: 3px solid #3498db;
+            background: #f4f8ff;
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+        a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Laporan Revisi Proposal</h1>
+
+    <div class="section">
+        <h2>Catatan Revisi</h2>
+
+        <div class="card">
+            <h3>Dr. Sri Mulyana, M.Kom.</h3>
+            <ul>
+                <li>Silakan diperbaiki sesuai dengan saran dan masukan dari para penguji.</li>
+                <li class="label">Tindak lanjut:</li>
+                <li class="tindak-lanjut">Seluruh masukan dari para penguji telah diakomodasi dan disesuaikan dalam dokumen proposal.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Moh. Edi Wibowo, S.Kom., M.Kom., Ph.D.</h3>
+            <ul>
+                <li>Perlu dilakukan peninjauan terhadap algoritma-algoritma diskriminatif klasik yang dibahas pada kanal Veritasium terkait Prisoner’s Dilemma.</li>
+                <li class="label">Tindak lanjut:</li>
+                <li class="tindak-lanjut">
+                    Peninjauan terhadap algoritma-algoritma diskriminatif klasik telah dilakukan dengan mengacu pada pembahasan di kanal Veritasium terkait Prisoner's Dilemma. 
+                    Berdasarkan referensi tersebut, strategi yang digunakan merujuk pada turnamen Axelrod tahun 1981 dan 1992, yang diakses melalui repository berikut:
+                    <br>
+                    <a href="https://axelrod.readthedocs.io/en/fix-documentation/reference/overview_of_strategies.html#axelrod-s-first-tournament">
+                        Dokumentasi Axelrod
+                    </a>.
+                    Algoritma-algoritma tersebut telah diperbaharui dijelaskan pada Bab 3 (Landasan Teori), khususnya pada Subbab 3.1.2 Iterated Prisoner's Dilemma. 
+                    Selain itu, implementasinya direncanakan pada Bab 4 (Rancangan Penelitian), Subbab 4.3.3 Algoritma yang Digunakan, dengan memanfaatkan repository berikut:
+                    <br>
+                    <a href="https://github.com/Axelrod-Python/TourExec">
+                        Axelrod Tournament Implementation
+                    </a>.
+                </li>
+
+                <li>Perlu dipastikan kembali apakah model LSTM yang digunakan beroperasi secara autoregresif.</li>
+                <li class="label">Tindak lanjut:</li>
+                <li class="tindak-lanjut">
+                    Model LSTM yang digunakan dalam penelitian ini dirancang untuk beroperasi secara autoregresif pada fase inferensi, yaitu dengan menggunakan output pada langkah waktu sebelumnya sebagai input untuk langkah waktu berikutnya dalam horizon prediksi.
+
+                    Namun demikian, pada fase pelatihan digunakan pendekatan teacher forcing terbatas, di mana model tetap menerima informasi aksi agen yang sebenarnya. Hal ini bertujuan untuk menjaga stabilitas pembelajaran dan mencegah propagasi kesalahan yang terlalu dini selama proses training.
+
+                    Secara metodologis, penelitian ini secara khusus memfokuskan prediksi pada aksi lawan. Oleh karena itu, strategi agen tidak diprediksi oleh model utama, melainkan ditentukan berdasarkan fungsi respon terhadap prediksi aksi lawan. Pendekatan ini dipilih untuk mengisolasi sumber kesalahan prediksi agar tidak terjadi akumulasi error dari dua komponen sekaligus (prediksi agen dan lawan), yang berpotensi memperumit analisis dinamika kesalahan dalam horizon waktu.
+
+                    Sebagai tindak lanjut dari masukan penguji, pendekatan full autoregressive yang memprediksi aksi agen dan lawan secara simultan juga akan diimplementasikan sebagai model pembanding (baseline) pada Bab 4.3.6. Pendekatan ini akan digunakan untuk mengevaluasi secara empiris dampak dari propagasi kesalahan ganda terhadap stabilitas dan akurasi prediksi dalam horizon jangka panjang.
+                </li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Prof. Dr. Suprapto, M.I.Kom.</h3>
+            <ul>
+                <li>Perlu ditambahkan penjelasan mengenai definisi kasus yang diangkat serta batasan-batasan penelitian.</li>
+                <li class="label">Tindak lanjut:</li>
+                <li class="tindak-lanjut">
+                    Penjelasan mengenai definisi kasus dan batasan penelitian telah ditambahkan, antara lain melalui pengenalan konsep Partially Observable Markov Decision Process (POMDP) 
+                    serta perbandingannya dengan permainan informasi sempurna (MDP) seperti catur. 
+                    Salah satu penjelasan yang ditambahkan adalah sebagai berikut:
+                    <br><br>
+                    <em>
+                    "Berbeda dengan catur, di mana kondisi permainan saat ini sudah cukup untuk menentukan langkah berikutnya dengan dinamika yang relatif tetap, 
+                    dalam Iterated Prisoner's Dilemma (IPD), respons lawan bergantung pada riwayat interaksi. Hal ini menyebabkan perilaku lawan dapat tampak berubah seiring waktu, 
+                    sehingga informasi pada satu langkah tidak cukup untuk memprediksi tindakan selanjutnya."
+                    </em>
+                    <br><br>
+                    Selain itu, penambahan subsubbab 3.1.2 juga telah dilakukan pada bagian landasan teori dengan judul:
+                    <br>
+                    <strong>Perbandingan Iterated Prisoner's Dilemma dengan Permainan Informasi Sempurna (Catur)</strong>.
+                </li>
+
+                <li>Dataset sebaiknya segera disiapkan.</li>
+                <li class="label">Tindak lanjut:</li>
+                <li class="tindak-lanjut">
+                    Penyusunan dataset akan dilakukan setelah lingkungan turnamen dan populasi strategi siap. 
+                    Hal ini dikarenakan dataset yang sesuai dengan kebutuhan penelitian harus dibangun melalui interaksi antar strategi dalam lingkungan turnamen IPD. Serta terkait masukan sebelumnya mengenai strategi lain di kanal Veritasium, maka strategi-strategi tersebut juga akan dimasukkan dalam populasi strategi untuk memastikan keberagaman dan representativitas dalam dataset yang dihasilkan. 
+                    Dataset tersebut akan mencakup riwayat interaksi antar agen, termasuk aksi yang diambil oleh masing-masing agen pada setiap putaran.
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+</html>

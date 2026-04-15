@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber index"] 1776085689.92829 "index.bcf" "index.bbl" "index" 1776085888.95641 0
-  "index.bcf" 1776085888.80321 115217 b87165b6f1c27f52612348946c928ecd "pdflatex"
+["biber index"] 1776181162.56165 "index.bcf" "index.bbl" "index" 1776181246.83992 0
+  "index.bcf" 1776181246.66439 115296 db6f15ab40cc956783e460b783819d59 "pdflatex"
   "referensi.bib" 1776085652.07497 65676 e2088b6b0a26a16e1271fd3f8b3e1412 ""
   (generated)
   "index.bbl"
   "index.blg"
   (rewritten before read)
-["pdflatex"] 1776085882.4296 "/home/paqh/Documents/Skripsi/Proposal/index.tex" "index.pdf" "index" 1776085888.95676 0
+["pdflatex"] 1776181240.38662 "/home/paqh/Documents/Skripsi/Proposal/index.tex" "index.pdf" "index" 1776181246.84027 0
   "/etc/texmf/web2c/texmf.cnf" 1732769992.1592 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/paqh/Documents/Skripsi/Proposal/index.tex" 1773464182.39878 7369 8b1cf7312cc3bea70af772206c942f68 ""
   "/home/paqh/texmf/tex/latex/beramono/bera/tex/latex/bera/t1fvm.fd" 1094557730 819 be55b7e3c5cc7c059be8eb7852d712b5 ""
@@ -321,20 +321,20 @@
   "Images/logougm.png" 1265437210 71376 e9033ea54d441155bffa203492bf8bb5 ""
   "abstract_eng.tex" 1774137985.05384 1437 950960cd3b160a1177273fc45812ed50 ""
   "abstract_ind.tex" 1774137985.05384 1395 1bb8b01d35447c46707592bb8fde7ade ""
-  "file_bab1.tex" 1776085869.02693 11012 a3fd79fbe1ce5162e90f3312f1b009ff ""
+  "file_bab1.tex" 1776161346.85875 11013 9759b709e6d3789012c9397e120a42a8 ""
   "file_bab2.tex" 1774138775.9504 18264 f6619e62c70ed9507b840e13aa44fcea ""
-  "file_bab3.tex" 1776085681.66336 25439 228cdaeb6a67936dc2e83dc616329402 ""
-  "file_bab4.tex" 1774852959.18164 27694 85a372d59c71875d78dea231774d4cfe ""
+  "file_bab3.tex" 1776181180.7382 28613 ea6cd3fb11baee7d2dd81ec4936447af ""
+  "file_bab4.tex" 1776181240.06407 28490 a04389bb43e8539469191d36fbd0846f ""
   "file_bab5.tex" 1773399559.61099 1655 934f8bb7e03b09b4677ce6ecf04e76d3 ""
   "hasil_eksperimen.tex" 1769665962.7588 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "index.aux" 1776085888.78321 26124 589f65271d642c20b0688b84ddb9482c "pdflatex"
-  "index.bbl" 1776085691.03949 98330 5080b18ed38a6a3bad76dc0c0836ebce "biber index"
-  "index.lof" 1776085888.80421 929 ddb83cea3c6a5f72345c438d3f82ddf6 "pdflatex"
-  "index.lot" 1776085888.80421 717 0ddd850c7a5b39492ed42f3b5081d131 "pdflatex"
-  "index.out" 1776085888.79421 8846 c0244a6a4c183db69008e765fd62dbdd "pdflatex"
-  "index.run.xml" 1776085888.80321 2317 2ef8a75ff9e3adf8e9c6a2ca8f59f116 "pdflatex"
+  "index.aux" 1776181246.64438 26358 16ce42bbd6de08e69958bbd294b0c449 "pdflatex"
+  "index.bbl" 1776181163.70337 103026 60eff9a42135750b44004b57992ba429 "biber index"
+  "index.lof" 1776181246.66639 929 493c034a9276513d1b1d44b19de84b8a "pdflatex"
+  "index.lot" 1776181246.66639 717 df18e10fcd64cc35d0e338ebe7451d7f "pdflatex"
+  "index.out" 1776181246.65638 8846 c0244a6a4c183db69008e765fd62dbdd "pdflatex"
+  "index.run.xml" 1776181246.66539 2317 2ef8a75ff9e3adf8e9c6a2ca8f59f116 "pdflatex"
   "index.tex" 1773464182.39878 7369 8b1cf7312cc3bea70af772206c942f68 ""
-  "index.toc" 1776085888.80421 6383 8f0c5fa38b62e913de4bbfeb033a2193 "pdflatex"
+  "index.toc" 1776181246.66639 6383 b1017dda7e0e093f4ab3feae79637a72 "pdflatex"
   "motto.tex" 1771691256.25432 0 d41d8cd98f00b204e9800998ecf8427e ""
   "prakata.tex" 1769665410.50711 0 d41d8cd98f00b204e9800998ecf8427e ""
   "ugmskripsi.cls" 1773989035.30518 22405 effc3a986beb6bac36e00947c7286265 ""

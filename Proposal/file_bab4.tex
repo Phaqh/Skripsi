@@ -120,7 +120,7 @@ Model prediksi lawan dibangun menggunakan arsitektur Long Short-Term Memory (LST
 
 Model satu langkah dioptimalkan untuk memprediksi aksi lawan pada waktu $t+1$ berdasarkan histori hingga waktu $t$.
 
-Fungsi objektif yang digunakan adalah \textit{cross-entropy loss} satu langkah yang didefinisikan pada persamaan \ref{eq:ChrossEnthropy}. Optimisasi ini mendorong model memaksimalkan akurasi prediksi lokal tanpa mempertimbangkan konsistensi trajektori jangka panjang.
+Fungsi objektif yang digunakan adalah \textit{cross-entropy loss} satu langkah yang didefinisikan pada persamaan \ref{eq:CrossEntropy}. Optimisasi ini mendorong model memaksimalkan akurasi prediksi lokal tanpa mempertimbangkan konsistensi trajektori jangka panjang.
 
 \subsubsection{Model Multi Langkah}
 
@@ -133,6 +133,10 @@ Untuk setiap riwayat interaksi hingga waktu observasi $t$ pada episode ke-$n$, m
 Selama proses pelatihan, riwayat interaksi yang digunakan sebagai kondisi model diperbarui menggunakan aksi aktual dari data, yaitu pasangan aksi $(a_{n,t+h,i}, a_{n,t+h,-i})$ pada setiap langkah horizon, sehingga trajektori yang dipelajari tetap konsisten dengan urutan interaksi \textit{ground-truth}. Dalam konteks ini, aksi agen pada setiap langkah juga dihasilkan secara deterministik menggunakan agen yang sama dengan yang digunakan dalam pembangkitan data trajektori, sehingga dinamika interaksi antara agen dan lawan yang dimodelkan tetap selaras dengan trajektori aktual yang diamati dalam dataset.
 
 Fungsi kerugian untuk model multi langkah dihitung sebagai akumulasi \textit{cross-entropy} sepanjang horizon prediksi, didefinisikan pada sub bab \ref{sec:CrossEntropy}. Dengan formulasi ini, model secara eksplisit dioptimalkan untuk menghasilkan prediksi yang konsisten sepanjang beberapa langkah ke depan, bukan hanya memaksimalkan akurasi prediksi pada langkah berikutnya saja.
+
+Penelitian ini juga akan mengimplementasikan pendekatan \textit{full autoregressive} sebagai model pembanding. Pada pendekatan ini, model tidak hanya memprediksi aksi lawan, tetapi juga secara simultan memprediksi aksi agen pada setiap langkah waktu, di mana kedua hasil prediksi tersebut digunakan kembali sebagai input pada langkah berikutnya dalam horizon prediksi.
+
+Pendekatan ini dirancang untuk mengevaluasi secara empiris dampak propagasi kesalahan (\textit{error propagation}) yang berasal dari prediksi ganda terhadap stabilitas dan akurasi model dalam prediksi jangka panjang. Dengan demikian, perbandingan dengan model utama diharapkan dapat memberikan pemahaman yang lebih komprehensif mengenai dinamika kesalahan dalam skenario prediksi autoregresif pada Iterated Prisoner's Dilemma.
 
 \subsubsection{Pelatihan Multi Langkah}
 

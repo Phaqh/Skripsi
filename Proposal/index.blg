@@ -1,19 +1,18 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'index.blg'
-[87] biber:340> INFO - === Sen Apr 13, 2026, 20:08:10
-[100] Biber.pm:419> INFO - Reading 'index.bcf'
-[159] Biber.pm:979> INFO - Found 33 citekeys in bib section 0
-[171] Biber.pm:4419> INFO - Processing section 0
-[180] Biber.pm:4610> INFO - Looking for bibtex file 'referensi.bib' for section 0
-[186] bibtex.pm:1713> INFO - LaTeX decoding ...
-[253] bibtex.pm:1519> INFO - Found BibTeX data source 'referensi.bib'
-[486] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[486] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[486] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
-[486] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
-[524] bbl.pm:660> INFO - Writing 'index.bbl' with encoding 'UTF-8'
-[541] bbl.pm:763> INFO - Output to index.bbl
-[541] Biber.pm:131> WARN - ISBN '978-0-13-604259-4 978-1-292-15397-1' in entry 'russell_artificial_2016' is invalid - run biber with '--validate_datamodel' for details.
-[541] Biber.pm:131> WARN - I didn't find a database entry for 'axelrod_evolution_1984' (section 0)
-[541] Biber.pm:131> WARN - I didn't find a database entry for 'russell_artificial_2010' (section 0)
-[541] Biber.pm:133> INFO - WARNINGS: 3
+[88] biber:340> INFO - === Sel Apr 14, 2026, 22:39:23
+[101] Biber.pm:419> INFO - Reading 'index.bcf'
+[161] Biber.pm:979> INFO - Found 33 citekeys in bib section 0
+[173] Biber.pm:4419> INFO - Processing section 0
+[182] Biber.pm:4610> INFO - Looking for bibtex file 'referensi.bib' for section 0
+[188] bibtex.pm:1713> INFO - LaTeX decoding ...
+[254] bibtex.pm:1519> INFO - Found BibTeX data source 'referensi.bib'
+[493] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[493] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[493] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[493] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[530] bbl.pm:660> INFO - Writing 'index.bbl' with encoding 'UTF-8'
+[546] bbl.pm:763> INFO - Output to index.bbl
+[547] Biber.pm:131> WARN - ISBN '978-0-465-02121-5 978-0-465-00564-2 978-0-465-02122-2' in entry 'axelrod_evolution_2006' is invalid - run biber with '--validate_datamodel' for details.
+[547] Biber.pm:131> WARN - ISBN '978-0-13-604259-4 978-1-292-15397-1' in entry 'russell_artificial_2016' is invalid - run biber with '--validate_datamodel' for details.
+[547] Biber.pm:133> INFO - WARNINGS: 2
