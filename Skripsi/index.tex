@@ -1,0 +1,236 @@
+%Template pembuatan Tesis dengan ugmtesis.
+\documentclass[proposal]{ugmskripsi}
+% sec caption bold
+\usepackage[labelfont=bf]{caption}
+\renewcommand{\captionfont}{\bf}
+
+% Script untuk keperluan lain-lain
+\usepackage{amssymb}
+
+% Script dibawah untuk menghapus batas list of table and figure
+\usepackage{etoolbox}
+
+\makeatletter
+
+% Remove chapter spacing in LoF / LoT
+\patchcmd{\@chapter}
+  {\addtocontents{lof}{\protect\addvspace{10\p@}}}
+  {}
+  {}
+  {\PackageWarning{ugmskripsi}{Failed to patch LoF spacing}}
+
+\patchcmd{\@chapter}
+  {\addtocontents{lot}{\protect\addvspace{10\p@}}}
+  {}
+  {}
+  {\PackageWarning{ugmskripsi}{Failed to patch LoT spacing}}
+
+% % Fix page numbering position (UGM class)
+% \AtBeginDocument{%
+%   \pagestyle{chapterheading}
+% }
+% \AtBeginShipout{%
+%   \typeout{PAGE \thepage\space STYLE=\meaning\@pagestyle}%
+% }
+\makeatother
+
+
+\usepackage{caption}
+\captionsetup[table]{labelsep=space}
+\captionsetup[figure]{labelsep=space}
+
+\usepackage{subcaption}
+\usepackage{diagbox}
+\usepackage[thinlines]{easytable}
+%-----------------------------------------------------------------
+%Disini awal masukan untuk data tesis
+%-----------------------------------------------------------------
+\titleind{Prediksi Multi-Langkah Perilaku Lawan dalam Interaksi Closed-Loop pada Iterated Prisoner's Dilemma}
+
+\titleeng{Closed-Loop Multi-Step Opponent Behavior Prediction in Iterated Prisoner's Dilemma}
+
+\fullname{Faqih Mahardika}
+
+\idnum{21/482551/PA/21039}
+
+\degree{Sarjana Komputer}
+
+\yearsubmit{2026}
+
+\program{Ilmu Komputer}
+
+\headprogram{Arif Nurwidyantoro, M.Cs., Ph.D.}
+
+\dept{Ilmu Komputer dan Elektronika}
+
+\firstsupervisor{Dr.\ Sri Mulyana, M.Kom.}
+
+\firstexaminer{Bob, M.Sc.}
+
+\secondexaminer{Eve, Ph.D.}
+
+\examdate{8 Mei 2026}
+
+
+%-----------------------------------------------------------------
+%Disini akhir masukan untuk data tesis
+%-----------------------------------------------------------------
+
+\begin{document}
+
+\cover{}
+\pagestyle{chapterheading}
+
+
+% \titlepageind{}
+
+% \agreementpage
+% \cleardoublepage\phantomsection{}
+% \approvalpage{}
+% \cleardoublepage\phantomsection{}
+% \declarepage{}
+
+%-----------------------------------------------------------------
+%Disini awal masukan Acknowledment
+%-----------------------------------------------------------------
+% \input{awal/acknowledge}
+%-----------------------------------------------------------------
+%Disini akhir masukan untuk muka tesis
+%-----------------------------------------------------------------
+
+%-----------------------------------------------------------------
+%Disini awal masukan Motto
+%-----------------------------------------------------------------
+\cleardoublepage\phantomsection{}
+\input{motto}
+%-----------------------------------------------------------------
+%Disini akhir masukan untuk Motto
+%-----------------------------------------------------------------
+
+%-----------------------------------------------------------------
+%Disini awal masukan untuk Prakata
+%-----------------------------------------------------------------
+\cleardoublepage\phantomsection{}
+\input{prakata}
+%-----------------------------------------------------------------
+%Disini akhir masukan Prakata
+%-----------------------------------------------------------------
+
+%-----------------------------------------------------------------
+%Disini awal masukan untuk daftar isi
+%-----------------------------------------------------------------
+\cleardoublepage\phantomsection{}
+\addcontentsline{toc}{chapter}{\contentsname}
+\tableofcontents
+%-----------------------------------------------------------------
+%Disini akhir masukan untuk daftar isi
+%-----------------------------------------------------------------
+
+%-----------------------------------------------------------------
+%Disini awal masukan untuk daftar table
+%-----------------------------------------------------------------
+\cleardoublepage\phantomsection{}
+\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
+%-----------------------------------------------------------------
+%Disini akhiran masukan untuk daftar table
+%-----------------------------------------------------------------
+
+%-----------------------------------------------------------------
+%Disini awal masukan untuk daftar gambar
+%-----------------------------------------------------------------
+\cleardoublepage\phantomsection{}
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+%-----------------------------------------------------------------
+%Disini akhiran masukan untuk daftar gambar
+%-----------------------------------------------------------------
+
+%-----------------------------------------------------------------
+%Disini awal masukan Intisari
+%-----------------------------------------------------------------
+\cleardoublepage\phantomsection{}
+\input{abstract_ind}
+%-----------------------------------------------------------------
+%Disini akhir masukan Intisari
+%-----------------------------------------------------------------
+
+%-----------------------------------------------------------------
+%Disini awal masukan untuk Abstract
+%-----------------------------------------------------------------
+\cleardoublepage\phantomsection{}
+\input{abstract_eng}
+%-----------------------------------------------------------------
+%Disini akhir masukan Abstract
+%-----------------------------------------------------------------
+
+%\clearpage
+\cleardoublepage\phantomsection{}
+\pagenumbering{arabic}
+\pagestyle{myheadings}
+\setcounter{page}{1}
+%-----------------------------------------------------------------
+%Disini awal masukan untuk Bab
+%-----------------------------------------------------------------
+% Judul dan jumlah bab menyesuaikan
+
+\chapter{PENDAHULUAN}
+    \input{file_bab1}
+
+\chapter{TINJAUAN PUSTAKA}
+    \input{file_bab2}
+
+\chapter{LANDASAN TEORI}
+    \input{file_bab3}
+
+\chapter{ANALISIS DAN PERANCANGAN}
+    \input{file_bab4}
+
+\chapter{IMPLEMENTASI}
+    \input{file_bab5}
+
+\chapter{HASIL DAN ANALISIS}
+    \input{file_bab6}
+
+%-----------------------------------------------------------------
+%Disini akhir masukan Bab
+%-----------------------------------------------------------------
+
+%-----------------------------------------------------------------
+%Disini awal masukan untuk Daftar Pustaka
+%-----------------------------------------------------------------
+
+\xpatchbibmacro{date+extrayear}{%
+  \printtext[parens]%
+}{%
+  \setunit{\addperiod\space}%
+  \printtext%
+}{}{}
+%\clearpage
+\cleardoublepage\phantomsection{}
+\begin{center}
+    \textbf{{\large DAFTAR PUSTAKA}}
+\end{center}
+\addcontentsline{toc}{chapter}{DAFTAR PUSTAKA}
+\printbibliography[heading=none,title={DAFTAR PUSTAKA}]
+%-----------------------------------------------------------------
+%Disini akhir masukan Daftar Pustaka
+%-----------------------------------------------------------------
+
+%-----------------------------------------------------------------
+%Disini awal masukan untuk Lampiran
+%-----------------------------------------------------------------
+%\clearpage
+
+\appendix
+% \addcontentsline{toc}{chapFebruariter}{\appendixname}
+\setcounter{secnumdepth}{-1}
+\cleardoublepage\phantomsection{}
+\chapter{LAMPIRAN}
+    \input{hasil_eksperimen}
+
+%-----------------------------------------------------------------
+%Disini akhir masukan Lampiran
+%-----------------------------------------------------------------
+
+\end{document}

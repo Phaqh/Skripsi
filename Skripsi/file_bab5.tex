@@ -1,0 +1,547 @@
+\section{Implementasi}
+
+\subsection{Lingkungan Implementasi}
+
+Penelitian ini dilaksanakan menggunakan lingkungan komputasi pada komputer pribadi. Lingkungan implementasi tersebut digunakan untuk mendukung seluruh tahapan penelitian, meliputi simulasi permainan \textit{Iterated Prisoner’s Dilemma} (IPD), eksplorasi data, penulisan kode program, pelatihan model, \textit{hyperparameter tuning}, pengujian model, serta analisis hasil penelitian.
+
+Proses implementasi dilakukan menggunakan lingkungan kerja \textit{Jupyter Notebook} dengan bahasa pemrograman utama Python versi 3.12.3. Bahasa pemrograman Python dipilih karena memiliki dukungan pustaka yang luas untuk pengolahan data, implementasi \textit{machine learning}, visualisasi data, serta pengembangan model berbasis \textit{deep learning}. Selain itu, penggunaan \textit{Jupyter Notebook} mempermudah proses eksperimen, dokumentasi kode, dan analisis hasil secara interaktif.
+
+Spesifikasi perangkat keras dan perangkat lunak yang digunakan dalam penelitian ini ditunjukkan pada Tabel \ref{tab:computer_spec}. Komputer yang digunakan menjalankan sistem operasi Ubuntu dan memiliki spesifikasi yang memadai untuk kebutuhan simulasi permainan, pelatihan model, visualisasi data, serta proses evaluasi model.
+
+\begin{table}[H]
+\centering
+\caption{Spesifikasi komputer pribadi}
+\label{tab:computer_spec}
+\begin{tabular}{|l|l|}
+\toprule
+\textbf{Komponen} & \textbf{Spesifikasi} \\
+\midrule
+Sistem Operasi & Ubuntu 24.04.4 LTS \\
+\midrule
+RAM & 16 GB \\
+\midrule
+CPU & 11th Gen Intel\textsuperscript{\textregistered} Core\texttrademark~i5-1145G7 (8 \textit{threads}) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+dalam pengerjaan implementasi, saya menggunakan beberapa pustaka Python yang mendukung berbagai aspek penelitian ini. Pytorch digunakan untuk implementasi model \textit{deep learning}, khususnya LSTM, serta untuk proses pelatihan dan evaluasi model. numpy dan pandas digunakan untuk konstruksi data, manipulasi data, serta analisis data. Matplotlib dan seaborn digunakan untuk visualisasi data hasil pengujian dan analisis. Sklearn.metrics digunakan untuk perhitungan metrik evaluasi seperti akurasi, F1-score, dan confusion matrix.
+
+\section{Implementasi Lingkungan Simulasi}
+
+\subsection{Implementasi Turnamen Iterated Prisoner's Dilemma}
+
+Implementasi menggunakan lingkungan IPD stateful sesuai dengan rancangan penelitian pada sub bab \ref{sec:Konfigurasipermainan} dengan perubahan pada implementasi trembling hand dari 0.05 menjadi 0.01 dikarenakan pada implementasi awal dengan trembling hand 0.05, hasilnya terlalu acak dan tidak mencerminkan perilaku strategi yang sebenarnya, sehingga implementasi diturunkan nilai trembling hand menjadi 0.01 untuk memberikan sedikit tingkat ketidakpastian tanpa menghilangkan karakteristik strategi yang sebenarnya.
+
+
+\subsection{Implementasi Populasi Strategi}
+
+Pada tahap perancangan penelitian, populasi strategi direncanakan menggunakan representasi berbasis \textit{finite state machine} sebagaimana diperkenalkan oleh Knight dkk. Pendekatan tersebut dipilih karena menyediakan representasi perilaku yang sederhana, terstruktur, dan mudah dianalisis. Namun, setelah proses implementasi dilakukan, populasi strategi yang digunakan mengalami perubahan.
+
+Penelitian ini menggunakan strategi asli yang tersedia pada pustaka \textit{Axelrod-Python}. Keputusan ini diambil karena strategi pada pustaka tersebut menyediakan variasi perilaku yang lebih beragam dibandingkan kumpulan strategi berbasis \textit{finite state machine} yang direncanakan sebelumnya. Sebagian strategi pada rancangan awal merupakan variasi dari strategi sederhana seperti \textit{Always Cooperate}, \textit{Always Defect}, \textit{Tit-for-Tat}, dan \textit{Suspicious Tit-for-Tat}, sehingga menghasilkan pola interaksi yang relatif mudah diprediksi.
+
+Sebaliknya, strategi pada pustaka Axelrod mencakup berbagai mekanisme pengambilan keputusan yang lebih kompleks, seperti penggunaan memori historis yang lebih panjang, aturan adaptif, kombinasi beberapa heuristik, maupun elemen stokastik. Keragaman tersebut menghasilkan distribusi perilaku yang lebih luas sehingga lingkungan simulasi menjadi lebih representatif terhadap berbagai kemungkinan lawan yang dapat ditemui oleh agen prediksi.
+
+Populasi strategi yang digunakan terdiri atas 69 strategi yang berasal dari koleksi strategi Axelrod hasil rekonstruksi turnamen Iterated Prisoner's Dilemma. Strategi tersebut mencakup keluarga strategi K31R hingga K93R beserta beberapa strategi tambahan seperti KPavlovC, KRandomC, KTF2TC, KTitForTatC, dan GRASR. Dengan menggunakan populasi strategi yang lebih beragam, data yang dihasilkan selama proses simulasi diharapkan mampu menggambarkan dinamika interaksi yang lebih kaya dibandingkan populasi strategi pada rancangan awal.
+
+Selama proses implementasi ditemukan bahwa strategi K89R tidak dapat digunakan pada lingkungan simulasi penelitian. Setelah dilakukan penelusuran terhadap implementasi modern dan kode sumber FORTRAN asli, ditemukan ketidaksesuaian perilaku yang mengindikasikan adanya permasalahan implementasi pada strategi tersebut. Selain itu, mekanisme internal K89R sangat bergantung pada struktur keadaan yang sulit direkonstruksi secara konsisten pada lingkungan simulasi yang digunakan dalam penelitian ini. Oleh karena itu, strategi K89R dikeluarkan dari populasi akhir dan tidak digunakan pada proses generasi data, pelatihan model, maupun pengujian.
+
+Dengan demikian, populasi strategi akhir yang digunakan dalam penelitian ini terdiri atas seluruh strategi yang telah ditentukan sebelumnya dengan pengecualian K89R.
+
+Strategi K89R dikeluarkan dari populasi karena implementasinya tidak dapat diverifikasi menghasilkan perilaku yang konsisten dengan deskripsi historis yang tersedia. Analisis terhadap kode sumber asli menunjukkan ketergantungan pada detail implementasi FORTRAN lama, seperti pengelolaan state internal dan operasi aritmetika integer, yang menyulitkan proses reproduksi perilaku strategi secara akurat pada lingkungan Python yang digunakan dalam penelitian ini. Untuk menghindari potensi bias pada data simulasi, strategi tersebut tidak digunakan dalam eksperimen.
+
+\section{Implementasi Generasi dan Persiapan Data}
+
+\subsection{Generasi Data Pertandingan}
+
+Proses generasi data dilakukan menggunakan lingkungan simulasi \textit{Iterated Prisoner's Dilemma} yang telah dijelaskan pada tahap perancangan penelitian. Seluruh strategi dalam populasi dipertandingkan melalui mekanisme \textit{matchmaking} sehingga menghasilkan kumpulan permainan yang merepresentasikan berbagai kombinasi interaksi antar strategi.
+
+Pada setiap pertandingan, kedua agen melakukan aksi secara berulang hingga jumlah putaran yang telah ditentukan tercapai. Selama proses simulasi berlangsung, sistem mencatat seluruh riwayat interaksi yang terjadi pada setiap turn permainan. Informasi yang disimpan meliputi aksi agen utama, aksi lawan, identitas strategi yang terlibat, serta informasi tambahan yang diperlukan untuk proses pelatihan dan evaluasi model.
+
+Hasil dari tahap ini berupa kumpulan histori permainan lengkap yang kemudian digunakan sebagai sumber data pada proses persiapan dataset.
+
+\subsection{Pembagian Dataset}
+
+Prosedur pembagian dataset mengikuti rancangan penelitian yang telah ditetapkan sebelumnya. Seluruh data pertandingan terlebih dahulu diacak (\textit{shuffle}) untuk mengurangi potensi bias akibat urutan generasi data. Setelah proses pengacakan selesai, data dibagi menjadi himpunan pelatihan, validasi, dan pengujian sesuai proporsi yang telah ditentukan pada tahap perancangan.
+
+Pendekatan ini bertujuan untuk memastikan bahwa distribusi data pada setiap himpunan relatif seimbang dan mampu merepresentasikan keseluruhan populasi pertandingan yang dihasilkan.
+
+\subsection{Representasi Data Historis}
+
+Setiap turn permainan direpresentasikan sebagai pasangan aksi kedua pemain:
+
+[
+(a_t,b_t)
+]
+
+dengan:
+
+\begin{itemize}
+\item $a_t$ menyatakan aksi agen utama pada turn ke-$t$,
+\item $b_t$ menyatakan aksi lawan pada turn ke-$t$.
+\end{itemize}
+
+Masing-masing aksi direpresentasikan secara biner, yaitu nilai 0 untuk \textit{cooperate} dan nilai 1 untuk \textit{defect}. Dengan demikian, setiap turn permainan dapat direpresentasikan sebagai salah satu dari empat kemungkinan pasangan aksi:
+
+[
+(0,0), (0,1), (1,0), (1,1)
+]
+
+Representasi tersebut digunakan sebagai masukan utama bagi model prediksi untuk mempelajari pola interaksi antar pemain sepanjang permainan.
+
+\subsection{Padding dan Masking Dataset}
+
+Model yang digunakan dalam penelitian ini memerlukan panjang histori masukan yang tetap sebesar parameter \textit{lag}. Namun, pada fase awal permainan jumlah histori yang tersedia belum mencukupi panjang tersebut. Oleh karena itu, dilakukan proses \textit{padding} pada bagian awal urutan histori menggunakan token khusus yang berada di luar ruang aksi valid permainan.
+
+Karena aksi pada lingkungan \textit{Iterated Prisoner's Dilemma} hanya terdiri atas nilai \textit{cooperate} (0) dan \textit{defect} (1), token \textit{padding} dapat dibedakan secara jelas dari data permainan yang sebenarnya. Dengan pendekatan ini, seluruh turn permainan, termasuk fase awal permainan, dapat digunakan sebagai data pelatihan.
+
+Selain \textit{padding} pada data masukan, implementasi juga menggunakan mekanisme \textit{masking} pada data target. Posisi target yang tidak memiliki nilai aktual diberi penanda khusus dan dikeluarkan dari perhitungan fungsi kerugian maupun metrik evaluasi. Pendekatan ini terutama diperlukan pada proses forecasting karena jumlah horizon yang tersedia dapat berbeda untuk setiap posisi permainan.
+
+Kombinasi \textit{padding} dan \textit{masking} memungkinkan model memanfaatkan seluruh data permainan tanpa mengorbankan konsistensi bentuk masukan maupun validitas proses pelatihan.
+
+\subsection{Dua Bentuk Dataset Pelatihan}
+
+Untuk mendukung dua metode pelatihan yang digunakan dalam penelitian ini, yaitu pelatihan prediksi satu langkah dan pelatihan forecasting, data historis diubah menjadi dua bentuk dataset yang berbeda.
+
+Meskipun memiliki struktur target yang berbeda, kedua bentuk dataset menggunakan mekanisme \textit{padding} dan \textit{masking} yang sama sehingga model tetap dapat memanfaatkan informasi pada fase awal permainan.
+
+\subsubsection{Dataset Prediksi Satu Langkah}
+
+Dataset prediksi satu langkah digunakan untuk melatih model memprediksi aksi pada turn berikutnya berdasarkan histori permainan sebelumnya.
+
+Untuk setiap titik waktu $t$, model menerima histori sepanjang \textit{lag} sebagai masukan:
+
+[
+X_t \rightarrow y_{t+1}
+]
+
+dengan $X_t$ merupakan urutan histori interaksi sepanjang \textit{lag} turn terakhir dan $y_{t+1}$ merupakan pasangan aksi pada turn berikutnya.
+
+Pada bentuk dataset ini, setiap posisi waktu dalam suatu permainan menghasilkan satu sampel pelatihan tersendiri. Oleh karena itu, satu permainan dapat menghasilkan banyak sampel pelatihan sesuai dengan panjang permainan yang tersedia.
+
+\subsubsection{Dataset Forecasting}
+
+Dataset forecasting digunakan untuk melatih model melakukan prediksi multi-langkah secara langsung melalui proses \textit{rollout}.
+
+Berbeda dengan dataset prediksi satu langkah, setiap permainan direpresentasikan sebagai satu sampel pelatihan yang utuh. Model menerima histori awal permainan sebagai masukan dan memprediksi urutan aksi pada beberapa horizon ke depan:
+
+[
+X_t \rightarrow Y_{t+1:t+h}
+]
+
+dengan $h$ menyatakan panjang horizon prediksi yang digunakan.
+
+Struktur dataset ini dirancang untuk mendukung proses pelatihan autoregresif yang konsisten dengan mekanisme rollout pada tahap evaluasi. Dengan demikian, model tidak hanya belajar melakukan prediksi satu langkah, tetapi juga belajar mempertahankan kualitas prediksi ketika hasil prediksi sebelumnya digunakan kembali sebagai bagian dari histori masukan pada langkah-langkah berikutnya.
+
+
+\section{Implementasi Model Prediksi Lawan}
+
+\subsection{Arsitektur LSTM}
+
+Model prediksi lawan diimplementasikan menggunakan arsitektur \textit{Long Short-Term Memory} (LSTM) yang tersedia pada pustaka PyTorch. Arsitektur ini dipilih karena mampu memodelkan data sekuensial dan mempertahankan informasi historis yang diperlukan untuk memprediksi perilaku lawan pada permainan \textit{Iterated Prisoner's Dilemma}.
+
+Implementasi model menggunakan satu lapisan LSTM (\textit{single-layer LSTM}). Keputusan ini diambil untuk menjaga kompleksitas model tetap terkendali mengingat penelitian telah melibatkan berbagai kombinasi konfigurasi pada proses penalaan hiperparameter. Penggunaan satu lapisan juga membantu menjaga waktu pelatihan tetap realistis tanpa mengurangi kemampuan model dalam mempelajari pola historis permainan.
+
+Selain itu, fokus utama penelitian ini bukanlah eksplorasi arsitektur jaringan yang semakin dalam, melainkan evaluasi kemampuan model dalam melakukan prediksi multi-langkah melalui mekanisme \textit{rollout} dan \textit{closed-loop rollout}. Oleh karena itu, arsitektur dasar LSTM dipilih sebagai fondasi yang memadai untuk mengisolasi pengaruh metode pelatihan dan metode evaluasi yang diteliti.
+
+Parameter utama yang digunakan pada arsitektur meliputi ukuran \textit{hidden state} (\textit{hidden size}) yang ditentukan melalui proses penalaan hiperparameter serta ukuran \textit{embedding} sebesar empat dimensi.
+
+\subsection{Representasi Aksi}
+
+Setiap turn permainan direpresentasikan sebagai pasangan aksi kedua pemain:
+
+[
+(a_t,b_t)
+]
+
+dengan nilai aksi berupa 0 untuk \textit{cooperate} dan 1 untuk \textit{defect}. Representasi tersebut menghasilkan empat kemungkinan keadaan yang dapat muncul pada setiap turn, yaitu:
+
+[
+(0,0),\quad (0,1),\quad (1,0),\quad (1,1)
+]
+
+Keempat kemungkinan keadaan tersebut dipetakan ke dalam representasi kategorikal dan kemudian diubah menjadi vektor \textit{embedding} berdimensi empat sebelum diproses oleh lapisan LSTM. Penggunaan \textit{embedding} memungkinkan model mempelajari representasi laten dari setiap kombinasi aksi sehingga hubungan antar keadaan dapat direpresentasikan secara lebih efektif dibandingkan representasi biner secara langsung.
+
+\subsection{Lapisan Keluaran}
+
+Keluaran dari lapisan LSTM diproyeksikan melalui lapisan \textit{fully connected} untuk menghasilkan logits prediksi pada setiap langkah waktu.
+
+Secara internal, model menghasilkan empat nilai logits yang merepresentasikan distribusi probabilitas aksi kedua pemain. Keluaran tersebut kemudian direstrukturisasi menjadi bentuk:
+
+[
+(B,T,2,2)
+]
+
+dengan:
+
+\begin{itemize}
+\item $B$ menyatakan ukuran \textit{batch},
+\item $T$ menyatakan panjang urutan,
+\item dimensi pertama pada bagian akhir merepresentasikan pemain,
+\item dimensi kedua pada bagian akhir merepresentasikan kemungkinan aksi.
+\end{itemize}
+
+Dengan struktur tersebut, model menghasilkan distribusi probabilitas terpisah untuk agen utama dan lawan pada setiap langkah waktu. Representasi ini mempermudah proses perhitungan fungsi kerugian maupun implementasi mekanisme rollout.
+
+\subsection{Implementasi Rollout}
+
+Implementasi rollout merupakan komponen utama dalam penelitian ini karena digunakan untuk melakukan prediksi multi-langkah ke masa depan.
+
+Proses rollout dilakukan secara autoregresif. Model pertama-tama menerima histori permainan sepanjang parameter \textit{lag} sebagai masukan dan menghasilkan prediksi untuk langkah berikutnya. Setelah prediksi diperoleh, hasil prediksi tersebut ditambahkan kembali ke histori masukan sehingga dapat digunakan untuk menghasilkan prediksi pada langkah selanjutnya.
+
+Prosedur ini diulang secara berurutan hingga jumlah horizon prediksi yang diinginkan tercapai. Dengan pendekatan ini, model tidak hanya diuji pada kemampuan prediksi satu langkah, tetapi juga pada kemampuannya mempertahankan kualitas prediksi ketika kesalahan prediksi sebelumnya dapat memengaruhi prediksi berikutnya.
+
+Secara umum, mekanisme rollout dapat dijelaskan melalui pseudocode berikut.
+
+\begin{verbatim}
+history <- initial_history
+
+for h = 1 to horizon:
+
+```
+prediction <- model(history)
+
+next_state <- prediction[-1]
+
+history <- history + next_state
+```
+
+end
+\end{verbatim}
+
+Apabila panjang histori melebihi parameter \textit{lag}, hanya \textit{lag} langkah terakhir yang digunakan sebagai masukan pada iterasi berikutnya.
+
+\subsection{Implementasi Closed-Loop Rollout}
+
+Selain rollout autoregresif standar, penelitian ini juga mengimplementasikan mekanisme \textit{closed-loop rollout}. Pendekatan ini dirancang untuk mensimulasikan kondisi yang lebih realistis ketika agen utama tetap dikendalikan oleh strategi aktual, sedangkan model hanya digunakan untuk memprediksi perilaku lawan.
+
+Pada setiap langkah rollout, model menghasilkan prediksi aksi lawan untuk turn berikutnya. Sementara itu, aksi agen utama diperoleh langsung dari strategi yang digunakan dalam simulasi. Setelah kedua aksi diperoleh, keadaan internal strategi diperbarui menggunakan hasil interaksi yang terjadi pada turn tersebut.
+
+Dengan demikian, histori permainan yang digunakan pada langkah berikutnya terdiri atas kombinasi antara aksi aktual agen utama dan aksi hasil prediksi model terhadap lawan.
+
+Pendekatan ini memungkinkan evaluasi kemampuan model dalam memprediksi perilaku lawan pada lingkungan yang dinamis, di mana keputusan agen utama tetap mengikuti mekanisme strategi sebenarnya dan terus memperbarui keadaan internalnya selama proses rollout berlangsung.
+
+
+\section{Implementasi Proses Pelatihan}
+
+Tahap pelatihan model dilakukan menggunakan fungsi kerugian berbasis \textit{Return on Cooperation} (ROC) sebagaimana telah direncanakan pada tahap perancangan penelitian. Selain itu, implementasi akhir juga memperkenalkan dua pendekatan pelatihan yang berbeda, yaitu pelatihan prediksi satu langkah (\textit{one-step prediction training}) dan pelatihan forecasting (\textit{forecasting training}).
+
+Kedua pendekatan tersebut digunakan untuk mengevaluasi pengaruh metode pelatihan terhadap kemampuan model dalam melakukan prediksi multi-langkah pada lingkungan \textit{Iterated Prisoner's Dilemma}.
+
+\subsection{Fungsi Kerugian ROC}
+
+Implementasi fungsi kerugian mengikuti rancangan penelitian yang telah ditetapkan sebelumnya. Pada setiap sampel pelatihan, model menghasilkan prediksi untuk beberapa horizon ke depan. Nilai kerugian dihitung secara terpisah untuk setiap horizon prediksi menggunakan fungsi \textit{cross-entropy}.
+
+Misalkan $L_h$ menyatakan nilai kerugian pada horizon ke-$h$, maka proses perhitungan dilakukan melalui tahapan berikut:
+
+\begin{enumerate}
+\item menghitung nilai kerugian pada setiap horizon prediksi,
+\item memberikan bobot pada setiap horizon berdasarkan kurva ROC yang digunakan,
+\item menjumlahkan seluruh kerugian berbobot untuk memperoleh nilai kerugian akhir.
+\end{enumerate}
+
+Secara umum, fungsi kerugian dapat dinyatakan sebagai:
+
+[
+L = \sum_{h=1}^{H} w_h L_h
+]
+
+dengan:
+
+\begin{itemize}
+\item $H$ menyatakan horizon prediksi maksimum,
+\item $L_h$ menyatakan kerugian pada horizon ke-$h$,
+\item $w_h$ menyatakan bobot ROC untuk horizon ke-$h$.
+\end{itemize}
+
+Melalui pendekatan ini, model dapat diberikan penekanan yang berbeda pada setiap horizon prediksi sesuai konfigurasi ROC yang digunakan selama eksperimen.
+
+\subsection{Pelatihan Prediksi Satu Langkah}
+
+Pelatihan prediksi satu langkah merupakan pendekatan yang paling mendekati formulasi standar pada permasalahan prediksi sekuensial.
+
+Pada pendekatan ini, model menerima histori permainan sepanjang parameter \textit{lag} dan dilatih untuk memprediksi aksi pada langkah berikutnya. Setiap posisi waktu dalam permainan menghasilkan sampel pelatihan yang berbeda sehingga satu permainan dapat menghasilkan banyak sampel pelatihan.
+
+Secara umum, proses pembelajaran dapat dinyatakan sebagai:
+
+[
+X_t \rightarrow y_{t+1}
+]
+
+dengan $X_t$ merupakan histori interaksi hingga waktu ke-$t$ dan $y_{t+1}$ merupakan aksi yang terjadi pada langkah berikutnya.
+
+Pendekatan ini memiliki keunggulan berupa jumlah sampel pelatihan yang lebih besar dan proses optimisasi yang relatif stabil karena model hanya perlu mempelajari prediksi satu langkah ke depan.
+
+\subsection{Pelatihan Forecasting}
+
+Selain pelatihan prediksi satu langkah, penelitian ini juga mengimplementasikan pelatihan forecasting yang dirancang khusus untuk mendukung prediksi multi-langkah.
+
+Pada pendekatan ini, satu permainan digunakan sebagai satu sampel pelatihan. Model menerima histori awal permainan dan kemudian menghasilkan prediksi secara autoregresif melalui mekanisme rollout. Hasil prediksi pada suatu langkah ditambahkan kembali ke histori masukan dan digunakan untuk menghasilkan prediksi pada langkah berikutnya.
+
+Proses tersebut diulang hingga seluruh horizon prediksi tercapai. Kerugian dihitung pada setiap horizon yang dihasilkan selama rollout dan kemudian digabungkan menggunakan fungsi kerugian ROC.
+
+Berbeda dengan pelatihan prediksi satu langkah yang hanya mengoptimalkan kesalahan lokal pada langkah berikutnya, pelatihan forecasting secara langsung mengoptimalkan kemampuan model dalam mempertahankan kualitas prediksi sepanjang proses rollout.
+
+\subsection{Alasan Penggunaan Forecasting Training}
+
+Implementasi pelatihan forecasting dilakukan karena ditemukan keterbatasan pada pendekatan pelatihan prediksi satu langkah ketika diterapkan pada lingkungan \textit{Iterated Prisoner's Dilemma} yang bersifat \textit{stateful}.
+
+Pada strategi \textit{stateful}, aksi yang dihasilkan tidak hanya bergantung pada histori observasi yang terlihat oleh model, tetapi juga pada keadaan internal strategi yang berkembang sepanjang permainan. Ketika histori permainan dipotong menjadi potongan-potongan pendek sepanjang parameter \textit{lag}, sebagian informasi keadaan yang memengaruhi perilaku strategi dapat hilang.
+
+Akibatnya, model yang dilatih hanya menggunakan prediksi satu langkah berpotensi mempelajari distribusi lokal dari data tanpa benar-benar memahami dinamika permainan yang muncul selama rollout jangka panjang.
+
+Pelatihan forecasting dikembangkan untuk mengatasi permasalahan tersebut. Dengan menggunakan satu permainan sebagai satu unit pelatihan dan melakukan prediksi secara autoregresif sepanjang horizon yang ditentukan, model dipaksa belajar menghadapi akumulasi kesalahan prediksi yang muncul selama rollout.
+
+Selain itu, pendekatan ini lebih sesuai dengan mekanisme \textit{closed-loop rollout} yang digunakan pada tahap evaluasi. Pada \textit{closed-loop rollout}, keadaan strategi terus berkembang dari satu langkah ke langkah berikutnya sehingga proses pelatihan yang mempertahankan kontinuitas permainan menjadi lebih konsisten dengan kondisi evaluasi yang sebenarnya.
+
+Oleh karena itu, pelatihan forecasting tidak hanya berfungsi sebagai alternatif metode pelatihan, tetapi juga sebagai pendekatan yang secara konseptual lebih selaras dengan karakteristik lingkungan \textit{Iterated Prisoner's Dilemma} dan tujuan utama penelitian, yaitu melakukan prediksi perilaku lawan pada horizon waktu yang lebih panjang.
+
+
+\section{Implementasi Validasi dan Penalaan Hiperparameter}
+
+Tahap validasi dan penalaan hiperparameter dilakukan untuk menentukan konfigurasi model yang memberikan performa terbaik pada data validasi. Secara umum, prosedur validasi mengikuti rancangan penelitian yang telah ditetapkan sebelumnya, namun beberapa penyesuaian dilakukan berdasarkan hasil observasi selama proses implementasi dan eksperimen awal.
+
+Penyesuaian tersebut meliputi perubahan metrik validasi, penggunaan evaluasi berbasis rollout, penyesuaian ruang pencarian hiperparameter, serta modifikasi jumlah pengulangan pada setiap fase penalaan untuk menyesuaikan kebutuhan komputasi.
+
+\subsection{Perubahan Metrik Validasi}
+
+Pada tahap perancangan penelitian, metrik validasi yang direncanakan adalah akurasi (\textit{accuracy}). Namun, selama proses eksplorasi data ditemukan bahwa distribusi aksi pada dataset tidak seimbang. Proporsi aksi \textit{cooperate} dan \textit{defect} berada pada kisaran sekitar 70:30, sehingga menghasilkan distribusi kelas yang tidak merata.
+
+Dalam kondisi tersebut, penggunaan akurasi berpotensi menghasilkan evaluasi yang bias. Sebagai ilustrasi, model yang selalu memprediksi kelas mayoritas dapat memperoleh nilai akurasi yang relatif tinggi meskipun gagal mempelajari perilaku kelas minoritas secara memadai.
+
+Untuk mengatasi permasalahan tersebut, metrik validasi diubah menjadi \textit{F1-score}. Metrik ini dipilih karena mempertimbangkan keseimbangan antara \textit{precision} dan \textit{recall}, sehingga memberikan gambaran performa yang lebih representatif pada data yang tidak seimbang.
+
+Dengan demikian, seluruh proses pemilihan model terbaik selama validasi dan penalaan hiperparameter menggunakan nilai \textit{F1-score} sebagai metrik utama.
+
+\subsection{Strategi Evaluasi Rollout}
+
+Tahap validasi pada penelitian ini tidak menggunakan evaluasi prediksi satu langkah (\textit{single-step evaluation}), melainkan menggunakan evaluasi berbasis rollout.
+
+Pada pendekatan ini, model dievaluasi dengan melakukan prediksi secara autoregresif sepanjang horizon yang ditentukan. Hasil prediksi pada suatu langkah digunakan kembali sebagai bagian dari histori masukan untuk menghasilkan prediksi pada langkah berikutnya.
+
+Pemilihan strategi evaluasi ini didasarkan pada tujuan utama penelitian, yaitu melakukan forecasting perilaku lawan dalam beberapa langkah ke depan. Oleh karena itu, performa model dinilai berdasarkan kemampuannya mempertahankan kualitas prediksi sepanjang proses rollout dan bukan hanya pada kemampuan memprediksi langkah berikutnya secara terisolasi.
+
+Pendekatan ini juga memastikan bahwa kondisi validasi lebih konsisten dengan kondisi penggunaan model pada tahap pengujian.
+
+Untuk mengurangi waktu komputasi selama validasi, proses evaluasi tidak menggunakan perpindahan jendela (\textit{stride}) sebesar satu langkah. Sebagai gantinya, digunakan nilai \textit{stride} yang sama dengan panjang horizon prediksi. Pendekatan ini menghasilkan jumlah sampel evaluasi yang lebih sedikit namun tetap mampu memberikan estimasi performa model yang representatif selama proses penalaan hiperparameter.
+
+\subsection{Penyesuaian Ruang Hiperparameter}
+
+Implementasi penalaan hiperparameter menggunakan ruang pencarian yang mengalami beberapa penyesuaian dibandingkan rancangan awal penelitian.
+
+Penyesuaian terutama dilakukan pada rentang \textit{learning rate}. Hasil eksperimen awal menunjukkan bahwa rentang nilai yang direncanakan sebelumnya belum mencakup wilayah yang menghasilkan proses pelatihan yang stabil. Oleh karena itu, rentang pencarian diperluas dan disesuaikan berdasarkan hasil observasi selama proses eksperimen.
+
+Selain itu, struktur tahapan penalaan hiperparameter juga mengalami penyempurnaan agar lebih sesuai dengan karakteristik model dan kebutuhan analisis. Penyesuaian ini memungkinkan proses pencarian dilakukan secara lebih terarah tanpa meningkatkan biaya komputasi secara berlebihan.
+
+Parameter yang dituning meliputi:
+
+\begin{itemize}
+\item \textit{learning rate},
+\item ukuran \textit{hidden state},
+\item panjang histori (\textit{lag}),
+\item ukuran \textit{batch},
+\item konfigurasi fungsi kerugian ROC.
+\end{itemize}
+
+\subsection{Tahapan Penalaan Hiperparameter}
+
+Penalaan hiperparameter dilakukan secara bertahap dalam tiga fase yang saling berurutan.
+
+\begin{enumerate}
+\item Fase 1 digunakan untuk mengidentifikasi rentang parameter yang memberikan performa menjanjikan.
+\item Fase 2 digunakan untuk mempersempit ruang pencarian berdasarkan hasil terbaik pada fase sebelumnya.
+\item Fase 3 digunakan untuk melakukan eksplorasi lebih rinci pada kombinasi parameter yang telah terpilih.
+\end{enumerate}
+
+Untuk mengurangi pengaruh variasi akibat proses pelatihan yang bersifat stokastik, setiap konfigurasi diuji beberapa kali menggunakan inisialisasi acak yang berbeda dan kemudian dirata-ratakan.
+
+Pada implementasi akhir, konfigurasi pada Fase 1 dan Fase 2 dijalankan sebanyak tiga repetisi untuk setiap kombinasi hiperparameter. Sementara itu, konfigurasi pada Fase 3 dijalankan sebanyak dua repetisi.
+
+Jumlah repetisi tersebut lebih rendah dibandingkan skenario ideal karena biaya komputasi yang meningkat secara signifikan pada fase akhir penalaan. Pengurangan jumlah repetisi dilakukan sebagai kompromi antara kebutuhan eksplorasi hiperparameter yang memadai dan keterbatasan sumber daya komputasi yang tersedia. Meskipun demikian, jumlah repetisi yang digunakan masih dianggap cukup untuk mengidentifikasi tren performa dan menentukan konfigurasi model terbaik yang digunakan pada tahap pengujian.
+
+\section{Implementasi Pengujian}
+
+Tahap pengujian dilakukan menggunakan konfigurasi model terbaik yang diperoleh dari proses validasi dan penalaan hiperparameter. Berbeda dengan tahap validasi yang berfokus pada pemilihan konfigurasi model, tahap pengujian bertujuan untuk melakukan evaluasi menyeluruh terhadap performa model serta mengumpulkan data yang diperlukan untuk analisis lebih lanjut.
+
+Seluruh model diuji menggunakan prosedur evaluasi yang sama sehingga hasil yang diperoleh dapat dibandingkan secara langsung pada berbagai skenario prediksi.
+
+\subsection{Konfigurasi Model yang Diuji}
+
+Tahap pengujian melibatkan delapan konfigurasi model akhir yang diperoleh dari kombinasi beberapa faktor eksperimen yang digunakan dalam penelitian.
+
+Faktor pertama adalah metode pelatihan yang terdiri atas:
+
+\begin{itemize}
+\item pelatihan prediksi satu langkah (\textit{one-step prediction training}),
+\item pelatihan forecasting (\textit{forecasting training}).
+\end{itemize}
+
+Faktor kedua adalah metode rollout yang digunakan saat inferensi, yaitu:
+
+\begin{itemize}
+\item rollout autoregresif (\textit{autoregressive rollout}),
+\item \textit{closed-loop rollout}.
+\end{itemize}
+
+Faktor ketiga adalah konfigurasi fungsi kerugian ROC yang digunakan selama pelatihan, yaitu:
+
+\begin{itemize}
+\item ROC First,
+\item ROC Uniform,
+\item ROC Last.
+\end{itemize}
+
+Kombinasi faktor-faktor tersebut menghasilkan delapan konfigurasi model akhir yang kemudian digunakan pada tahap pengujian.\footnote{Sesuaikan jumlah dan kombinasi model dengan konfigurasi akhir yang benar-benar digunakan dalam eksperimen.}
+
+\subsection{Prosedur Pengujian}
+
+Pengujian dilakukan menggunakan seluruh data pada himpunan pengujian yang tidak pernah digunakan selama proses pelatihan maupun validasi.
+
+Berbeda dengan tahap validasi yang menggunakan \textit{stride} sebesar panjang horizon untuk mengurangi biaya komputasi, tahap pengujian menggunakan:
+
+[
+\textit{stride} = 1
+]
+
+sehingga evaluasi dilakukan pada setiap posisi yang memungkinkan dalam permainan. Pendekatan ini menghasilkan pengukuran performa yang lebih rinci dan memungkinkan analisis yang lebih komprehensif terhadap perilaku model.
+
+Pada setiap sampel pengujian, model melakukan prediksi untuk seluruh horizon yang telah ditentukan. Evaluasi dilakukan baik pada skenario rollout autoregresif maupun \textit{closed-loop rollout} sehingga pengaruh metode rollout terhadap performa model dapat diamati secara langsung.
+
+Penggunaan evaluasi penuh pada seluruh horizon juga memungkinkan analisis terhadap degradasi performa model seiring bertambahnya jarak prediksi ke masa depan.
+
+\subsection{Pencatatan Data Pengujian}
+
+Selain menghitung metrik evaluasi akhir, sistem pengujian juga mengumpulkan berbagai informasi tambahan yang digunakan pada tahap analisis hasil.
+
+Untuk setiap proses pengujian, sistem menyimpan:
+
+\begin{itemize}
+\item histori interaksi permainan pada setiap turn,
+\item prediksi model pada setiap horizon,
+\item probabilitas keluaran model untuk setiap aksi,
+\item logits hasil prediksi model,
+\item metrik evaluasi agregat,
+\item hasil evaluasi pada tingkat permainan,
+\item identitas pasangan strategi yang terlibat,
+\item hasil prediksi aktual dan target sebenarnya pada setiap langkah prediksi.
+\end{itemize}
+
+Data yang dikumpulkan tersebut memungkinkan analisis dilakukan pada berbagai tingkat granularitas, mulai dari tingkat prediksi individual, tingkat permainan, tingkat pasangan strategi, hingga tingkat agregat seluruh populasi pengujian.
+
+Pendekatan ini dipilih karena tujuan penelitian tidak hanya mengevaluasi performa akhir model, tetapi juga memahami bagaimana kualitas prediksi berubah sepanjang permainan dan sepanjang horizon forecasting yang diamati.
+
+
+\section{Implementasi Analisis}
+
+Tahap analisis diimplementasikan sebagai rangkaian proses pengolahan data hasil pengujian untuk menghasilkan metrik, visualisasi, dan statistik yang digunakan pada bab hasil dan pembahasan. Data yang dikumpulkan selama proses pengujian mencakup prediksi model pada setiap horizon, probabilitas keluaran model, riwayat interaksi permainan, identitas strategi yang terlibat, serta berbagai metrik evaluasi yang dihitung pada tingkat permainan maupun tingkat horizon.
+
+Analisis dilakukan dengan memanfaatkan pustaka \textit{Pandas} untuk agregasi data, \textit{NumPy} untuk komputasi numerik, \textit{Matplotlib} dan \textit{Seaborn} untuk visualisasi, serta \textit{Scikit-Learn} untuk perhitungan beberapa metrik evaluasi. Seluruh data hasil pengujian disimpan dalam bentuk tabel sehingga dapat dianalisis dari berbagai sudut pandang, seperti tingkat permainan, pasangan strategi, horizon prediksi, maupun turn permainan.
+
+\subsection{Agregasi Data Hasil Pengujian}
+
+Data hasil pengujian dikumpulkan pada beberapa tingkat granularitas, yaitu:
+
+\begin{itemize}
+\item tingkat permainan (\textit{game-level}),
+\item tingkat horizon prediksi (\textit{horizon-level}),
+\item tingkat pasangan strategi (\textit{strategy-pair level}),
+\item tingkat turn permainan (\textit{turn-level}).
+\end{itemize}
+
+Struktur penyimpanan ini memungkinkan analisis dilakukan baik secara global maupun pada kasus-kasus tertentu yang memerlukan inspeksi lebih lanjut.
+
+\subsection{Agregasi Metrik Per Permainan}
+
+Pada tingkat permainan, metrik evaluasi dihitung untuk setiap pertandingan secara terpisah. Agregasi ini digunakan untuk mengukur konsistensi performa model pada keseluruhan permainan dan memungkinkan distribusi performa model diamati pada seluruh populasi pertandingan.
+
+Metrik yang dihitung meliputi:
+
+\begin{itemize}
+\item Accuracy Agen A,
+\item Accuracy Agen B,
+\item F1 Score Agen A,
+\item F1 Score Agen B,
+\item rata-rata metrik permainan.
+\end{itemize}
+
+Selain itu, agregasi ini digunakan sebagai dasar untuk identifikasi permainan yang memiliki performa prediksi terbaik maupun terburuk.
+
+\subsection{Agregasi Metrik Per Pasangan Strategi}
+
+Analisis juga dilakukan pada tingkat pasangan strategi untuk mengetahui performa model terhadap kombinasi strategi tertentu.
+
+Untuk setiap pasangan strategi dihitung:
+
+\begin{itemize}
+\item rata-rata Accuracy Agen A,
+\item rata-rata Accuracy Agen B,
+\item rata-rata F1 Score,
+\item jumlah pertandingan yang diamati.
+\end{itemize}
+
+Hasil agregasi ini digunakan untuk mengidentifikasi pasangan strategi yang paling mudah maupun paling sulit diprediksi oleh model.
+
+\subsection{Agregasi Temporal Berdasarkan Turn Permainan}
+
+Untuk mengamati perubahan performa model sepanjang permainan, seluruh prediksi dikelompokkan berdasarkan indeks turn.
+
+Pada tahap ini dihitung:
+
+\begin{itemize}
+\item akurasi rata-rata setiap turn,
+\item F1 Score rata-rata setiap turn,
+\item confidence prediksi rata-rata setiap turn.
+\end{itemize}
+
+Analisis temporal digunakan untuk mengamati bagaimana kemampuan prediksi model berkembang seiring bertambahnya informasi yang tersedia selama permainan berlangsung.
+
+\subsection{Agregasi Berdasarkan Horizon Prediksi}
+
+Karena penelitian berfokus pada permasalahan forecasting multi-step, evaluasi juga dilakukan pada setiap horizon prediksi secara terpisah.
+
+Untuk setiap horizon dihitung:
+
+\begin{itemize}
+\item Accuracy Agen A,
+\item Accuracy Agen B,
+\item F1 Score,
+\item confusion matrix.
+\end{itemize}
+
+Agregasi ini digunakan untuk mengamati pola penurunan performa model seiring bertambahnya jarak prediksi ke masa depan.
+
+\subsection{Visualisasi Hasil}
+
+Untuk mempermudah interpretasi data, beberapa bentuk visualisasi diimplementasikan, antara lain:
+
+\begin{itemize}
+\item heatmap performa pasangan strategi,
+\item grafik perbandingan konfigurasi model,
+\item grafik performa terhadap turn permainan,
+\item grafik confidence model,
+\item grafik performa terhadap horizon prediksi,
+\item distribusi metrik evaluasi,
+\item visualisasi perilaku permainan individual.
+\end{itemize}
+
+Visualisasi tersebut digunakan untuk mendukung proses analisis pada bab hasil dan pembahasan.
+
+\subsection{Studi Kasus Permainan}
+
+Selain analisis agregat, sistem analisis juga menyediakan visualisasi pada tingkat permainan individual. Visualisasi ini menampilkan riwayat aksi aktual, prediksi model, serta confidence yang dihasilkan pada setiap turn.
+
+Pendekatan ini digunakan untuk mengamati secara lebih rinci bagaimana model memprediksi dinamika interaksi antara dua strategi tertentu.
+
+\subsection{Analisis Statistik}
+
+Untuk membandingkan performa antar model secara kuantitatif, dilakukan analisis statistik terhadap metrik yang diperoleh dari hasil pengujian.
+
+Analisis statistik yang diimplementasikan meliputi:
+
+\begin{itemize}
+\item \textit{paired t-test},
+\item ukuran efek Cohen's $d$,
+\item interpretasi signifikansi statistik.
+\end{itemize}
+
+Analisis ini digunakan untuk mengevaluasi apakah perbedaan performa antar model merupakan perbedaan yang signifikan secara statistik atau hanya disebabkan oleh variasi sampel pengujian.
